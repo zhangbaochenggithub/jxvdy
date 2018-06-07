@@ -1,0 +1,1283 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset=utf-8"utf-8" />
+<meta name="renderer" content="webkit" />
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+<meta name="description" content="世界的尽头，故事梗概：故事讲的是主人公王雨沁无意之中在水晶钻石的帮助下到了另外的世界，那是一个非常美丽的世界，那里的人都乘坐着白云和魔毯，在彩虹里开心的玩闹，大树遇到不开心，就会拼命的摇头。而小草开着野花，会每一天都会笑。那里的房子软软的可以移动。那里的人是无比的幸福和快乐，因为他们不会伤害任何一物，包括植物。王雨沁刚刚来到，惊呆了，太美了。树上的果子会开心地叫道 说像人一样的语音。王雨沁在美丽世界里遇到了好几位好朋友  张怿天  李娓娓 张泽雯 李怿明 这些好朋友讲故事给雨沁听，讲以前美丽的这个世界遇到的灾难，然后战胜邪恶，世界从此以后就不在被受伤害，美丽的世界又像往常一样，安静 平稳 幸福快乐。" />
+<meta name="keywords" content="世界 尽头" />
+<meta name="author" content="Gold elephant Group" />
+<link rel="icon" href="http://skin.jxvdy.com/jxvdy2/public/images/favicon.ico" />
+<title>世界的尽头-剧本展示-微影剧本-金象微电影网</title>
+<link rel="stylesheet" href="jxvdy.css" tppabs="http://skin.jxvdy.com/jxvdy2/public/stylesheets/jxvdy.css" />
+<link rel="stylesheet" href="font-awesome.min.css" tppabs="http://skin.jxvdy.com/jxvdy2/public/stylesheets/font-awesome.min.css" />
+<!--[if lt IE 9]>
+<link rel="stylesheet" href="font-awesome-ie7.min.css-v=4.2.css" tppabs="http://skin.jxvdy.com/jxvdy2/public/stylesheets/font-awesome-ie7.min.css?v=4.2">
+<script src="html5hack.min.js" tppabs="http://skin.jxvdy.com/jxvdy2/public/javascripts/html5hack.min.js"></script>
+<![endif]-->
+	<script src="jquery-1.8.3.min.js" tppabs="http://skin.jxvdy.com/jxvdy2/public/javascripts/jquery-1.8.3.min.js"></script>
+	<script src="jquery.SuperSlide.js" tppabs="http://skin.jxvdy.com/jxvdy2/public/javascripts/jspack/jquery.SuperSlide.js"></script>
+	<script src="headroom.min.js" tppabs="http://skin.jxvdy.com/jxvdy2/public/javascripts/jspack/headroom.min.js"></script>
+	<script src="simplePagination.js" tppabs="http://skin.jxvdy.com/jxvdy2/public/javascripts/jspack/simplePagination.js"></script>
+	<script src="jquery.slimscroll.js" tppabs="http://skin.jxvdy.com/jxvdy2/public/javascripts/jspack/jquery.slimscroll.js"></script>
+	<script src="jquery.surReady.min.js" tppabs="http://skin.jxvdy.com/jxvdy2/public/javascripts/jspack/jquery.surReady.min.js"></script>
+	<script src="jquery.surCookie.min.js" tppabs="http://skin.jxvdy.com/jxvdy2/public/javascripts/jspack/jquery.surCookie.min.js"></script>
+	<script type="text/javascript">
+	<!--
+	//黑头信标查找
+	$('#js_black_head').surReady(function(){
+		$('body').addClass('page-index-min');
+		$('#header').addClass('header-min-wrap');
+	});
+	
+	//清空历史记录
+	function clearHistory()
+	{
+		$.delCookie('video_jxvdy');
+		$.delCookie('drama_jxvdy');
+		$("#history-scrollbar").html('您还未观看微电影，暂无播放记录！');
+	}
+	
+	//判断是否已登录
+	$('#js_login_user_info').surReady(function(){
+		$.ajax({
+			url : '/d/member/mess'
+			,type : 'post'
+			,success: function(d){
+				var data = JSON.parse(d);
+				if(typeof(data['m_nick']) == 'string')
+				{
+					$('.js_login_user_info').removeClass('login-before').addClass('login-after')
+					$('.js_login_link').hide();
+					$('.js_user_login_btn').hide();
+					$('.js_user_name_wrap').show().find('img').attr('src', data['i_path']).attr('alt', data['m_nick']);
+					$('.js_user_name_wrap .js_user_nick').html(data['m_nick']);
+					$('.js_user_icon').show().find('img').attr('src', data['i_path']).attr('alt', data['m_nick']);
+					$('.js_user_icon div a').html(data['m_nick']);
+					$('.js_user_icon ul').children('li').first().find('a').html(data['attention']);
+					$('.js_user_icon ul').children('li').last().find('a').html(data['fans']);
+					$('.js_user_footer').show();
+				}
+				if(typeof(data['notice']) == 'string' && data['notice'] != 0)
+				{
+					$('.js_mess_total').show();
+				}
+			}
+		})
+	});
+	//-->
+	</script>
+	<script src="util.js" tppabs="http://skin.jxvdy.com/jxvdy2/public/javascripts/util.js"></script>
+	<script src="shitao.js" tppabs="http://skin.jxvdy.com/jxvdy2/public/javascripts/jspack/shitao.js"></script>
+	<script src="zebra_tooltips.js" tppabs="http://skin.jxvdy.com/jxvdy2/public/javascripts/jspack/zebra_tooltips.js"></script>
+<script>
+	//百度统计
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "hm.js-e64f7f2c081e3417386b861e0882c9d9"/*tpa=http://hm.baidu.com/hm.js?e64f7f2c081e3417386b861e0882c9d9*/;
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+</script>
+<script type="text/javascript">
+<!--
+$.ajax({cache:false,type:'GET',url:'http://www.jxvdy.com/d/record_click?s=3_052649'});
+//-->
+</script>
+
+<script type="text/javascript">
+<!--
+function js_click_record(url)
+{
+	$.ajax({cache:false,type:'GET',url: url});
+}
+
+//-->
+</script>
+<script language="JavaScript">
+<!--
+//火狐img onerror
+var FIREFOXBULLSHIT = null
+,	FIREFOXBULLSHITC = 0;
+$(function(){
+	FIREFOXBULLSHIT = setInterval("$('img:not(.js_error_off)').each(function(){$(this).attr('src')=='' && $(this).trigger('error') && $(this).attr('js_error_off');});15<=++FIREFOXBULLSHITC && clearInterval(FIREFOXBULLSHIT);", 200);
+});
+//-->
+</script>
+<!--t1517408218-->
+<script type="text/javascript" src="pb.js" tppabs="http://skin.jxvdy.com/jxvdy2/public/javascripts/pb.js"></script>
+<script type="text/javascript" src="screenplay_inside.js" tppabs="http://skin.jxvdy.com/jxvdy2/public/javascripts/screenplay_inside.js"></script>
+<script type="text/javascript" src="video_tab.js" tppabs="http://skin.jxvdy.com/jxvdy2/public/javascripts/video_tab.js"></script>
+<script type="text/javascript" src="rank.js" tppabs="http://skin.jxvdy.com/jxvdy2/public/javascripts/rank.js"></script>
+<script type="text/javascript" src="reload.js" tppabs="http://skin.jxvdy.com/jxvdy2/public/javascripts/reload.js"></script>
+<script type="text/javascript" src="share.js" tppabs="http://skin.jxvdy.com/jxvdy2/public/javascripts/share.js"></script>
+<script type="text/javascript" src="public.js" tppabs="http://skin.jxvdy.com/jxvdy2/public/javascripts/public.js"></script>
+<script type="text/javascript" charset="utf-8" src="buttonLite.js" tppabs="http://static.bshare.cn/b/buttonLite.js"></script>
+<script type="text/javascript" charset="utf-8" >
+	//预定义bshare分享按钮样式及配置参数
+	var bShareOpt = {style:-1,uuid:'38f8de2c-ca33-452c-89f3-4caa71109129',mdiv:-1};
+	function shareTo(event, shortName) {
+		//自定义设置内容，可动态获取当前页面内相应的参数进行传递
+		var url=window.location.href;
+		var str_title = "世界的尽头";
+		var str_info = "梦境里的奇幻故事";
+		var img = "566e2fb056af67e9231df_0.jpg"/*tpa=http://image.jxvdy.com/2015/1214/566e2fb056af67e9231df_0.jpg*/;
+		//清除自定义分享内容的方法，在设置前清空，重新自定义内容
+		bShare.entries = [];
+		//添加自定义分享内容方法，不需要自定义的可以传递，bshare js会主动抓取页面相应值默认
+		bShare.addEntry({
+			title: str_title,
+			url: url,
+			summary: str_info,
+			pic:img
+		});
+
+		//调用相应的分享方法，
+		bShare.share(event, shortName);
+
+	}
+</script>
+</head>
+<body class="page-index" id="lazyload_content">
+<header id="header" class="header-fixed">
+	<div class="header-wrap clearfix">
+		<div class="container header-inner">
+			<!-- logo -->
+			<h1 class="logo-wrap"><a href="index.htm" tppabs="http://www.jxvdy.com/" title="金象微电影网"><img src="logo.png" tppabs="http://skin.jxvdy.com/jxvdy2/public/images/logo.png" alt="金象微电影网"/></a></h1>
+			<!-- mini导航 -->
+			<div class="mini-nav dropdown-wrap">
+				<div class="dropdown-object">
+				<span class="dropdown-name"><i class="fa fa-bars"></i>导航</span>
+					<div class="dropdown-inner">
+						<div class="user-inner">
+							<span class="tip-t"><i class="tip-outer"></i><i class="tip-inner"></i></span>
+														<div class="item-menu clearfix">
+								<div class="item-column"><a href="news.html" tppabs="http://www.jxvdy.com/news.html">资讯</a></div>
+								<div class="item-subcolumn">
+																		<a href="list.html" tppabs="http://www.jxvdy.com/news/hydt/list.html">行业动态</a>
+																		<a href="list-1.html" tppabs="http://www.jxvdy.com/news/ylqy/list.html">娱乐前沿</a>
+																		<a href="list-2.html" tppabs="http://www.jxvdy.com/news/mrzl/list.html">名人专栏</a>
+																		<a href="list-3.html" tppabs="http://www.jxvdy.com/news/jxbb/list.html">金象播报</a>
+																		<a href="list-4.html" tppabs="http://www.jxvdy.com/news/ysmp/list.html">影视名片</a>
+																	</div>
+							</div>
+														<div class="item-menu clearfix">
+								<div class="item-column"><a href="video.html" tppabs="http://www.jxvdy.com/video.html">微电影</a></div>
+								<div class="item-subcolumn">
+																		<a href="list-t1.html" tppabs="http://www.jxvdy.com/video/list-t1.html">爱情</a>
+																		<a href="list-t2.html" tppabs="http://www.jxvdy.com/video/list-t2.html">校园</a>
+																		<a href="list-t3.html" tppabs="http://www.jxvdy.com/video/list-t3.html">温情</a>
+																		<a href="list-t6.html" tppabs="http://www.jxvdy.com/video/list-t6.html">励志</a>
+																		<a href="list-t8.html" tppabs="http://www.jxvdy.com/video/list-t8.html">社会</a>
+																		<a href="list-t7.html" tppabs="http://www.jxvdy.com/video/list-t7.html">职场</a>
+																		<a href="list-t4.html" tppabs="http://www.jxvdy.com/video/list-t4.html">搞笑</a>
+																		<a href="list-t5.html" tppabs="http://www.jxvdy.com/video/list-t5.html">悬疑</a>
+																		<a href="list-t14.html" tppabs="http://www.jxvdy.com/video/list-t14.html">穿越</a>
+																		<a href="list-t17.html" tppabs="http://www.jxvdy.com/video/list-t17.html">恐怖</a>
+																		<a href="list-t9.html" tppabs="http://www.jxvdy.com/video/list-t9.html">刑侦</a>
+																		<a href="list-t13.html" tppabs="http://www.jxvdy.com/video/list-t13.html">动作</a>
+																		<a href="list-t12.html" tppabs="http://www.jxvdy.com/video/list-t12.html">科幻</a>
+																		<a href="list-t11.html" tppabs="http://www.jxvdy.com/video/list-t11.html">古装</a>
+																		<a href="list-t16.html" tppabs="http://www.jxvdy.com/video/list-t16.html">公益</a>
+																		<a href="list-t18.html" tppabs="http://www.jxvdy.com/video/list-t18.html">文艺</a>
+																		<a href="list-t10.html" tppabs="http://www.jxvdy.com/video/list-t10.html">战争</a>
+																		<a href="list-t20.html" tppabs="http://www.jxvdy.com/video/list-t20.html">动画</a>
+																		<a href="list-t21.html" tppabs="http://www.jxvdy.com/video/list-t21.html">剧情</a>
+																		<a href="list-t19.html" tppabs="http://www.jxvdy.com/video/list-t19.html">纪录</a>
+																		<a href="list-t15.html" tppabs="http://www.jxvdy.com/video/list-t15.html">广告</a>
+																		<a href="list-t22.html" tppabs="http://www.jxvdy.com/video/list-t22.html">其他</a>
+																	</div>
+							</div>
+														<div class="item-menu clearfix">
+								<div class="item-column"><a href="drama.html" tppabs="http://www.jxvdy.com/drama.html">微剧集</a></div>
+								<div class="item-subcolumn">
+																		<a href="list-t29.html" tppabs="http://www.jxvdy.com/drama/list-t29.html">都市爱情</a>
+																		<a href="list-t30.html" tppabs="http://www.jxvdy.com/drama/list-t30.html">青春励志</a>
+																		<a href="list-t31.html" tppabs="http://www.jxvdy.com/drama/list-t31.html">创意搞笑</a>
+																		<a href="list-t32.html" tppabs="http://www.jxvdy.com/drama/list-t32.html">恐怖悬疑</a>
+																		<a href="list-t33.html" tppabs="http://www.jxvdy.com/drama/list-t33.html">动画儿童</a>
+																		<a href="list-t34.html" tppabs="http://www.jxvdy.com/drama/list-t34.html">社会纪实</a>
+																	</div>
+							</div>
+														<div class="item-menu clearfix">
+								<div class="item-column"><a href="screenplay.html" tppabs="http://www.jxvdy.com/screenplay.html">剧本</a></div>
+								<div class="item-subcolumn">
+																		<a href="javascript:if(confirm('http://www.jxvdy.com/screenplay/list.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/screenplay/list.html'" tppabs="http://www.jxvdy.com/screenplay/show/list.html">剧本展示</a>
+																		<a href="list-6.html" tppabs="http://www.jxvdy.com/screenplay/sale/list.html">剧本出售</a>
+																		<a href="list-7.html" tppabs="http://www.jxvdy.com/screenplay/collection/list.html">剧本征集</a>
+																	</div>
+							</div>
+														<div class="item-menu clearfix">
+								<div class="item-column"><a href="tutorials.html" tppabs="http://www.jxvdy.com/tutorials.html">教学</a></div>
+								<div class="item-subcolumn">
+																		<a href="list-8.html" tppabs="http://www.jxvdy.com/tutorials/plays/list.html">剧作教程</a>
+																		<a href="list-9.html" tppabs="http://www.jxvdy.com/tutorials/shooting/list.html">微影拍摄</a>
+																		<a href="list-10.html" tppabs="http://www.jxvdy.com/tutorials/late/list.html">影视后期</a>
+																		<a href="list-11.html" tppabs="http://www.jxvdy.com/tutorials/equipment/list.html">拍摄器材</a>
+																	</div>
+							</div>
+														<div class="item-menu clearfix">
+								<div class="item-column">微影专题</div>
+								<div class="item-subcolumn">
+									<a href="list-12.html" tppabs="http://www.jxvdy.com/activities/spec/list.html" class="brand-warning">微影活动</a>
+									<!--<a href="">网站专题</a>-->
+									<!--<a href="">资讯专题</a>-->
+									<a href="list-13.html" tppabs="http://www.jxvdy.com/video/spec/list.html">微电影专题</a>
+								</div>
+							</div>
+							<!-- /.item-menu -->
+							<div class="item-menu clearfix">
+								<div class="item-column">APP下载</div>
+								<div class="item-subcolumn">
+									<a href="javascript:if(confirm('https://itunes.apple.com/cn/app/jin-xiang-wei-dian-ying/id828237631?mt=8  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://itunes.apple.com/cn/app/jin-xiang-wei-dian-ying/id828237631?mt=8'" tppabs="http://www.jxvdy.com/app/iphone" target="_blank">iPhone客户端</a>
+									<a href="javascript:if(confirm('http://www.jxvdy.com/404.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ������������ļ�δ�ҵ���  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/404.html'" tppabs="http://www.jxvdy.com/app/jxvdy.apk" target="_blank">Android客户端</a>
+									<a href="javascript:if(confirm('https://itunes.apple.com/cn/app/jin-xiang-wei-dian-yinghd/id879977586?mt=8  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://itunes.apple.com/cn/app/jin-xiang-wei-dian-yinghd/id879977586?mt=8'" tppabs="http://www.jxvdy.com/app/ipad" target="_blank">iPad客户端</a>
+								</div>
+							</div>
+							<!-- /.item-menu -->
+						</div>
+					</div>
+				</div>
+				<!-- /.dropdown-menu -->
+			</div>
+			<!-- 搜索框 -->
+			<div class="search-wrap">
+				<form class="clearfix" action="http://www.jxvdy.com/screenplay/sale/search" method="get" role="search" target="_blank">
+					<div class="mod-search">
+						<input type="text" class="search-txt" name="kw" placeholder="请输入“微影剧本”关键词">
+						<i class="fa fa-search"></i>
+					</div>
+					<input type="submit" class="btn-search" value="搜索"> 
+				</form>
+			</div>
+			<!-- 用户中心 -->
+			<div class="user-info-wrap" id="js_login_user_info">
+				<div class="user-wrap login-before dropdown-wrap js_login_user_info">
+					<div class="dropdown-object">
+						<div class="user-name-wrap js_user_name_wrap" style="display: none;">
+							<span class="user-icon">
+								<a class="" href="login.html-jumpto=-my-index.html" tppabs="http://www.jxvdy.com/my/index.html" target="_blank"><img src="" onerror="this.src='http://skin.jxvdy.com/jxvdy2/public/images/avatar80_80.jpg'" width="40" height="40"  alt=""/></a>
+							</span>
+							<a class="user-txt js_user_nick" href="login.html-jumpto=-my-index.html" tppabs="http://www.jxvdy.com/my/index.html" target="_blank"></a>
+						</div>
+						<a class="link js_login_link" href="javascript:;"><i class="fa fa-user"></i>登录</a>
+						<div class="dropdown-inner">
+							<div class="user-inner">
+								<span class="tip-t"><i class="tip-outer"></i><i class="tip-inner"></i></span>
+								<div class="menu-hd">
+									<div class="user-btns clearfix">
+										<div class="user-icon clearfix js_user_icon" style="display: none;">
+											<a class="" href="login.html-jumpto=-my-index.html" tppabs="http://www.jxvdy.com/my/index.html" target="_blank"><img src="" onerror="this.src='http://skin.jxvdy.com/jxvdy2/public/images/avatar80_80.jpg'" width="50" height="50"  alt=""/></a>
+											<div class="user-name">
+												<a href="login.html-jumpto=-my-index.html" tppabs="http://www.jxvdy.com/my/index.html" target="_blank"></a>
+												<ul class="mem-sta">
+													<li><span>关注</span> <strong><a href="login.html-jumpto=-my-friend-list.html-t=follow.htm" tppabs="http://www.jxvdy.com/my/friend/list.html?t=follow" target="_blank"></a></strong></li>
+													<li><span>粉丝</span> <strong><a href="login.html-jumpto=-my-friend-list.html-t=fans.htm" tppabs="http://www.jxvdy.com/my/friend/list.html?t=fans" target="_blank"></a></strong></li>
+												</ul>
+											</div>
+										</div>
+										<a class="btn btn-warning user-login-btn js_user_login_btn" href="login.htm" tppabs="http://www.jxvdy.com/my/login">马上登录</a>
+										<a class="btn btn-warning user-login-btn ml10 js_user_login_btn" href="regist.htm" tppabs="http://www.jxvdy.com/my/regist">免费注册</a>
+									</div>
+								</div>
+								<div class="menu-bd">
+									<ul class="list-unstyled clearfix">
+										<li><a href="login.html-jumpto=-my-index.html" tppabs="http://www.jxvdy.com/my/index.html" target="_blank"><i class="fa fa-home"></i>我的金象</a></li>
+										<li><a href="login.html-jumpto=-my-video-list.html-t=release.htm" tppabs="http://www.jxvdy.com/my/video/list.html?t=release" target="_blank"><i class="fa fa-video-camera"></i>我的微影</a></li>
+										<li><a href="login.html-jumpto=-my-screenplay-list.html-t=release.htm" tppabs="http://www.jxvdy.com/my/screenplay/list.html?t=release" target="_blank"><i class="fa fa-film"></i>我的剧本</a></li>
+										<li><a href="login.html-jumpto=-my-tutorials-list.html-t=release.htm" tppabs="http://www.jxvdy.com/my/tutorials/list.html?t=release" target="_blank"><i class="fa fa-file-powerpoint-o"></i>我的教学</a></li>
+										<li><a href="login.html-jumpto=-my-news-list.html-t=collect.htm" tppabs="http://www.jxvdy.com/my/news/list.html?t=collect" target="_blank"><i class="fa fa-newspaper-o"></i>我的资讯</a></li>
+										<li><a href="login.html" tppabs="http://www.jxvdy.com/my/login.html" target="_blank"><i class="fa fa-volume-up"></i>消息中心</a></li>
+									</ul>
+								</div>
+								<div class="user-footer js_user_footer" style="display: none;">
+									<a class="user-setting pull-left" href="login.html-jumpto=-my-profile-edit.html" tppabs="http://www.jxvdy.com/my/profile/edit.html"><i class="fa fa-cog"></i>账户设置</a>
+									<a class="user-exit pull-right" href="login.htm" tppabs="http://www.jxvdy.com/my/logout"><i class="fa fa-power-off"></i>退出</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="upload-wrap dropdown-wrap">
+					<div class="dropdown-object">
+						<a class="link" href="javascript:;" target="_blank"><i class="fa fa-cloud-upload"></i>发布</a>
+						<div class="dropdown-inner">
+							<div class="user-inner">
+								<span class="tip-t"><i class="tip-outer"></i><i class="tip-inner"></i></span>
+								<div class="menu-bd">
+									<ul class="list-unstyled clearfix">
+										<li><a href="login-jumpto=http---www.jxvdy.com-my-video_release.html" tppabs="http://www.jxvdy.com/my/video_release.html" target="_blank"><i class="fa fa-video-camera"></i>发布微电影</a></li>
+										<li><a href="login-jumpto=http---www.jxvdy.com-my-drama_release.html" tppabs="http://www.jxvdy.com/my/drama_release.html" target="_blank"><i class="fa fa-file-video-o"></i>发布网络剧</a></li>
+										<li><a href="login-jumpto=http---www.jxvdy.com-my-screenplay_release.html" tppabs="http://www.jxvdy.com/my/screenplay_release.html" target="_blank"><i class="fa fa-film"></i>发布剧本</a></li>
+										<li><a href="login-jumpto=http---www.jxvdy.com-my-screenplay-collection_release.html" tppabs="http://www.jxvdy.com/my/screenplay/collection_release.html" target="_blank"><i class="fa fa-film"></i>发布剧本征集</a></li>
+										<li><a href="login-jumpto=http---www.jxvdy.com-my-tutorials_release.html" tppabs="http://www.jxvdy.com/my/tutorials_release.html" target="_blank"><i class="fa fa-file-powerpoint-o"></i>发布教程</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="history-wrap dropdown-wrap">
+					<div class="dropdown-object">
+					<a class="link" href="javascript:void(0)"><i class="fa fa-history"></i>记录</a>
+					<div id="js_history_tab" class="dropdown-inner history-tab">
+						<div class="user-inner">
+							<span class="tip-t"><i class="tip-outer"></i><i class="tip-inner"></i></span>
+							<div id="history-scrollbar" class="history-inner">
+								<div class="history-list clearfix">
+																<p>您还未观看微电影，暂无播放记录！</p>
+																</div>
+							</div>
+							<div class="user-footer">
+								<a class="history-clear" href="javascript:;" onclick="clearHistory()"><i class="fa fa-trash-o"></i>清空</a>
+							</div>
+						</div>
+					</div>
+					</div>
+				</div>
+
+				<div class="message-wrap">
+					<a class="link" href="login-jumpto=-my-message-list.html-t=private.htm" tppabs="http://www.jxvdy.com/my/message/list.html?t=private" target="_blank"><i class="fa fa-bell-o"></i>消息</a>
+					<em class="total js_mess_total" style="display: none;"><i class="fa fa-circle"></i></em>
+				</div>
+			</div>
+		</div>
+
+		<div id="js_nav" class="head-jxv">
+			<div class="navigation-up">
+				<div class="navigation-inner">
+					<div class="navigation-jxv">
+						<ul id="js_nav_highlight">
+							<li class="js_navdown js_navbtn_" js_navdown="">
+								<h2><a href="index.htm" tppabs="http://www.jxvdy.com/">首页</a></h2>
+							</li>
+														<li class="js_navdown js_navbtn_news" js_navdown="news">
+								<h2><a href="news.html" tppabs="http://www.jxvdy.com/news.html">资讯</a></h2>
+							</li>
+														<li class="js_navdown js_navbtn_video" js_navdown="video">
+								<h2><a href="video.html" tppabs="http://www.jxvdy.com/video.html">微电影</a></h2>
+							</li>
+														<li class="js_navdown js_navbtn_screenplay" js_navdown="screenplay">
+								<h2><a href="screenplay.html" tppabs="http://www.jxvdy.com/screenplay.html">剧本</a></h2>
+							</li>
+														<li class="js_navdown js_navbtn_tutorials" js_navdown="tutorials">
+								<h2><a href="tutorials.html" tppabs="http://www.jxvdy.com/tutorials.html">教学</a></h2>
+							</li>
+														<li class="js_navdown js_navbtn_activities" js_navdown="activities">
+								<h2><a href="list-12.html" tppabs="http://www.jxvdy.com/activities/spec/list.html">活动</a></h2>
+							</li>
+						</ul>
+					</div>
+					<div class="downapp">
+						<a href="app.htm" tppabs="http://www.jxvdy.com/app" title="下载移动客户端" target="_blank"><i class="fa fa-mobile"></i>下载移动客户端</a>
+					</div>
+				</div>
+			</div>
+			<div class="navigation-down">
+								<div id="js_navsub_news" class="js_navdown nav-down-menu" js_navdown="news" style="display: none;">
+					<div class="navigation-down-inner">
+											<dl><dd><a href="list.html" tppabs="http://www.jxvdy.com/news/hydt/list.html">行业动态</a></dd></dl>
+											<dl><dd><a href="list-1.html" tppabs="http://www.jxvdy.com/news/ylqy/list.html">娱乐前沿</a></dd></dl>
+											<dl><dd><a href="list-2.html" tppabs="http://www.jxvdy.com/news/mrzl/list.html">名人专栏</a></dd></dl>
+											<dl><dd><a href="list-3.html" tppabs="http://www.jxvdy.com/news/jxbb/list.html">金象播报</a></dd></dl>
+											<dl><dd><a href="list-4.html" tppabs="http://www.jxvdy.com/news/ysmp/list.html">影视名片</a></dd></dl>
+										</div>
+				</div>
+								<div id="js_navsub_video" class="js_navdown nav-down-menu" js_navdown="video" style="display: none;">
+					<div class="navigation-down-inner">
+											<dl><dd><a href="list-16.html" tppabs="http://www.jxvdy.com/video/list.html">微电影</a></dd></dl>
+											<dl><dd><a href="list-17.html" tppabs="http://www.jxvdy.com/drama/list.html">网络剧</a></dd></dl>
+											<dl><dd><a href="list-13.html" tppabs="http://www.jxvdy.com/video/spec/list.html">微电影专题</a></dd></dl>
+										</div>
+				</div>
+								<div id="js_navsub_screenplay" class="js_navdown nav-down-menu" js_navdown="screenplay" style="display: none;">
+					<div class="navigation-down-inner">
+											<dl><dd><a href="javascript:if(confirm('http://www.jxvdy.com/screenplay/list.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/screenplay/list.html'" tppabs="http://www.jxvdy.com/screenplay/show/list.html">剧本展示</a></dd></dl>
+											<dl><dd><a href="list-6.html" tppabs="http://www.jxvdy.com/screenplay/sale/list.html">剧本出售</a></dd></dl>
+											<dl><dd><a href="list-7.html" tppabs="http://www.jxvdy.com/screenplay/collection/list.html">剧本征集</a></dd></dl>
+										</div>
+				</div>
+								<div id="js_navsub_tutorials" class="js_navdown nav-down-menu" js_navdown="tutorials" style="display: none;">
+					<div class="navigation-down-inner">
+											<dl><dd><a href="list-8.html" tppabs="http://www.jxvdy.com/tutorials/plays/list.html">剧作教程</a></dd></dl>
+											<dl><dd><a href="list-9.html" tppabs="http://www.jxvdy.com/tutorials/shooting/list.html">微影拍摄</a></dd></dl>
+											<dl><dd><a href="list-10.html" tppabs="http://www.jxvdy.com/tutorials/late/list.html">影视后期</a></dd></dl>
+											<dl><dd><a href="list-11.html" tppabs="http://www.jxvdy.com/tutorials/equipment/list.html">拍摄器材</a></dd></dl>
+										</div>
+				</div>
+							</div>
+		</div>
+		<!-- /.head-jxv -->
+	</div>
+	<!-- header-wrap -->
+</header>
+<!--t1517407534-->
+
+<!--面包屑 -->
+
+<section class="container mt20">
+	<ol class="breadcrumb-wrap hidden-xs">
+		<li><i class="fa fa-home color-gray"></i><a href="index.htm" tppabs="http://www.jxvdy.com/">金象微电影网首页</a></li>
+		<li><i>/</i><a href="screenplay.html" tppabs="http://www.jxvdy.com/screenplay.html">微影剧本</a><i>/</i><a href="list-6.html" tppabs="http://www.jxvdy.com/screenplay/sale/list.html">剧本出售</a></li>
+		<li class="active"><i>/</i>正文</li>
+	</ol>
+</section>
+
+<section class="container">
+	<div class="content-wrap">
+		<div class="content clearfix">
+			<div class="screenplay-header clearfix">
+				<div class="thumb-wrap"><img src="566e2fb056af67e9231df_0.jpg" tppabs="http://image.jxvdy.com/2015/1214/566e2fb056af67e9231df_0.jpg" width="380" height="264" alt="世界的尽头" onerror="this.src='http://skin.jxvdy.com/jxvdy/web/images/default/380_264.png'"></div>
+				<div class="info-wrap screenplay-info">
+					<h4>世界的尽头<strong>￥8000</strong></h4>
+					<p>梦境里的奇幻故事</p>
+					<div class="clearfix">
+						<span class="muted">作者：陈佳佳</span>						<span class="muted">来源：原创</span>						<span class="muted">年代：<a href="javascript:if(confirm('http://www.jxvdy.com/screenplay/sale/list-y61.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/screenplay/sale/list-y61.html'" tppabs="http://www.jxvdy.com/screenplay/sale/list-y61.html" target="_blank">其他</a></span>						<span class="muted">类型：<a href="javascript:if(confirm('http://www.jxvdy.com/screenplay/sale/list-t52.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/screenplay/sale/list-t52.html'" tppabs="http://www.jxvdy.com/screenplay/sale/list-t52.html" target="_blank">科幻</a></span>						<span class="muted">时长：20分钟</span>						<span class="muted">评论：<a href="#comments"><span class="comment_num"  js_data="4681" js_coc_id="12"></span>评论</a></span>
+						<span class="muted">查看：<span class="js_hits">0</span></span>
+						<span class="muted">发布时间：2015-12-14</span>
+					</div>
+					<!--<div class="dropdown-wrap contact-wrap">
+						<div class="dropdown-object">
+							<span class="btn btn-warning">联系Ta</span>
+							<ul class="dropdown-inner dropdown-menu">
+								<li><span>手机：</span>15538701817</li>
+								<li><span>QQ：</span>14088754</li>
+								<li><span>邮箱：</span>14088754@qq.com</li>
+							</ul>
+						</div>
+					</div>-->
+				</div>
+			</div>
+			<!-- /.screenplay-header  -->
+			<div id="js_widget_screenplay_tab" class="widget-screenplay-tab clearfix mt20">
+				<div class="column-tab clearfix hd">
+						<span class="pull-right pdr10">
+							<a class="random random-screenplay" href="" style="display: inline;"><i class="fa fa-repeat"></i>换一篇</a>
+						</span>
+					<ul class="list-unstyled">
+						<li>故事梗概</li>
+											</ul>
+				</div>
+				<div class="widget-screenplay-inner">
+					<div class="articl-header clearfix">
+						<div class="article-other-info">
+							<blockquote class="article-city hidden-xs"><p>故事梗概：故事讲的是主人公王雨沁无意之中在水晶钻石的帮助下到了另外的世界，那是一个非常美丽的世界，那里的人都乘坐着白云和魔毯，在彩虹里开心的玩闹，大树遇到不开心，就会拼命的摇头。而小草开着野花，会每一天都会笑。那里的房子软软的可以移动。那里的人是无比的幸福和快乐，因为他们不会伤害任何一物，包括植物。王雨沁刚刚来到，惊呆了，太美了。树上的果子会开心地叫道 说像人一样的语音。王雨沁在美丽世界里遇到了好几位好朋友  张怿天  李娓娓 张泽雯 李怿明 这些好朋友讲故事给雨沁听，讲以前美丽的这个世界遇到的灾难，然后战胜邪恶，世界从此以后就不在被受伤害，美丽的世界又像往常一样，安静 平稳 幸福快乐。</p></blockquote>
+						</div>
+					</div>
+					<!-- /.article-header  -->
+					<div class="articl-header clearfix">
+						<div class="article-other-info">
+							<blockquote class="article-city hidden-xs">
+															</blockquote>
+						</div>
+					</div>
+					<!-- /.article-header  -->
+				</div>
+				<!-- /.widget-wdy-inner -->
+			</div>
+			<!-- /.article-header  -->
+			<div class="articl-content clearfix js_loadmore" style="max-height: 1000px; overflow: hidden;" js_data="4681" js_page="1" js_total="1">
+				<div class="js_loadmord_1">
+               <span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">第一场王雨沁的梦中</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">有一个晚上&nbsp;&nbsp;王雨沁的梦中&nbsp;，她做了一个梦，梦到她拾到了一颗水晶钻石，梦里有个声音&nbsp;说道：<span style="font-family:Times New Roman;">“</span><span style="font-family:宋体;">雨沁你只要拿着这个水晶钻石，到山上石壁上只要把钻石放到上面，你就可以到另外的世界里去了</span><span style="font-family:Times New Roman;">”</span></span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">王雨沁拼命地说&nbsp;&nbsp;我走了，我到另外的世界去了，我的爸爸&nbsp;妈妈&nbsp;和奶奶怎么办，我不想去&nbsp;。</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">梦里的声音说道&nbsp;&nbsp;这由不得你去不去。</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">这时在梦中，她感觉有人推了她一把。</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">王雨沁被梦惊醒了</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">她看到窗外，天上的星星还是那么明亮</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">王雨沁似乎听到了星星闪烁的声音</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">那么安宁</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">她看了一下时间，居然<span style="font-family:Times New Roman;">12</span><span style="font-family:宋体;">整</span></span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">但是她再也睡不着了，因为失眠了。</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">她想着梦里，如果梦里实现，那该怎么办。</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">雨沁起床了，她想看一眼熟睡中的奶奶</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">&nbsp;</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">&nbsp;</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">第二场雨沁家里&nbsp;&nbsp;&nbsp;夜晚</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">雨沁轻轻的推开房间</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">想去看一眼熟睡中的奶奶</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">&nbsp;&nbsp;</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">&nbsp;</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">第三场雨沁想起以前&nbsp;&nbsp;和奶奶一起快乐的日子</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">五岁的时候被坏小朋友欺负，奶奶匆忙跑了过去，可是却摔到了地上</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">雨沁大声喊到&nbsp;&nbsp;奶奶&nbsp;&nbsp;您怎么了</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">奶奶抱住雨沁说道&nbsp;&nbsp;雨沁你没事吧&nbsp;宝贝&nbsp;&nbsp;你哪里疼。</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">雨沁说&nbsp;&nbsp;奶奶&nbsp;&nbsp;奶奶&nbsp;雨沁没事。</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">又接着说&nbsp;&nbsp;奶奶&nbsp;&nbsp;都是雨沁不好，害奶奶摔跤了</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">奶奶强忍着痛说&nbsp;&nbsp;宝贝&nbsp;奶奶不痛&nbsp;&nbsp;奶奶没事</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">又说&nbsp;&nbsp;别担心</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">可是后来雨沁才知道，奶奶骨折了</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">&nbsp;</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">&nbsp;</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">七岁的时候&nbsp;&nbsp;有一天晚上&nbsp;下着大雨，雨沁发烧了，那时爸妈不在家</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">奶奶摸了摸雨沁的额头，心疼的说&nbsp;&nbsp;雨沁你发烧了&nbsp;&nbsp;奶奶带你去医院</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">奶奶背起小雨沁&nbsp;&nbsp;马上向医院跑去</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">可是那时淋着大雨&nbsp;&nbsp;&nbsp;奶奶冻得直发抖</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">到了医院，小雨沁的病好了&nbsp;&nbsp;，可是奶奶却发烧了</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">九岁的时候&nbsp;&nbsp;奶奶拍着小雨沁睡觉，一边赶着蚊子，小雨沁那时感到无比的幸福和感激</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">小雨沁离开了奶奶的房间</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">&nbsp;</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">&nbsp;</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">第四场&nbsp;&nbsp;父母的房间</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">&nbsp;</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">看着熟睡中的爸妈</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">雨沁想起了从前的幸福快乐的生活</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">六岁时&nbsp;到公园里玩，一不小心掉进了池塘</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">爸爸马上跳进池塘</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">把雨沁救了上来</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">妈妈操碎了心&nbsp;&nbsp;&nbsp;不停地哭</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">雨沁抱住了妈妈&nbsp;&nbsp;妈妈&nbsp;妈妈别哭，我没事了</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">妈妈强忍住泪水，微笑地说&nbsp;&nbsp;妈妈不哭了&nbsp;雨沁也要坚强哦&nbsp;&nbsp;妈妈永远爱你&nbsp;&nbsp;还有爸爸，答应妈妈，以候遇到任何事情，都要坚强。</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">雨沁说&nbsp;&nbsp;妈妈&nbsp;你也答应我&nbsp;&nbsp;以后遇到任何事情，都不要哭&nbsp;好吗</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">妈妈点了点头&nbsp;&nbsp;三人紧紧拥抱</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">&nbsp;</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">&nbsp;</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">七岁的时候，她和爸爸妈妈到游乐场玩</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">那时走丢了，遇到了坏人</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">爸爸妈妈疯了似的找雨沁</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">最后找到了，从坏人的手里&nbsp;夺了回来</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">妈妈又哭了</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">雨沁说&nbsp;&nbsp;妈妈别哭</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">然后又说&nbsp;&nbsp;雨沁答应过妈妈要坚强，妈妈也答应过雨沁不掉泪</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">两人抱在一起</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">爸爸说&nbsp;&nbsp;没事就好</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">&nbsp;</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">十岁的时候&nbsp;&nbsp;&nbsp;雨沁过生日</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">爸爸妈妈和奶奶&nbsp;&nbsp;一家人一起唱生日歌</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">雨沁许了一个愿望&nbsp;&nbsp;&nbsp;我们一家人永远幸福</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">想到这里&nbsp;&nbsp;&nbsp;&nbsp;雨沁又流下眼泪</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">&nbsp;</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">&nbsp;</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">&nbsp;</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">&nbsp;</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">第五场&nbsp;&nbsp;去山上的石壁</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">雨沁照着梦中，想去看看山上的石壁</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">因为那是以前雨沁从小的秘密基地</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">那时天上划下了一颗星星</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">一颗水晶钻石落在雨沁的旁边</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">居然和梦中的一模一样</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">雨沁好奇地把水晶钻石放到石壁上</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">没想到一切和梦里一样&nbsp;&nbsp;雨沁到了另外的世界</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">&nbsp;</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">&nbsp;</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">第六场&nbsp;另外的美丽世界</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">雨沁去了另外的世界</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">有一位年纪相似的男孩&nbsp;&nbsp;张怿天&nbsp;&nbsp;乘坐着魔毯飞驰过来</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">雨沁开始发现了自己居然飞了起来</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">下面是白云</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">雨沁开心的飞呀飞呀</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">一不小心&nbsp;&nbsp;怿天和雨沁&nbsp;撞到了</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">怿天说&nbsp;&nbsp;对不起&nbsp;&nbsp;女孩&nbsp;你的水晶钻石掉了</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">雨沁说&nbsp;&nbsp;哦&nbsp;没关系的&nbsp;男孩</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">这时候&nbsp;&nbsp;怿天的朋友&nbsp;李娓娓也飞了过来</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">娓娓说&nbsp;&nbsp;&nbsp;哥你怎么还在这里呀</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">然后急了&nbsp;&nbsp;你妈在找你呀</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">怿天说&nbsp;&nbsp;&nbsp;&nbsp;那我妈妈在哪里</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">不一会儿，张妈来到这里</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">张妈着急地说&nbsp;&nbsp;&nbsp;怿天&nbsp;你姐出事了</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">怿天说到&nbsp;&nbsp;妈别着急&nbsp;慢慢说&nbsp;&nbsp;我姐怎么了</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">张妈说&nbsp;&nbsp;今天早上&nbsp;&nbsp;你姐去花园浇水&nbsp;&nbsp;突然晕到了&nbsp;你爸已经把她送到医院了</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">怿天说&nbsp;&nbsp;&nbsp;妈&nbsp;那赶紧去看看姐姐呀</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">&nbsp;</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">&nbsp;</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">第七场&nbsp;&nbsp;医院</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">一眨眼时间&nbsp;&nbsp;怿天和他的妈妈到了医院</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">怿天看着昏迷中的姐姐</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">拼命地叫&nbsp;&nbsp;想要幻醒她</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">美丽善良的姐姐，一直安静地躺在病床上、</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">一直昏迷着</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">医生来了&nbsp;&nbsp;&nbsp;</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">怿天拼命地说&nbsp;&nbsp;医生&nbsp;&nbsp;你一定要救救我姐姐</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">医生摇头了&nbsp;&nbsp;&nbsp;这&nbsp;&nbsp;不知道她那天能醒来</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">又说&nbsp;&nbsp;只有魔法水晶钻石&nbsp;&nbsp;才能救她</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">这时怿天想到了&nbsp;&nbsp;有位女孩带了水晶钻石</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">他对医生说&nbsp;&nbsp;是不是粉红色的&nbsp;&nbsp;很大颗&nbsp;</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">医生说&nbsp;&nbsp;对的&nbsp;&nbsp;你怎么知道的</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">怿天开心地说&nbsp;&nbsp;姐姐有救了</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">&nbsp;</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">&nbsp;</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">第八场&nbsp;&nbsp;花丛中</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">怿天马上来到&nbsp;&nbsp;刚才的地方</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">怿天叫道&nbsp;&nbsp;女孩&nbsp;你在吗</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">那时雨沁在花丛中</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">美丽的鲜花不停的笑</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">怿天听到花在笑</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">他飞到了花丛中&nbsp;&nbsp;&nbsp;&nbsp;看到了雨沁</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">他开心地说&nbsp;&nbsp;&nbsp;终于找到你了</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">雨沁说&nbsp;&nbsp;你就是&nbsp;那个男孩</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">怿天说&nbsp;&nbsp;可不可以借你的水晶钻石一用</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">雨沁说&nbsp;&nbsp;&nbsp;可以</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">又说&nbsp;&nbsp;但是&nbsp;&nbsp;干什么用的呢</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">怿天说&nbsp;&nbsp;我的姐姐昏到了&nbsp;&nbsp;只有你的水晶钻石才救她</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">雨沁连忙说&nbsp;&nbsp;我借给你</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">怿天接过钻石说&nbsp;&nbsp;谢谢你</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">俩人赶紧飞到了医院</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">&nbsp;</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">&nbsp;</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">第九场&nbsp;&nbsp;医院</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">怿天拿着钻石给医生看&nbsp;&nbsp;医生是这个吗</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">医生看着笑着说&nbsp;&nbsp;&nbsp;是啊&nbsp;&nbsp;就是这个&nbsp;&nbsp;真是百闻不如一见啊</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">怿天把钻石放在姐姐的额头</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">这时姐姐醒了过来</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">一家人开心的笑了</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">张妈说&nbsp;&nbsp;女孩&nbsp;&nbsp;太感谢你了</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">张爸说&nbsp;&nbsp;是啊&nbsp;&nbsp;你是我女儿的救命恩人</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">怿天说&nbsp;&nbsp;&nbsp;女孩&nbsp;&nbsp;谢谢</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">又说&nbsp;&nbsp;&nbsp;给水晶钻石还给你</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">雨沁第一次感觉到水晶钻石的重要性</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">&nbsp;</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">&nbsp;</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">第十场&nbsp;&nbsp;怿天的家</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">怿天的房子很漂亮，软软的像橡皮泥</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">雨沁从来没看到过如此美丽的房子</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">雨沁大声叫道&nbsp;&nbsp;哇&nbsp;&nbsp;好漂亮&nbsp;&nbsp;好神奇的房子啊</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">这时怿天的姐姐拿出了魔法水晶项链说道&nbsp;&nbsp;女孩&nbsp;&nbsp;这是我的水晶项链&nbsp;&nbsp;我把他送给你&nbsp;&nbsp;谢谢你救了我</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">雨沁说&nbsp;不不&nbsp;&nbsp;&nbsp;这么贵重的东西&nbsp;&nbsp;&nbsp;我不能要</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">怿天说&nbsp;&nbsp;女孩&nbsp;&nbsp;你收下吧&nbsp;不然我们都不会安心的</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">雨沁说&nbsp;&nbsp;好吧</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">一家人又开心地笑了</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">雨沁说&nbsp;&nbsp;谢谢&nbsp;&nbsp;以后看到项链&nbsp;就会想到你们</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">然后雨沁在沙发上坐了下来</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">一家人也坐了下来</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">这时李娓娓和李怿明来坐客</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">这些另外的世界的人们&nbsp;看着雨沁&nbsp;他们有好多疑问</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">这时李娓娓先开始问&nbsp;&nbsp;女孩&nbsp;&nbsp;&nbsp;你是从哪里来</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">雨沁看了看他们说&nbsp;&nbsp;我来自宇宙的地球</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">李娓娓说&nbsp;&nbsp;宇宙的哪个系</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">雨沁说&nbsp;&nbsp;&nbsp;&nbsp;宇宙的银河系&nbsp;&nbsp;太阳系&nbsp;地球</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">怿天说&nbsp;&nbsp;&nbsp;就是蓝色的吗？</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">雨沁说&nbsp;&nbsp;是的</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">张妈说&nbsp;&nbsp;&nbsp;好远哦</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">张爸说&nbsp;&nbsp;那你是怎么来的</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">雨沁说&nbsp;&nbsp;是这个带我来的&nbsp;&nbsp;说完用手托起水晶钻石</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">怿天说&nbsp;&nbsp;哦&nbsp;&nbsp;我明白了</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">又说&nbsp;&nbsp;&nbsp;从前也来过一位女孩，那是很久以前了</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">娓娓说&nbsp;&nbsp;是啊&nbsp;&nbsp;那位女孩和你差不多大，可是她来的时候太不巧了&nbsp;&nbsp;因为那时世界受灾难了&nbsp;</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">张妈说&nbsp;&nbsp;多亏了她&nbsp;&nbsp;不然世界就糟糕了</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">雨沁说&nbsp;&nbsp;&nbsp;怎么回事呢</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">怿天说&nbsp;&nbsp;&nbsp;我来说</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">&nbsp;</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">&nbsp;</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">第十一场&nbsp;&nbsp;另一个世界受灾难的那短时期</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">我们的小公主是全世界最幸福的人</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">可是有一天美丽可爱的公主被坏人的诅咒</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">才十四岁的公主就昏睡过去</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">以为公主再也醒不来了</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">终于有一天有一位女孩的出现，是她用水晶钻石救醒的公主</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">雨沁说&nbsp;&nbsp;&nbsp;是这颗吗</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">娓娓拿过一看说&nbsp;&nbsp;真的好像呢</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">这时李娓娓说&nbsp;&nbsp;你叫什么名字</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">雨沁说&nbsp;&nbsp;我叫王雨沁&nbsp;&nbsp;你呢</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">李娓娓说&nbsp;&nbsp;我叫李娓娓&nbsp;&nbsp;很高兴认识你</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">雨沁说&nbsp;&nbsp;&nbsp;我也是</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">李娓娓说&nbsp;&nbsp;雨沁&nbsp;&nbsp;你红红的脸庞&nbsp;像小苹果呢</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">雨沁害羞地说&nbsp;&nbsp;是吗</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">李娓娓说&nbsp;&nbsp;想不想听&nbsp;&nbsp;我们世界里的故事</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">雨沁说&nbsp;&nbsp;好啊</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">&nbsp;</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">&nbsp;</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">第十二场另一个世界里的故事</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">李娓娓说道&nbsp;&nbsp;当我们的世界&nbsp;&nbsp;还在初级阶段的时候，只有一个很美的女孩和一个很优秀的男孩，他们俩人一直井水不犯河水&nbsp;可是因为一件事让他们增进了感情</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">有一天&nbsp;&nbsp;女孩在池塘边，而男孩偷偷地躲在旁边看她</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">这时女孩的鞋子掉进了池塘&nbsp;&nbsp;因为想捞回鞋子&nbsp;&nbsp;不小心掉进了池塘里</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">男孩飞了过去&nbsp;&nbsp;把她救了上来&nbsp;&nbsp;&nbsp;可是她已经昏迷&nbsp;&nbsp;&nbsp;男孩守了女孩很多天&nbsp;&nbsp;可是还是昏迷</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">终于有一天&nbsp;&nbsp;&nbsp;流星雨下来的时候&nbsp;&nbsp;&nbsp;&nbsp;男孩发现自己旁边有一颗水晶钻石&nbsp;&nbsp;有一个声音说到&nbsp;&nbsp;只有这颗水晶钻石才能救她</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">男孩用水晶钻石救了女孩</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">女孩醒了过来&nbsp;&nbsp;但是水晶钻石消失了</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">女孩说&nbsp;&nbsp;谢谢你&nbsp;是你救了我</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">男孩说&nbsp;&nbsp;没什么&nbsp;是水晶。。。。</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">女孩说&nbsp;&nbsp;带我去飞翔</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">男孩开心的说&nbsp;&nbsp;好啊</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">两人开心地飞呀飞呀</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">从此以后男孩就经常在她危险的时候保护她</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">雨沁说&nbsp;&nbsp;再后来呢</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">李娓娓说&nbsp;&nbsp;她们两人成了我们的祖先</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">雨沁说&nbsp;&nbsp;好浪漫&nbsp;&nbsp;好伟大</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">李怿明说&nbsp;&nbsp;是啊&nbsp;这个故事，我们大家都知道&nbsp;&nbsp;我讲一个大家都不知道的故事</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">&nbsp;</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">&nbsp;</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">&nbsp;</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">第十三场&nbsp;&nbsp;&nbsp;李怿明讲的真实故事里</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">李怿明说道&nbsp;&nbsp;&nbsp;我们的世界以前有一位很善良的女孩&nbsp;&nbsp;叫小怡</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">她出生的时候&nbsp;&nbsp;空气里到处都是香味，这是一种奇香，被草闻到&nbsp;&nbsp;会马上开花&nbsp;&nbsp;被果树闻到&nbsp;&nbsp;果树会结果&nbsp;&nbsp;让人闻到心旷神怡&nbsp;&nbsp;</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">有一次天边出现了黑云，老一辈的人说&nbsp;&nbsp;不好了&nbsp;&nbsp;恶魔要来了&nbsp;&nbsp;</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">果然恶魔出现在天边&nbsp;&nbsp;小怡想要驱赶恶魔</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">怿明喊道&nbsp;&nbsp;小怡不要去&nbsp;&nbsp;危险</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">恶魔大笑&nbsp;&nbsp;小姑娘&nbsp;&nbsp;也敢斗我</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">小怡说&nbsp;&nbsp;&nbsp;我要代表全世界驱赶你</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">恶魔说&nbsp;&nbsp;是什么让你连命都不要</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">小怡说&nbsp;&nbsp;&nbsp;是我们全世界的子民&nbsp;&nbsp;我不允许你伤害她们</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">恶魔说&nbsp;&nbsp;&nbsp;就凭你</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">小怡闭上了眼睛&nbsp;&nbsp;&nbsp;用我的生命来换他们&nbsp;&nbsp;来吧</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">恶魔说道&nbsp;&nbsp;&nbsp;好&nbsp;&nbsp;算你狠&nbsp;&nbsp;&nbsp;</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">然后恶魔消失了</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">小怡开心的飞了过来&nbsp;说道&nbsp;&nbsp;恶魔走了</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">大家开心地说&nbsp;&nbsp;&nbsp;谢谢你&nbsp;小怡</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">小怡开心地说&nbsp;&nbsp;&nbsp;不用谢</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">还有一次&nbsp;&nbsp;有一天小怡在云间散步</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">天上砸下来一块石头</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">好像要砸中一个小朋友</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">小怡拼命的飞了过去喊道&nbsp;&nbsp;&nbsp;危险</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">小怡抱住了小朋友&nbsp;&nbsp;&nbsp;&nbsp;石头砸中了小怡</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">小怡昏了过去&nbsp;&nbsp;&nbsp;但小朋友没事&nbsp;&nbsp;</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">小怡躺在病床上&nbsp;&nbsp;&nbsp;好多人都想唤醒小怡</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">可是小怡始终醒不过来&nbsp;&nbsp;&nbsp;但微笑的嘴角</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">医生说&nbsp;&nbsp;小怡似乎很安静&nbsp;&nbsp;很幸福</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">小怡妈妈叫道&nbsp;&nbsp;女儿醒来吧&nbsp;&nbsp;求求你醒来</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">小怡昏迷中说&nbsp;&nbsp;妈妈我好想到天边织云彩</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">过了一个月&nbsp;&nbsp;小怡还没醒来</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">小朋友整天守在身边说道&nbsp;&nbsp;谢谢你姐姐&nbsp;&nbsp;谢谢你救了我</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">最终有一天&nbsp;&nbsp;&nbsp;万草开花&nbsp;&nbsp;万树结果了</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">小怡终于醒过来了</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">身边到处都是蝴蝶&nbsp;&nbsp;小怡开心跳啊跳啊</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">再有一次&nbsp;&nbsp;有一个顽皮的小男孩爬到树上去了</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">一不小心快掉下来的时候&nbsp;&nbsp;&nbsp;小怡飞了过去&nbsp;&nbsp;抱住小男孩</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">小男孩说&nbsp;&nbsp;谢谢你&nbsp;&nbsp;姐姐</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">小怡说&nbsp;&nbsp;不用谢&nbsp;以后爬树要小心哦</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">小男孩说&nbsp;&nbsp;对&nbsp;&nbsp;我以后会小心</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">小怡说&nbsp;&nbsp;&nbsp;这样才乖</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">小男孩说&nbsp;&nbsp;姐姐&nbsp;&nbsp;再见</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">小怡开心的招手了</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">这时小怡想要回家了</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">小怡赶回了家里</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">妈妈正在哭&nbsp;&nbsp;小怡问&nbsp;&nbsp;妈妈您怎么了&nbsp;</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">妈妈说&nbsp;你奶奶她。。。&nbsp;&nbsp;妈妈大声的哭了起来</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">小怡晴天霹雳&nbsp;&nbsp;不&nbsp;奶奶不会的&nbsp;</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">正在这时有一个声音说&nbsp;&nbsp;小怡你可以许两个愿望，但是要牺牲自己的性命&nbsp;你愿意吗</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">小怡大声说&nbsp;&nbsp;我愿意&nbsp;&nbsp;我的第一个愿意是全世界不会受到恶魔伤害&nbsp;&nbsp;第两个奶奶可以活着</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">小怡永远活在了人们的心中</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">李怿明讲完了</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">娓娓说&nbsp;&nbsp;太感人了</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">雨沁说&nbsp;&nbsp;好善良的小怡啊</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">雨沁说&nbsp;&nbsp;</span></span></span><span style="font-family:宋体;"><span style="font-size:11.0000pt;"><span style="color:#000000;">我这个水晶钻石也有让草快花&nbsp;&nbsp;让树结果的香味</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">张怿天说&nbsp;&nbsp;我明白了&nbsp;&nbsp;&nbsp;小怡并没有死</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">大家吓了一跳</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">王妈说&nbsp;&nbsp;你的意思是？</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">张怿天说&nbsp;&nbsp;小怡是水晶钻石变的</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">雨沁说&nbsp;&nbsp;她变回了水晶钻石了吗</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">王妈说&nbsp;&nbsp;&nbsp;我明白了</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">怿明说&nbsp;&nbsp;&nbsp;可是这个水晶是粉色的呀</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">又说&nbsp;&nbsp;&nbsp;我想起来了&nbsp;&nbsp;&nbsp;小怡会发紫光</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">雨沁说&nbsp;&nbsp;也许是另外一颗水晶钻石吧</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">怿明打开窗户大声喊道&nbsp;&nbsp;&nbsp;小怡你在那边过得好吗<span style="font-family:Times New Roman;">?&nbsp;&nbsp;</span><span style="font-family:宋体;">我们大家都想你</span></span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">娓娓也喊到&nbsp;&nbsp;你的事情我们都知道了&nbsp;&nbsp;你好伟大</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">雨沁也喊道&nbsp;&nbsp;你是我听说过的最善良的女孩，希望你能活着，活的幸福&nbsp;快乐</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">&nbsp;</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">&nbsp;</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">第十四场&nbsp;&nbsp;王妈讲的真实故事里</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">我们世界里最小的公主&nbsp;&nbsp;&nbsp;也很善良&nbsp;&nbsp;经常帮助别人</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">虽然她才<span style="font-family:Times New Roman;">13</span><span style="font-family:宋体;">岁</span></span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">有一次&nbsp;&nbsp;&nbsp;公主看见&nbsp;有四个坏蛋正在欺负一个大女孩</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">公主马上飞了过去</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">其中一个坏蛋说&nbsp;&nbsp;你是谁&nbsp;&nbsp;&nbsp;爱管老子的事</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">公主说&nbsp;&nbsp;坏蛋&nbsp;&nbsp;我是她表妹</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">其中一个坏蛋说&nbsp;&nbsp;什么表妹&nbsp;&nbsp;两人一起欺负</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">公主拿出腰牌说&nbsp;&nbsp;&nbsp;睁大眼睛&nbsp;看看</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">四个坏蛋吓跑了&nbsp;&nbsp;&nbsp;对不起&nbsp;公主</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">公主握着大女孩的手说&nbsp;&nbsp;姐姐没事了&nbsp;</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">大女孩感激地说&nbsp;&nbsp;&nbsp;谢谢你&nbsp;&nbsp;您是公主？</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">公主说&nbsp;&nbsp;是小技俩，吓吓他们的</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">故事讲完了</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">&nbsp;</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">&nbsp;</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">第十五场回去了</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">那个声音又出现了&nbsp;&nbsp;&nbsp;&nbsp;雨沁你该回去了</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">雨沁依依不舍&nbsp;告别大家</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">雨沁回去了&nbsp;&nbsp;&nbsp;水晶钻石也消失了</span></span></span><br /><br /><span style="font-family:'Times New Roman';"><span style="font-size:11.0000pt;"><span style="color:#000000;">雨沁把故事藏在心里</span></span></span>               </div>
+			</div>
+			<!-- .articl-content  -->
+
+			<!-- 官方QQ群 -->
+			<div class="jx-qq-qun">
+                <ul>
+                    <li><a class="item6-qq" target="_blank" href="javascript:if(confirm('http://shang.qq.com/wpa/qunwpa?idkey=4aebcdd5bb61e51580f17f3e7ecfe23a617b0fb5f9a35da83e668d5de7a56bc1  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://shang.qq.com/wpa/qunwpa?idkey=4aebcdd5bb61e51580f17f3e7ecfe23a617b0fb5f9a35da83e668d5de7a56bc1'" tppabs="http://shang.qq.com/wpa/qunwpa?idkey=4aebcdd5bb61e51580f17f3e7ecfe23a617b0fb5f9a35da83e668d5de7a56bc1">编剧群</a></li>
+                </ul>
+            </div>
+            
+			<!-- 喜欢、收藏按钮  -->
+			<div class="article-social clearfix">
+				<div class="mem-action">
+					<a href="javascript:;" onclick="collect(this, '4681', 'favorite')" class="btn btn-warning"><i class="fa fa-heart-o"></i><span>喜欢</span> (<span class="favorite_count">0</span>)</a>
+					<a href="javascript:;" onclick="collect(this, '4681', 'collect')" class="btn btn-warning"><i class="fa fa-star-o"></i><span>收藏</span></a>
+				</div>
+				<div class="social-wrap">
+					<a href="javascript:;" onclick="share('/d/screenplay/share','4681')" class="icon-share-jx" title="分享到金象好友"></a>
+					<a onclick="shareTo(this,'sinaminiblog')" href="javascript:void(0);" class="icon-share-sina" title="分享到新浪微博"></a>
+					<a onclick="shareTo(this,'qqmb')" href="javascript:void(0);" class="icon-share-tqq" title="分享到腾讯微博"></a>
+					<a onclick="shareTo(this,'qzone')" href="javascript:void(0);" class="icon-share-qzone" title="分享到QQ空间"></a>
+					<a onclick="shareTo(this,'renren')" href="javascript:void(0);" class="icon-share-renren" title="分享到人人网"></a>
+					<a onclick="shareTo(this,'douban')" href="javascript:void(0);" class="icon-share-douban" title="分享到豆瓣"></a>
+					<a onclick="shareTo(this,'weixin')" href="javascript:void(0);" class="icon-share-wechat" title="分享到微信"></a>
+					<a onclick="shareTo(this,'qqim')" href="javascript:void(0);" class="icon-share-qq" title="分享到QQ好友"></a>
+				</div>
+			</div>
+			<!-- 标签  -->
+						<div class="article-footer">
+				<div class="article-tags label-tooltip">
+					<i class="fa fa-tags"></i>
+										<a href="javascript:if(confirm('http://www.jxvdy.com/screenplay/sale/search?kw=世界 尽头  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/screenplay/sale/search?kw=世界 尽头'" tppabs="http://www.jxvdy.com/screenplay/sale/search?kw=世界 尽头">世界 尽头</a>
+									</div>
+			</div>
+						<!-- .article-footer  -->
+			<div class="statement">免责声明：金象微电影网部分文章信息来源于网络以及网友投稿，本网站只负责对文章进行整理、排版、编辑，是出于传递更多信息之目的，并不意味着赞同其观点或证实其内容的真实性。</div>
+			
+			<!--相关剧本-->
+			<div class="js_reload js_pb_jxvdy widget widget-relation mt20 clearfix" js_ch_id="4681" js_action="getRecommend" js_model="screenplay" js_temp="1045">
+				<div class="modal-title clearfix">
+					<div class="modal-title-left">
+						<div class="modal-title-left-inner">相关推荐</div>
+						<span class="tip-t"><i class="tip-outer"></i><i class="tip-inner"></i></span>
+					</div>
+					<div class="modal-title-right">
+						<a class="js_reload_h random" href="javascript:;" js_ch_id="4681" js_action="getRecommend" js_model="screenplay" js_temp="1045"><i class="fa fa-repeat"></i>换一换</a>
+					</div>
+				</div>
+				<!-- /.modal-title -->
+				<div class="js_reload_panel widget-relation-inner">
+					<ul class="js_reload_pagecount recommend_list" js_data="90">
+		<li><i class="dot"></i><a href="javascript:if(confirm('http://www.jxvdy.com/screenplay/sale/044222.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/screenplay/sale/044222.html'" tppabs="http://www.jxvdy.com/screenplay/sale/044222.html">【末日求生】人心才是最恐怖的灾难</a></li>
+		<li><i class="dot"></i><a href="javascript:if(confirm('http://www.jxvdy.com/screenplay/sale/046255.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/screenplay/sale/046255.html'" tppabs="http://www.jxvdy.com/screenplay/sale/046255.html">【末日前的选择】末日前，我选择了打一个电话，讲一个故事</a></li>
+		<li><i class="dot"></i><a href="javascript:if(confirm('http://www.jxvdy.com/screenplay/sale/044639.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/screenplay/sale/044639.html'" tppabs="http://www.jxvdy.com/screenplay/sale/044639.html">【时空门】如果你能回到过去，你会做些什么</a></li>
+		<li><i class="dot"></i><a href="javascript:if(confirm('http://www.jxvdy.com/screenplay/sale/053406.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/screenplay/sale/053406.html'" tppabs="http://www.jxvdy.com/screenplay/sale/053406.html">【我的世界】他体验了前所未有的生活也体验了前所未有的孤独</a></li>
+		<li><i class="dot"></i><a href="javascript:if(confirm('http://www.jxvdy.com/screenplay/show/042733.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/screenplay/show/042733.html'" tppabs="http://www.jxvdy.com/screenplay/show/042733.html">【爱情小店】讲述爱情小店里贩卖爱情的故事。</a></li>
+		<li><i class="dot"></i><a href="javascript:if(confirm('http://www.jxvdy.com/screenplay/sale/050808.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/screenplay/sale/050808.html'" tppabs="http://www.jxvdy.com/screenplay/sale/050808.html">【六个地球之全球统一】太阳系不是唯一的太阳系，地球不是唯一的地球</a></li>
+		<li><i class="dot"></i><a href="javascript:if(confirm('http://www.jxvdy.com/screenplay/sale/053439.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/screenplay/sale/053439.html'" tppabs="http://www.jxvdy.com/screenplay/sale/053439.html">【剪】姐姐坠楼身亡，妹妹的奇病却好了</a></li>
+		<li><i class="dot"></i><a href="javascript:if(confirm('http://www.jxvdy.com/screenplay/sale/051316.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/screenplay/sale/051316.html'" tppabs="http://www.jxvdy.com/screenplay/sale/051316.html">【Number】一个疯子的故事，你相信么?</a></li>
+		<li><i class="dot"></i><a href="javascript:if(confirm('http://www.jxvdy.com/screenplay/sale/044843.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/screenplay/sale/044843.html'" tppabs="http://www.jxvdy.com/screenplay/sale/044843.html">【门】一个人的时空之旅</a></li>
+		<li><i class="dot"></i><a href="javascript:if(confirm('http://www.jxvdy.com/screenplay/sale/054618.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/screenplay/sale/054618.html'" tppabs="http://www.jxvdy.com/screenplay/sale/054618.html">【天书】一个普通的山里女孩从五岁起就能在不自觉的情况下随手画出许多奇怪的图案</a></li>
+	</ul>
+<!--t1517408434-->
+
+				</div>
+				<!-- /.widget-relation-inner -->
+			</div>
+			<!-- /.widget-relation -->
+
+			<div class="ads760-90 mt10 js_ad_record" style="height: 90px;">
+			<script type="text/javascript" src="0137.js" tppabs="http://ad.jxvdy.com/script/0137.js"></script>
+			</div>
+			<!-- 最新微电影、网络剧 -->
+			<div class="js_video_tab widget-wdy clearfix mt20 js_pb_jxvdy" js_ch_id="2" js_action="getNew" js_model="video_info" js_temp="1040">
+				<div class="column-tab clearfix hd">
+					<span class="pull-right pdr10">
+						<a class="js_video_tab_next random" href="javascript:;" style="display: inline;"><i class="fa fa-repeat"></i>换一换</a>
+					</span>
+					<ul class="list-unstyled">
+						<li class="js_video_tab_handle on" js_data="2">最新微电影</li>
+						<li class="js_video_tab_handle" js_data="3">最新网络剧</li>
+					</ul>
+				</div>
+				<div class="widget-wdy-inner">
+					<div class="js_video_tab_panel mod-figure-video mod-figure-v-190 clearfix js_reload_panel" js_tpl="1040">
+						<ul class="js_video_tab_pagecount video-figures-list" js_data="1684">
+		<li class="video-list-item">
+		<a class="video-figure" href="0033201616.html" tppabs="http://www.jxvdy.com/video/0033201616.html" title="敦化市小学生校园微电影《钢笔》" target="_blank">
+			<img class="lazy-video" _src="59e5c4e0db9f9dc0699f9_180_253.jpg" tppabs="http://image.jxvdy.com/2017/1017/59e5c4e0db9f9dc0699f9_180_253.jpg" alt="敦化市小学生校园微电影《钢笔》">
+			<div class="figure-caption">
+								<p class="figure-description" title="敦化市小学生校园微电影《钢笔》">敦化市小学生校园微电影《钢笔》</p>
+				<p class="figure-description">主演：</p>
+							</div>
+					</a>
+		<strong class="video-figure-title js_video_score" js_data="">
+			<a class="video-title" href="0033201616.html" tppabs="http://www.jxvdy.com/video/0033201616.html" target="_blank">敦化市小学生校园微电影《钢笔》</a>
+			<span class="video-score"><span>0</span><small>.0</small></span>
+		</strong>
+	</li>
+		<li class="video-list-item">
+		<a class="video-figure" href="0001524814.html" tppabs="http://www.jxvdy.com/video/0001524814.html" title="正能量微电影《正义为先》" target="_blank">
+			<img class="lazy-video" _src="594a4ecb812a862ca866b_0.png" tppabs="http://image.jxvdy.com/2017/0621/594a4ecb812a862ca866b_0.png" alt="正能量微电影《正义为先》">
+			<div class="figure-caption">
+								<p class="figure-description" title="正能量微电影《正义为先》！">正能量微电影《正义为先》！</p>
+				<p class="figure-description">主演：曹亮 王小爱</p>
+							</div>
+					</a>
+		<strong class="video-figure-title js_video_score" js_data="10.0">
+			<a class="video-title" href="0001524814.html" tppabs="http://www.jxvdy.com/video/0001524814.html" target="_blank">正能量微电影《正义为先》</a>
+			<span class="video-score"><span>0</span><small>.0</small></span>
+		</strong>
+	</li>
+		<li class="video-list-item">
+		<a class="video-figure" href="0033521604.html" tppabs="http://www.jxvdy.com/video/0033521604.html" title="恐怖微电影《残梦》" target="_blank">
+			<img class="lazy-video" _src="58eb5e6df2d37d4298376_180_253.jpg" tppabs="http://image.jxvdy.com/2017/0410/58eb5e6df2d37d4298376_180_253.jpg" alt="恐怖微电影《残梦》">
+			<div class="figure-caption">
+								<p class="figure-description" title="一个错乱的残缺不全的梦">一个错乱的残缺不全的梦</p>
+				<p class="figure-description">主演：张禾 小华</p>
+							</div>
+					</a>
+		<strong class="video-figure-title js_video_score" js_data="10.0">
+			<a class="video-title" href="0033521604.html" tppabs="http://www.jxvdy.com/video/0033521604.html" target="_blank">恐怖微电影《残梦》</a>
+			<span class="video-score"><span>0</span><small>.0</small></span>
+		</strong>
+	</li>
+		<li class="video-list-item">
+		<a class="video-figure" href="0033201633.html" tppabs="http://www.jxvdy.com/video/0033201633.html" title="浩哥新作来袭！《二龙湖浩哥之江湖学院》预告！" target="_blank">
+			<img class="lazy-video" _src="58eb6019be54e476e8854_0.jpg" tppabs="http://image.jxvdy.com/2017/0410/58eb6019be54e476e8854_0.jpg" alt="浩哥新作来袭！《二龙湖浩哥之江湖学院》预告！">
+			<div class="figure-caption">
+								<p class="figure-description" title="《二龙湖浩哥之江湖学院》">《二龙湖浩哥之江湖学院》</p>
+				<p class="figure-description">主演：二龙湖浩哥</p>
+							</div>
+					</a>
+		<strong class="video-figure-title js_video_score" js_data="">
+			<a class="video-title" href="0033201633.html" tppabs="http://www.jxvdy.com/video/0033201633.html" target="_blank">浩哥新作来袭！《二龙湖浩哥之江湖学院》预告！</a>
+			<span class="video-score"><span>0</span><small>.0</small></span>
+		</strong>
+	</li>
+	</ul>
+<!--t1517408340-->
+
+					</div>
+				</div>
+				<!-- /.widget-wdy-inner -->
+			</div>
+			<!-- /.widget-wdy -->
+			<!--我要评论 -->
+			<p id="comments"></p>
+			<script type="text/javascript" src="export-cid=12&oid=4681" tppabs="http://www.jxvdy.com/comment/export?cid=12&oid=4681"></script>
+		</div>
+	</div>
+	<!-- /.content-wrap  -->
+
+	<aside class="sidebar">
+		<!--作者信息 -->
+		<div class="js_person_info js_pb_jxvdy person-info" js_ch_id="343184" js_action="getPubInfo" js_model="screenplay" js_temp="1043" >
+			
+		</div>
+		<!-- /.person-info -->
+
+		<!--喜欢该剧本的人 -->
+		<div class="widget widget-fans clearfix js_fans_jxvdy">
+			<div class="modal-title clearfix">
+				<div class="modal-title-left">
+					<div class="modal-title-left-inner">喜欢该剧本的人</div>
+					<span class="tip-t"><i class="tip-outer"></i><i class="tip-inner"></i></span>
+				</div>
+			</div>
+			<div class="widget-fans-inner">
+				<ul>
+			<li><a href="javascript:if(confirm('http://www.jxvdy.com/member/dynamic.html?id=341256  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/member/dynamic.html?id=341256'" tppabs="http://www.jxvdy.com/member/dynamic.html?id=341256" title="ewwwqqq" target="_blank"><img src="" alt="ewwwqqq" onerror="this.src='http://skin.jxvdy.com/jxvdy2/public/images/avatar80_80.jpg'"></a></li>
+			<li><a href="javascript:if(confirm('http://www.jxvdy.com/member/dynamic.html?id=342782  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/member/dynamic.html?id=342782'" tppabs="http://www.jxvdy.com/member/dynamic.html?id=342782" title="chenjiajia" target="_blank"><img src="" alt="chenjiajia" onerror="this.src='http://skin.jxvdy.com/jxvdy2/public/images/avatar80_80.jpg'"></a></li>
+	</ul>
+<!--t1517408796-->
+
+			</div>
+		</div>
+		<!-- /.widget-thumb-text -->
+
+		<!-- 最新征集 -->
+		<div class="widget-new-ctn clearfix mt20 js_pb_jxvdy" js_ch_id="13" js_action="newCollection" js_model="screenplay_collection" js_temp="1039">
+			<div class="modal-title clearfix">
+				<div class="modal-title-left">
+					<div class="modal-title-left-inner">最新征集</div>
+					<span class="tip-t"><i class="tip-outer"></i><i class="tip-inner"></i></span>
+				</div>
+			</div>
+			<!-- /.modal-title  -->
+			<div class="widget-new-ctn-inner mem-dynamic video-mem-dynamic clearfix js_reload_panel">
+				<div class="dynamic-content">
+	<ul id="timeline" class="timeline">
+				<li class="item-wrap">
+			<div class="item">
+				<div class="avatar-wrap clearfix">
+					<a class="avatar water-drop" href="javascript:if(confirm('http://www.jxvdy.com/member/dynamic.html?id=349563  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/member/dynamic.html?id=349563'" tppabs="http://www.jxvdy.com/member/dynamic.html?id=349563" title="redarmy2046" target="_blank"><img class="head-pic" src="" onerror="this.src='http://skin.jxvdy.com/jxvdy2/public/images/avatar80_80.jpg'"></a>
+					<time class="timeago time">135天前</time>
+					<strong class="price">议价</strong>
+				</div>
+				<div class="ctn-title"><a href="javascript:if(confirm('http://www.jxvdy.com/screenplay/collection/004018.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/screenplay/collection/004018.html'" tppabs="http://www.jxvdy.com/screenplay/collection/004018.html" target="_blank"><i class="dot"></i>征集20-30分钟微电影</a></div>
+				<div class="summary">一对年轻人，跨越两个城市之间发生的感情故事。要正能量，结尾大团圆。重点是要有波折...</div>
+			</div>
+		</li>
+				<li class="item-wrap">
+			<div class="item">
+				<div class="avatar-wrap clearfix">
+					<a class="avatar water-drop" href="javascript:if(confirm('http://www.jxvdy.com/member/dynamic.html?id=349348  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/member/dynamic.html?id=349348'" tppabs="http://www.jxvdy.com/member/dynamic.html?id=349348" title="GFJY" target="_blank"><img class="head-pic" src="" onerror="this.src='http://skin.jxvdy.com/jxvdy2/public/images/avatar80_80.jpg'"></a>
+					<time class="timeago time">138天前</time>
+					<strong class="price">议价</strong>
+				</div>
+				<div class="ctn-title"><a href="javascript:if(confirm('http://www.jxvdy.com/screenplay/collection/000849.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/screenplay/collection/000849.html'" tppabs="http://www.jxvdy.com/screenplay/collection/000849.html" target="_blank"><i class="dot"></i>动画剧本征集</a></div>
+				<div class="summary">一、征集剧本类型：二维动画二、征集剧本题材：不限（古风、搞笑、热血、励志等均可）...</div>
+			</div>
+		</li>
+				<li class="item-wrap">
+			<div class="item">
+				<div class="avatar-wrap clearfix">
+					<a class="avatar water-drop" href="javascript:if(confirm('http://www.jxvdy.com/member/dynamic.html?id=348969  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/member/dynamic.html?id=348969'" tppabs="http://www.jxvdy.com/member/dynamic.html?id=348969" title="姜瑞利" target="_blank"><img class="head-pic" src="590bfc5730e8cce3e35ae_0.png" tppabs="http://image.jxvdy.com/2017/0505/590bfc5730e8cce3e35ae_0.png" onerror="this.src='http://skin.jxvdy.com/jxvdy2/public/images/avatar80_80.jpg'"></a>
+					<time class="timeago time">271天前</time>
+					<strong class="price">免费</strong>
+				</div>
+				<div class="ctn-title"><a href="javascript:if(confirm('http://www.jxvdy.com/screenplay/collection/004043.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/screenplay/collection/004043.html'" tppabs="http://www.jxvdy.com/screenplay/collection/004043.html" target="_blank"><i class="dot"></i>希望</a></div>
+				<div class="summary">学校</div>
+			</div>
+		</li>
+				<li class="item-wrap">
+			<div class="item">
+				<div class="avatar-wrap clearfix">
+					<a class="avatar water-drop" href="javascript:if(confirm('http://www.jxvdy.com/member/dynamic.html?id=348854  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/member/dynamic.html?id=348854'" tppabs="http://www.jxvdy.com/member/dynamic.html?id=348854" title="lee" target="_blank"><img class="head-pic" src="" onerror="this.src='http://skin.jxvdy.com/jxvdy2/public/images/avatar80_80.jpg'"></a>
+					<time class="timeago time">287天前</time>
+					<strong class="price">议价</strong>
+				</div>
+				<div class="ctn-title"><a href="javascript:if(confirm('http://www.jxvdy.com/screenplay/collection/004010.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/screenplay/collection/004010.html'" tppabs="http://www.jxvdy.com/screenplay/collection/004010.html" target="_blank"><i class="dot"></i>微电影作品征集</a></div>
+				<div class="summary">微电影作品征集1.要求是成品2.发送作品附件或者网址3.作品可以，将进行签约合作...</div>
+			</div>
+		</li>
+				<li class="item-wrap">
+			<div class="item">
+				<div class="avatar-wrap clearfix">
+					<a class="avatar water-drop" href="javascript:if(confirm('http://www.jxvdy.com/member/dynamic.html?id=348802  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/member/dynamic.html?id=348802'" tppabs="http://www.jxvdy.com/member/dynamic.html?id=348802" title="13797262439" target="_blank"><img class="head-pic" src="" onerror="this.src='http://skin.jxvdy.com/jxvdy2/public/images/avatar80_80.jpg'"></a>
+					<time class="timeago time">294天前</time>
+					<strong class="price">￥500</strong>
+				</div>
+				<div class="ctn-title"><a href="javascript:if(confirm('http://www.jxvdy.com/screenplay/collection/000841.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/screenplay/collection/000841.html'" tppabs="http://www.jxvdy.com/screenplay/collection/000841.html" target="_blank"><i class="dot"></i>拼搏奉献  博爱无私</a></div>
+				<div class="summary">通过微电影展现高速公路职工奋发向上的精神风貌、积极进取的职业操守、无私奉献的人生...</div>
+			</div>
+		</li>
+				<li class="item-wrap">
+			<div class="item">
+				<div class="avatar-wrap clearfix">
+					<a class="avatar water-drop" href="javascript:if(confirm('http://www.jxvdy.com/member/dynamic.html?id=348788  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/member/dynamic.html?id=348788'" tppabs="http://www.jxvdy.com/member/dynamic.html?id=348788" title="wly1990" target="_blank"><img class="head-pic" src="" onerror="this.src='http://skin.jxvdy.com/jxvdy2/public/images/avatar80_80.jpg'"></a>
+					<time class="timeago time">296天前</time>
+					<strong class="price">议价</strong>
+				</div>
+				<div class="ctn-title"><a href="javascript:if(confirm('http://www.jxvdy.com/screenplay/collection/000808.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/screenplay/collection/000808.html'" tppabs="http://www.jxvdy.com/screenplay/collection/000808.html" target="_blank"><i class="dot"></i>关于地板品牌的微电影</a></div>
+				<div class="summary">要求：关于环保类的与产品相结合点名主题“环保”</div>
+			</div>
+		</li>
+				<li class="item-wrap">
+			<div class="item">
+				<div class="avatar-wrap clearfix">
+					<a class="avatar water-drop" href="javascript:if(confirm('http://www.jxvdy.com/member/dynamic.html?id=348755  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/member/dynamic.html?id=348755'" tppabs="http://www.jxvdy.com/member/dynamic.html?id=348755" title="圆方影视一康翔" target="_blank"><img class="head-pic" src="58e796f3900c5Hk9BgZuR.jpg.png" tppabs="http://image.jxvdy.com/2017/0407/58e796f3900c5Hk9BgZuR.jpg" onerror="this.src='http://skin.jxvdy.com/jxvdy2/public/images/avatar80_80.jpg'"></a>
+					<time class="timeago time">299天前</time>
+					<strong class="price">议价</strong>
+				</div>
+				<div class="ctn-title"><a href="javascript:if(confirm('http://www.jxvdy.com/screenplay/collection/004039.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/screenplay/collection/004039.html'" tppabs="http://www.jxvdy.com/screenplay/collection/004039.html" target="_blank"><i class="dot"></i>有那种类似《屌丝男士》的剧本么，多个段子构成</a></div>
+				<div class="summary">有那种类似《屌丝男士》的剧本么，多个段子构成的.qq814385906,少量片酬</div>
+			</div>
+		</li>
+				<li class="item-wrap">
+			<div class="item">
+				<div class="avatar-wrap clearfix">
+					<a class="avatar water-drop" href="javascript:if(confirm('http://www.jxvdy.com/member/dynamic.html?id=348297  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/member/dynamic.html?id=348297'" tppabs="http://www.jxvdy.com/member/dynamic.html?id=348297" title="兄弟通宝" target="_blank"><img class="head-pic" src="58ab371ed0fac3efe22e4_0.jpg" tppabs="http://image.jxvdy.com/2017/0221/58ab371ed0fac3efe22e4_0.jpg" onerror="this.src='http://skin.jxvdy.com/jxvdy2/public/images/avatar80_80.jpg'"></a>
+					<time class="timeago time">344天前</time>
+					<strong class="price">议价</strong>
+				</div>
+				<div class="ctn-title"><a href="javascript:if(confirm('http://www.jxvdy.com/screenplay/collection/000837.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/screenplay/collection/000837.html'" tppabs="http://www.jxvdy.com/screenplay/collection/000837.html" target="_blank"><i class="dot"></i>影视公司长期征集 喜剧 温情 励志类 商业电影剧本</a></div>
+				<div class="summary">长期征集喜剧温情励志类商业电影剧本本公司主要以商业院线类电影或卫视电视剧为主。(...</div>
+			</div>
+		</li>
+				<li class="item-wrap">
+			<div class="item">
+				<div class="avatar-wrap clearfix">
+					<a class="avatar water-drop" href="javascript:if(confirm('http://www.jxvdy.com/member/dynamic.html?id=348297  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/member/dynamic.html?id=348297'" tppabs="http://www.jxvdy.com/member/dynamic.html?id=348297" title="兄弟通宝" target="_blank"><img class="head-pic" src="58ab371ed0fac3efe22e4_0.jpg" tppabs="http://image.jxvdy.com/2017/0221/58ab371ed0fac3efe22e4_0.jpg" onerror="this.src='http://skin.jxvdy.com/jxvdy2/public/images/avatar80_80.jpg'"></a>
+					<time class="timeago time">344天前</time>
+					<strong class="price">议价</strong>
+				</div>
+				<div class="ctn-title"><a href="javascript:if(confirm('http://www.jxvdy.com/screenplay/collection/000804.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/screenplay/collection/000804.html'" tppabs="http://www.jxvdy.com/screenplay/collection/000804.html" target="_blank"><i class="dot"></i>征集 具有西安特色都市温情喜剧</a></div>
+				<div class="summary">影视公司征集具有西安特色，影视剧本。剧本内容完善，具有明显温情与西剧元素，能突出...</div>
+			</div>
+		</li>
+				<li class="item-wrap">
+			<div class="item">
+				<div class="avatar-wrap clearfix">
+					<a class="avatar water-drop" href="javascript:if(confirm('http://www.jxvdy.com/member/dynamic.html?id=347940  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/member/dynamic.html?id=347940'" tppabs="http://www.jxvdy.com/member/dynamic.html?id=347940" title="怪胎°?" target="_blank"><img class="head-pic" src="5898106aba91cxedaS2CD.jpg" tppabs="http://image.jxvdy.com/2017/0206/5898106aba91cxedaS2CD.jpg" onerror="this.src='http://skin.jxvdy.com/jxvdy2/public/images/avatar80_80.jpg'"></a>
+					<time class="timeago time">359天前</time>
+					<strong class="price">议价</strong>
+				</div>
+				<div class="ctn-title"><a href="javascript:if(confirm('http://www.jxvdy.com/screenplay/collection/004035.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/screenplay/collection/004035.html'" tppabs="http://www.jxvdy.com/screenplay/collection/004035.html" target="_blank"><i class="dot"></i>第三届&ldquo;根亲中国&rdquo;微电影节 作品继续征集中！</a></div>
+				<div class="summary">-❶-第三届根亲中国微电影大赛作品征集已经全面启动，此次大赛将联合中国电影家协会...</div>
+			</div>
+		</li>
+			</ul>
+</div>
+
+<!--t1517408579-->
+
+			</div>
+			<!-- /.widget-new-ctn-inner -->
+		</div>
+		<!-- /.widget-new-ctn -->
+		
+		<div class="ads300-250 mt10 js_ad_record" style="height: 250px;">
+			<script type="text/javascript" src="0030.js" tppabs="http://ad.jxvdy.com/script/0030.js"></script>
+		</div>
+		
+		<!--大家都在看 -->
+		<div class="js_reload js_pb_jxvdy widget widget-thumb-text clearfix mt20" js_ch_id="4" js_action="getWatching" js_temp="1059" js_model="screenplay">
+			<div class="modal-title clearfix">
+				<div class="modal-title-left">
+					<div class="modal-title-left-inner">大家都在看</div>
+					<span class="tip-t"><i class="tip-outer"></i><i class="tip-inner"></i></span>
+				</div>
+				<div class="modal-title-right">
+					<a class="js_reload_h random" href="javascript:;" js_ch_id="4" js_action="getWatching" js_temp="1059" js_model="screenplay" ><i class="fa fa-repeat"></i>换一换</a>
+				</div>
+			</div>
+			<!-- /.modal-title  -->
+			<div class="js_reload_panel widget-thumb-text-inner">
+					<article class="article-item js_reload_pagecount" js_data="1012">
+		<figure><a href="javascript:if(confirm('http://www.jxvdy.com/screenplay/001437.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/screenplay/001437.html'" tppabs="http://www.jxvdy.com/screenplay/001437.html" title="我要当演员" target="_blank"><img class="img-responsive lazy-article" _src="16-47-57-89-3.jpg.png" tppabs="http://image.jxvdy.com/old/201311/15/16-47-57-89-3.jpg" onerror="this.src='http://skin.jxvdy.com/jxvdy/web/images/default/380_264.png'" alt="我要当演员"></a></figure>
+		<div class="widget-thumb-text-info">
+			<h5><a href="javascript:if(confirm('http://www.jxvdy.com/screenplay/001437.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/screenplay/001437.html'" tppabs="http://www.jxvdy.com/screenplay/001437.html" target="_blank">我要当演员</a></h5>
+			<small>1402人正在浏览<span class="text-center"><a href="javascript:if(confirm('http://www.jxvdy.com/screenplay/001437.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/screenplay/001437.html'" tppabs="http://www.jxvdy.com/screenplay/001437.html" target="_blank"><i class="fa fa-eye"></i>围观</a></span></small>
+		</div>
+	</article>
+	<article class="article-item js_reload_pagecount" js_data="1012">
+		<figure><a href="javascript:if(confirm('http://www.jxvdy.com/screenplay/034026.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/screenplay/034026.html'" tppabs="http://www.jxvdy.com/screenplay/034026.html" title="狗伴儿" target="_blank"><img class="img-responsive lazy-article" _src="548a8a46c0e3bf0d1b1b0_0.jpg" tppabs="http://image.jxvdy.com/2014/1212/548a8a46c0e3bf0d1b1b0_0.jpg" onerror="this.src='http://skin.jxvdy.com/jxvdy/web/images/default/380_264.png'" alt="狗伴儿"></a></figure>
+		<div class="widget-thumb-text-info">
+			<h5><a href="javascript:if(confirm('http://www.jxvdy.com/screenplay/034026.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/screenplay/034026.html'" tppabs="http://www.jxvdy.com/screenplay/034026.html" target="_blank">【狗伴儿】与狗为伴，成就机缘。</a></h5>
+			<small>3911人正在浏览<span class="text-center"><a href="javascript:if(confirm('http://www.jxvdy.com/screenplay/034026.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/screenplay/034026.html'" tppabs="http://www.jxvdy.com/screenplay/034026.html" target="_blank"><i class="fa fa-eye"></i>围观</a></span></small>
+		</div>
+	</article>
+	<article class="article-item js_reload_pagecount" js_data="1012">
+		<figure><a href="javascript:if(confirm('http://www.jxvdy.com/screenplay/033041.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/screenplay/033041.html'" tppabs="http://www.jxvdy.com/screenplay/033041.html" title="寻灵" target="_blank"><img class="img-responsive lazy-article" _src="54deb2bfec8f89f22fdcc_0.jpg" tppabs="http://image.jxvdy.com/2015/0214/54deb2bfec8f89f22fdcc_0.jpg" onerror="this.src='http://skin.jxvdy.com/jxvdy/web/images/default/380_264.png'" alt="寻灵"></a></figure>
+		<div class="widget-thumb-text-info">
+			<h5><a href="javascript:if(confirm('http://www.jxvdy.com/screenplay/033041.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/screenplay/033041.html'" tppabs="http://www.jxvdy.com/screenplay/033041.html" target="_blank">【寻灵】生活的压力使他无法面对自己的人生</a></h5>
+			<small>3232人正在浏览<span class="text-center"><a href="javascript:if(confirm('http://www.jxvdy.com/screenplay/033041.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/screenplay/033041.html'" tppabs="http://www.jxvdy.com/screenplay/033041.html" target="_blank"><i class="fa fa-eye"></i>围观</a></span></small>
+		</div>
+	</article>
+	<article class="article-item js_reload_pagecount" js_data="1012">
+		<figure><a href="javascript:if(confirm('http://www.jxvdy.com/screenplay/042004.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/screenplay/042004.html'" tppabs="http://www.jxvdy.com/screenplay/042004.html" title="白发初生" target="_blank"><img class="img-responsive lazy-article" _src="553ef12349bcc5afeca33_0.jpg" tppabs="http://image.jxvdy.com/2015/0428/553ef12349bcc5afeca33_0.jpg" onerror="this.src='http://skin.jxvdy.com/jxvdy/web/images/default/380_264.png'" alt="白发初生"></a></figure>
+		<div class="widget-thumb-text-info">
+			<h5><a href="javascript:if(confirm('http://www.jxvdy.com/screenplay/042004.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/screenplay/042004.html'" tppabs="http://www.jxvdy.com/screenplay/042004.html" target="_blank">【白发初生】趁着父母身体尚算康健，多回家看看吧</a></h5>
+			<small>4757人正在浏览<span class="text-center"><a href="javascript:if(confirm('http://www.jxvdy.com/screenplay/042004.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/screenplay/042004.html'" tppabs="http://www.jxvdy.com/screenplay/042004.html" target="_blank"><i class="fa fa-eye"></i>围观</a></span></small>
+		</div>
+	</article>
+<!--t1517407628-->
+
+			</div>
+			<!-- /.widget-thumb-text-inner -->
+		</div>
+		<!-- /.widget-thumb-text -->
+
+		<!-- 最新学院教程 -->
+		<div class="widget widget-thumb-text clearfix js_pb_jxvdy" js_ch_id="4" js_action="getNew" js_temp="1062" js_model="screenplay">
+			<div class="modal-title clearfix">
+				<div class="modal-title-left">
+					<div class="modal-title-left-inner">最新剧本展示</div>
+					<span class="tip-t"><i class="tip-outer"></i><i class="tip-inner"></i></span>
+				</div>
+				<div class="modal-title-right">
+					<a class="more" href="javascript:if(confirm('http://www.jxvdy.com/screenplay/list.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/screenplay/list.html'" tppabs="http://www.jxvdy.com/screenplay/list.html">更多<i class="fa fa-caret-right"></i></a>
+				</div>
+			</div>
+			<!-- /.modal-title  -->
+			<div class="widget-thumb-text-inner js_reload_panel">
+					<article class="article-item">
+		<figure><a href="javascript:if(confirm('http://www.jxvdy.com/screenplay/056159.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/screenplay/056159.html'" tppabs="http://www.jxvdy.com/screenplay/056159.html" title="2016金丹若网络影视创新论坛暖冬开幕" target="_blank"><img class="img-responsive" src="585ddc1a5afdd1abb2dc3_380_264.jpg" tppabs="http://image.jxvdy.com/2016/1224/585ddc1a5afdd1abb2dc3_380_264.jpg" alt="2016金丹若网络影视创新论坛暖冬开幕"></a></figure>
+		<div class="widget-thumb-text-info">
+			<h5><a href="javascript:if(confirm('http://www.jxvdy.com/screenplay/056159.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/screenplay/056159.html'" tppabs="http://www.jxvdy.com/screenplay/056159.html" target="_blank" title="【2016金丹若网络影视创新论坛暖冬开幕】2016金丹若网络影视创新论坛暖冬开幕">【2016金丹若网络影视创新论坛暖冬开幕】2016金丹若网络影视创新论坛暖冬开幕</a></h5>
+			<small><i class="fa fa-clock-o"></i>2016-12-24</small>
+		</div>
+	</article>
+	<article class="article-item">
+		<figure><a href="javascript:if(confirm('http://www.jxvdy.com/screenplay/052924.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/screenplay/052924.html'" tppabs="http://www.jxvdy.com/screenplay/052924.html" title="搜魔记" target="_blank"><img class="img-responsive" src="5838efae32d7e4e9d1a2d_380_264.jpg" tppabs="http://image.jxvdy.com/2016/1126/5838efae32d7e4e9d1a2d_380_264.jpg" alt="搜魔记"></a></figure>
+		<div class="widget-thumb-text-info">
+			<h5><a href="javascript:if(confirm('http://www.jxvdy.com/screenplay/052924.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/screenplay/052924.html'" tppabs="http://www.jxvdy.com/screenplay/052924.html" target="_blank" title="【搜魔记】天下英雄在，搜魔正当时！">【搜魔记】天下英雄在，搜魔正当时！</a></h5>
+			<small><i class="fa fa-clock-o"></i>2016-11-26</small>
+		</div>
+	</article>
+	<article class="article-item">
+		<figure><a href="javascript:if(confirm('http://www.jxvdy.com/screenplay/056151.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/screenplay/056151.html'" tppabs="http://www.jxvdy.com/screenplay/056151.html" title="这个夏天遇见你" target="_blank"><img class="img-responsive" src="57db8ed218d280562ab4e_380_264.jpg" tppabs="http://image.jxvdy.com/2016/0916/57db8ed218d280562ab4e_380_264.jpg" alt="这个夏天遇见你"></a></figure>
+		<div class="widget-thumb-text-info">
+			<h5><a href="javascript:if(confirm('http://www.jxvdy.com/screenplay/056151.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/screenplay/056151.html'" tppabs="http://www.jxvdy.com/screenplay/056151.html" target="_blank" title="【这个夏天遇见你】都市情感剧">【这个夏天遇见你】都市情感剧</a></h5>
+			<small><i class="fa fa-clock-o"></i>2016-09-16</small>
+		</div>
+	</article>
+	<article class="article-item">
+		<figure><a href="javascript:if(confirm('http://www.jxvdy.com/screenplay/052916.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/screenplay/052916.html'" tppabs="http://www.jxvdy.com/screenplay/052916.html" title="大学不都这样" target="_blank"><img class="img-responsive" src="57ce359155fa9ed89d82e_380_264.jpg" tppabs="http://image.jxvdy.com/2016/0906/57ce359155fa9ed89d82e_380_264.jpg" alt="大学不都这样"></a></figure>
+		<div class="widget-thumb-text-info">
+			<h5><a href="javascript:if(confirm('http://www.jxvdy.com/screenplay/052916.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/screenplay/052916.html'" tppabs="http://www.jxvdy.com/screenplay/052916.html" target="_blank" title="【大学不都这样】我们都一样，懵懂地踏入大学，从憧憬到迷惘，不要担心，你总会找到方向。">【大学不都这样】我们都一样，懵懂地踏入大学，从憧憬到迷惘，不要担心，你总会找到方向。</a></h5>
+			<small><i class="fa fa-clock-o"></i>2016-09-06</small>
+		</div>
+	</article>
+<!--t1517407634-->
+
+			</div>
+			<!-- /.widget-thumb-text-inner -->
+		</div>
+		<!-- /.widget-thumb-text -->
+
+		<!-- 最新学院教程 -->
+		<div class="widget widget-thumb-text clearfix js_pb_jxvdy" js_ch_id="5" js_action="getNew" js_temp="1062" js_model="text_content">
+			<div class="modal-title clearfix">
+				<div class="modal-title-left">
+					<div class="modal-title-left-inner">最新学院教程</div>
+					<span class="tip-t"><i class="tip-outer"></i><i class="tip-inner"></i></span>
+				</div>
+				<div class="modal-title-right">
+					<a class="more" href="list-18.html" tppabs="http://www.jxvdy.com/tutorials/list.html">更多<i class="fa fa-caret-right"></i></a>
+				</div>
+			</div>
+			<!-- /.modal-title  -->
+			<div class="widget-thumb-text-inner js_reload_panel">
+					<article class="article-item">
+		<figure><a href="0001514426.html" tppabs="http://www.jxvdy.com/tutorials/equipment/qcpc/0001514426.html" title="摄影师你好｜除了Angelababy，你还需要知道Lensbaby" target="_blank"><img class="img-responsive" src="56a7465c2e4b4627b139a_0.jpg" tppabs="http://image.jxvdy.com/2016/0126/56a7465c2e4b4627b139a_0.jpg" alt="摄影师你好｜除了Angelababy，你还需要知道Lensbaby"></a></figure>
+		<div class="widget-thumb-text-info">
+			<h5><a href="0001514426.html" tppabs="http://www.jxvdy.com/tutorials/equipment/qcpc/0001514426.html" target="_blank" title="摄影师你好｜除了Angelababy，你还需要知道Lensbaby">摄影师你好｜除了Angelababy，你还需要知道Lensbaby</a></h5>
+			<small><i class="fa fa-clock-o"></i>2016-01-26</small>
+		</div>
+	</article>
+	<article class="article-item">
+		<figure><a href="0001511257.html" tppabs="http://www.jxvdy.com/tutorials/shooting/sysx/0001511257.html" title="在限制里做出最合理，《唐人街探案》摄影手记" target="_blank"><img class="img-responsive" src="56a73e20b6b35162ad1b8_0.jpg" tppabs="http://image.jxvdy.com/2016/0126/56a73e20b6b35162ad1b8_0.jpg" alt="在限制里做出最合理，《唐人街探案》摄影手记"></a></figure>
+		<div class="widget-thumb-text-info">
+			<h5><a href="0001511257.html" tppabs="http://www.jxvdy.com/tutorials/shooting/sysx/0001511257.html" target="_blank" title="在限制里做出最合理，《唐人街探案》摄影手记">在限制里做出最合理，《唐人街探案》摄影手记</a></h5>
+			<small><i class="fa fa-clock-o"></i>2016-01-26</small>
+		</div>
+	</article>
+	<article class="article-item">
+		<figure><a href="0033514418.html" tppabs="http://www.jxvdy.com/tutorials/shooting/sysx/0033514418.html" title="通过摄影机的运动表现意义：黑泽明的《罗生门》" target="_blank"><img class="img-responsive" src="56a5a0224cc8f6a39463a_0.jpg" tppabs="http://image.jxvdy.com/2016/0125/56a5a0224cc8f6a39463a_0.jpg" alt="通过摄影机的运动表现意义：黑泽明的《罗生门》"></a></figure>
+		<div class="widget-thumb-text-info">
+			<h5><a href="0033514418.html" tppabs="http://www.jxvdy.com/tutorials/shooting/sysx/0033514418.html" target="_blank" title="通过摄影机的运动表现意义：黑泽明的《罗生门》">通过摄影机的运动表现意义：黑泽明的《罗生门》</a></h5>
+			<small><i class="fa fa-clock-o"></i>2016-01-25</small>
+		</div>
+	</article>
+	<article class="article-item">
+		<figure><a href="0001514410.html" tppabs="http://www.jxvdy.com/tutorials/shooting/dgbj/0001514410.html" title="摄影师打光如何参考光源" target="_blank"><img class="img-responsive" src="569c96710f46ff33e46f6_0.jpg" tppabs="http://image.jxvdy.com/2016/0118/569c96710f46ff33e46f6_0.jpg" alt="摄影师打光如何参考光源"></a></figure>
+		<div class="widget-thumb-text-info">
+			<h5><a href="0001514410.html" tppabs="http://www.jxvdy.com/tutorials/shooting/dgbj/0001514410.html" target="_blank" title="摄影师打光如何参考光源">摄影师打光如何参考光源</a></h5>
+			<small><i class="fa fa-clock-o"></i>2016-01-18</small>
+		</div>
+	</article>
+<!--t1517407634-->
+
+			</div>
+			<!-- /.widget-thumb-text-inner -->
+		</div>
+		<!-- /.widget-thumb-text -->
+
+		<!--热门排行 -->
+		<div id="sidebar">
+			<div class="js_rank widget clearfix">
+				<div class="modal-title clearfix">
+					<div class="modal-title-left">
+						<div class="modal-title-left-inner">热门排行</div>
+						<span class="tip-t"><i class="tip-outer"></i><i class="tip-inner"></i></span>
+					</div>
+				</div>
+				<!-- /.modal-title  -->
+				<div class="modal-title-tab channel-tab-nav">
+					<ul class="rank-tab clearfix">
+						<li class="js_rank_handle" js_data_m="text_content" js_data_c="1" js_data="week"><a href="javascript:;">资讯</a></li>
+						<li class="js_rank_handle on" js_data_m="screenplay" js_data_c="4" js_data="week"><a href="javascript:;">剧本</a></li>
+						<li class="js_rank_handle" js_data_m="text_content" js_data_c="5" js_data="week"><a href="javascript:;">教程</a></li>
+						<li class="js_rank_handle" js_data_m="video_info" js_data_c="2" js_data="week"><a href="javascript:;">微电影</a></li>
+						<li class="js_rank_handle last" js_data_m="video_info" js_data_c="3" js_data="week"><a href="javascript:;">网络剧</a></li>
+					</ul>
+				</div>
+				<div class="channel-tab-inner clearfix">
+					<div class="hots-rank">
+	<ul class="js_col list-unstyled">
+					<li class="rank-title"><i class="rank-num num-1">1</i><a href="javascript:if(confirm('http://www.jxvdy.com/screenplay/053020.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/screenplay/053020.html'" tppabs="http://www.jxvdy.com/screenplay/053020.html" target="_blank" title="春风化雨">【春风化雨】家庭贫困学生胡玥面临辍学的痛苦&hellip;&hellip;</a></li>
+					<li class="rank-title"><i class="rank-num num-2">2</i><a href="javascript:if(confirm('http://www.jxvdy.com/screenplay/053016.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/screenplay/053016.html'" tppabs="http://www.jxvdy.com/screenplay/053016.html" target="_blank" title="恶魇">【恶魇】一己利益，套取国家扶贫款，使国家&hellip;&hellip;最终走向不归路。</a></li>
+					<li class="rank-title"><i class="rank-num num-3">3</i><a href="javascript:if(confirm('http://www.jxvdy.com/screenplay/056210.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/screenplay/056210.html'" tppabs="http://www.jxvdy.com/screenplay/056210.html" target="_blank" title="惑">【惑】一个不争的事实，不得不让我们陷入深深地思考&hellip;&hellip;</a></li>
+					<li class="rank-title"><i class="rank-num num-4">4</i><a href="javascript:if(confirm('http://www.jxvdy.com/screenplay/056239.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/screenplay/056239.html'" tppabs="http://www.jxvdy.com/screenplay/056239.html" target="_blank" title="同学情">【同学情】同学之情不可忘，一旦同学情超越了法律范畴，那就&hellip;&hellip;</a></li>
+					<li class="rank-title"><i class="rank-num num-5">5</i><a href="javascript:if(confirm('http://www.jxvdy.com/screenplay/056206.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/screenplay/056206.html'" tppabs="http://www.jxvdy.com/screenplay/056206.html" target="_blank" title="悔悟">【悔悟】青少年犯罪呈上升趋势，如何教育、引导，已迫在眉睫&hellip;&hellip;</a></li>
+					<li class="rank-title"><i class="rank-num num-6">6</i><a href="javascript:if(confirm('http://www.jxvdy.com/screenplay/056159.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/screenplay/056159.html'" tppabs="http://www.jxvdy.com/screenplay/056159.html" target="_blank" title="2016金丹若网络影视创新论坛暖冬开幕">【2016金丹若网络影视创新论坛暖冬开幕】2016金丹若网络影视创新论坛暖冬开幕</a></li>
+					<li class="rank-title"><i class="rank-num num-7">7</i><a href="javascript:if(confirm('http://www.jxvdy.com/screenplay/052924.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/screenplay/052924.html'" tppabs="http://www.jxvdy.com/screenplay/052924.html" target="_blank" title="搜魔记">【搜魔记】天下英雄在，搜魔正当时！</a></li>
+					<li class="rank-title"><i class="rank-num num-8">8</i><a href="javascript:if(confirm('http://www.jxvdy.com/screenplay/052953.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/screenplay/052953.html'" tppabs="http://www.jxvdy.com/screenplay/052953.html" target="_blank" title="梦中预言">【梦中预言】一个都市小职员经历梦中预言，大彻大悟，最后走向成功</a></li>
+					<li class="rank-title"><i class="rank-num num-9">9</i><a href="javascript:if(confirm('http://www.jxvdy.com/screenplay/056151.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/screenplay/056151.html'" tppabs="http://www.jxvdy.com/screenplay/056151.html" target="_blank" title="这个夏天遇见你">【这个夏天遇见你】都市情感剧</a></li>
+					<li class="rank-title"><i class="rank-num num-10">10</i><a href="javascript:if(confirm('http://www.jxvdy.com/screenplay/052916.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/screenplay/052916.html'" tppabs="http://www.jxvdy.com/screenplay/052916.html" target="_blank" title="大学不都这样">【大学不都这样】我们都一样，懵懂地踏入大学，从憧憬到迷惘，不要担心，你总会找到方向。</a></li>
+			</ul>
+</div>
+<ul class="js_tpl hidden">
+	<li class="rank-title"><i class="rank-num"></i><a href="#" title="" target="_blank"></a></li>
+</ul>
+<!--t1517408533-->
+
+				</div>
+				<!-- /.tab-content -->
+			</div>
+			<!-- /.widget-thumb-text -->
+			<div class="mt20 ads300-250 js_ad_record" style="height: 250px;">
+			<script type="text/javascript" src="0063.js" tppabs="http://ad.jxvdy.com/script/0063.js"></script>
+			</div>
+		</div>
+		<!-- /.sidebar -->
+	</aside>
+	<a class="js_popup hidden" id="popup_login" js_popup="js_popup_login"></a>
+	<a class="js_popup hidden" id="popup_private" js_popup="js_popup_private" href="javascript:;"></a>
+	<a class="js_popup hide" id="popup_verify" js_popup="js_popup_verify" href="javascript:;"></a>
+	<!-- 邮箱验证弹出层 -->
+<div id="js_popup_verify" class="js_popup_content popup-wrap popup-login-wrap">
+    <div class="popup-title">
+        <a href="javascript:;" title="关闭" class="js_popup_closed closed">×</a>
+        <h4>邮箱验证</h4>
+    </div>
+    <div class="popup-body clearfix">
+        <div class="user-group-wrap text-center">
+            您的账户邮箱未验证，请验证您的邮箱
+        </div>
+        <!-- /.user-group-wrap -->
+        <div class="user-group-wrap text-center mt20">
+            <div class="user-group">
+                <a class="btn btn-warning" href="javascript:if(confirm('http://www.jxvdy.com/my/checkEmail  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/my/checkEmail'" tppabs="http://www.jxvdy.com/my/checkEmail">验证邮箱</a>
+                <a class="js_popup_closed btn btn-default ml10" href="javascript:;">取消</a>
+            </div>
+        </div>
+        <!-- /.user-group-wrap -->
+    </div>
+    <!-- /.popup-body -->
+</div>
+
+<!--t1517408521-->
+ 
+	<div id="js_popup_private" class="js_popup_content popup-wrap popup-private-wrap">
+<form action="/message/addsubmit" method="post" class="js_form" js_validrules="mess_validRules" onsubmit="return false">
+  	<input type="hidden" name="id" value="">
+    <div class="popup-title">
+        <a href="javascript:;" title="关闭" class="js_popup_closed closed">×</a>
+        <h4>发送私信</h4>
+    </div>
+    <div class="popup-body clearfix">
+        <div class="message-talk-wrap">
+            <form action="">
+                <div class="user-group-wrap">
+                    <label for="" class="label-name">收件人:</label>
+                    <div class="user-group">
+                        <input type="text" name="username" class="form-control input-nick user-profile" autocomplete="off" placeholder="请输入收件人用户名" value="">
+                        <p class="user-tip-wrap" id="js_username_tip"></p>
+                    </div>
+                </div>
+                <!-- /.user-group-wrap -->
+                <div class="user-group-wrap">
+                    <label for="" class="label-name">内容:</label>
+                    <div class="user-group">
+                        <textarea name="content" cols="30" rows="5" class="textarea textarea-profile" maxlength="99999" placeholder="请输入内容"></textarea>
+                        <p class="user-tip-wrap" id="js_content_tip"></p>
+                    </div>
+                </div>
+                <!-- /.user-group-wrap -->
+                <div class="user-group-wrap">
+                    <label for="" class="label-name"></label>
+                    <div class="user-group">
+                        <input type="button" class="btn btn-warning btn_mess_submit" value="确定" />
+                    </div>
+                </div>
+                <!-- /.user-group-wrap -->
+            </form>
+        </div>
+        <!-- /.message-talk-wrap -->
+    </div>
+    <!-- /.popup-body -->
+</form>
+</div>
+<div class="popup-wrap-mask"></div>
+<!--t1517408224-->
+	<script type="text/javascript" src="my_login.js" tppabs="http://skin.jxvdy.com/jxvdy2/public/javascripts/my_login.js"></script>
+<script language="JavaScript">
+<!--
+var CHECK_FIELD_URL = '/my/logincheck';
+//-->
+</script>
+<!-- 会员登录弹出层 -->
+<div id="js_popup_login" class="js_popup_content popup-wrap popup-login-wrap">
+	<div class="popup-title">
+		<a href="javascript:;" title="关闭" class="js_popup_closed closed">×</a>
+		<h4>登录金象微电影账号</h4>
+	</div>
+	<div class="popup-body clearfix">
+		<div class="setting-wrap setting-profile">
+			<form class="js_form form-usr" action="http://www.jxvdy.com/my/loginsubmit" method="post" js_validrules="validRules" onsubmit="return false;">
+				<input type="hidden" name="jumpto" value="" />
+				<div class="user-group-wrap">
+					<div class="user-group">
+						<input type="text" id="js_name" name="name" class="input-username form-control" autocomplete="off" maxlength="35" placeholder="用户名/邮箱">
+						<p class="user-tip-wrap" id="js_name_tip"></p>
+					</div>
+				</div>
+				<!-- /.user-group-wrap -->
+				<div class="user-group-wrap">
+					<div class="user-group">
+						<input type="password" id="js_pwd" name="pwd" class="input-password form-control" autocomplete="off" placeholder="请输入密码" maxlength="35" />
+						<p class="user-tip-wrap" id="js_pwd_tip"></p>
+					</div>
+				</div>
+				<!-- /.user-group-wrap -->
+				<div class="user-group-wrap">
+					<div class="user-group aotu-login">
+						<span class="form-checkbox pull-left">
+							<input type="checkbox" id="js_autologin" name="autologin" style="-webkit-appearance:display" value="1" checked="checked">
+							<label for="js_autologin">下次自动登录</label>
+						</span>
+						<a href="javascript:if(confirm('http://www.jxvdy.com/my/forgetpwd  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/my/forgetpwd'" tppabs="http://www.jxvdy.com/my/forgetpwd" class="color-gray pull-right">忘记密码？</a>
+					</div>
+				</div>
+				<!-- /.user-group-wrap -->
+				<div class="user-group-wrap">
+					<div class="user-group">
+						<input type="submit" class="btn btn-warning btn-login-submit" value="登 录" />
+					</div>
+				</div>
+				<div id="js_ok_tip" style="display: none;"></div>
+				<!-- /.user-group-wrap -->
+				<div class="user-group-wrap">
+					<div class="user-group aotu-login">
+						<span class="pull-right">还没有金象微电影账号？<a href="regist.htm" tppabs="http://www.jxvdy.com/my/regist" class="brand-warning">立即注册</a></span>
+					</div>
+				</div>
+				<!-- /.user-group-wrap -->
+			</form>
+		</div>
+		<!-- /.lsetting-wrap -->
+		<dl class="login-other-wrap">
+			<dt class="login-other-title color-gray">一键授权，快速登录 </dt>
+			<dd class="login-sina login-other-btn"><a href="javascript:void(0)" onclick="return window.open('http://www.jxvdy.com/oauth2/authorize?p=sinaweibo&login=1', 'oauth2Login_sinaweibo' ,'height=562,width=754, toolbar=no, menubar=no, scrollbars=no, status=no, location=yes, resizable=yes').noAim = true;"><i class="icon-login-sina"></i><span>新浪微博登录</span></a></dd>
+			<dd class="login-tqq login-other-btn"><a href="javascript:void(0)" onclick="return window.open('http://www.jxvdy.com/oauth2/authorize?p=txweibo&login=1', 'oauth2Login_txweibo' ,'height=420,width=610, toolbar=no, menubar=no, scrollbars=no, status=no, location=yes, resizable=yes').noAim = true;"><i class="icon-login-tqq"></i><span>腾讯微博登录</span></a></dd>
+			<dd class="login-qq login-other-btn tencent"><a href="javascript:void(0)" onclick="return window.open('http://www.jxvdy.com/oauth2/authorize?p=txqq&login=1', 'oauth2Login_txqq' ,'height=525,width=585, toolbar=no, menubar=no, scrollbars=no, status=no, location=yes, resizable=yes').noAim = true;"><i class="icon-login-qq"></i><span>腾讯QQ登录</span></a></dd>
+		</dl>
+		<!-- /.login-other -->
+	</div>
+	<!-- /.popup-body -->
+</div>
+<!-- /.popup-wrap -->
+<!-- 弹出层遮罩 -->
+<div class="popup-wrap-mask"></div>
+<!--t1517408404-->
+	<a class="js_popup hide" id="popup_dynamic" js_popup="js_popup_dynamic" href="javascript:;"></a>
+	<div id="js_popup_dynamic" class="js_popup_content popup-wrap popup-comment-wrap">
+    <div class="popup-title">
+        <a href="javascript:;" title="关闭" class="js_popup_closed closed">×</a>
+        <h4>分享到金象动态</h4>
+    </div>
+    <div class="popup-body clearfix">
+    <form id="js_comment" class="js_form">
+        <div class="user-group-wrap">
+            <div class="user-group">
+                <textarea name="share_comment" onkeyup="checkLength(this);" cols="62" rows="5" class="textarea" placeholder="分享到金象动态..." js_mltip="#sy_share" js_ml="130"></textarea>
+                <p class="text-right" id="sy_share">还可以再输入130字</p>
+            </div>
+        </div>
+        <!-- /.user-group-wrap -->
+        <div class="user-group-wrap text-center">
+            <div class="user-group">
+                <input type="button" class="btn btn-warning pop_share_submit" hidefocus="true" value="分享" />
+            </div>
+        </div>
+        <!-- /.user-group-wrap -->
+    </form>
+    </div>
+    <!-- /.popup-body -->
+</div>
+<!--t1517408521-->
+</section>
+<!-- 隐藏代码盒子 S -->
+<div id="displayBox">
+	<div class="hd"><a></a></div>
+	<div class="bd" style="height: 0;">
+		<iframe scrolling="yse" src="" frameborder="0"></iframe>
+	</div>
+</div>
+<footer id="footer" class="footer-wrap clearfix">
+	<div class="container">
+		<div class="foot text-center">
+			<div class="clearfix foot-link">
+				<a href="about.html" tppabs="http://www.jxvdy.com/about.html" target="_blank">关于我们</a><span class="divide">|</span>
+				<a href="contact.html" tppabs="http://www.jxvdy.com/contact.html" target="_blank">联系我们</a><span class="divide">|</span>
+				<a href="guestbook.html" tppabs="http://www.jxvdy.com/guestbook.html" target="_blank">网站留言</a><span class="divide">|</span>
+				<a href="help.html" tppabs="http://www.jxvdy.com/help.html" target="_blank">帮助中心</a><span class="divide">|</span>
+				<a href="disclaimer.html" tppabs="http://www.jxvdy.com/disclaimer.html" target="_blank">免责声明</a><span class="divide">|</span>
+				<a href="copyright.html" tppabs="http://www.jxvdy.com/copyright.html" target="_blank">版权声明</a><span class="divide">|</span>
+				<a href="agreement.html" tppabs="http://www.jxvdy.com/agreement.html" target="_blank">使用协议</a>
+			</div>
+			<p>Copyright &copy; 2013-2018 jxvdy.com，All Rights Reserved&nbsp;&nbsp;使用本网站即表示接受金象微电影网用户协议<br><a href="javascript:if(confirm('http://www.miitbeian.gov.cn/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://www.miitbeian.gov.cn/'" tppabs="http://www.miitbeian.gov.cn/" target="_blank">ICP备案证书号：豫ICP备12020961号</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="licence.html" tppabs="http://www.jxvdy.com/licence.html" target="_blank">广播电视节目制作经营许可证 （豫）字第00213号</a><br>版权所有 金象微电影网</p>
+		</div>
+	</div>
+</footer>
+
+<!-- 页面右侧浮动控件 -->
+<div id="js_float_left" class="float-wx"><span class="jx-wx"></span></div>
+<div id="js_float_right" class="side-bar side-pannel" style="display: none;">
+    <div id="side-bar"><a class="gotop" href="javascript:;" style="display: none"></a></div>
+    <a class="block-text jx-app" href="javascript:;"><span class="jx-app-icon"></span></a>
+    <a class="block-text jx-kf" href="javascript:if(confirm('http://wpa.qq.com/msgrd?v=3&uin=1606173530&site=qq&menu=yes  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://wpa.qq.com/msgrd?v=3&uin=1606173530&site=qq&menu=yes'" tppabs="http://wpa.qq.com/msgrd?v=3&uin=1606173530&site=qq&menu=yes" target="_blank">
+        <span class="jx-kf-con">
+            官方客服QQ：1605173530<br>工作日9:00-18:00在线
+            <i></i>
+        </span>
+    </a>
+    <a class="block-text jx-wb" href="javascript:if(confirm('http://weibo.com/jinxiangv  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://weibo.com/jinxiangv'" tppabs="http://weibo.com/jinxiangv" target="_blank">
+        <span class="jx-wb-con">
+            <script src="wb.js" tppabs="http://tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8"></script>
+            <wb:follow-button uid="3568758305" type="red_2" width="136" height="24" ></wb:follow-button>
+            <i></i>
+        </span>
+    </a>
+    <a class="jx-ly" href="guestbook.html" tppabs="http://www.jxvdy.com/guestbook.html" target="_blank"></a>
+</div>
+<!--300_250_s-->
+<div class="js_ad_record" style="height: 250px;position:fixed; right:0; bottom:0;z-index:2147483648;"><script type="text/javascript" src="0112.js" tppabs="http://ad.jxvdy.com/script/0112.js"></script></div>
+<!--300_250_e-->
+<script type="text/javascript">
+//  返回置顶
+    $(function(){
+        $(window).scroll(function(){
+            if($(window).scrollTop()>100){
+                $("#side-bar .gotop").fadeIn();
+            }
+            else{
+                $("#side-bar .gotop").hide();
+            }
+        });
+        $("#side-bar .gotop").click(function(){
+            $('html,body').animate({'scrollTop':0},500);
+        });
+    });
+//    页面两侧浮动随屏幕滚动显示
+    function float_nav(dom){
+        var right_nav=$(dom);
+        var nav_height=right_nav.height();
+        function right_nav_position(bool){
+            var window_height=$(window).height();
+            var nav_top=(window_height-nav_height)/2;
+            if(bool){
+                right_nav.stop(true,false).animate({top:nav_top+$(window).scrollTop()},500);
+            }else{
+                right_nav.stop(true,false).animate({top:nav_top},400);
+            }
+            right_nav.show();
+        }
+
+        if(!+'\v1' && !window.XMLHttpRequest ){
+            $(window).bind('scroll resize',function(){
+                if($(window).scrollTop()>400){
+                    right_nav_position(true);
+                }else{
+                    right_nav.hide();
+                }
+            })
+        }else{
+            $(window).bind('scroll resize',function(){
+                if($(window).scrollTop()>400){
+                    right_nav_position();
+                }else{
+                    right_nav.hide();
+                }
+            })
+        }
+    }
+    float_nav('#js_float_left');
+    float_nav('#js_float_right');
+    
+    $(function(){
+        recordShow();
+        $(window).scroll(recordShow);
+    })
+    
+    function recordShow()
+    {
+		var Hei = $(window).height();
+        var scrTop = $(document).scrollTop();
+        $('.js_ad_record').each(function(){
+        	var offHei = $(this).offset().top
+			var objHei = $(this).height();
+			if((offHei < scrTop + Hei && offHei > scrTop) || (offHei + objHei < scrTop + Hei && offHei + objHei > scrTop))
+			{
+				if(!$(this).hasClass('js_recorded'))
+				{
+					$(this).addClass('js_recorded');
+					var _u = $(this).children("div:last-child").attr('js_data');
+					$.ajax({cache:false,type:'GET',url: _u});
+				}
+			}
+        })
+    }
+</script>
+</body>
+</html>
+<!--t1517408166-->
+
+<!--t1517408796-->

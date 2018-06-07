@@ -1,0 +1,130 @@
+  .main{
+		width:100% !important;
+		margin:0 auto;
+  }
+
+  .reg_title{
+			
+		width:350px;
+		font-size:40px;
+		margin:0 auto;
+		position:relative;
+		top:-100px;
+  }
+  .register{
+		border:0;
+		width:650px;
+		margin:0 auto;
+		display:flex;
+		justify-content:space-between;
+		margin-bottom:200px;
+  }
+  .register input{
+		width:350px;
+		height:35px;
+		margin-bottom:25px;
+		padding-left:35px;
+		box-sizing:border-box;
+  }
+	 .register p:nth-of-type(3) input {
+			width:13px;
+			height:13px;
+  }
+  .register p:nth-of-type(4) input {
+		background:#0aa1ed;
+		border:none;
+		height:40px;
+		color:#fff;
+		font-size:15px;
+  }
+  .register form{
+		border-right:1px solid rgb(222,222,222);
+		padding-right:40px;
+		
+  }
+
+  .register form p:nth-of-type(1) img,
+  .register form p:nth-of-type(2) img{
+		border-right:1px solid rgb(222,222,222);
+		display:inline-block;
+		position:relative;
+		top:6px;
+		width:22px;
+		height:20px;
+		right:353px;
+		padding:0 3px 0 2px;
+		
+  }
+	.register form p:nth-of-type(3){
+		width:350px;
+		height:40px;
+		line-height:40px;
+		display:flex;
+		justify-content:space-between;
+	}
+	.register form p:nth-of-type(3) span>span{
+		position:relative;
+		top:-3px;
+	}
+
+  .register p:nth-of-type(5){
+		position:relative;
+		
+  }
+  .register p:nth-of-type(5) a{
+		position:absolute;
+		right:32px;
+		top:-15px;
+  }
+  .register p:nth-of-type(5) span{
+		color:#0aa1ed;
+  }
+  .register div p{
+
+    width:150px;
+		height:40px;
+		line-height:40px;
+		margin-bottom:15px;
+		display:flex;
+		justify-content:space-between;
+		padding-right:20px;
+		box-sizing:border-box;
+		
+  }
+  .register div p a{
+		color:#fff;	
+  }
+	.register div p span{
+		padding:0 4px;
+  }
+  .register div p img{
+		width:24px;
+		height:25px;
+		position:relative;
+		top:6px;
+  }
+  .register div p:nth-of-type(1){
+		margin-top:5px;
+		background:#CE3121;
+  }
+  .register div p:nth-of-type(1) span{
+		background:#DC3121;	
+  }
+	.register div p:nth-of-type(2){
+		
+		background:#8FC726;
+  }
+  .register div p:nth-of-type(2) span{
+		background:#99D42C;	
+  }
+  .register div p:nth-of-type(3){
+		
+		background:#0873C0;
+  }
+  .register div p:nth-of-type(3) span{
+		background:#087BCA;	
+  }
+  .register div p:nth-of-type(3) a{
+		
+		padding:0 10px;
+  }

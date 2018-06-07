@@ -1,0 +1,187 @@
+/*类型选择部分*/
+	nav{
+		width:100%;
+		border-bottom:3px solid rgb(213,213,213);
+	}
+	
+	.nav1>ul>li:first-child>a{
+		background:none;
+		color:#666;
+	}
+	.nav1>ul>li:first-child>a:hover{background-color:#eee;color:#0aa1ed;}
+	.nav1>ul>li:nth-child(3)>a{background:rgb(255,176,9);color:#fff;}
+	.v_type{
+		width:1100px;
+		margin:20px auto;
+		font-size:14px;
+		padding:10px 30px;
+		background:rgb(238,238,238);
+		box-sizing:border-box;
+		border-top:3px solid rgb(255,176,9);
+	}
+	 a.v_check{
+		background:rgb(255,176,9);
+		color:#fff;
+	}
+
+	.v_type ul:nth-child(2){border-bottom:1px solid rgb(213,213,213);padding-bottom:5px;}
+	.v_type ul:nth-child(3){border-top:1px solid #fff;padding-top:5px;}
+	.v_type li{
+		display:inline-block;
+		padding:5px 0;
+	}
+	.v_type a{
+		font-size:14px;
+		padding:4px 8px;
+
+	}
+	.v_type>a{
+		display:block;
+		width:50px;
+		margin:0 auto;
+		margin-top:10px;
+	}
+
+	.v_type li a:hover{
+		color:#fff;
+		background:rgb(255,176,9);
+	}
+	.v_type>ul:nth-of-type(3) li:nth-child(21){
+		padding-left:42px;
+	}
+/*最新发布 最多观看 评分最高*/
+	.v_score{
+		width:1100px;
+		margin:0 auto;
+		margin-bottom:20px;
+	}
+	.v_score a{
+		border:1px solid rgb(221,221,221);
+		font-size:16px;
+		padding:10px 20px; 
+		background:rgb(238,238,238);
+	}
+	
+	.v_score [data-trigger="v_bg"]{
+		background:rgb(255,176,9);
+		border:1px solid rgb(230,126,34);
+		color:#fff;
+	}
+	.v_score a:not(:nth-child(3)){
+		border-right:none;
+	}
+	.v_score a:not([data-trigger="v_bg"]):hover{
+		color:#666;
+		background:#fff;
+	}
+/*微电影列表*/
+.v_list{
+	width:1100px;
+	margin:0 auto;
+}
+.v_list ul{
+	width:1120px;
+	display:flex;
+	justify-content:flex-start;
+	flex-wrap:wrap;
+}
+.v_list ul>li{
+	width:166px;
+	height:245px;
+	margin-bottom:10px;
+	margin-right:20px;
+	position:relative;
+}
+.v_list ul>li>a>img{
+	display:block;
+	width:166px;
+	height:220px;
+}
+.v_list ul>li>a>p:nth-of-type(1){
+	width:165px;
+	height:80px;
+	position:absolute;
+	left:0;
+	top:140px;
+	overflow:hidden;
+
+}
+.v_list ul>li>a>p:nth-of-type(1) span{
+	display:inline-block;
+	background:#000;
+	color:#fff;
+	width:166px;
+	height:60px;
+	position:absolute;
+	top:47px;
+	padding:11px;
+	transition: all .5s linear;
+
+}
+.v_list ul>li>a>p:nth-of-type(1) span i{
+	display:inline-block;
+	width:150px;
+	font-style:normal;
+	overflow:hidden;
+	text-overflow:ellipsis;
+	white-space:nowrap;
+}
+.v_list ul>li>a>p:nth-of-type(1) span b{
+	display:block;
+	font-weight:normal;
+	margin-top:5px;
+	
+}
+.v_list ul>li>a:hover>p:nth-of-type(1) span{
+	transform:translate(0,-20px)
+}
+.v_list ul>li>a>p:nth-of-type(2){
+	margin-top:5px;
+	display:flex;
+	justify-content:space-between;
+}
+.v_list ul>li>a>p:nth-of-type(2)>span:first-child{
+	width:130px;
+	overflow:hidden;
+	text-overflow:ellipsis;
+	white-space:nowrap;
+}
+.v_list ul>li>a>p:nth-of-type(2)>span:last-child{
+	color:rgb(255,176,9);
+}
+
+/*分页*/
+.v_page{
+	width:1100px;
+	margin:0 auto;
+	
+}
+.v_page>div{
+	margin:0 auto;
+	text-align:center;
+}
+.v_page>div>a{
+	height:30px;
+	line-height:30px;
+	padding:0 15px;
+	font-size:14px;
+	border:1px solid rgb(187,187,187);
+	background:rgb(247,247,247);
+	margin-right:5px;
+}
+.v_page>div>a.current{
+	background:rgb(255,176,9);
+	color:#fff;
+}
+.v_page>div>a.current:hover{
+	background:rgb(255,176,9);
+	color:#fff;
+}
+.v_page>div>a:hover{
+	background:#fff;
+}
+.v_page>div>a.disabled{
+	 color:#bfbfbf;
+   background:#f2f2f2;
+   border:1px solid #bfbfbf;
+}

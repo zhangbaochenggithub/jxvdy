@@ -1,0 +1,55 @@
+body{
+	font:13px "simhei",Arial;
+	color:#666;
+	margin:0;
+	padding:0;
+	
+}
+p,h1,h2,h3,h4,h5,h6,ul,ol,dl,dd{
+	margin:0;
+	padding:0;
+	list-style:none;
+}
+a{
+	text-decoration:none;
+	color:#666;
+	display:inline-block;
+	text-overflow:ellipsis;
+	white-space:nowrap;
+}
+a:hover{
+	color:#0aa1ed;
+}
+
+img{
+	vertical-align:middle;
+}
+.lf{
+	float:left;
+}
+.rf{
+	float:right;
+}
+.clear:after{
+	display:block;
+	content:"";
+	clear:both;
+.main{
+	width:100%;
+	margin:0 auto;
+	border:1px solid red;
+}
+#header{
+	width:100%;
+
+}
+#footer{
+	width:100%;
+
+}
+
+.v_ad{
+	width:200px;
+	height:200px;
+	border:1px solid red;
+}

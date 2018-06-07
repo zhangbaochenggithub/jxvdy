@@ -1,0 +1,1288 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset=utf-8"utf-8" />
+<meta name="renderer" content="webkit" />
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+<meta name="description" content="《彼得潘的涩情》，（一个风尘女子和一个小胖墩）大人与小孩之间发生的关于爱情的那些事。
+在孩子眼里爱情是糖果，是气球，是我要拥有她，不能有人欺负她，保护自己喜欢的人，一切都那么单纯。" />
+<meta name="keywords" content="温情,爱情" />
+<meta name="author" content="Gold elephant Group" />
+<link rel="icon" href="http://skin.jxvdy.com/jxvdy2/public/images/favicon.ico" />
+<title>《彼得潘的涩情》-剧本展示-微影剧本-金象微电影网</title>
+<link rel="stylesheet" href="jxvdy.css" tppabs="http://skin.jxvdy.com/jxvdy2/public/stylesheets/jxvdy.css" />
+<link rel="stylesheet" href="font-awesome.min.css" tppabs="http://skin.jxvdy.com/jxvdy2/public/stylesheets/font-awesome.min.css" />
+<!--[if lt IE 9]>
+<link rel="stylesheet" href="font-awesome-ie7.min.css-v=4.2.css" tppabs="http://skin.jxvdy.com/jxvdy2/public/stylesheets/font-awesome-ie7.min.css?v=4.2">
+<script src="html5hack.min.js" tppabs="http://skin.jxvdy.com/jxvdy2/public/javascripts/html5hack.min.js"></script>
+<![endif]-->
+	<script src="jquery-1.8.3.min.js" tppabs="http://skin.jxvdy.com/jxvdy2/public/javascripts/jquery-1.8.3.min.js"></script>
+	<script src="jquery.SuperSlide.js" tppabs="http://skin.jxvdy.com/jxvdy2/public/javascripts/jspack/jquery.SuperSlide.js"></script>
+	<script src="headroom.min.js" tppabs="http://skin.jxvdy.com/jxvdy2/public/javascripts/jspack/headroom.min.js"></script>
+	<script src="simplePagination.js" tppabs="http://skin.jxvdy.com/jxvdy2/public/javascripts/jspack/simplePagination.js"></script>
+	<script src="jquery.slimscroll.js" tppabs="http://skin.jxvdy.com/jxvdy2/public/javascripts/jspack/jquery.slimscroll.js"></script>
+	<script src="jquery.surReady.min.js" tppabs="http://skin.jxvdy.com/jxvdy2/public/javascripts/jspack/jquery.surReady.min.js"></script>
+	<script src="jquery.surCookie.min.js" tppabs="http://skin.jxvdy.com/jxvdy2/public/javascripts/jspack/jquery.surCookie.min.js"></script>
+	<script type="text/javascript">
+	<!--
+	//黑头信标查找
+	$('#js_black_head').surReady(function(){
+		$('body').addClass('page-index-min');
+		$('#header').addClass('header-min-wrap');
+	});
+	
+	//清空历史记录
+	function clearHistory()
+	{
+		$.delCookie('video_jxvdy');
+		$.delCookie('drama_jxvdy');
+		$("#history-scrollbar").html('您还未观看微电影，暂无播放记录！');
+	}
+	
+	//判断是否已登录
+	$('#js_login_user_info').surReady(function(){
+		$.ajax({
+			url : '/d/member/mess'
+			,type : 'post'
+			,success: function(d){
+				var data = JSON.parse(d);
+				if(typeof(data['m_nick']) == 'string')
+				{
+					$('.js_login_user_info').removeClass('login-before').addClass('login-after')
+					$('.js_login_link').hide();
+					$('.js_user_login_btn').hide();
+					$('.js_user_name_wrap').show().find('img').attr('src', data['i_path']).attr('alt', data['m_nick']);
+					$('.js_user_name_wrap .js_user_nick').html(data['m_nick']);
+					$('.js_user_icon').show().find('img').attr('src', data['i_path']).attr('alt', data['m_nick']);
+					$('.js_user_icon div a').html(data['m_nick']);
+					$('.js_user_icon ul').children('li').first().find('a').html(data['attention']);
+					$('.js_user_icon ul').children('li').last().find('a').html(data['fans']);
+					$('.js_user_footer').show();
+				}
+				if(typeof(data['notice']) == 'string' && data['notice'] != 0)
+				{
+					$('.js_mess_total').show();
+				}
+			}
+		})
+	});
+	//-->
+	</script>
+	<script src="util.js" tppabs="http://skin.jxvdy.com/jxvdy2/public/javascripts/util.js"></script>
+	<script src="shitao.js" tppabs="http://skin.jxvdy.com/jxvdy2/public/javascripts/jspack/shitao.js"></script>
+	<script src="zebra_tooltips.js" tppabs="http://skin.jxvdy.com/jxvdy2/public/javascripts/jspack/zebra_tooltips.js"></script>
+<script>
+	//百度统计
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "hm.js-e64f7f2c081e3417386b861e0882c9d9"/*tpa=http://hm.baidu.com/hm.js?e64f7f2c081e3417386b861e0882c9d9*/;
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+</script>
+<script type="text/javascript">
+<!--
+$.ajax({cache:false,type:'GET',url:'http://www.jxvdy.com/d/0033523751.html?episode=14'});
+//-->
+</script>
+
+<script type="text/javascript">
+<!--
+function js_click_record(url)
+{
+	$.ajax({cache:false,type:'GET',url: url});
+}
+
+//-->
+</script>
+<script language="JavaScript">
+<!--
+//火狐img onerror
+var FIREFOXBULLSHIT = null
+,	FIREFOXBULLSHITC = 0;
+$(function(){
+	FIREFOXBULLSHIT = setInterval("$('img:not(.js_error_off)').each(function(){$(this).attr('src')=='' && $(this).trigger('error') && $(this).attr('js_error_off');});15<=++FIREFOXBULLSHITC && clearInterval(FIREFOXBULLSHIT);", 200);
+});
+//-->
+</script>
+<!--t1517408819-->
+<script type="text/javascript" src="pb.js" tppabs="http://skin.jxvdy.com/jxvdy2/public/javascripts/pb.js"></script>
+<script type="text/javascript" src="screenplay_inside.js" tppabs="http://skin.jxvdy.com/jxvdy2/public/javascripts/screenplay_inside.js"></script>
+<script type="text/javascript" src="video_tab.js" tppabs="http://skin.jxvdy.com/jxvdy2/public/javascripts/video_tab.js"></script>
+<script type="text/javascript" src="rank.js" tppabs="http://skin.jxvdy.com/jxvdy2/public/javascripts/rank.js"></script>
+<script type="text/javascript" src="reload.js" tppabs="http://skin.jxvdy.com/jxvdy2/public/javascripts/reload.js"></script>
+<script type="text/javascript" src="share.js" tppabs="http://skin.jxvdy.com/jxvdy2/public/javascripts/share.js"></script>
+<script type="text/javascript" src="public.js" tppabs="http://skin.jxvdy.com/jxvdy2/public/javascripts/public.js"></script>
+<script type="text/javascript" charset="utf-8" src="buttonLite.js" tppabs="http://static.bshare.cn/b/buttonLite.js"></script>
+<script type="text/javascript" charset="utf-8" >
+	//预定义bshare分享按钮样式及配置参数
+	var bShareOpt = {style:-1,uuid:'38f8de2c-ca33-452c-89f3-4caa71109129',mdiv:-1};
+	function shareTo(event, shortName) {
+		//自定义设置内容，可动态获取当前页面内相应的参数进行传递
+		var url=window.location.href;
+		var str_title = "《彼得潘的涩情》";
+		var str_info = "在孩子眼里爱情是糖果，是气球，是我要拥有她";
+		var img = "0033523751.html-episode=15"/*tpa=http://image.jxvdy.com/2015/1213/566cf14d3717fda0f8cf9_380_264.jpg*/;
+		//清除自定义分享内容的方法，在设置前清空，重新自定义内容
+		bShare.entries = [];
+		//添加自定义分享内容方法，不需要自定义的可以传递，bshare js会主动抓取页面相应值默认
+		bShare.addEntry({
+			title: str_title,
+			url: url,
+			summary: str_info,
+			pic:img
+		});
+
+		//调用相应的分享方法，
+		bShare.share(event, shortName);
+
+	}
+</script>
+</head>
+<body class="page-index" id="lazyload_content">
+<header id="header" class="header-fixed">
+	<div class="header-wrap clearfix">
+		<div class="container header-inner">
+			<!-- logo -->
+			<h1 class="logo-wrap"><a href="index.htm" tppabs="http://www.jxvdy.com/" title="金象微电影网"><img src="logo.png" tppabs="http://skin.jxvdy.com/jxvdy2/public/images/logo.png" alt="金象微电影网"/></a></h1>
+			<!-- mini导航 -->
+			<div class="mini-nav dropdown-wrap">
+				<div class="dropdown-object">
+				<span class="dropdown-name"><i class="fa fa-bars"></i>导航</span>
+					<div class="dropdown-inner">
+						<div class="user-inner">
+							<span class="tip-t"><i class="tip-outer"></i><i class="tip-inner"></i></span>
+														<div class="item-menu clearfix">
+								<div class="item-column"><a href="news.html" tppabs="http://www.jxvdy.com/news.html">资讯</a></div>
+								<div class="item-subcolumn">
+																		<a href="list.html" tppabs="http://www.jxvdy.com/news/hydt/list.html">行业动态</a>
+																		<a href="list-1.html" tppabs="http://www.jxvdy.com/news/ylqy/list.html">娱乐前沿</a>
+																		<a href="list-2.html" tppabs="http://www.jxvdy.com/news/mrzl/list.html">名人专栏</a>
+																		<a href="list-3.html" tppabs="http://www.jxvdy.com/news/jxbb/list.html">金象播报</a>
+																		<a href="list-4.html" tppabs="http://www.jxvdy.com/news/ysmp/list.html">影视名片</a>
+																	</div>
+							</div>
+														<div class="item-menu clearfix">
+								<div class="item-column"><a href="video.html" tppabs="http://www.jxvdy.com/video.html">微电影</a></div>
+								<div class="item-subcolumn">
+																		<a href="list-t1.html" tppabs="http://www.jxvdy.com/video/list-t1.html">爱情</a>
+																		<a href="list-t2.html" tppabs="http://www.jxvdy.com/video/list-t2.html">校园</a>
+																		<a href="list-t3.html" tppabs="http://www.jxvdy.com/video/list-t3.html">温情</a>
+																		<a href="list-t6.html" tppabs="http://www.jxvdy.com/video/list-t6.html">励志</a>
+																		<a href="list-t8.html" tppabs="http://www.jxvdy.com/video/list-t8.html">社会</a>
+																		<a href="list-t7.html" tppabs="http://www.jxvdy.com/video/list-t7.html">职场</a>
+																		<a href="list-t4.html" tppabs="http://www.jxvdy.com/video/list-t4.html">搞笑</a>
+																		<a href="list-t5.html" tppabs="http://www.jxvdy.com/video/list-t5.html">悬疑</a>
+																		<a href="list-t14.html" tppabs="http://www.jxvdy.com/video/list-t14.html">穿越</a>
+																		<a href="list-t17.html" tppabs="http://www.jxvdy.com/video/list-t17.html">恐怖</a>
+																		<a href="list-t9.html" tppabs="http://www.jxvdy.com/video/list-t9.html">刑侦</a>
+																		<a href="list-t13.html" tppabs="http://www.jxvdy.com/video/list-t13.html">动作</a>
+																		<a href="list-t12.html" tppabs="http://www.jxvdy.com/video/list-t12.html">科幻</a>
+																		<a href="list-t11.html" tppabs="http://www.jxvdy.com/video/list-t11.html">古装</a>
+																		<a href="list-t16.html" tppabs="http://www.jxvdy.com/video/list-t16.html">公益</a>
+																		<a href="list-t18.html" tppabs="http://www.jxvdy.com/video/list-t18.html">文艺</a>
+																		<a href="list-t10.html" tppabs="http://www.jxvdy.com/video/list-t10.html">战争</a>
+																		<a href="list-t20.html" tppabs="http://www.jxvdy.com/video/list-t20.html">动画</a>
+																		<a href="list-t21.html" tppabs="http://www.jxvdy.com/video/list-t21.html">剧情</a>
+																		<a href="list-t19.html" tppabs="http://www.jxvdy.com/video/list-t19.html">纪录</a>
+																		<a href="list-t15.html" tppabs="http://www.jxvdy.com/video/list-t15.html">广告</a>
+																		<a href="list-t22.html" tppabs="http://www.jxvdy.com/video/list-t22.html">其他</a>
+																	</div>
+							</div>
+														<div class="item-menu clearfix">
+								<div class="item-column"><a href="drama.html" tppabs="http://www.jxvdy.com/drama.html">微剧集</a></div>
+								<div class="item-subcolumn">
+																		<a href="list-t29.html" tppabs="http://www.jxvdy.com/drama/list-t29.html">都市爱情</a>
+																		<a href="list-t30.html" tppabs="http://www.jxvdy.com/drama/list-t30.html">青春励志</a>
+																		<a href="list-t31.html" tppabs="http://www.jxvdy.com/drama/list-t31.html">创意搞笑</a>
+																		<a href="list-t32.html" tppabs="http://www.jxvdy.com/drama/list-t32.html">恐怖悬疑</a>
+																		<a href="list-t33.html" tppabs="http://www.jxvdy.com/drama/list-t33.html">动画儿童</a>
+																		<a href="list-t34.html" tppabs="http://www.jxvdy.com/drama/list-t34.html">社会纪实</a>
+																	</div>
+							</div>
+														<div class="item-menu clearfix">
+								<div class="item-column"><a href="screenplay.html" tppabs="http://www.jxvdy.com/screenplay.html">剧本</a></div>
+								<div class="item-subcolumn">
+																		<a href="javascript:if(confirm('http://www.jxvdy.com/screenplay/list.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/screenplay/list.html'" tppabs="http://www.jxvdy.com/screenplay/show/list.html">剧本展示</a>
+																		<a href="list-6.html" tppabs="http://www.jxvdy.com/screenplay/sale/list.html">剧本出售</a>
+																		<a href="list-7.html" tppabs="http://www.jxvdy.com/screenplay/collection/list.html">剧本征集</a>
+																	</div>
+							</div>
+														<div class="item-menu clearfix">
+								<div class="item-column"><a href="tutorials.html" tppabs="http://www.jxvdy.com/tutorials.html">教学</a></div>
+								<div class="item-subcolumn">
+																		<a href="list-8.html" tppabs="http://www.jxvdy.com/tutorials/plays/list.html">剧作教程</a>
+																		<a href="list-9.html" tppabs="http://www.jxvdy.com/tutorials/shooting/list.html">微影拍摄</a>
+																		<a href="list-10.html" tppabs="http://www.jxvdy.com/tutorials/late/list.html">影视后期</a>
+																		<a href="list-11.html" tppabs="http://www.jxvdy.com/tutorials/equipment/list.html">拍摄器材</a>
+																	</div>
+							</div>
+														<div class="item-menu clearfix">
+								<div class="item-column">微影专题</div>
+								<div class="item-subcolumn">
+									<a href="list-12.html" tppabs="http://www.jxvdy.com/activities/spec/list.html" class="brand-warning">微影活动</a>
+									<!--<a href="">网站专题</a>-->
+									<!--<a href="">资讯专题</a>-->
+									<a href="list-13.html" tppabs="http://www.jxvdy.com/video/spec/list.html">微电影专题</a>
+								</div>
+							</div>
+							<!-- /.item-menu -->
+							<div class="item-menu clearfix">
+								<div class="item-column">APP下载</div>
+								<div class="item-subcolumn">
+									<a href="javascript:if(confirm('https://itunes.apple.com/cn/app/jin-xiang-wei-dian-ying/id828237631?mt=8  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://itunes.apple.com/cn/app/jin-xiang-wei-dian-ying/id828237631?mt=8'" tppabs="http://www.jxvdy.com/app/iphone" target="_blank">iPhone客户端</a>
+									<a href="javascript:if(confirm('http://www.jxvdy.com/404.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ������������ļ�δ�ҵ���  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/404.html'" tppabs="http://www.jxvdy.com/app/jxvdy.apk" target="_blank">Android客户端</a>
+									<a href="javascript:if(confirm('https://itunes.apple.com/cn/app/jin-xiang-wei-dian-yinghd/id879977586?mt=8  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://itunes.apple.com/cn/app/jin-xiang-wei-dian-yinghd/id879977586?mt=8'" tppabs="http://www.jxvdy.com/app/ipad" target="_blank">iPad客户端</a>
+								</div>
+							</div>
+							<!-- /.item-menu -->
+						</div>
+					</div>
+				</div>
+				<!-- /.dropdown-menu -->
+			</div>
+			<!-- 搜索框 -->
+			<div class="search-wrap">
+				<form class="clearfix" action="http://www.jxvdy.com/screenplay/search" method="get" role="search" target="_blank">
+					<div class="mod-search">
+						<input type="text" class="search-txt" name="kw" placeholder="请输入“微影剧本”关键词">
+						<i class="fa fa-search"></i>
+					</div>
+					<input type="submit" class="btn-search" value="搜索"> 
+				</form>
+			</div>
+			<!-- 用户中心 -->
+			<div class="user-info-wrap" id="js_login_user_info">
+				<div class="user-wrap login-before dropdown-wrap js_login_user_info">
+					<div class="dropdown-object">
+						<div class="user-name-wrap js_user_name_wrap" style="display: none;">
+							<span class="user-icon">
+								<a class="" href="login.html-jumpto=-my-index.html" tppabs="http://www.jxvdy.com/my/index.html" target="_blank"><img src="" onerror="this.src='http://skin.jxvdy.com/jxvdy2/public/images/avatar80_80.jpg'" width="40" height="40"  alt=""/></a>
+							</span>
+							<a class="user-txt js_user_nick" href="login.html-jumpto=-my-index.html" tppabs="http://www.jxvdy.com/my/index.html" target="_blank"></a>
+						</div>
+						<a class="link js_login_link" href="javascript:;"><i class="fa fa-user"></i>登录</a>
+						<div class="dropdown-inner">
+							<div class="user-inner">
+								<span class="tip-t"><i class="tip-outer"></i><i class="tip-inner"></i></span>
+								<div class="menu-hd">
+									<div class="user-btns clearfix">
+										<div class="user-icon clearfix js_user_icon" style="display: none;">
+											<a class="" href="login.html-jumpto=-my-index.html" tppabs="http://www.jxvdy.com/my/index.html" target="_blank"><img src="" onerror="this.src='http://skin.jxvdy.com/jxvdy2/public/images/avatar80_80.jpg'" width="50" height="50"  alt=""/></a>
+											<div class="user-name">
+												<a href="login.html-jumpto=-my-index.html" tppabs="http://www.jxvdy.com/my/index.html" target="_blank"></a>
+												<ul class="mem-sta">
+													<li><span>关注</span> <strong><a href="login.html-jumpto=-my-friend-list.html-t=follow.htm" tppabs="http://www.jxvdy.com/my/friend/list.html?t=follow" target="_blank"></a></strong></li>
+													<li><span>粉丝</span> <strong><a href="login.html-jumpto=-my-friend-list.html-t=fans.htm" tppabs="http://www.jxvdy.com/my/friend/list.html?t=fans" target="_blank"></a></strong></li>
+												</ul>
+											</div>
+										</div>
+										<a class="btn btn-warning user-login-btn js_user_login_btn" href="login.htm" tppabs="http://www.jxvdy.com/my/login">马上登录</a>
+										<a class="btn btn-warning user-login-btn ml10 js_user_login_btn" href="regist.htm" tppabs="http://www.jxvdy.com/my/regist">免费注册</a>
+									</div>
+								</div>
+								<div class="menu-bd">
+									<ul class="list-unstyled clearfix">
+										<li><a href="login.html-jumpto=-my-index.html" tppabs="http://www.jxvdy.com/my/index.html" target="_blank"><i class="fa fa-home"></i>我的金象</a></li>
+										<li><a href="login.html-jumpto=-my-video-list.html-t=release.htm" tppabs="http://www.jxvdy.com/my/video/list.html?t=release" target="_blank"><i class="fa fa-video-camera"></i>我的微影</a></li>
+										<li><a href="login.html-jumpto=-my-screenplay-list.html-t=release.htm" tppabs="http://www.jxvdy.com/my/screenplay/list.html?t=release" target="_blank"><i class="fa fa-film"></i>我的剧本</a></li>
+										<li><a href="login.html-jumpto=-my-tutorials-list.html-t=release.htm" tppabs="http://www.jxvdy.com/my/tutorials/list.html?t=release" target="_blank"><i class="fa fa-file-powerpoint-o"></i>我的教学</a></li>
+										<li><a href="login.html-jumpto=-my-news-list.html-t=collect.htm" tppabs="http://www.jxvdy.com/my/news/list.html?t=collect" target="_blank"><i class="fa fa-newspaper-o"></i>我的资讯</a></li>
+										<li><a href="login.html" tppabs="http://www.jxvdy.com/my/login.html" target="_blank"><i class="fa fa-volume-up"></i>消息中心</a></li>
+									</ul>
+								</div>
+								<div class="user-footer js_user_footer" style="display: none;">
+									<a class="user-setting pull-left" href="login.html-jumpto=-my-profile-edit.html" tppabs="http://www.jxvdy.com/my/profile/edit.html"><i class="fa fa-cog"></i>账户设置</a>
+									<a class="user-exit pull-right" href="login.htm" tppabs="http://www.jxvdy.com/my/logout"><i class="fa fa-power-off"></i>退出</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="upload-wrap dropdown-wrap">
+					<div class="dropdown-object">
+						<a class="link" href="javascript:;" target="_blank"><i class="fa fa-cloud-upload"></i>发布</a>
+						<div class="dropdown-inner">
+							<div class="user-inner">
+								<span class="tip-t"><i class="tip-outer"></i><i class="tip-inner"></i></span>
+								<div class="menu-bd">
+									<ul class="list-unstyled clearfix">
+										<li><a href="login-jumpto=http---www.jxvdy.com-my-video_release.html" tppabs="http://www.jxvdy.com/my/video_release.html" target="_blank"><i class="fa fa-video-camera"></i>发布微电影</a></li>
+										<li><a href="login-jumpto=http---www.jxvdy.com-my-drama_release.html" tppabs="http://www.jxvdy.com/my/drama_release.html" target="_blank"><i class="fa fa-file-video-o"></i>发布网络剧</a></li>
+										<li><a href="login-jumpto=http---www.jxvdy.com-my-screenplay_release.html" tppabs="http://www.jxvdy.com/my/screenplay_release.html" target="_blank"><i class="fa fa-film"></i>发布剧本</a></li>
+										<li><a href="login-jumpto=http---www.jxvdy.com-my-screenplay-collection_release.html" tppabs="http://www.jxvdy.com/my/screenplay/collection_release.html" target="_blank"><i class="fa fa-film"></i>发布剧本征集</a></li>
+										<li><a href="login-jumpto=http---www.jxvdy.com-my-tutorials_release.html" tppabs="http://www.jxvdy.com/my/tutorials_release.html" target="_blank"><i class="fa fa-file-powerpoint-o"></i>发布教程</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="history-wrap dropdown-wrap">
+					<div class="dropdown-object">
+					<a class="link" href="javascript:void(0)"><i class="fa fa-history"></i>记录</a>
+					<div id="js_history_tab" class="dropdown-inner history-tab">
+						<div class="user-inner">
+							<span class="tip-t"><i class="tip-outer"></i><i class="tip-inner"></i></span>
+							<div id="history-scrollbar" class="history-inner">
+								<div class="history-list clearfix">
+																<p>您还未观看微电影，暂无播放记录！</p>
+																</div>
+							</div>
+							<div class="user-footer">
+								<a class="history-clear" href="javascript:;" onclick="clearHistory()"><i class="fa fa-trash-o"></i>清空</a>
+							</div>
+						</div>
+					</div>
+					</div>
+				</div>
+
+				<div class="message-wrap">
+					<a class="link" href="login-jumpto=-my-message-list.html-t=private.htm" tppabs="http://www.jxvdy.com/my/message/list.html?t=private" target="_blank"><i class="fa fa-bell-o"></i>消息</a>
+					<em class="total js_mess_total" style="display: none;"><i class="fa fa-circle"></i></em>
+				</div>
+			</div>
+		</div>
+
+		<div id="js_nav" class="head-jxv">
+			<div class="navigation-up">
+				<div class="navigation-inner">
+					<div class="navigation-jxv">
+						<ul id="js_nav_highlight">
+							<li class="js_navdown js_navbtn_" js_navdown="">
+								<h2><a href="index.htm" tppabs="http://www.jxvdy.com/">首页</a></h2>
+							</li>
+														<li class="js_navdown js_navbtn_news" js_navdown="news">
+								<h2><a href="news.html" tppabs="http://www.jxvdy.com/news.html">资讯</a></h2>
+							</li>
+														<li class="js_navdown js_navbtn_video" js_navdown="video">
+								<h2><a href="video.html" tppabs="http://www.jxvdy.com/video.html">微电影</a></h2>
+							</li>
+														<li class="js_navdown js_navbtn_screenplay" js_navdown="screenplay">
+								<h2><a href="screenplay.html" tppabs="http://www.jxvdy.com/screenplay.html">剧本</a></h2>
+							</li>
+														<li class="js_navdown js_navbtn_tutorials" js_navdown="tutorials">
+								<h2><a href="tutorials.html" tppabs="http://www.jxvdy.com/tutorials.html">教学</a></h2>
+							</li>
+														<li class="js_navdown js_navbtn_activities" js_navdown="activities">
+								<h2><a href="list-12.html" tppabs="http://www.jxvdy.com/activities/spec/list.html">活动</a></h2>
+							</li>
+						</ul>
+					</div>
+					<div class="downapp">
+						<a href="app.htm" tppabs="http://www.jxvdy.com/app" title="下载移动客户端" target="_blank"><i class="fa fa-mobile"></i>下载移动客户端</a>
+					</div>
+				</div>
+			</div>
+			<div class="navigation-down">
+								<div id="js_navsub_news" class="js_navdown nav-down-menu" js_navdown="news" style="display: none;">
+					<div class="navigation-down-inner">
+											<dl><dd><a href="list.html" tppabs="http://www.jxvdy.com/news/hydt/list.html">行业动态</a></dd></dl>
+											<dl><dd><a href="list-1.html" tppabs="http://www.jxvdy.com/news/ylqy/list.html">娱乐前沿</a></dd></dl>
+											<dl><dd><a href="list-2.html" tppabs="http://www.jxvdy.com/news/mrzl/list.html">名人专栏</a></dd></dl>
+											<dl><dd><a href="list-3.html" tppabs="http://www.jxvdy.com/news/jxbb/list.html">金象播报</a></dd></dl>
+											<dl><dd><a href="list-4.html" tppabs="http://www.jxvdy.com/news/ysmp/list.html">影视名片</a></dd></dl>
+										</div>
+				</div>
+								<div id="js_navsub_video" class="js_navdown nav-down-menu" js_navdown="video" style="display: none;">
+					<div class="navigation-down-inner">
+											<dl><dd><a href="list-16.html" tppabs="http://www.jxvdy.com/video/list.html">微电影</a></dd></dl>
+											<dl><dd><a href="list-17.html" tppabs="http://www.jxvdy.com/drama/list.html">网络剧</a></dd></dl>
+											<dl><dd><a href="list-13.html" tppabs="http://www.jxvdy.com/video/spec/list.html">微电影专题</a></dd></dl>
+										</div>
+				</div>
+								<div id="js_navsub_screenplay" class="js_navdown nav-down-menu" js_navdown="screenplay" style="display: none;">
+					<div class="navigation-down-inner">
+											<dl><dd><a href="javascript:if(confirm('http://www.jxvdy.com/screenplay/list.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/screenplay/list.html'" tppabs="http://www.jxvdy.com/screenplay/show/list.html">剧本展示</a></dd></dl>
+											<dl><dd><a href="list-6.html" tppabs="http://www.jxvdy.com/screenplay/sale/list.html">剧本出售</a></dd></dl>
+											<dl><dd><a href="list-7.html" tppabs="http://www.jxvdy.com/screenplay/collection/list.html">剧本征集</a></dd></dl>
+										</div>
+				</div>
+								<div id="js_navsub_tutorials" class="js_navdown nav-down-menu" js_navdown="tutorials" style="display: none;">
+					<div class="navigation-down-inner">
+											<dl><dd><a href="list-8.html" tppabs="http://www.jxvdy.com/tutorials/plays/list.html">剧作教程</a></dd></dl>
+											<dl><dd><a href="list-9.html" tppabs="http://www.jxvdy.com/tutorials/shooting/list.html">微影拍摄</a></dd></dl>
+											<dl><dd><a href="list-10.html" tppabs="http://www.jxvdy.com/tutorials/late/list.html">影视后期</a></dd></dl>
+											<dl><dd><a href="list-11.html" tppabs="http://www.jxvdy.com/tutorials/equipment/list.html">拍摄器材</a></dd></dl>
+										</div>
+				</div>
+							</div>
+		</div>
+		<!-- /.head-jxv -->
+	</div>
+	<!-- header-wrap -->
+</header>
+<!--t1517408188-->
+
+<!--面包屑 -->
+
+<section class="container mt20">
+	<ol class="breadcrumb-wrap hidden-xs">
+		<li><i class="fa fa-home color-gray"></i><a href="index.htm" tppabs="http://www.jxvdy.com/">金象微电影网首页</a></li>
+		<li><i>/</i><a href="screenplay.html" tppabs="http://www.jxvdy.com/screenplay.html">微影剧本</a><i>/</i><a href="javascript:if(confirm('http://www.jxvdy.com/screenplay/list.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/screenplay/list.html'" tppabs="http://www.jxvdy.com/screenplay/show/list.html">剧本展示</a></li>
+		<li class="active"><i>/</i>正文</li>
+	</ol>
+</section>
+
+<section class="container">
+	<div class="content-wrap">
+		<div class="content clearfix">
+			<div class="screenplay-header clearfix">
+				<div class="thumb-wrap"><img src="0033523751.html-episode=15" tppabs="http://image.jxvdy.com/2015/1213/566cf14d3717fda0f8cf9_380_264.jpg" width="380" height="264" alt="《彼得潘的涩情》" onerror="this.src='http://skin.jxvdy.com/jxvdy/web/images/default/380_264.png'"></div>
+				<div class="info-wrap screenplay-info">
+					<h4>《彼得潘的涩情》<strong></strong></h4>
+					<p>在孩子眼里爱情是糖果，是气球，是我要拥有她</p>
+					<div class="clearfix">
+						<span class="muted">作者：张少</span>												<span class="muted">年代：<a href="javascript:if(confirm('http://www.jxvdy.com/screenplay/list-y61.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/screenplay/list-y61.html'" tppabs="http://www.jxvdy.com/screenplay/list-y61.html" target="_blank">其他</a></span>						<span class="muted">类型：<a href="javascript:if(confirm('http://www.jxvdy.com/screenplay/list-t41.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/screenplay/list-t41.html'" tppabs="http://www.jxvdy.com/screenplay/list-t41.html" target="_blank">爱情</a></span>												<span class="muted">评论：<a href="#comments"><span class="comment_num"  js_data="4679" js_coc_id="4"></span>评论</a></span>
+						<span class="muted">查看：<span class="js_hits">0</span></span>
+						<span class="muted">发布时间：2015-12-13</span>
+					</div>
+					<!--<div class="dropdown-wrap contact-wrap">
+						<div class="dropdown-object">
+							<span class="btn btn-warning">联系Ta</span>
+							<ul class="dropdown-inner dropdown-menu">
+								<li><span>手机：</span>15538701817</li>
+								<li><span>QQ：</span>14088754</li>
+								<li><span>邮箱：</span>14088754@qq.com</li>
+							</ul>
+						</div>
+					</div>-->
+				</div>
+			</div>
+			<!-- /.screenplay-header  -->
+			<div id="js_widget_screenplay_tab" class="widget-screenplay-tab clearfix mt20">
+				<div class="column-tab clearfix hd">
+						<span class="pull-right pdr10">
+							<a class="random random-screenplay" href="" style="display: inline;"><i class="fa fa-repeat"></i>换一篇</a>
+						</span>
+					<ul class="list-unstyled">
+						<li>故事梗概</li>
+											</ul>
+				</div>
+				<div class="widget-screenplay-inner">
+					<div class="articl-header clearfix">
+						<div class="article-other-info">
+							<blockquote class="article-city hidden-xs"><p>（一个风尘女子和一个小胖墩）大人与小孩之间发生的关于爱情的那些事。
+在孩子眼里爱情是糖果，是气球，是我要拥有她，不能有人欺负她，保护自己喜欢的人，一切都那么单纯。</p></blockquote>
+						</div>
+					</div>
+					<!-- /.article-header  -->
+					<div class="articl-header clearfix">
+						<div class="article-other-info">
+							<blockquote class="article-city hidden-xs">
+															</blockquote>
+						</div>
+					</div>
+					<!-- /.article-header  -->
+				</div>
+				<!-- /.widget-wdy-inner -->
+			</div>
+			<!-- /.article-header  -->
+			<div class="articl-content clearfix js_loadmore" style="max-height: 1000px; overflow: hidden;" js_data="4679" js_page="1" js_total="1">
+				<div class="js_loadmord_1">
+               根据一则“孩子眼中的爱情”心理调查改编<br /><br /><br />画外音：<br />       黑幕<br /><br />      “什么时候？你会亲吻你喜欢的女孩呢？”<br />       {刚柔的女人的声音}<br /><br />      “如果没有别的人看，我..我还是会考虑一下亲吻她的呀,嘿！嘿.....&quot;<br />      {幼稚的小男孩的声音}<br /><br /><br /><br />街道上   晚      外<br /><br /><br />乌压压闷热的天气，渐夜昏黄的路灯。<br /><br /><br />男孩站在路灯杆子旁说：喂！我可以亲吻你吗？{皱着眉头，些许嘟囔着嘴}<br /><br /><br />小男孩仰着头望着眼前这位风情女子 <br /><br />薄如蝉翼的纸片被路灯照的黄斑点点，女人鲜艳性感的厚唇通过这张薄如蝉翼的纸片亲吻在小男孩嫩红的嘴唇上。<br /><br />女人流着泪嘴角抽搐露出些许的微笑，涂抹的浓妆早已弄花。小男孩眼中泛着点点泪光看着女人。<br /><br />昏黄路灯下，灰尘漂浮停留在空中，颗颗清晰可见。<br /><br />女人鲜艳性感的厚唇离开纸板刹那，口红粘黏在纸板上拉起的条条细丝都在路灯的照射下泛起点点光斑，<br /><br />纸片瞬间跌落在地上，女人转身踏着晃眼的红色高跟鞋离开。<br /><br /><br />男孩仰着头质问地问女人：“喂！你会记着我吗？”<br /><br /><br />女人未回头些许抽泣地说：“会的！”<br /><br /><br />男孩：“我这还有好多好多糖果”<br /><br /><br />女人：“我会记得回来吃的”<br /><br /><br />女人并未停止脚步，踏着晃眼红色的高跟鞋漫漫消失在街道的尽头。<br /><br />天空下起了雨，在昏黄灯光的照射下雨丝显得滴滴凌厉，小男孩抿着嘴缓慢的挪着步子走开。<br /><br />雨水打湿纸片上的红色唇印，流下的红色液体组合成了片名——《彼得潘的涩情》<br /><br /><br />商铺街道   日    外<br /><br /><br /><br />街道旁蒸馒头的蒸汽腾腾跑窜，厨师油炸各类熟食的滋滋啪啪的声，小贩们的吆喝声狂轰乱炸的充斥着整条街。<br /><br /><br /><br />小吃的摊位  日  外<br /><br /><br />坐在街道旁吃早餐的小男孩（吴康康）左手拿着油条啃着，低着头呼哧呼哧地喝着豆浆，吃毕擦拭着沾满油渣和涂满乳白色豆浆的嘴<br /><br /><br />抬起头瞳仁中反射出一位身着枣红大衣，提着硕大行李箱，画着浓妆脚蹬晃眼红色高跟鞋的女人朝他走来越来越近。<br /><br />（画面升格处理，声音静音，音效&lt;高跟鞋击打地面的“嗒嗒嗒”声&gt;放大化）<br /><br /><br />小男孩（吴康康）的父亲缓缓走来,在小男孩的略显圆滑的屁股上拍了一巴掌<br /><br /><br />吴自强：“快，上学去！”<br /><br /><br />吴康康拔腿就跑，店里的老板放下手中为顾客盛汤的勺子跑出来说：小胖墩，钱呢？”<br /><br /><br />小男孩边跑边指着坐在小吃摊位上的父亲吴自强说：“恩！那呢！”<br /><br /><br />吴自强（父亲）就座而坐要了碗豆浆坐下用眼角瞄了眼女人进入楼的模糊的身影提起嗓门说：“早点回来啊！”<br /><br /><br />小男孩大声应答说：“奥”<br /><br /><br /><br /><br />单元楼同层   夜   外<br /><br /><br /><br />在苍蝇的团团环绕下，楼道里的灯昏黄可见度低，依稀听得见“呼呼呼”家家的风扇声和蟋蟀的叽叽声。<br /><br />吴康康左手中拿着装着蝴蝶的罐头瓶，右手不停地擦拭着额头的汗珠向自家走来。<br /><br />远远就看见了摆放在隔壁门口那双晃眼的红色高跟鞋，小男孩慢慢走到隔壁的门口，将装着蝴蝶的罐头瓶放在隔壁家的窗户外。<br /><br /><br /><br />女人屋内  夜  内<br /><br /><br />脑袋顺着虚掩的门的门缝左右上下晃动，看见了女人穿着黑色丝袜纤细的腿，看见了女人红唇和丰满耸立的乳房。<br /><br /><br />整栋楼  夜   外<br /><br /><br />随着“轰”的一声，整栋楼变得一片漆黑。<br /><br /><br />单元楼同层   夜   外<br /><br /><br /><br />小男孩匆忙跑了，顺脚带倒了那双摆放在门口晃眼的红色高跟鞋。<br /><br /><br />女人屋内  夜  内<br /><br /><br />从屋内传来女人的声音：“谁啊！”起身走到门口将晃眼的红色高跟鞋收回家，关上了门。<br /><br /><br /><br />小男孩家  夜  内<br /><br /><br />小男孩跑进屋内，凭着感觉抹黑找到了手电筒，在家里的抽屉里胡乱地翻腾找到了两只蜡烛，拔腿朝屋外跑去。<br /><br /><br /><br />单元楼同层   夜   外<br /><br /><br />“咚咚咚.....”<br /><br />小男孩轻轻敲开了女人的门。<br /><br />小男孩：“姐姐，请问你家有蜡烛吗？姐姐，请问你家有蜡烛吗？姐姐，请问你家有蜡烛吗？”<br /><br />小男孩连问了三遍，女人不做声似乎想着什么。<br /><br />女人（不耐烦的轻吼）：“没有”<br /><br />小男孩：我就知道姐姐家没有，爸爸怕你一个人住有没有蜡烛，所以送你两根”<br /><br />女人尴尬地抿起嘴角说“谢谢你啊！”<br /><br />女人正要从小男孩手中接过蜡烛时，小男孩爸爸充满磁性的声音砸过来端立在门口说“姑娘对不起，孩子不懂事，这是老社区了，停电是常事<br /><br />蜡烛你拿着”<br /><br />父亲从儿子手里夺过蜡烛塞到女人手里，反身拍着男孩的后背示意小男孩快回家。<br /><br />楼道的灯吱吱作响忽明忽暗，女人看见了放在自家窗外装着蝴蝶的罐头瓶将其拿回家，在女人闭门的瞬间随着“轰”的一声电又续上了。<br /><br /><br /><br />女人屋内  夜  内<br /><br /><br /> 女人屋内光线通亮，电视机屏幕雪花点点闪烁不停发出低频的微微吵杂声。<br /><br />女人走到电视机旁将蜡烛放在了最底下的抽屉内缓缓闭上，将装着蚂蚱的罐头瓶放在等下默默地看着，似乎想着什么。<br /><br /><br />小男孩家  夜  内<br /><br />屋内到处都贴着父子俩的照片，家具陈设都还齐全，在逆光照射下一高瘦高瘦的的黑<br />影和一个胖矮胖矮的黑影，矗立在屋内对视相向。<br /><br /><br /><br />吴康康（委屈）：“停电了，我去给姐姐送蜡烛”<br /><br /><br />吴自强（质问）：“就这么简单吗？”<br /><br /><br />吴康康（委屈）：“我喜欢那位姐姐”<br /><br /><br />吴自强（疑惑）：“嘿！康康啊！你怎么会有这个想法呢？”<br /><br /><br />吴康康（嘟嘴皱着眉）：“她长得漂亮啊！”<br /><br /><br />吴自强：“你老爸，我！还没有......找....”<br /><br /><br />吴康康做着鬼脸，吐着舌头跑回自己的房间。<br /><br /><br />吴自强独自坐在椅子上抽着闷烟，烟雾缭绕。<br /><br /><br /><br /> 小男孩家    日     内<br /><br />男孩父亲对在厨房做饭的姥姥说；“妈，我出差，你和康康在家别让他玩的太疯，作业要写。&quot;<br /><br />在厨房做饭的姥姥应声达道:&quot;知道了!&quot;<br /><br />夏日的阳光透过窗户照射在男孩的卧室内，摇吹了一宿的电风扇，依旧“呼呼呼”地摇吹着。<br /><br />小男孩下了床，伸着自己胖乎乎的脑袋朝客厅看了看又伸缩回来，颤微微的虚掩着房门溜进父亲的卧室。<br /><br />将父亲的衣柜中一件件大人模样的衣服偷回到自己的屋内。穿上衣服在镜子前不停的打量和整理。<br /><br />吴康康（朝着镜子摸着肚子）说：唉！又胖了，姐姐会不会接受呢？”<br /><br />说着匆匆爬进床底将私藏的一罐纸包糖果拿出，打开盖子将胖乎乎的小手塞进罐内掏出一颗糖果剥开塞进嘴里铆劲的噘着，<br /><br />抿着嘴呵呵笑着说：“这回，姐姐应该接受了吧！”<br /><br />蹑手蹑脚的避开姥姥的视线，溜出门外。<br /><br /><br /><br />单元楼同层   日  外<br /><br /><br />“咚咚咚.....”<br /><br />小男孩轻轻敲开了女人的门，映入女人眼帘的是穿着一身与自己毫不相称的西服的小胖墩。<br /><br />女人（微笑)：&quot;小朋友，你来干嘛？”<br /><br />吴康康（咧着嘴看着女人）：“哼！你不许笑”<br /><br /><br />女人（微笑)：&quot;奥，好！好！不笑”<br /><br /><br />吴康康踮起脚跟对女人说：“先让我进去好不好？我怕我姥姥发现”<br /><br /><br />女人（微笑)：&quot;好”<br /><br />吴康康顺手将那罐纸包糖果塞在女人手里，脱了鞋进入女人屋内。<br /><br /><br />女人屋内  日   内<br /><br />屋内女士的内衣胸罩和各种性感的衣物，挂的到处都是一片乱糟糟。<br /><br /><br /><br />女人对着男孩说：“谢谢你，昨天晚上送蜡烛过来！”<br /><br /><br /><br />小男孩扫视了一圈，转过身对着依旧站在门口的女人说：姐姐，我可以喜欢你吗？”<br /><br /><br /><br />女人愣住了说：“啊！”<br /><br /><br />男孩：“我把我私藏的糖果，全部都给了你耶”<br /><br /><br /><br />男孩看见了摆放在桌上的装着蝴蝶的罐头瓶说走了过去：姐姐，这是我的蝴蝶耶！”<br /><br /><br />女人应答说：“昨天放在我家窗台外面的，我就顺手拿了回来。”<br /><br /><br />女人走过来弯下腰坦露出乳房的局部对男孩说：“你说，你为什么喜欢姐姐啊！”<br /><br />男孩看着女人坦露出乳房的局部说:“姐姐，长得漂亮啊。”<br /><br /><br />女人起身朝冰箱走去，边走边说：“当一个人说我爱你的时候，心里想着什么呢？”<br /><br /><br />男孩起身朝女人的化妆台走去看着各式各样的化妆品应答说：“她没准在想，喜欢就是喜欢，不过最好他勤快点洗澡，至少一天一次。”<br /><br />男孩偷偷瞄了一眼女人，趁她没注意偷偷将一支口红塞进自己的口袋里。<br /><br />女人从冰箱里拿出两瓶汽水放在茶几上说：“小胖墩，过来”<br /><br />男孩跑过来坐在沙发上打开汽水喝了起来。女人对着男孩说：“你觉得外表重要吗？”<br /><br />男孩放下汽水说：“如果你希望一个不是亲戚的人爱上你，当然长得漂亮点好啦，我长得还不错吧！可是没听说过有谁想嫁给我&quot;<br /><br />这时屋外传来男孩姥姥的呼唤声‘康康 .....康康.....”<br /><br />男孩听到了姥姥的呼唤说：“姐姐，我得走呀！”<br /><br />离开时还不忙喝了两口汽水，带走了装着蝴蝶的罐头瓶。<br /><br />出门时说：“姐姐，你愿意嫁给我吗？”<br /><br />女人朝着男孩说：“好呀！”<br /><br /><br /><br />女人屋内/男孩屋内  夜  内 <br /><br /><br /><br />女人和男孩在只有一墙之隔的墙上遭了个洞，穿上线，两端接上两个杯子，每天晚上都说悄悄话。<br /><br /><br /><br />单元楼外  日  外<br /><br /><br />男孩和女人天天都在楼道尽头的公共洗漱池洗漱刷牙。嬉闹打闹涂得牙膏到处都是。<br /><br />女人屋内  日  内<br /><br />男孩拿出了一张只有66分的卷子，让女人签字，女人看着卷子两人哈哈哈大笑。<br /><br />楼道内  夜   外<br /><br />整栋楼的灯几乎都熄灭了，一位男士抽着烟，咳着烟嗓，敲开了女人的门，女人屋内的灯亮了。<br /><br />女人屋内  夜 内<br /><br />女人双手大敞在床头舒展，撕扯着床头的白色床单，像一头被俘的猎物任凭施暴者肆意宰割。<br /><br />床做着强烈的规律性的上下起伏，盖在墙上洞的杯子掉了女人并未发觉。<br /><br />女人强抿着嘴将抽吸空气的呻吟声压倒最低，一阵粗狂的喘嘘声。。。。<br /><br /><br />男孩屋内  夜  内<br /><br />男孩在墙之间猫眼大的洞里看到了女人和男人发生的一切，男孩流下了眼泪。<br /><br /><br />女人屋内  夜 内<br /><br />男人提起裤子从腰中掏出数张人民币砸在床上说：“做起来和死人似得。”摔门而去。<br /><br />男孩屋内  夜  内<br /><br />男孩假装的睡下，眼泪顺着眼角缓缓滴下。<br /><br /><br />女人屋内  夜 内<br /><br />女人用被子半掩着身体靠在床上，看着桌上装着蝴蝶的罐头瓶，转身朝着墙上的洞看了看假装的睡下男孩又把杯子重新扣在了上面。<br /><br />楼道     日  外<br /><br />“咚咚咚.....”<br /><br />第二天小男孩敲开了，女人的门，冲进去拿起放在桌上装着蝴蝶的罐头瓶，跑回了自家屋内。&lt;<br />               </div>
+			</div>
+			<!-- .articl-content  -->
+
+			<!-- 官方QQ群 -->
+			<div class="jx-qq-qun">
+                <ul>
+                    <li><a class="item6-qq" target="_blank" href="javascript:if(confirm('http://shang.qq.com/wpa/qunwpa?idkey=4aebcdd5bb61e51580f17f3e7ecfe23a617b0fb5f9a35da83e668d5de7a56bc1  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://shang.qq.com/wpa/qunwpa?idkey=4aebcdd5bb61e51580f17f3e7ecfe23a617b0fb5f9a35da83e668d5de7a56bc1'" tppabs="http://shang.qq.com/wpa/qunwpa?idkey=4aebcdd5bb61e51580f17f3e7ecfe23a617b0fb5f9a35da83e668d5de7a56bc1">编剧群</a></li>
+                </ul>
+            </div>
+            
+			<!-- 喜欢、收藏按钮  -->
+			<div class="article-social clearfix">
+				<div class="mem-action">
+					<a href="javascript:;" onclick="collect(this, '4679', 'favorite')" class="btn btn-warning"><i class="fa fa-heart-o"></i><span>喜欢</span> (<span class="favorite_count">0</span>)</a>
+					<a href="javascript:;" onclick="collect(this, '4679', 'collect')" class="btn btn-warning"><i class="fa fa-star-o"></i><span>收藏</span></a>
+				</div>
+				<div class="social-wrap">
+					<a href="javascript:;" onclick="share('/d/screenplay/share','4679')" class="icon-share-jx" title="分享到金象好友"></a>
+					<a onclick="shareTo(this,'sinaminiblog')" href="javascript:void(0);" class="icon-share-sina" title="分享到新浪微博"></a>
+					<a onclick="shareTo(this,'qqmb')" href="javascript:void(0);" class="icon-share-tqq" title="分享到腾讯微博"></a>
+					<a onclick="shareTo(this,'qzone')" href="javascript:void(0);" class="icon-share-qzone" title="分享到QQ空间"></a>
+					<a onclick="shareTo(this,'renren')" href="javascript:void(0);" class="icon-share-renren" title="分享到人人网"></a>
+					<a onclick="shareTo(this,'douban')" href="javascript:void(0);" class="icon-share-douban" title="分享到豆瓣"></a>
+					<a onclick="shareTo(this,'weixin')" href="javascript:void(0);" class="icon-share-wechat" title="分享到微信"></a>
+					<a onclick="shareTo(this,'qqim')" href="javascript:void(0);" class="icon-share-qq" title="分享到QQ好友"></a>
+				</div>
+			</div>
+			<!-- 标签  -->
+						<div class="article-footer">
+				<div class="article-tags label-tooltip">
+					<i class="fa fa-tags"></i>
+										<a href="javascript:if(confirm('http://www.jxvdy.com/screenplay/0033523751.html?episode=16  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/screenplay/0033523751.html?episode=16'" tppabs="http://www.jxvdy.com/screenplay/search?kw=温情">温情</a>
+										<a href="javascript:if(confirm('http://www.jxvdy.com/screenplay/search?kw=爱情  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/screenplay/search?kw=爱情'" tppabs="http://www.jxvdy.com/screenplay/search?kw=爱情">爱情</a>
+									</div>
+			</div>
+						<!-- .article-footer  -->
+			<div class="statement">免责声明：金象微电影网部分文章信息来源于网络以及网友投稿，本网站只负责对文章进行整理、排版、编辑，是出于传递更多信息之目的，并不意味着赞同其观点或证实其内容的真实性。</div>
+			
+			<!--相关剧本-->
+			<div class="js_reload js_pb_jxvdy widget widget-relation mt20 clearfix" js_ch_id="4679" js_action="getRecommend" js_model="screenplay" js_temp="1045">
+				<div class="modal-title clearfix">
+					<div class="modal-title-left">
+						<div class="modal-title-left-inner">相关推荐</div>
+						<span class="tip-t"><i class="tip-outer"></i><i class="tip-inner"></i></span>
+					</div>
+					<div class="modal-title-right">
+						<a class="js_reload_h random" href="javascript:;" js_ch_id="4679" js_action="getRecommend" js_model="screenplay" js_temp="1045"><i class="fa fa-repeat"></i>换一换</a>
+					</div>
+				</div>
+				<!-- /.modal-title -->
+				<div class="js_reload_panel widget-relation-inner">
+					<ul class="js_reload_pagecount recommend_list" js_data="213">
+		<li><i class="dot"></i><a href="javascript:if(confirm('http://www.jxvdy.com/screenplay/sale/0033520912.html?episode=7  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/screenplay/sale/0033520912.html?episode=7'" tppabs="http://www.jxvdy.com/screenplay/sale/050241.html">【拥抱明天的太阳】天有不测风云，人有旦夕祸福</a></li>
+		<li><i class="dot"></i><a href="javascript:if(confirm('http://www.jxvdy.com/screenplay/sale/0033204143.html?episode=4  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/screenplay/sale/0033204143.html?episode=4'" tppabs="http://www.jxvdy.com/screenplay/sale/050624.html">【酒鬼男人和咖啡女人】远开着保时捷来到精神康复中心接尤嘉回家，教授默默祝福。</a></li>
+		<li><i class="dot"></i><a href="javascript:if(confirm('http://www.jxvdy.com/screenplay/sale/0033200941.html?episode=31  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/screenplay/sale/0033200941.html?episode=31'" tppabs="http://www.jxvdy.com/screenplay/sale/045426.html">【三生石之搭车】三生石畔三生远</a></li>
+		<li><i class="dot"></i><a href="javascript:if(confirm('http://www.jxvdy.com/screenplay/sale/0033204143.html?episode=1  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/screenplay/sale/0033204143.html?episode=1'" tppabs="http://www.jxvdy.com/screenplay/sale/050612.html">【因为相信】一段人人都羡慕的爱情。</a></li>
+		<li><i class="dot"></i><a href="javascript:if(confirm('http://www.jxvdy.com/screenplay/sale/search?kw=全集在线观看  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/screenplay/sale/search?kw=全集在线观看'" tppabs="http://www.jxvdy.com/screenplay/sale/050157.html">【爱就在身边】他的幽默打动了这位冷面女生，从而得到了自己的爱情，原来，爱就在身边。</a></li>
+		<li><i class="dot"></i><a href="javascript:if(confirm('http://www.jxvdy.com/screenplay/sale/055659.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/screenplay/sale/055659.html'" tppabs="http://www.jxvdy.com/screenplay/sale/055659.html">【戏剧圣诞】一个有着象征意思的夜，相聚，相守，一个误会，差一点毁掉两个人的幸福。</a></li>
+		<li><i class="dot"></i><a href="javascript:if(confirm('http://www.jxvdy.com/screenplay/sale/record_click?s=2_0033521457_0000212624  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/screenplay/sale/record_click?s=2_0033521457_0000212624'" tppabs="http://www.jxvdy.com/screenplay/sale/042161.html">【爱她校服到婚纱】最长情的爱情莫过于从校服到婚纱</a></li>
+		<li><i class="dot"></i><a href="javascript:if(confirm('http://www.jxvdy.com/screenplay/sale/0033184243.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/screenplay/sale/0033184243.html'" tppabs="http://www.jxvdy.com/screenplay/sale/041304.html">【飘来的信使】命里有时终须有，命里无时莫强求</a></li>
+		<li><i class="dot"></i><a href="javascript:if(confirm('http://www.jxvdy.com/screenplay/show/export?cid=6&oid=33091  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/screenplay/show/export?cid=6&oid=33091'" tppabs="http://www.jxvdy.com/screenplay/show/041441.html">【剪不断，理还乱】邻居家少年的爱情，就像你我回忆里的一样</a></li>
+		<li><i class="dot"></i><a href="javascript:if(confirm('http://www.jxvdy.com/screenplay/sale/0033521241.html?episode=3  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/screenplay/sale/0033521241.html?episode=3'" tppabs="http://www.jxvdy.com/screenplay/sale/044810.html">【那几年我们无法经营的爱情】渐行渐远渐无书，叹时光残酷</a></li>
+	</ul>
+<!--t1517409047-->
+
+				</div>
+				<!-- /.widget-relation-inner -->
+			</div>
+			<!-- /.widget-relation -->
+
+			<div class="ads760-90 mt10 js_ad_record" style="height: 90px;">
+			<script type="text/javascript" src="0137.js" tppabs="http://ad.jxvdy.com/script/0137.js"></script>
+			</div>
+			<!-- 最新微电影、网络剧 -->
+			<div class="js_video_tab widget-wdy clearfix mt20 js_pb_jxvdy" js_ch_id="2" js_action="getNew" js_model="video_info" js_temp="1040">
+				<div class="column-tab clearfix hd">
+					<span class="pull-right pdr10">
+						<a class="js_video_tab_next random" href="javascript:;" style="display: inline;"><i class="fa fa-repeat"></i>换一换</a>
+					</span>
+					<ul class="list-unstyled">
+						<li class="js_video_tab_handle on" js_data="2">最新微电影</li>
+						<li class="js_video_tab_handle" js_data="3">最新网络剧</li>
+					</ul>
+				</div>
+				<div class="widget-wdy-inner">
+					<div class="js_video_tab_panel mod-figure-video mod-figure-v-190 clearfix js_reload_panel" js_tpl="1040">
+						<ul class="js_video_tab_pagecount video-figures-list" js_data="1684">
+		<li class="video-list-item">
+		<a class="video-figure" href="0033201616.html" tppabs="http://www.jxvdy.com/video/0033201616.html" title="敦化市小学生校园微电影《钢笔》" target="_blank">
+			<img class="lazy-video" _src="59e5c4e0db9f9dc0699f9_180_253.jpg" tppabs="http://image.jxvdy.com/2017/1017/59e5c4e0db9f9dc0699f9_180_253.jpg" alt="敦化市小学生校园微电影《钢笔》">
+			<div class="figure-caption">
+								<p class="figure-description" title="敦化市小学生校园微电影《钢笔》">敦化市小学生校园微电影《钢笔》</p>
+				<p class="figure-description">主演：</p>
+							</div>
+					</a>
+		<strong class="video-figure-title js_video_score" js_data="">
+			<a class="video-title" href="0033201616.html" tppabs="http://www.jxvdy.com/video/0033201616.html" target="_blank">敦化市小学生校园微电影《钢笔》</a>
+			<span class="video-score"><span>0</span><small>.0</small></span>
+		</strong>
+	</li>
+		<li class="video-list-item">
+		<a class="video-figure" href="0001524814.html" tppabs="http://www.jxvdy.com/video/0001524814.html" title="正能量微电影《正义为先》" target="_blank">
+			<img class="lazy-video" _src="594a4ecb812a862ca866b_0.png" tppabs="http://image.jxvdy.com/2017/0621/594a4ecb812a862ca866b_0.png" alt="正能量微电影《正义为先》">
+			<div class="figure-caption">
+								<p class="figure-description" title="正能量微电影《正义为先》！">正能量微电影《正义为先》！</p>
+				<p class="figure-description">主演：曹亮 王小爱</p>
+							</div>
+					</a>
+		<strong class="video-figure-title js_video_score" js_data="10.0">
+			<a class="video-title" href="0001524814.html" tppabs="http://www.jxvdy.com/video/0001524814.html" target="_blank">正能量微电影《正义为先》</a>
+			<span class="video-score"><span>0</span><small>.0</small></span>
+		</strong>
+	</li>
+		<li class="video-list-item">
+		<a class="video-figure" href="0033521604.html" tppabs="http://www.jxvdy.com/video/0033521604.html" title="恐怖微电影《残梦》" target="_blank">
+			<img class="lazy-video" _src="58eb5e6df2d37d4298376_180_253.jpg" tppabs="http://image.jxvdy.com/2017/0410/58eb5e6df2d37d4298376_180_253.jpg" alt="恐怖微电影《残梦》">
+			<div class="figure-caption">
+								<p class="figure-description" title="一个错乱的残缺不全的梦">一个错乱的残缺不全的梦</p>
+				<p class="figure-description">主演：张禾 小华</p>
+							</div>
+					</a>
+		<strong class="video-figure-title js_video_score" js_data="10.0">
+			<a class="video-title" href="0033521604.html" tppabs="http://www.jxvdy.com/video/0033521604.html" target="_blank">恐怖微电影《残梦》</a>
+			<span class="video-score"><span>0</span><small>.0</small></span>
+		</strong>
+	</li>
+		<li class="video-list-item">
+		<a class="video-figure" href="0033201633.html" tppabs="http://www.jxvdy.com/video/0033201633.html" title="浩哥新作来袭！《二龙湖浩哥之江湖学院》预告！" target="_blank">
+			<img class="lazy-video" _src="58eb6019be54e476e8854_0.jpg" tppabs="http://image.jxvdy.com/2017/0410/58eb6019be54e476e8854_0.jpg" alt="浩哥新作来袭！《二龙湖浩哥之江湖学院》预告！">
+			<div class="figure-caption">
+								<p class="figure-description" title="《二龙湖浩哥之江湖学院》">《二龙湖浩哥之江湖学院》</p>
+				<p class="figure-description">主演：二龙湖浩哥</p>
+							</div>
+					</a>
+		<strong class="video-figure-title js_video_score" js_data="">
+			<a class="video-title" href="0033201633.html" tppabs="http://www.jxvdy.com/video/0033201633.html" target="_blank">浩哥新作来袭！《二龙湖浩哥之江湖学院》预告！</a>
+			<span class="video-score"><span>0</span><small>.0</small></span>
+		</strong>
+	</li>
+	</ul>
+<!--t1517408340-->
+
+					</div>
+				</div>
+				<!-- /.widget-wdy-inner -->
+			</div>
+			<!-- /.widget-wdy -->
+			<!--我要评论 -->
+			<p id="comments"></p>
+			<script type="text/javascript" src="search-kw=全集在线观看" tppabs="http://www.jxvdy.com/comment/export?cid=4&oid=4679"></script>
+		</div>
+	</div>
+	<!-- /.content-wrap  -->
+
+	<aside class="sidebar">
+		<!--作者信息 -->
+		<div class="js_person_info js_pb_jxvdy person-info" js_ch_id="313251" js_action="getPubInfo" js_model="screenplay" js_temp="1043" >
+			
+		</div>
+		<!-- /.person-info -->
+
+		<!--喜欢该剧本的人 -->
+		<div class="widget widget-fans clearfix js_fans_jxvdy">
+			<div class="modal-title clearfix">
+				<div class="modal-title-left">
+					<div class="modal-title-left-inner">喜欢该剧本的人</div>
+					<span class="tip-t"><i class="tip-outer"></i><i class="tip-inner"></i></span>
+				</div>
+			</div>
+			<div class="widget-fans-inner">
+				<ul>
+			<li><a href="javascript:if(confirm('http://www.jxvdy.com/member/search?kw=最新网剧  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/member/search?kw=最新网剧'" tppabs="http://www.jxvdy.com/member/dynamic.html?id=339872" title="longsee" target="_blank"><img src="search-kw=匆匆那年2之好久不见" tppabs="http://image.jxvdy.com/2015/0605/55712776c4fcc0eeb57fa_230_230.png" alt="longsee" onerror="this.src='http://skin.jxvdy.com/jxvdy2/public/images/avatar80_80.jpg'"></a></li>
+			<li><a href="javascript:if(confirm('http://www.jxvdy.com/member/export?cid=3&oid=33351  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/member/export?cid=3&oid=33351'" tppabs="http://www.jxvdy.com/member/dynamic.html?id=346650" title="761201569" target="_blank"><img src="" alt="761201569" onerror="this.src='http://skin.jxvdy.com/jxvdy2/public/images/avatar80_80.jpg'"></a></li>
+			<li><a href="javascript:if(confirm('http://www.jxvdy.com/member/record_click?s=2_0033520912_0000215643  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/member/record_click?s=2_0033520912_0000215643'" tppabs="http://www.jxvdy.com/member/dynamic.html?id=343314" title="pjj" target="_blank"><img src="" alt="pjj" onerror="this.src='http://skin.jxvdy.com/jxvdy2/public/images/avatar80_80.jpg'"></a></li>
+			<li><a href="javascript:if(confirm('http://www.jxvdy.com/member/v_19rrku85jk.swf-albumId=202921401-tvId=460229500-isPurchase=0-cnId=2  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/member/v_19rrku85jk.swf-albumId=202921401-tvId=460229500-isPurchase=0-cnId=2'" tppabs="http://www.jxvdy.com/member/dynamic.html?id=343183" title="haixi" target="_blank"><img src="" alt="haixi" onerror="this.src='http://skin.jxvdy.com/jxvdy2/public/images/avatar80_80.jpg'"></a></li>
+	</ul>
+<!--t1517408796-->
+
+			</div>
+		</div>
+		<!-- /.widget-thumb-text -->
+
+		<!-- 最新征集 -->
+		<div class="widget-new-ctn clearfix mt20 js_pb_jxvdy" js_ch_id="13" js_action="newCollection" js_model="screenplay_collection" js_temp="1039">
+			<div class="modal-title clearfix">
+				<div class="modal-title-left">
+					<div class="modal-title-left-inner">最新征集</div>
+					<span class="tip-t"><i class="tip-outer"></i><i class="tip-inner"></i></span>
+				</div>
+			</div>
+			<!-- /.modal-title  -->
+			<div class="widget-new-ctn-inner mem-dynamic video-mem-dynamic clearfix js_reload_panel">
+				<div class="dynamic-content">
+	<ul id="timeline" class="timeline">
+				<li class="item-wrap">
+			<div class="item">
+				<div class="avatar-wrap clearfix">
+					<a class="avatar water-drop" href="javascript:if(confirm('http://www.jxvdy.com/member/dynamic.html?id=349563  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/member/dynamic.html?id=349563'" tppabs="http://www.jxvdy.com/member/dynamic.html?id=349563" title="redarmy2046" target="_blank"><img class="head-pic" src="" onerror="this.src='http://skin.jxvdy.com/jxvdy2/public/images/avatar80_80.jpg'"></a>
+					<time class="timeago time">135天前</time>
+					<strong class="price">议价</strong>
+				</div>
+				<div class="ctn-title"><a href="javascript:if(confirm('http://www.jxvdy.com/screenplay/collection/004018.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/screenplay/collection/004018.html'" tppabs="http://www.jxvdy.com/screenplay/collection/004018.html" target="_blank"><i class="dot"></i>征集20-30分钟微电影</a></div>
+				<div class="summary">一对年轻人，跨越两个城市之间发生的感情故事。要正能量，结尾大团圆。重点是要有波折...</div>
+			</div>
+		</li>
+				<li class="item-wrap">
+			<div class="item">
+				<div class="avatar-wrap clearfix">
+					<a class="avatar water-drop" href="javascript:if(confirm('http://www.jxvdy.com/member/dynamic.html?id=349348  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/member/dynamic.html?id=349348'" tppabs="http://www.jxvdy.com/member/dynamic.html?id=349348" title="GFJY" target="_blank"><img class="head-pic" src="" onerror="this.src='http://skin.jxvdy.com/jxvdy2/public/images/avatar80_80.jpg'"></a>
+					<time class="timeago time">138天前</time>
+					<strong class="price">议价</strong>
+				</div>
+				<div class="ctn-title"><a href="javascript:if(confirm('http://www.jxvdy.com/screenplay/collection/000849.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/screenplay/collection/000849.html'" tppabs="http://www.jxvdy.com/screenplay/collection/000849.html" target="_blank"><i class="dot"></i>动画剧本征集</a></div>
+				<div class="summary">一、征集剧本类型：二维动画二、征集剧本题材：不限（古风、搞笑、热血、励志等均可）...</div>
+			</div>
+		</li>
+				<li class="item-wrap">
+			<div class="item">
+				<div class="avatar-wrap clearfix">
+					<a class="avatar water-drop" href="javascript:if(confirm('http://www.jxvdy.com/member/dynamic.html?id=348969  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/member/dynamic.html?id=348969'" tppabs="http://www.jxvdy.com/member/dynamic.html?id=348969" title="姜瑞利" target="_blank"><img class="head-pic" src="590bfc5730e8cce3e35ae_0.png" tppabs="http://image.jxvdy.com/2017/0505/590bfc5730e8cce3e35ae_0.png" onerror="this.src='http://skin.jxvdy.com/jxvdy2/public/images/avatar80_80.jpg'"></a>
+					<time class="timeago time">271天前</time>
+					<strong class="price">免费</strong>
+				</div>
+				<div class="ctn-title"><a href="javascript:if(confirm('http://www.jxvdy.com/screenplay/collection/004043.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/screenplay/collection/004043.html'" tppabs="http://www.jxvdy.com/screenplay/collection/004043.html" target="_blank"><i class="dot"></i>希望</a></div>
+				<div class="summary">学校</div>
+			</div>
+		</li>
+				<li class="item-wrap">
+			<div class="item">
+				<div class="avatar-wrap clearfix">
+					<a class="avatar water-drop" href="javascript:if(confirm('http://www.jxvdy.com/member/dynamic.html?id=348854  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/member/dynamic.html?id=348854'" tppabs="http://www.jxvdy.com/member/dynamic.html?id=348854" title="lee" target="_blank"><img class="head-pic" src="" onerror="this.src='http://skin.jxvdy.com/jxvdy2/public/images/avatar80_80.jpg'"></a>
+					<time class="timeago time">287天前</time>
+					<strong class="price">议价</strong>
+				</div>
+				<div class="ctn-title"><a href="javascript:if(confirm('http://www.jxvdy.com/screenplay/collection/004010.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/screenplay/collection/004010.html'" tppabs="http://www.jxvdy.com/screenplay/collection/004010.html" target="_blank"><i class="dot"></i>微电影作品征集</a></div>
+				<div class="summary">微电影作品征集1.要求是成品2.发送作品附件或者网址3.作品可以，将进行签约合作...</div>
+			</div>
+		</li>
+				<li class="item-wrap">
+			<div class="item">
+				<div class="avatar-wrap clearfix">
+					<a class="avatar water-drop" href="javascript:if(confirm('http://www.jxvdy.com/member/dynamic.html?id=348802  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/member/dynamic.html?id=348802'" tppabs="http://www.jxvdy.com/member/dynamic.html?id=348802" title="13797262439" target="_blank"><img class="head-pic" src="" onerror="this.src='http://skin.jxvdy.com/jxvdy2/public/images/avatar80_80.jpg'"></a>
+					<time class="timeago time">294天前</time>
+					<strong class="price">￥500</strong>
+				</div>
+				<div class="ctn-title"><a href="javascript:if(confirm('http://www.jxvdy.com/screenplay/collection/000841.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/screenplay/collection/000841.html'" tppabs="http://www.jxvdy.com/screenplay/collection/000841.html" target="_blank"><i class="dot"></i>拼搏奉献  博爱无私</a></div>
+				<div class="summary">通过微电影展现高速公路职工奋发向上的精神风貌、积极进取的职业操守、无私奉献的人生...</div>
+			</div>
+		</li>
+				<li class="item-wrap">
+			<div class="item">
+				<div class="avatar-wrap clearfix">
+					<a class="avatar water-drop" href="javascript:if(confirm('http://www.jxvdy.com/member/dynamic.html?id=348788  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/member/dynamic.html?id=348788'" tppabs="http://www.jxvdy.com/member/dynamic.html?id=348788" title="wly1990" target="_blank"><img class="head-pic" src="" onerror="this.src='http://skin.jxvdy.com/jxvdy2/public/images/avatar80_80.jpg'"></a>
+					<time class="timeago time">296天前</time>
+					<strong class="price">议价</strong>
+				</div>
+				<div class="ctn-title"><a href="javascript:if(confirm('http://www.jxvdy.com/screenplay/collection/000808.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/screenplay/collection/000808.html'" tppabs="http://www.jxvdy.com/screenplay/collection/000808.html" target="_blank"><i class="dot"></i>关于地板品牌的微电影</a></div>
+				<div class="summary">要求：关于环保类的与产品相结合点名主题“环保”</div>
+			</div>
+		</li>
+				<li class="item-wrap">
+			<div class="item">
+				<div class="avatar-wrap clearfix">
+					<a class="avatar water-drop" href="javascript:if(confirm('http://www.jxvdy.com/member/dynamic.html?id=348755  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/member/dynamic.html?id=348755'" tppabs="http://www.jxvdy.com/member/dynamic.html?id=348755" title="圆方影视一康翔" target="_blank"><img class="head-pic" src="58e796f3900c5Hk9BgZuR.jpg.png" tppabs="http://image.jxvdy.com/2017/0407/58e796f3900c5Hk9BgZuR.jpg" onerror="this.src='http://skin.jxvdy.com/jxvdy2/public/images/avatar80_80.jpg'"></a>
+					<time class="timeago time">299天前</time>
+					<strong class="price">议价</strong>
+				</div>
+				<div class="ctn-title"><a href="javascript:if(confirm('http://www.jxvdy.com/screenplay/collection/004039.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/screenplay/collection/004039.html'" tppabs="http://www.jxvdy.com/screenplay/collection/004039.html" target="_blank"><i class="dot"></i>有那种类似《屌丝男士》的剧本么，多个段子构成</a></div>
+				<div class="summary">有那种类似《屌丝男士》的剧本么，多个段子构成的.qq814385906,少量片酬</div>
+			</div>
+		</li>
+				<li class="item-wrap">
+			<div class="item">
+				<div class="avatar-wrap clearfix">
+					<a class="avatar water-drop" href="javascript:if(confirm('http://www.jxvdy.com/member/dynamic.html?id=348297  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/member/dynamic.html?id=348297'" tppabs="http://www.jxvdy.com/member/dynamic.html?id=348297" title="兄弟通宝" target="_blank"><img class="head-pic" src="58ab371ed0fac3efe22e4_0.jpg" tppabs="http://image.jxvdy.com/2017/0221/58ab371ed0fac3efe22e4_0.jpg" onerror="this.src='http://skin.jxvdy.com/jxvdy2/public/images/avatar80_80.jpg'"></a>
+					<time class="timeago time">344天前</time>
+					<strong class="price">议价</strong>
+				</div>
+				<div class="ctn-title"><a href="javascript:if(confirm('http://www.jxvdy.com/screenplay/collection/000837.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/screenplay/collection/000837.html'" tppabs="http://www.jxvdy.com/screenplay/collection/000837.html" target="_blank"><i class="dot"></i>影视公司长期征集 喜剧 温情 励志类 商业电影剧本</a></div>
+				<div class="summary">长期征集喜剧温情励志类商业电影剧本本公司主要以商业院线类电影或卫视电视剧为主。(...</div>
+			</div>
+		</li>
+				<li class="item-wrap">
+			<div class="item">
+				<div class="avatar-wrap clearfix">
+					<a class="avatar water-drop" href="javascript:if(confirm('http://www.jxvdy.com/member/dynamic.html?id=348297  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/member/dynamic.html?id=348297'" tppabs="http://www.jxvdy.com/member/dynamic.html?id=348297" title="兄弟通宝" target="_blank"><img class="head-pic" src="58ab371ed0fac3efe22e4_0.jpg" tppabs="http://image.jxvdy.com/2017/0221/58ab371ed0fac3efe22e4_0.jpg" onerror="this.src='http://skin.jxvdy.com/jxvdy2/public/images/avatar80_80.jpg'"></a>
+					<time class="timeago time">344天前</time>
+					<strong class="price">议价</strong>
+				</div>
+				<div class="ctn-title"><a href="javascript:if(confirm('http://www.jxvdy.com/screenplay/collection/000804.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/screenplay/collection/000804.html'" tppabs="http://www.jxvdy.com/screenplay/collection/000804.html" target="_blank"><i class="dot"></i>征集 具有西安特色都市温情喜剧</a></div>
+				<div class="summary">影视公司征集具有西安特色，影视剧本。剧本内容完善，具有明显温情与西剧元素，能突出...</div>
+			</div>
+		</li>
+				<li class="item-wrap">
+			<div class="item">
+				<div class="avatar-wrap clearfix">
+					<a class="avatar water-drop" href="javascript:if(confirm('http://www.jxvdy.com/member/dynamic.html?id=347940  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/member/dynamic.html?id=347940'" tppabs="http://www.jxvdy.com/member/dynamic.html?id=347940" title="怪胎°?" target="_blank"><img class="head-pic" src="5898106aba91cxedaS2CD.jpg" tppabs="http://image.jxvdy.com/2017/0206/5898106aba91cxedaS2CD.jpg" onerror="this.src='http://skin.jxvdy.com/jxvdy2/public/images/avatar80_80.jpg'"></a>
+					<time class="timeago time">359天前</time>
+					<strong class="price">议价</strong>
+				</div>
+				<div class="ctn-title"><a href="javascript:if(confirm('http://www.jxvdy.com/screenplay/collection/004035.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/screenplay/collection/004035.html'" tppabs="http://www.jxvdy.com/screenplay/collection/004035.html" target="_blank"><i class="dot"></i>第三届&ldquo;根亲中国&rdquo;微电影节 作品继续征集中！</a></div>
+				<div class="summary">-❶-第三届根亲中国微电影大赛作品征集已经全面启动，此次大赛将联合中国电影家协会...</div>
+			</div>
+		</li>
+			</ul>
+</div>
+
+<!--t1517408579-->
+
+			</div>
+			<!-- /.widget-new-ctn-inner -->
+		</div>
+		<!-- /.widget-new-ctn -->
+		
+		<div class="ads300-250 mt10 js_ad_record" style="height: 250px;">
+			<script type="text/javascript" src="0030.js" tppabs="http://ad.jxvdy.com/script/0030.js"></script>
+		</div>
+		
+		<!--大家都在看 -->
+		<div class="js_reload js_pb_jxvdy widget widget-thumb-text clearfix mt20" js_ch_id="4" js_action="getWatching" js_temp="1059" js_model="screenplay">
+			<div class="modal-title clearfix">
+				<div class="modal-title-left">
+					<div class="modal-title-left-inner">大家都在看</div>
+					<span class="tip-t"><i class="tip-outer"></i><i class="tip-inner"></i></span>
+				</div>
+				<div class="modal-title-right">
+					<a class="js_reload_h random" href="javascript:;" js_ch_id="4" js_action="getWatching" js_temp="1059" js_model="screenplay" ><i class="fa fa-repeat"></i>换一换</a>
+				</div>
+			</div>
+			<!-- /.modal-title  -->
+			<div class="js_reload_panel widget-thumb-text-inner">
+					<article class="article-item js_reload_pagecount" js_data="1012">
+		<figure><a href="javascript:if(confirm('http://www.jxvdy.com/screenplay/001437.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/screenplay/001437.html'" tppabs="http://www.jxvdy.com/screenplay/001437.html" title="我要当演员" target="_blank"><img class="img-responsive lazy-article" _src="16-47-57-89-3.jpg.png" tppabs="http://image.jxvdy.com/old/201311/15/16-47-57-89-3.jpg" onerror="this.src='http://skin.jxvdy.com/jxvdy/web/images/default/380_264.png'" alt="我要当演员"></a></figure>
+		<div class="widget-thumb-text-info">
+			<h5><a href="javascript:if(confirm('http://www.jxvdy.com/screenplay/001437.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/screenplay/001437.html'" tppabs="http://www.jxvdy.com/screenplay/001437.html" target="_blank">我要当演员</a></h5>
+			<small>1402人正在浏览<span class="text-center"><a href="javascript:if(confirm('http://www.jxvdy.com/screenplay/001437.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/screenplay/001437.html'" tppabs="http://www.jxvdy.com/screenplay/001437.html" target="_blank"><i class="fa fa-eye"></i>围观</a></span></small>
+		</div>
+	</article>
+	<article class="article-item js_reload_pagecount" js_data="1012">
+		<figure><a href="javascript:if(confirm('http://www.jxvdy.com/screenplay/034026.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/screenplay/034026.html'" tppabs="http://www.jxvdy.com/screenplay/034026.html" title="狗伴儿" target="_blank"><img class="img-responsive lazy-article" _src="548a8a46c0e3bf0d1b1b0_0.jpg" tppabs="http://image.jxvdy.com/2014/1212/548a8a46c0e3bf0d1b1b0_0.jpg" onerror="this.src='http://skin.jxvdy.com/jxvdy/web/images/default/380_264.png'" alt="狗伴儿"></a></figure>
+		<div class="widget-thumb-text-info">
+			<h5><a href="javascript:if(confirm('http://www.jxvdy.com/screenplay/034026.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/screenplay/034026.html'" tppabs="http://www.jxvdy.com/screenplay/034026.html" target="_blank">【狗伴儿】与狗为伴，成就机缘。</a></h5>
+			<small>3911人正在浏览<span class="text-center"><a href="javascript:if(confirm('http://www.jxvdy.com/screenplay/034026.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/screenplay/034026.html'" tppabs="http://www.jxvdy.com/screenplay/034026.html" target="_blank"><i class="fa fa-eye"></i>围观</a></span></small>
+		</div>
+	</article>
+	<article class="article-item js_reload_pagecount" js_data="1012">
+		<figure><a href="javascript:if(confirm('http://www.jxvdy.com/screenplay/033041.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/screenplay/033041.html'" tppabs="http://www.jxvdy.com/screenplay/033041.html" title="寻灵" target="_blank"><img class="img-responsive lazy-article" _src="54deb2bfec8f89f22fdcc_0.jpg" tppabs="http://image.jxvdy.com/2015/0214/54deb2bfec8f89f22fdcc_0.jpg" onerror="this.src='http://skin.jxvdy.com/jxvdy/web/images/default/380_264.png'" alt="寻灵"></a></figure>
+		<div class="widget-thumb-text-info">
+			<h5><a href="javascript:if(confirm('http://www.jxvdy.com/screenplay/033041.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/screenplay/033041.html'" tppabs="http://www.jxvdy.com/screenplay/033041.html" target="_blank">【寻灵】生活的压力使他无法面对自己的人生</a></h5>
+			<small>3232人正在浏览<span class="text-center"><a href="javascript:if(confirm('http://www.jxvdy.com/screenplay/033041.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/screenplay/033041.html'" tppabs="http://www.jxvdy.com/screenplay/033041.html" target="_blank"><i class="fa fa-eye"></i>围观</a></span></small>
+		</div>
+	</article>
+	<article class="article-item js_reload_pagecount" js_data="1012">
+		<figure><a href="javascript:if(confirm('http://www.jxvdy.com/screenplay/042004.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/screenplay/042004.html'" tppabs="http://www.jxvdy.com/screenplay/042004.html" title="白发初生" target="_blank"><img class="img-responsive lazy-article" _src="553ef12349bcc5afeca33_0.jpg" tppabs="http://image.jxvdy.com/2015/0428/553ef12349bcc5afeca33_0.jpg" onerror="this.src='http://skin.jxvdy.com/jxvdy/web/images/default/380_264.png'" alt="白发初生"></a></figure>
+		<div class="widget-thumb-text-info">
+			<h5><a href="javascript:if(confirm('http://www.jxvdy.com/screenplay/042004.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/screenplay/042004.html'" tppabs="http://www.jxvdy.com/screenplay/042004.html" target="_blank">【白发初生】趁着父母身体尚算康健，多回家看看吧</a></h5>
+			<small>4757人正在浏览<span class="text-center"><a href="javascript:if(confirm('http://www.jxvdy.com/screenplay/042004.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/screenplay/042004.html'" tppabs="http://www.jxvdy.com/screenplay/042004.html" target="_blank"><i class="fa fa-eye"></i>围观</a></span></small>
+		</div>
+	</article>
+<!--t1517408849-->
+
+			</div>
+			<!-- /.widget-thumb-text-inner -->
+		</div>
+		<!-- /.widget-thumb-text -->
+
+		<!-- 最新学院教程 -->
+		<div class="widget widget-thumb-text clearfix js_pb_jxvdy" js_ch_id="4" js_action="getNew" js_temp="1062" js_model="screenplay">
+			<div class="modal-title clearfix">
+				<div class="modal-title-left">
+					<div class="modal-title-left-inner">最新剧本展示</div>
+					<span class="tip-t"><i class="tip-outer"></i><i class="tip-inner"></i></span>
+				</div>
+				<div class="modal-title-right">
+					<a class="more" href="javascript:if(confirm('http://www.jxvdy.com/screenplay/list.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/screenplay/list.html'" tppabs="http://www.jxvdy.com/screenplay/list.html">更多<i class="fa fa-caret-right"></i></a>
+				</div>
+			</div>
+			<!-- /.modal-title  -->
+			<div class="widget-thumb-text-inner js_reload_panel">
+					<article class="article-item">
+		<figure><a href="javascript:if(confirm('http://www.jxvdy.com/screenplay/056159.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/screenplay/056159.html'" tppabs="http://www.jxvdy.com/screenplay/056159.html" title="2016金丹若网络影视创新论坛暖冬开幕" target="_blank"><img class="img-responsive" src="585ddc1a5afdd1abb2dc3_380_264.jpg" tppabs="http://image.jxvdy.com/2016/1224/585ddc1a5afdd1abb2dc3_380_264.jpg" alt="2016金丹若网络影视创新论坛暖冬开幕"></a></figure>
+		<div class="widget-thumb-text-info">
+			<h5><a href="javascript:if(confirm('http://www.jxvdy.com/screenplay/056159.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/screenplay/056159.html'" tppabs="http://www.jxvdy.com/screenplay/056159.html" target="_blank" title="【2016金丹若网络影视创新论坛暖冬开幕】2016金丹若网络影视创新论坛暖冬开幕">【2016金丹若网络影视创新论坛暖冬开幕】2016金丹若网络影视创新论坛暖冬开幕</a></h5>
+			<small><i class="fa fa-clock-o"></i>2016-12-24</small>
+		</div>
+	</article>
+	<article class="article-item">
+		<figure><a href="javascript:if(confirm('http://www.jxvdy.com/screenplay/052924.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/screenplay/052924.html'" tppabs="http://www.jxvdy.com/screenplay/052924.html" title="搜魔记" target="_blank"><img class="img-responsive" src="5838efae32d7e4e9d1a2d_380_264.jpg" tppabs="http://image.jxvdy.com/2016/1126/5838efae32d7e4e9d1a2d_380_264.jpg" alt="搜魔记"></a></figure>
+		<div class="widget-thumb-text-info">
+			<h5><a href="javascript:if(confirm('http://www.jxvdy.com/screenplay/052924.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/screenplay/052924.html'" tppabs="http://www.jxvdy.com/screenplay/052924.html" target="_blank" title="【搜魔记】天下英雄在，搜魔正当时！">【搜魔记】天下英雄在，搜魔正当时！</a></h5>
+			<small><i class="fa fa-clock-o"></i>2016-11-26</small>
+		</div>
+	</article>
+	<article class="article-item">
+		<figure><a href="javascript:if(confirm('http://www.jxvdy.com/screenplay/056151.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/screenplay/056151.html'" tppabs="http://www.jxvdy.com/screenplay/056151.html" title="这个夏天遇见你" target="_blank"><img class="img-responsive" src="57db8ed218d280562ab4e_380_264.jpg" tppabs="http://image.jxvdy.com/2016/0916/57db8ed218d280562ab4e_380_264.jpg" alt="这个夏天遇见你"></a></figure>
+		<div class="widget-thumb-text-info">
+			<h5><a href="javascript:if(confirm('http://www.jxvdy.com/screenplay/056151.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/screenplay/056151.html'" tppabs="http://www.jxvdy.com/screenplay/056151.html" target="_blank" title="【这个夏天遇见你】都市情感剧">【这个夏天遇见你】都市情感剧</a></h5>
+			<small><i class="fa fa-clock-o"></i>2016-09-16</small>
+		</div>
+	</article>
+	<article class="article-item">
+		<figure><a href="javascript:if(confirm('http://www.jxvdy.com/screenplay/052916.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/screenplay/052916.html'" tppabs="http://www.jxvdy.com/screenplay/052916.html" title="大学不都这样" target="_blank"><img class="img-responsive" src="57ce359155fa9ed89d82e_380_264.jpg" tppabs="http://image.jxvdy.com/2016/0906/57ce359155fa9ed89d82e_380_264.jpg" alt="大学不都这样"></a></figure>
+		<div class="widget-thumb-text-info">
+			<h5><a href="javascript:if(confirm('http://www.jxvdy.com/screenplay/052916.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/screenplay/052916.html'" tppabs="http://www.jxvdy.com/screenplay/052916.html" target="_blank" title="【大学不都这样】我们都一样，懵懂地踏入大学，从憧憬到迷惘，不要担心，你总会找到方向。">【大学不都这样】我们都一样，懵懂地踏入大学，从憧憬到迷惘，不要担心，你总会找到方向。</a></h5>
+			<small><i class="fa fa-clock-o"></i>2016-09-06</small>
+		</div>
+	</article>
+<!--t1517408941-->
+
+			</div>
+			<!-- /.widget-thumb-text-inner -->
+		</div>
+		<!-- /.widget-thumb-text -->
+
+		<!-- 最新学院教程 -->
+		<div class="widget widget-thumb-text clearfix js_pb_jxvdy" js_ch_id="5" js_action="getNew" js_temp="1062" js_model="text_content">
+			<div class="modal-title clearfix">
+				<div class="modal-title-left">
+					<div class="modal-title-left-inner">最新学院教程</div>
+					<span class="tip-t"><i class="tip-outer"></i><i class="tip-inner"></i></span>
+				</div>
+				<div class="modal-title-right">
+					<a class="more" href="list-18.html" tppabs="http://www.jxvdy.com/tutorials/list.html">更多<i class="fa fa-caret-right"></i></a>
+				</div>
+			</div>
+			<!-- /.modal-title  -->
+			<div class="widget-thumb-text-inner js_reload_panel">
+					<article class="article-item">
+		<figure><a href="0001514426.html" tppabs="http://www.jxvdy.com/tutorials/equipment/qcpc/0001514426.html" title="摄影师你好｜除了Angelababy，你还需要知道Lensbaby" target="_blank"><img class="img-responsive" src="56a7465c2e4b4627b139a_0.jpg" tppabs="http://image.jxvdy.com/2016/0126/56a7465c2e4b4627b139a_0.jpg" alt="摄影师你好｜除了Angelababy，你还需要知道Lensbaby"></a></figure>
+		<div class="widget-thumb-text-info">
+			<h5><a href="0001514426.html" tppabs="http://www.jxvdy.com/tutorials/equipment/qcpc/0001514426.html" target="_blank" title="摄影师你好｜除了Angelababy，你还需要知道Lensbaby">摄影师你好｜除了Angelababy，你还需要知道Lensbaby</a></h5>
+			<small><i class="fa fa-clock-o"></i>2016-01-26</small>
+		</div>
+	</article>
+	<article class="article-item">
+		<figure><a href="0001511257.html" tppabs="http://www.jxvdy.com/tutorials/shooting/sysx/0001511257.html" title="在限制里做出最合理，《唐人街探案》摄影手记" target="_blank"><img class="img-responsive" src="56a73e20b6b35162ad1b8_0.jpg" tppabs="http://image.jxvdy.com/2016/0126/56a73e20b6b35162ad1b8_0.jpg" alt="在限制里做出最合理，《唐人街探案》摄影手记"></a></figure>
+		<div class="widget-thumb-text-info">
+			<h5><a href="0001511257.html" tppabs="http://www.jxvdy.com/tutorials/shooting/sysx/0001511257.html" target="_blank" title="在限制里做出最合理，《唐人街探案》摄影手记">在限制里做出最合理，《唐人街探案》摄影手记</a></h5>
+			<small><i class="fa fa-clock-o"></i>2016-01-26</small>
+		</div>
+	</article>
+	<article class="article-item">
+		<figure><a href="0033514418.html" tppabs="http://www.jxvdy.com/tutorials/shooting/sysx/0033514418.html" title="通过摄影机的运动表现意义：黑泽明的《罗生门》" target="_blank"><img class="img-responsive" src="56a5a0224cc8f6a39463a_0.jpg" tppabs="http://image.jxvdy.com/2016/0125/56a5a0224cc8f6a39463a_0.jpg" alt="通过摄影机的运动表现意义：黑泽明的《罗生门》"></a></figure>
+		<div class="widget-thumb-text-info">
+			<h5><a href="0033514418.html" tppabs="http://www.jxvdy.com/tutorials/shooting/sysx/0033514418.html" target="_blank" title="通过摄影机的运动表现意义：黑泽明的《罗生门》">通过摄影机的运动表现意义：黑泽明的《罗生门》</a></h5>
+			<small><i class="fa fa-clock-o"></i>2016-01-25</small>
+		</div>
+	</article>
+	<article class="article-item">
+		<figure><a href="0001514410.html" tppabs="http://www.jxvdy.com/tutorials/shooting/dgbj/0001514410.html" title="摄影师打光如何参考光源" target="_blank"><img class="img-responsive" src="569c96710f46ff33e46f6_0.jpg" tppabs="http://image.jxvdy.com/2016/0118/569c96710f46ff33e46f6_0.jpg" alt="摄影师打光如何参考光源"></a></figure>
+		<div class="widget-thumb-text-info">
+			<h5><a href="0001514410.html" tppabs="http://www.jxvdy.com/tutorials/shooting/dgbj/0001514410.html" target="_blank" title="摄影师打光如何参考光源">摄影师打光如何参考光源</a></h5>
+			<small><i class="fa fa-clock-o"></i>2016-01-18</small>
+		</div>
+	</article>
+<!--t1517408941-->
+
+			</div>
+			<!-- /.widget-thumb-text-inner -->
+		</div>
+		<!-- /.widget-thumb-text -->
+
+		<!--热门排行 -->
+		<div id="sidebar">
+			<div class="js_rank widget clearfix">
+				<div class="modal-title clearfix">
+					<div class="modal-title-left">
+						<div class="modal-title-left-inner">热门排行</div>
+						<span class="tip-t"><i class="tip-outer"></i><i class="tip-inner"></i></span>
+					</div>
+				</div>
+				<!-- /.modal-title  -->
+				<div class="modal-title-tab channel-tab-nav">
+					<ul class="rank-tab clearfix">
+						<li class="js_rank_handle" js_data_m="text_content" js_data_c="1" js_data="week"><a href="javascript:;">资讯</a></li>
+						<li class="js_rank_handle on" js_data_m="screenplay" js_data_c="4" js_data="week"><a href="javascript:;">剧本</a></li>
+						<li class="js_rank_handle" js_data_m="text_content" js_data_c="5" js_data="week"><a href="javascript:;">教程</a></li>
+						<li class="js_rank_handle" js_data_m="video_info" js_data_c="2" js_data="week"><a href="javascript:;">微电影</a></li>
+						<li class="js_rank_handle last" js_data_m="video_info" js_data_c="3" js_data="week"><a href="javascript:;">网络剧</a></li>
+					</ul>
+				</div>
+				<div class="channel-tab-inner clearfix">
+					<div class="hots-rank">
+	<ul class="js_col list-unstyled">
+					<li class="rank-title"><i class="rank-num num-1">1</i><a href="javascript:if(confirm('http://www.jxvdy.com/screenplay/053020.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/screenplay/053020.html'" tppabs="http://www.jxvdy.com/screenplay/053020.html" target="_blank" title="春风化雨">【春风化雨】家庭贫困学生胡玥面临辍学的痛苦&hellip;&hellip;</a></li>
+					<li class="rank-title"><i class="rank-num num-2">2</i><a href="javascript:if(confirm('http://www.jxvdy.com/screenplay/053016.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/screenplay/053016.html'" tppabs="http://www.jxvdy.com/screenplay/053016.html" target="_blank" title="恶魇">【恶魇】一己利益，套取国家扶贫款，使国家&hellip;&hellip;最终走向不归路。</a></li>
+					<li class="rank-title"><i class="rank-num num-3">3</i><a href="javascript:if(confirm('http://www.jxvdy.com/screenplay/056210.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/screenplay/056210.html'" tppabs="http://www.jxvdy.com/screenplay/056210.html" target="_blank" title="惑">【惑】一个不争的事实，不得不让我们陷入深深地思考&hellip;&hellip;</a></li>
+					<li class="rank-title"><i class="rank-num num-4">4</i><a href="javascript:if(confirm('http://www.jxvdy.com/screenplay/056239.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/screenplay/056239.html'" tppabs="http://www.jxvdy.com/screenplay/056239.html" target="_blank" title="同学情">【同学情】同学之情不可忘，一旦同学情超越了法律范畴，那就&hellip;&hellip;</a></li>
+					<li class="rank-title"><i class="rank-num num-5">5</i><a href="javascript:if(confirm('http://www.jxvdy.com/screenplay/056206.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/screenplay/056206.html'" tppabs="http://www.jxvdy.com/screenplay/056206.html" target="_blank" title="悔悟">【悔悟】青少年犯罪呈上升趋势，如何教育、引导，已迫在眉睫&hellip;&hellip;</a></li>
+					<li class="rank-title"><i class="rank-num num-6">6</i><a href="javascript:if(confirm('http://www.jxvdy.com/screenplay/056159.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/screenplay/056159.html'" tppabs="http://www.jxvdy.com/screenplay/056159.html" target="_blank" title="2016金丹若网络影视创新论坛暖冬开幕">【2016金丹若网络影视创新论坛暖冬开幕】2016金丹若网络影视创新论坛暖冬开幕</a></li>
+					<li class="rank-title"><i class="rank-num num-7">7</i><a href="javascript:if(confirm('http://www.jxvdy.com/screenplay/052924.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/screenplay/052924.html'" tppabs="http://www.jxvdy.com/screenplay/052924.html" target="_blank" title="搜魔记">【搜魔记】天下英雄在，搜魔正当时！</a></li>
+					<li class="rank-title"><i class="rank-num num-8">8</i><a href="javascript:if(confirm('http://www.jxvdy.com/screenplay/052953.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/screenplay/052953.html'" tppabs="http://www.jxvdy.com/screenplay/052953.html" target="_blank" title="梦中预言">【梦中预言】一个都市小职员经历梦中预言，大彻大悟，最后走向成功</a></li>
+					<li class="rank-title"><i class="rank-num num-9">9</i><a href="javascript:if(confirm('http://www.jxvdy.com/screenplay/056151.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/screenplay/056151.html'" tppabs="http://www.jxvdy.com/screenplay/056151.html" target="_blank" title="这个夏天遇见你">【这个夏天遇见你】都市情感剧</a></li>
+					<li class="rank-title"><i class="rank-num num-10">10</i><a href="javascript:if(confirm('http://www.jxvdy.com/screenplay/052916.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/screenplay/052916.html'" tppabs="http://www.jxvdy.com/screenplay/052916.html" target="_blank" title="大学不都这样">【大学不都这样】我们都一样，懵懂地踏入大学，从憧憬到迷惘，不要担心，你总会找到方向。</a></li>
+			</ul>
+</div>
+<ul class="js_tpl hidden">
+	<li class="rank-title"><i class="rank-num"></i><a href="#" title="" target="_blank"></a></li>
+</ul>
+<!--t1517408533-->
+
+				</div>
+				<!-- /.tab-content -->
+			</div>
+			<!-- /.widget-thumb-text -->
+			<div class="mt20 ads300-250 js_ad_record" style="height: 250px;">
+			<script type="text/javascript" src="0063.js" tppabs="http://ad.jxvdy.com/script/0063.js"></script>
+			</div>
+		</div>
+		<!-- /.sidebar -->
+	</aside>
+	<a class="js_popup hidden" id="popup_login" js_popup="js_popup_login"></a>
+	<a class="js_popup hidden" id="popup_private" js_popup="js_popup_private" href="javascript:;"></a>
+	<a class="js_popup hide" id="popup_verify" js_popup="js_popup_verify" href="javascript:;"></a>
+	<!-- 邮箱验证弹出层 -->
+<div id="js_popup_verify" class="js_popup_content popup-wrap popup-login-wrap">
+    <div class="popup-title">
+        <a href="javascript:;" title="关闭" class="js_popup_closed closed">×</a>
+        <h4>邮箱验证</h4>
+    </div>
+    <div class="popup-body clearfix">
+        <div class="user-group-wrap text-center">
+            您的账户邮箱未验证，请验证您的邮箱
+        </div>
+        <!-- /.user-group-wrap -->
+        <div class="user-group-wrap text-center mt20">
+            <div class="user-group">
+                <a class="btn btn-warning" href="javascript:if(confirm('http://www.jxvdy.com/my/checkEmail  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/my/checkEmail'" tppabs="http://www.jxvdy.com/my/checkEmail">验证邮箱</a>
+                <a class="js_popup_closed btn btn-default ml10" href="javascript:;">取消</a>
+            </div>
+        </div>
+        <!-- /.user-group-wrap -->
+    </div>
+    <!-- /.popup-body -->
+</div>
+
+<!--t1517409123-->
+ 
+	<div id="js_popup_private" class="js_popup_content popup-wrap popup-private-wrap">
+<form action="/message/addsubmit" method="post" class="js_form" js_validrules="mess_validRules" onsubmit="return false">
+  	<input type="hidden" name="id" value="">
+    <div class="popup-title">
+        <a href="javascript:;" title="关闭" class="js_popup_closed closed">×</a>
+        <h4>发送私信</h4>
+    </div>
+    <div class="popup-body clearfix">
+        <div class="message-talk-wrap">
+            <form action="">
+                <div class="user-group-wrap">
+                    <label for="" class="label-name">收件人:</label>
+                    <div class="user-group">
+                        <input type="text" name="username" class="form-control input-nick user-profile" autocomplete="off" placeholder="请输入收件人用户名" value="">
+                        <p class="user-tip-wrap" id="js_username_tip"></p>
+                    </div>
+                </div>
+                <!-- /.user-group-wrap -->
+                <div class="user-group-wrap">
+                    <label for="" class="label-name">内容:</label>
+                    <div class="user-group">
+                        <textarea name="content" cols="30" rows="5" class="textarea textarea-profile" maxlength="99999" placeholder="请输入内容"></textarea>
+                        <p class="user-tip-wrap" id="js_content_tip"></p>
+                    </div>
+                </div>
+                <!-- /.user-group-wrap -->
+                <div class="user-group-wrap">
+                    <label for="" class="label-name"></label>
+                    <div class="user-group">
+                        <input type="button" class="btn btn-warning btn_mess_submit" value="确定" />
+                    </div>
+                </div>
+                <!-- /.user-group-wrap -->
+            </form>
+        </div>
+        <!-- /.message-talk-wrap -->
+    </div>
+    <!-- /.popup-body -->
+</form>
+</div>
+<div class="popup-wrap-mask"></div>
+<!--t1517408827-->
+	<script type="text/javascript" src="my_login.js" tppabs="http://skin.jxvdy.com/jxvdy2/public/javascripts/my_login.js"></script>
+<script language="JavaScript">
+<!--
+var CHECK_FIELD_URL = '/my/logincheck';
+//-->
+</script>
+<!-- 会员登录弹出层 -->
+<div id="js_popup_login" class="js_popup_content popup-wrap popup-login-wrap">
+	<div class="popup-title">
+		<a href="javascript:;" title="关闭" class="js_popup_closed closed">×</a>
+		<h4>登录金象微电影账号</h4>
+	</div>
+	<div class="popup-body clearfix">
+		<div class="setting-wrap setting-profile">
+			<form class="js_form form-usr" action="http://www.jxvdy.com/my/loginsubmit" method="post" js_validrules="validRules" onsubmit="return false;">
+				<input type="hidden" name="jumpto" value="" />
+				<div class="user-group-wrap">
+					<div class="user-group">
+						<input type="text" id="js_name" name="name" class="input-username form-control" autocomplete="off" maxlength="35" placeholder="用户名/邮箱">
+						<p class="user-tip-wrap" id="js_name_tip"></p>
+					</div>
+				</div>
+				<!-- /.user-group-wrap -->
+				<div class="user-group-wrap">
+					<div class="user-group">
+						<input type="password" id="js_pwd" name="pwd" class="input-password form-control" autocomplete="off" placeholder="请输入密码" maxlength="35" />
+						<p class="user-tip-wrap" id="js_pwd_tip"></p>
+					</div>
+				</div>
+				<!-- /.user-group-wrap -->
+				<div class="user-group-wrap">
+					<div class="user-group aotu-login">
+						<span class="form-checkbox pull-left">
+							<input type="checkbox" id="js_autologin" name="autologin" style="-webkit-appearance:display" value="1" checked="checked">
+							<label for="js_autologin">下次自动登录</label>
+						</span>
+						<a href="javascript:if(confirm('http://www.jxvdy.com/my/forgetpwd  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/my/forgetpwd'" tppabs="http://www.jxvdy.com/my/forgetpwd" class="color-gray pull-right">忘记密码？</a>
+					</div>
+				</div>
+				<!-- /.user-group-wrap -->
+				<div class="user-group-wrap">
+					<div class="user-group">
+						<input type="submit" class="btn btn-warning btn-login-submit" value="登 录" />
+					</div>
+				</div>
+				<div id="js_ok_tip" style="display: none;"></div>
+				<!-- /.user-group-wrap -->
+				<div class="user-group-wrap">
+					<div class="user-group aotu-login">
+						<span class="pull-right">还没有金象微电影账号？<a href="regist.htm" tppabs="http://www.jxvdy.com/my/regist" class="brand-warning">立即注册</a></span>
+					</div>
+				</div>
+				<!-- /.user-group-wrap -->
+			</form>
+		</div>
+		<!-- /.lsetting-wrap -->
+		<dl class="login-other-wrap">
+			<dt class="login-other-title color-gray">一键授权，快速登录 </dt>
+			<dd class="login-sina login-other-btn"><a href="javascript:void(0)" onclick="return window.open('http://www.jxvdy.com/oauth2/authorize?p=sinaweibo&login=1', 'oauth2Login_sinaweibo' ,'height=562,width=754, toolbar=no, menubar=no, scrollbars=no, status=no, location=yes, resizable=yes').noAim = true;"><i class="icon-login-sina"></i><span>新浪微博登录</span></a></dd>
+			<dd class="login-tqq login-other-btn"><a href="javascript:void(0)" onclick="return window.open('http://www.jxvdy.com/oauth2/authorize?p=txweibo&login=1', 'oauth2Login_txweibo' ,'height=420,width=610, toolbar=no, menubar=no, scrollbars=no, status=no, location=yes, resizable=yes').noAim = true;"><i class="icon-login-tqq"></i><span>腾讯微博登录</span></a></dd>
+			<dd class="login-qq login-other-btn tencent"><a href="javascript:void(0)" onclick="return window.open('http://www.jxvdy.com/oauth2/authorize?p=txqq&login=1', 'oauth2Login_txqq' ,'height=525,width=585, toolbar=no, menubar=no, scrollbars=no, status=no, location=yes, resizable=yes').noAim = true;"><i class="icon-login-qq"></i><span>腾讯QQ登录</span></a></dd>
+		</dl>
+		<!-- /.login-other -->
+	</div>
+	<!-- /.popup-body -->
+</div>
+<!-- /.popup-wrap -->
+<!-- 弹出层遮罩 -->
+<div class="popup-wrap-mask"></div>
+<!--t1517409006-->
+	<a class="js_popup hide" id="popup_dynamic" js_popup="js_popup_dynamic" href="javascript:;"></a>
+	<div id="js_popup_dynamic" class="js_popup_content popup-wrap popup-comment-wrap">
+    <div class="popup-title">
+        <a href="javascript:;" title="关闭" class="js_popup_closed closed">×</a>
+        <h4>分享到金象动态</h4>
+    </div>
+    <div class="popup-body clearfix">
+    <form id="js_comment" class="js_form">
+        <div class="user-group-wrap">
+            <div class="user-group">
+                <textarea name="share_comment" onkeyup="checkLength(this);" cols="62" rows="5" class="textarea" placeholder="分享到金象动态..." js_mltip="#sy_share" js_ml="130"></textarea>
+                <p class="text-right" id="sy_share">还可以再输入130字</p>
+            </div>
+        </div>
+        <!-- /.user-group-wrap -->
+        <div class="user-group-wrap text-center">
+            <div class="user-group">
+                <input type="button" class="btn btn-warning pop_share_submit" hidefocus="true" value="分享" />
+            </div>
+        </div>
+        <!-- /.user-group-wrap -->
+    </form>
+    </div>
+    <!-- /.popup-body -->
+</div>
+<!--t1517409123-->
+</section>
+<!-- 隐藏代码盒子 S -->
+<div id="displayBox">
+	<div class="hd"><a></a></div>
+	<div class="bd" style="height: 0;">
+		<iframe scrolling="yse" src="" frameborder="0"></iframe>
+	</div>
+</div>
+<footer id="footer" class="footer-wrap clearfix">
+	<div class="container">
+		<div class="foot text-center">
+			<div class="clearfix foot-link">
+				<a href="about.html" tppabs="http://www.jxvdy.com/about.html" target="_blank">关于我们</a><span class="divide">|</span>
+				<a href="contact.html" tppabs="http://www.jxvdy.com/contact.html" target="_blank">联系我们</a><span class="divide">|</span>
+				<a href="guestbook.html" tppabs="http://www.jxvdy.com/guestbook.html" target="_blank">网站留言</a><span class="divide">|</span>
+				<a href="help.html" tppabs="http://www.jxvdy.com/help.html" target="_blank">帮助中心</a><span class="divide">|</span>
+				<a href="disclaimer.html" tppabs="http://www.jxvdy.com/disclaimer.html" target="_blank">免责声明</a><span class="divide">|</span>
+				<a href="copyright.html" tppabs="http://www.jxvdy.com/copyright.html" target="_blank">版权声明</a><span class="divide">|</span>
+				<a href="agreement.html" tppabs="http://www.jxvdy.com/agreement.html" target="_blank">使用协议</a>
+			</div>
+			<p>Copyright &copy; 2013-2018 jxvdy.com，All Rights Reserved&nbsp;&nbsp;使用本网站即表示接受金象微电影网用户协议<br><a href="javascript:if(confirm('http://www.miitbeian.gov.cn/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://www.miitbeian.gov.cn/'" tppabs="http://www.miitbeian.gov.cn/" target="_blank">ICP备案证书号：豫ICP备12020961号</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="licence.html" tppabs="http://www.jxvdy.com/licence.html" target="_blank">广播电视节目制作经营许可证 （豫）字第00213号</a><br>版权所有 金象微电影网</p>
+		</div>
+	</div>
+</footer>
+
+<!-- 页面右侧浮动控件 -->
+<div id="js_float_left" class="float-wx"><span class="jx-wx"></span></div>
+<div id="js_float_right" class="side-bar side-pannel" style="display: none;">
+    <div id="side-bar"><a class="gotop" href="javascript:;" style="display: none"></a></div>
+    <a class="block-text jx-app" href="javascript:;"><span class="jx-app-icon"></span></a>
+    <a class="block-text jx-kf" href="javascript:if(confirm('http://wpa.qq.com/msgrd?v=3&uin=1606173530&site=qq&menu=yes  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://wpa.qq.com/msgrd?v=3&uin=1606173530&site=qq&menu=yes'" tppabs="http://wpa.qq.com/msgrd?v=3&uin=1606173530&site=qq&menu=yes" target="_blank">
+        <span class="jx-kf-con">
+            官方客服QQ：1605173530<br>工作日9:00-18:00在线
+            <i></i>
+        </span>
+    </a>
+    <a class="block-text jx-wb" href="javascript:if(confirm('http://weibo.com/jinxiangv  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://weibo.com/jinxiangv'" tppabs="http://weibo.com/jinxiangv" target="_blank">
+        <span class="jx-wb-con">
+            <script src="wb.js" tppabs="http://tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8"></script>
+            <wb:follow-button uid="3568758305" type="red_2" width="136" height="24" ></wb:follow-button>
+            <i></i>
+        </span>
+    </a>
+    <a class="jx-ly" href="guestbook.html" tppabs="http://www.jxvdy.com/guestbook.html" target="_blank"></a>
+</div>
+<!--300_250_s-->
+<div class="js_ad_record" style="height: 250px;position:fixed; right:0; bottom:0;z-index:2147483648;"><script type="text/javascript" src="0112.js" tppabs="http://ad.jxvdy.com/script/0112.js"></script></div>
+<!--300_250_e-->
+<script type="text/javascript">
+//  返回置顶
+    $(function(){
+        $(window).scroll(function(){
+            if($(window).scrollTop()>100){
+                $("#side-bar .gotop").fadeIn();
+            }
+            else{
+                $("#side-bar .gotop").hide();
+            }
+        });
+        $("#side-bar .gotop").click(function(){
+            $('html,body').animate({'scrollTop':0},500);
+        });
+    });
+//    页面两侧浮动随屏幕滚动显示
+    function float_nav(dom){
+        var right_nav=$(dom);
+        var nav_height=right_nav.height();
+        function right_nav_position(bool){
+            var window_height=$(window).height();
+            var nav_top=(window_height-nav_height)/2;
+            if(bool){
+                right_nav.stop(true,false).animate({top:nav_top+$(window).scrollTop()},500);
+            }else{
+                right_nav.stop(true,false).animate({top:nav_top},400);
+            }
+            right_nav.show();
+        }
+
+        if(!+'\v1' && !window.XMLHttpRequest ){
+            $(window).bind('scroll resize',function(){
+                if($(window).scrollTop()>400){
+                    right_nav_position(true);
+                }else{
+                    right_nav.hide();
+                }
+            })
+        }else{
+            $(window).bind('scroll resize',function(){
+                if($(window).scrollTop()>400){
+                    right_nav_position();
+                }else{
+                    right_nav.hide();
+                }
+            })
+        }
+    }
+    float_nav('#js_float_left');
+    float_nav('#js_float_right');
+    
+    $(function(){
+        recordShow();
+        $(window).scroll(recordShow);
+    })
+    
+    function recordShow()
+    {
+		var Hei = $(window).height();
+        var scrTop = $(document).scrollTop();
+        $('.js_ad_record').each(function(){
+        	var offHei = $(this).offset().top
+			var objHei = $(this).height();
+			if((offHei < scrTop + Hei && offHei > scrTop) || (offHei + objHei < scrTop + Hei && offHei + objHei > scrTop))
+			{
+				if(!$(this).hasClass('js_recorded'))
+				{
+					$(this).addClass('js_recorded');
+					var _u = $(this).children("div:last-child").attr('js_data');
+					$.ajax({cache:false,type:'GET',url: _u});
+				}
+			}
+        })
+    }
+</script>
+</body>
+</html>
+<!--t1517408166-->
+
+<!--t1517408796-->

@@ -1,0 +1,33 @@
+html{color:#666;background-color:#fff;-ms-text-size-adjust:100%;_text-overflow:ellipsis}
+body,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,select,p,blockquote,th,td,hr,button,article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{margin:0;padding:0}
+body,button,input,select,textarea{font:12px/1.5 hiragino sans gb,microsoft yahei,simsun}
+h1,h2,h3,h4,h5,h6{font-size:1em}
+a{text-decoration:none}
+a:active{outline:0 none}
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none){a:active{background-color:transparent}}
+
+
+
+
+.site_head,.site_head_simple{position:relative;top:135px; _top:0px;left:0;z-index:100;width:100%;background:#fff;-webkit-transition:all .2s ease;-moz-transition:all .2s ease;-0-transition:all .2s ease;transition:all .2s ease}
+.site_head{position:fixed;_position:relative;left:0;height:44px;z-index:100;-webkit-transition:all .2s ease;-moz-transition:all .2s ease;-0-transition:all .2s ease;transition:all .2s ease}
+
+.site_navigation{z-index:2;width:100%;height:45px;padding-top:3px;box-shadow:0 2px 6px rgba(0,0,0,.4);overflow:hidden;background-color:rgba(256,256,256,.72);-webkit-transition:all .2s ease;-moz-transition:all .2s ease;-0-transition:all .2s ease;transition:all .2s ease;-webkit-transform:translateZ(0)}
+.lte_ie8 .site_navigation{filter:progid:DXImageTransform.Microsoft.gradient(enabled='true',startColorstr='#99FFFFFF',endColorstr='#99FFFFFF');zoom:1;border-bottom:1px solid #999;background-color:transparent}
+.navigation_open{height:88px;bottom:-91px!important;box-shadow:0 1px 3px rgba(0,0,0,.2)}
+.navigation_open .navigation_main{box-shadow:0 2px 6px rgba(0,0,0,.2)}
+
+
+
+.site_navigation .navigation_inner{position:relative;z-index:2;width:1240px;margin:0 auto}
+.site_navigation .navigation_area{float:left;height:16px;margin:14px 0;padding:0 5px}
+.site_navigation .navigation_area .list_item{float:left;height:45px;line-height:45px;margin-top:-14px;_margin-bottom:-14px;zoom:1}
+
+
+
+
+
+.site_navigation .navigation_area .navigation_sub{visibility:hidden;display:block;zoom:1;position:absolute;top:44px;left:0;width:100%;_width:1240px;height:44px;line-height:42px;font-size:14px;clear:both}
+.site_navigation .navigation_area .navigation_sub li{display:inline-block;*display:inline;zoom:1;margin:0 13px}
+.site_navigation .navigation_area .list_item_open .navigation_sub{visibility:visible}
+.site_navigation .navigation_area .list_item_open .navigation_sub ul{opacity:1}

@@ -1,0 +1,1 @@
+document.write('<a href="http://weibo.com/jinxiangv" target="_blank"  onclick="js_click_record(\'http://ad.jxvdy.com/record?type=1&id=24&p=4\')"><img src="http://ad.jxvdy.com/media/2016/0527/5747ec4dc807f213ca128.jpg" width="1100" height="90"></a><div js_data="http://ad.jxvdy.com/record?id=24&p=4" style="display:none"/></div>');

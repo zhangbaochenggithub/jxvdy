@@ -1,0 +1,1102 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset=utf-8"utf-8" />
+<meta name="renderer" content="webkit" />
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+<meta name="description" content="通过摄影机的运动表现意义：黑泽明的《罗生门》，（文/斯坦利·梭罗门，译/齐宙）黑泽明的《罗生门》（Rashomon，1950）采用了始终变幻不定的摄影机运动模式，而且是对这种模式的发展产生了最大影响的影片之一。黑泽明拍摄的那些穿越森林的出色推拉镜头，也许是《罗生门》在技术方面的最惊人成就。" />
+<meta name="keywords" content="罗生门,黑泽明,影视制作详解,摄影拍摄经验,影视创作心得" />
+<meta name="author" content="Gold elephant Group" />
+<link rel="icon" href="http://skin.jxvdy.com/jxvdy2/public/images/favicon.ico" />
+<title>通过摄影机的运动表现意义：黑泽明的《罗生门》-教学-微影拍摄-摄影摄像-微影教学-金象微电影网</title>
+<link rel="stylesheet" href="jxvdy.css" tppabs="http://skin.jxvdy.com/jxvdy2/public/stylesheets/jxvdy.css" />
+<link rel="stylesheet" href="font-awesome.min.css" tppabs="http://skin.jxvdy.com/jxvdy2/public/stylesheets/font-awesome.min.css" />
+<!--[if lt IE 9]>
+<link rel="stylesheet" href="font-awesome-ie7.min.css-v=4.2.css" tppabs="http://skin.jxvdy.com/jxvdy2/public/stylesheets/font-awesome-ie7.min.css?v=4.2">
+<script src="html5hack.min.js" tppabs="http://skin.jxvdy.com/jxvdy2/public/javascripts/html5hack.min.js"></script>
+<![endif]-->
+	<script src="jquery-1.8.3.min.js" tppabs="http://skin.jxvdy.com/jxvdy2/public/javascripts/jquery-1.8.3.min.js"></script>
+	<script src="jquery.SuperSlide.js" tppabs="http://skin.jxvdy.com/jxvdy2/public/javascripts/jspack/jquery.SuperSlide.js"></script>
+	<script src="headroom.min.js" tppabs="http://skin.jxvdy.com/jxvdy2/public/javascripts/jspack/headroom.min.js"></script>
+	<script src="simplePagination.js" tppabs="http://skin.jxvdy.com/jxvdy2/public/javascripts/jspack/simplePagination.js"></script>
+	<script src="jquery.slimscroll.js" tppabs="http://skin.jxvdy.com/jxvdy2/public/javascripts/jspack/jquery.slimscroll.js"></script>
+	<script src="jquery.surReady.min.js" tppabs="http://skin.jxvdy.com/jxvdy2/public/javascripts/jspack/jquery.surReady.min.js"></script>
+	<script src="jquery.surCookie.min.js" tppabs="http://skin.jxvdy.com/jxvdy2/public/javascripts/jspack/jquery.surCookie.min.js"></script>
+	<script type="text/javascript">
+	<!--
+	//黑头信标查找
+	$('#js_black_head').surReady(function(){
+		$('body').addClass('page-index-min');
+		$('#header').addClass('header-min-wrap');
+	});
+	
+	//清空历史记录
+	function clearHistory()
+	{
+		$.delCookie('video_jxvdy');
+		$.delCookie('drama_jxvdy');
+		$("#history-scrollbar").html('您还未观看微电影，暂无播放记录！');
+	}
+	
+	//判断是否已登录
+	$('#js_login_user_info').surReady(function(){
+		$.ajax({
+			url : '/d/member/mess'
+			,type : 'post'
+			,success: function(d){
+				var data = JSON.parse(d);
+				if(typeof(data['m_nick']) == 'string')
+				{
+					$('.js_login_user_info').removeClass('login-before').addClass('login-after')
+					$('.js_login_link').hide();
+					$('.js_user_login_btn').hide();
+					$('.js_user_name_wrap').show().find('img').attr('src', data['i_path']).attr('alt', data['m_nick']);
+					$('.js_user_name_wrap .js_user_nick').html(data['m_nick']);
+					$('.js_user_icon').show().find('img').attr('src', data['i_path']).attr('alt', data['m_nick']);
+					$('.js_user_icon div a').html(data['m_nick']);
+					$('.js_user_icon ul').children('li').first().find('a').html(data['attention']);
+					$('.js_user_icon ul').children('li').last().find('a').html(data['fans']);
+					$('.js_user_footer').show();
+				}
+				if(typeof(data['notice']) == 'string' && data['notice'] != 0)
+				{
+					$('.js_mess_total').show();
+				}
+			}
+		})
+	});
+	//-->
+	</script>
+	<script src="util.js" tppabs="http://skin.jxvdy.com/jxvdy2/public/javascripts/util.js"></script>
+	<script src="shitao.js" tppabs="http://skin.jxvdy.com/jxvdy2/public/javascripts/jspack/shitao.js"></script>
+	<script src="zebra_tooltips.js" tppabs="http://skin.jxvdy.com/jxvdy2/public/javascripts/jspack/zebra_tooltips.js"></script>
+<script>
+	//百度统计
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "hm.js-e64f7f2c081e3417386b861e0882c9d9"/*tpa=http://hm.baidu.com/hm.js?e64f7f2c081e3417386b861e0882c9d9*/;
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+</script>
+<script type="text/javascript">
+<!--
+$.ajax({cache:false,type:'GET',url:'http://www.jxvdy.com/d/0033201420.html'});
+//-->
+</script>
+
+<script type="text/javascript">
+<!--
+function js_click_record(url)
+{
+	$.ajax({cache:false,type:'GET',url: url});
+}
+
+//-->
+</script>
+<script language="JavaScript">
+<!--
+//火狐img onerror
+var FIREFOXBULLSHIT = null
+,	FIREFOXBULLSHITC = 0;
+$(function(){
+	FIREFOXBULLSHIT = setInterval("$('img:not(.js_error_off)').each(function(){$(this).attr('src')=='' && $(this).trigger('error') && $(this).attr('js_error_off');});15<=++FIREFOXBULLSHITC && clearInterval(FIREFOXBULLSHIT);", 200);
+});
+//-->
+</script>
+<!--t1517408218-->
+<script type="text/javascript" src="video_tab.js" tppabs="http://skin.jxvdy.com/jxvdy2/public/javascripts/video_tab.js"></script>
+<script type="text/javascript" src="rank.js" tppabs="http://skin.jxvdy.com/jxvdy2/public/javascripts/rank.js"></script>
+<script type="text/javascript" src="reload.js" tppabs="http://skin.jxvdy.com/jxvdy2/public/javascripts/reload.js"></script>
+<script type="text/javascript" src="pb.js" tppabs="http://skin.jxvdy.com/jxvdy2/public/javascripts/pb.js"></script>
+<script type="text/javascript" src="text_content_inside.js" tppabs="http://skin.jxvdy.com/jxvdy2/public/javascripts/text_content_inside.js"></script>
+<script type="text/javascript" src="public.js" tppabs="http://skin.jxvdy.com/jxvdy2/public/javascripts/public.js"></script>
+<script type="text/javascript" src="share.js" tppabs="http://skin.jxvdy.com/jxvdy2/public/javascripts/share.js"></script>
+<script type="text/javascript" charset="utf-8" src="buttonLite.js" tppabs="http://static.bshare.cn/b/buttonLite.js"></script>
+<script type="text/javascript" charset="utf-8" >
+	//预定义bshare分享按钮样式及配置参数
+	var bShareOpt = {style:-1,uuid:'38f8de2c-ca33-452c-89f3-4caa71109129',mdiv:-1};
+	function shareTo(event, shortName) {
+		//自定义设置内容，可动态获取当前页面内相应的参数进行传递
+		var url=window.location.href;
+		var str_title = "通过摄影机的运动表现意义：黑泽明的《罗生门》";
+		var str_info = "（文/斯坦利·梭罗门，译/齐宙）黑泽明的《罗生门》（Rashomon，1950）采用了始终变幻不定的摄影机运动模式，而且是对这种模式的发展产生了最大影响的影片之一。黑泽明拍摄的那些穿越森林的出色推拉镜头，也许是《罗生门》在技术方面的最惊人成就。";
+		var img = "index-1.htm.png"/*tpa=http://image.jxvdy.com/*/;
+		//清除自定义分享内容的方法，在设置前清空，重新自定义内容
+		bShare.entries = [];
+		//添加自定义分享内容方法，不需要自定义的可以传递，bshare js会主动抓取页面相应值默认
+		bShare.addEntry({
+			title: str_title,
+			url: url,
+			summary: str_info,
+			pic:img
+		});
+
+		//调用相应的分享方法，
+		bShare.share(event, shortName);
+
+	}
+</script>
+</head>
+<body class="page-index" id="lazyload_content">
+<header id="header" class="header-fixed">
+	<div class="header-wrap clearfix">
+		<div class="container header-inner">
+			<!-- logo -->
+			<h1 class="logo-wrap"><a href="index.htm" tppabs="http://www.jxvdy.com/" title="金象微电影网"><img src="logo.png" tppabs="http://skin.jxvdy.com/jxvdy2/public/images/logo.png" alt="金象微电影网"/></a></h1>
+			<!-- mini导航 -->
+			<div class="mini-nav dropdown-wrap">
+				<div class="dropdown-object">
+				<span class="dropdown-name"><i class="fa fa-bars"></i>导航</span>
+					<div class="dropdown-inner">
+						<div class="user-inner">
+							<span class="tip-t"><i class="tip-outer"></i><i class="tip-inner"></i></span>
+														<div class="item-menu clearfix">
+								<div class="item-column"><a href="news.html" tppabs="http://www.jxvdy.com/news.html">资讯</a></div>
+								<div class="item-subcolumn">
+																		<a href="list.html" tppabs="http://www.jxvdy.com/news/hydt/list.html">行业动态</a>
+																		<a href="list-1.html" tppabs="http://www.jxvdy.com/news/ylqy/list.html">娱乐前沿</a>
+																		<a href="list-2.html" tppabs="http://www.jxvdy.com/news/mrzl/list.html">名人专栏</a>
+																		<a href="list-3.html" tppabs="http://www.jxvdy.com/news/jxbb/list.html">金象播报</a>
+																		<a href="list-4.html" tppabs="http://www.jxvdy.com/news/ysmp/list.html">影视名片</a>
+																	</div>
+							</div>
+														<div class="item-menu clearfix">
+								<div class="item-column"><a href="video.html" tppabs="http://www.jxvdy.com/video.html">微电影</a></div>
+								<div class="item-subcolumn">
+																		<a href="list-t1.html" tppabs="http://www.jxvdy.com/video/list-t1.html">爱情</a>
+																		<a href="list-t2.html" tppabs="http://www.jxvdy.com/video/list-t2.html">校园</a>
+																		<a href="list-t3.html" tppabs="http://www.jxvdy.com/video/list-t3.html">温情</a>
+																		<a href="list-t6.html" tppabs="http://www.jxvdy.com/video/list-t6.html">励志</a>
+																		<a href="list-t8.html" tppabs="http://www.jxvdy.com/video/list-t8.html">社会</a>
+																		<a href="list-t7.html" tppabs="http://www.jxvdy.com/video/list-t7.html">职场</a>
+																		<a href="list-t4.html" tppabs="http://www.jxvdy.com/video/list-t4.html">搞笑</a>
+																		<a href="list-t5.html" tppabs="http://www.jxvdy.com/video/list-t5.html">悬疑</a>
+																		<a href="list-t14.html" tppabs="http://www.jxvdy.com/video/list-t14.html">穿越</a>
+																		<a href="list-t17.html" tppabs="http://www.jxvdy.com/video/list-t17.html">恐怖</a>
+																		<a href="list-t9.html" tppabs="http://www.jxvdy.com/video/list-t9.html">刑侦</a>
+																		<a href="list-t13.html" tppabs="http://www.jxvdy.com/video/list-t13.html">动作</a>
+																		<a href="list-t12.html" tppabs="http://www.jxvdy.com/video/list-t12.html">科幻</a>
+																		<a href="list-t11.html" tppabs="http://www.jxvdy.com/video/list-t11.html">古装</a>
+																		<a href="list-t16.html" tppabs="http://www.jxvdy.com/video/list-t16.html">公益</a>
+																		<a href="list-t18.html" tppabs="http://www.jxvdy.com/video/list-t18.html">文艺</a>
+																		<a href="list-t10.html" tppabs="http://www.jxvdy.com/video/list-t10.html">战争</a>
+																		<a href="list-t20.html" tppabs="http://www.jxvdy.com/video/list-t20.html">动画</a>
+																		<a href="list-t21.html" tppabs="http://www.jxvdy.com/video/list-t21.html">剧情</a>
+																		<a href="list-t19.html" tppabs="http://www.jxvdy.com/video/list-t19.html">纪录</a>
+																		<a href="list-t15.html" tppabs="http://www.jxvdy.com/video/list-t15.html">广告</a>
+																		<a href="list-t22.html" tppabs="http://www.jxvdy.com/video/list-t22.html">其他</a>
+																	</div>
+							</div>
+														<div class="item-menu clearfix">
+								<div class="item-column"><a href="drama.html" tppabs="http://www.jxvdy.com/drama.html">微剧集</a></div>
+								<div class="item-subcolumn">
+																		<a href="list-t29.html" tppabs="http://www.jxvdy.com/drama/list-t29.html">都市爱情</a>
+																		<a href="list-t30.html" tppabs="http://www.jxvdy.com/drama/list-t30.html">青春励志</a>
+																		<a href="list-t31.html" tppabs="http://www.jxvdy.com/drama/list-t31.html">创意搞笑</a>
+																		<a href="list-t32.html" tppabs="http://www.jxvdy.com/drama/list-t32.html">恐怖悬疑</a>
+																		<a href="list-t33.html" tppabs="http://www.jxvdy.com/drama/list-t33.html">动画儿童</a>
+																		<a href="list-t34.html" tppabs="http://www.jxvdy.com/drama/list-t34.html">社会纪实</a>
+																	</div>
+							</div>
+														<div class="item-menu clearfix">
+								<div class="item-column"><a href="screenplay.html" tppabs="http://www.jxvdy.com/screenplay.html">剧本</a></div>
+								<div class="item-subcolumn">
+																		<a href="javascript:if(confirm('http://www.jxvdy.com/screenplay/list.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/screenplay/list.html'" tppabs="http://www.jxvdy.com/screenplay/show/list.html">剧本展示</a>
+																		<a href="list-6.html" tppabs="http://www.jxvdy.com/screenplay/sale/list.html">剧本出售</a>
+																		<a href="list-7.html" tppabs="http://www.jxvdy.com/screenplay/collection/list.html">剧本征集</a>
+																	</div>
+							</div>
+														<div class="item-menu clearfix">
+								<div class="item-column"><a href="tutorials.html" tppabs="http://www.jxvdy.com/tutorials.html">教学</a></div>
+								<div class="item-subcolumn">
+																		<a href="list-8.html" tppabs="http://www.jxvdy.com/tutorials/plays/list.html">剧作教程</a>
+																		<a href="list-9.html" tppabs="http://www.jxvdy.com/tutorials/shooting/list.html">微影拍摄</a>
+																		<a href="list-10.html" tppabs="http://www.jxvdy.com/tutorials/late/list.html">影视后期</a>
+																		<a href="list-11.html" tppabs="http://www.jxvdy.com/tutorials/equipment/list.html">拍摄器材</a>
+																	</div>
+							</div>
+														<div class="item-menu clearfix">
+								<div class="item-column">微影专题</div>
+								<div class="item-subcolumn">
+									<a href="list-12.html" tppabs="http://www.jxvdy.com/activities/spec/list.html" class="brand-warning">微影活动</a>
+									<!--<a href="">网站专题</a>-->
+									<!--<a href="">资讯专题</a>-->
+									<a href="list-13.html" tppabs="http://www.jxvdy.com/video/spec/list.html">微电影专题</a>
+								</div>
+							</div>
+							<!-- /.item-menu -->
+							<div class="item-menu clearfix">
+								<div class="item-column">APP下载</div>
+								<div class="item-subcolumn">
+									<a href="javascript:if(confirm('https://itunes.apple.com/cn/app/jin-xiang-wei-dian-ying/id828237631?mt=8  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://itunes.apple.com/cn/app/jin-xiang-wei-dian-ying/id828237631?mt=8'" tppabs="http://www.jxvdy.com/app/iphone" target="_blank">iPhone客户端</a>
+									<a href="javascript:if(confirm('http://www.jxvdy.com/404.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ������������ļ�δ�ҵ���  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/404.html'" tppabs="http://www.jxvdy.com/app/jxvdy.apk" target="_blank">Android客户端</a>
+									<a href="javascript:if(confirm('https://itunes.apple.com/cn/app/jin-xiang-wei-dian-yinghd/id879977586?mt=8  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://itunes.apple.com/cn/app/jin-xiang-wei-dian-yinghd/id879977586?mt=8'" tppabs="http://www.jxvdy.com/app/ipad" target="_blank">iPad客户端</a>
+								</div>
+							</div>
+							<!-- /.item-menu -->
+						</div>
+					</div>
+				</div>
+				<!-- /.dropdown-menu -->
+			</div>
+			<!-- 搜索框 -->
+			<div class="search-wrap">
+				<form class="clearfix" action="http://www.jxvdy.com/tutorials/shooting/sysx/search" method="get" role="search" target="_blank">
+					<div class="mod-search">
+						<input type="text" class="search-txt" name="kw" placeholder="请输入“教程”关键词">
+						<i class="fa fa-search"></i>
+					</div>
+					<input type="submit" class="btn-search" value="搜索"> 
+				</form>
+			</div>
+			<!-- 用户中心 -->
+			<div class="user-info-wrap" id="js_login_user_info">
+				<div class="user-wrap login-before dropdown-wrap js_login_user_info">
+					<div class="dropdown-object">
+						<div class="user-name-wrap js_user_name_wrap" style="display: none;">
+							<span class="user-icon">
+								<a class="" href="login.html-jumpto=-my-index.html" tppabs="http://www.jxvdy.com/my/index.html" target="_blank"><img src="" onerror="this.src='http://skin.jxvdy.com/jxvdy2/public/images/avatar80_80.jpg'" width="40" height="40"  alt=""/></a>
+							</span>
+							<a class="user-txt js_user_nick" href="login.html-jumpto=-my-index.html" tppabs="http://www.jxvdy.com/my/index.html" target="_blank"></a>
+						</div>
+						<a class="link js_login_link" href="javascript:;"><i class="fa fa-user"></i>登录</a>
+						<div class="dropdown-inner">
+							<div class="user-inner">
+								<span class="tip-t"><i class="tip-outer"></i><i class="tip-inner"></i></span>
+								<div class="menu-hd">
+									<div class="user-btns clearfix">
+										<div class="user-icon clearfix js_user_icon" style="display: none;">
+											<a class="" href="login.html-jumpto=-my-index.html" tppabs="http://www.jxvdy.com/my/index.html" target="_blank"><img src="" onerror="this.src='http://skin.jxvdy.com/jxvdy2/public/images/avatar80_80.jpg'" width="50" height="50"  alt=""/></a>
+											<div class="user-name">
+												<a href="login.html-jumpto=-my-index.html" tppabs="http://www.jxvdy.com/my/index.html" target="_blank"></a>
+												<ul class="mem-sta">
+													<li><span>关注</span> <strong><a href="login.html-jumpto=-my-friend-list.html-t=follow.htm" tppabs="http://www.jxvdy.com/my/friend/list.html?t=follow" target="_blank"></a></strong></li>
+													<li><span>粉丝</span> <strong><a href="login.html-jumpto=-my-friend-list.html-t=fans.htm" tppabs="http://www.jxvdy.com/my/friend/list.html?t=fans" target="_blank"></a></strong></li>
+												</ul>
+											</div>
+										</div>
+										<a class="btn btn-warning user-login-btn js_user_login_btn" href="login.htm" tppabs="http://www.jxvdy.com/my/login">马上登录</a>
+										<a class="btn btn-warning user-login-btn ml10 js_user_login_btn" href="regist.htm" tppabs="http://www.jxvdy.com/my/regist">免费注册</a>
+									</div>
+								</div>
+								<div class="menu-bd">
+									<ul class="list-unstyled clearfix">
+										<li><a href="login.html-jumpto=-my-index.html" tppabs="http://www.jxvdy.com/my/index.html" target="_blank"><i class="fa fa-home"></i>我的金象</a></li>
+										<li><a href="login.html-jumpto=-my-video-list.html-t=release.htm" tppabs="http://www.jxvdy.com/my/video/list.html?t=release" target="_blank"><i class="fa fa-video-camera"></i>我的微影</a></li>
+										<li><a href="login.html-jumpto=-my-screenplay-list.html-t=release.htm" tppabs="http://www.jxvdy.com/my/screenplay/list.html?t=release" target="_blank"><i class="fa fa-film"></i>我的剧本</a></li>
+										<li><a href="login.html-jumpto=-my-tutorials-list.html-t=release.htm" tppabs="http://www.jxvdy.com/my/tutorials/list.html?t=release" target="_blank"><i class="fa fa-file-powerpoint-o"></i>我的教学</a></li>
+										<li><a href="login.html-jumpto=-my-news-list.html-t=collect.htm" tppabs="http://www.jxvdy.com/my/news/list.html?t=collect" target="_blank"><i class="fa fa-newspaper-o"></i>我的资讯</a></li>
+										<li><a href="login.html" tppabs="http://www.jxvdy.com/my/login.html" target="_blank"><i class="fa fa-volume-up"></i>消息中心</a></li>
+									</ul>
+								</div>
+								<div class="user-footer js_user_footer" style="display: none;">
+									<a class="user-setting pull-left" href="login.html-jumpto=-my-profile-edit.html" tppabs="http://www.jxvdy.com/my/profile/edit.html"><i class="fa fa-cog"></i>账户设置</a>
+									<a class="user-exit pull-right" href="login.htm" tppabs="http://www.jxvdy.com/my/logout"><i class="fa fa-power-off"></i>退出</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="upload-wrap dropdown-wrap">
+					<div class="dropdown-object">
+						<a class="link" href="javascript:;" target="_blank"><i class="fa fa-cloud-upload"></i>发布</a>
+						<div class="dropdown-inner">
+							<div class="user-inner">
+								<span class="tip-t"><i class="tip-outer"></i><i class="tip-inner"></i></span>
+								<div class="menu-bd">
+									<ul class="list-unstyled clearfix">
+										<li><a href="login-jumpto=http---www.jxvdy.com-my-video_release.html" tppabs="http://www.jxvdy.com/my/video_release.html" target="_blank"><i class="fa fa-video-camera"></i>发布微电影</a></li>
+										<li><a href="login-jumpto=http---www.jxvdy.com-my-drama_release.html" tppabs="http://www.jxvdy.com/my/drama_release.html" target="_blank"><i class="fa fa-file-video-o"></i>发布网络剧</a></li>
+										<li><a href="login-jumpto=http---www.jxvdy.com-my-screenplay_release.html" tppabs="http://www.jxvdy.com/my/screenplay_release.html" target="_blank"><i class="fa fa-film"></i>发布剧本</a></li>
+										<li><a href="login-jumpto=http---www.jxvdy.com-my-screenplay-collection_release.html" tppabs="http://www.jxvdy.com/my/screenplay/collection_release.html" target="_blank"><i class="fa fa-film"></i>发布剧本征集</a></li>
+										<li><a href="login-jumpto=http---www.jxvdy.com-my-tutorials_release.html" tppabs="http://www.jxvdy.com/my/tutorials_release.html" target="_blank"><i class="fa fa-file-powerpoint-o"></i>发布教程</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="history-wrap dropdown-wrap">
+					<div class="dropdown-object">
+					<a class="link" href="javascript:void(0)"><i class="fa fa-history"></i>记录</a>
+					<div id="js_history_tab" class="dropdown-inner history-tab">
+						<div class="user-inner">
+							<span class="tip-t"><i class="tip-outer"></i><i class="tip-inner"></i></span>
+							<div id="history-scrollbar" class="history-inner">
+								<div class="history-list clearfix">
+																<p>您还未观看微电影，暂无播放记录！</p>
+																</div>
+							</div>
+							<div class="user-footer">
+								<a class="history-clear" href="javascript:;" onclick="clearHistory()"><i class="fa fa-trash-o"></i>清空</a>
+							</div>
+						</div>
+					</div>
+					</div>
+				</div>
+
+				<div class="message-wrap">
+					<a class="link" href="login-jumpto=-my-message-list.html-t=private.htm" tppabs="http://www.jxvdy.com/my/message/list.html?t=private" target="_blank"><i class="fa fa-bell-o"></i>消息</a>
+					<em class="total js_mess_total" style="display: none;"><i class="fa fa-circle"></i></em>
+				</div>
+			</div>
+		</div>
+
+		<div id="js_nav" class="head-jxv">
+			<div class="navigation-up">
+				<div class="navigation-inner">
+					<div class="navigation-jxv">
+						<ul id="js_nav_highlight">
+							<li class="js_navdown js_navbtn_" js_navdown="">
+								<h2><a href="index.htm" tppabs="http://www.jxvdy.com/">首页</a></h2>
+							</li>
+														<li class="js_navdown js_navbtn_news" js_navdown="news">
+								<h2><a href="news.html" tppabs="http://www.jxvdy.com/news.html">资讯</a></h2>
+							</li>
+														<li class="js_navdown js_navbtn_video" js_navdown="video">
+								<h2><a href="video.html" tppabs="http://www.jxvdy.com/video.html">微电影</a></h2>
+							</li>
+														<li class="js_navdown js_navbtn_screenplay" js_navdown="screenplay">
+								<h2><a href="screenplay.html" tppabs="http://www.jxvdy.com/screenplay.html">剧本</a></h2>
+							</li>
+														<li class="js_navdown js_navbtn_tutorials" js_navdown="tutorials">
+								<h2><a href="tutorials.html" tppabs="http://www.jxvdy.com/tutorials.html">教学</a></h2>
+							</li>
+														<li class="js_navdown js_navbtn_activities" js_navdown="activities">
+								<h2><a href="list-12.html" tppabs="http://www.jxvdy.com/activities/spec/list.html">活动</a></h2>
+							</li>
+						</ul>
+					</div>
+					<div class="downapp">
+						<a href="app.htm" tppabs="http://www.jxvdy.com/app" title="下载移动客户端" target="_blank"><i class="fa fa-mobile"></i>下载移动客户端</a>
+					</div>
+				</div>
+			</div>
+			<div class="navigation-down">
+								<div id="js_navsub_news" class="js_navdown nav-down-menu" js_navdown="news" style="display: none;">
+					<div class="navigation-down-inner">
+											<dl><dd><a href="list.html" tppabs="http://www.jxvdy.com/news/hydt/list.html">行业动态</a></dd></dl>
+											<dl><dd><a href="list-1.html" tppabs="http://www.jxvdy.com/news/ylqy/list.html">娱乐前沿</a></dd></dl>
+											<dl><dd><a href="list-2.html" tppabs="http://www.jxvdy.com/news/mrzl/list.html">名人专栏</a></dd></dl>
+											<dl><dd><a href="list-3.html" tppabs="http://www.jxvdy.com/news/jxbb/list.html">金象播报</a></dd></dl>
+											<dl><dd><a href="list-4.html" tppabs="http://www.jxvdy.com/news/ysmp/list.html">影视名片</a></dd></dl>
+										</div>
+				</div>
+								<div id="js_navsub_video" class="js_navdown nav-down-menu" js_navdown="video" style="display: none;">
+					<div class="navigation-down-inner">
+											<dl><dd><a href="list-16.html" tppabs="http://www.jxvdy.com/video/list.html">微电影</a></dd></dl>
+											<dl><dd><a href="list-17.html" tppabs="http://www.jxvdy.com/drama/list.html">网络剧</a></dd></dl>
+											<dl><dd><a href="list-13.html" tppabs="http://www.jxvdy.com/video/spec/list.html">微电影专题</a></dd></dl>
+										</div>
+				</div>
+								<div id="js_navsub_screenplay" class="js_navdown nav-down-menu" js_navdown="screenplay" style="display: none;">
+					<div class="navigation-down-inner">
+											<dl><dd><a href="javascript:if(confirm('http://www.jxvdy.com/screenplay/list.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/screenplay/list.html'" tppabs="http://www.jxvdy.com/screenplay/show/list.html">剧本展示</a></dd></dl>
+											<dl><dd><a href="list-6.html" tppabs="http://www.jxvdy.com/screenplay/sale/list.html">剧本出售</a></dd></dl>
+											<dl><dd><a href="list-7.html" tppabs="http://www.jxvdy.com/screenplay/collection/list.html">剧本征集</a></dd></dl>
+										</div>
+				</div>
+								<div id="js_navsub_tutorials" class="js_navdown nav-down-menu" js_navdown="tutorials" style="display: none;">
+					<div class="navigation-down-inner">
+											<dl><dd><a href="list-8.html" tppabs="http://www.jxvdy.com/tutorials/plays/list.html">剧作教程</a></dd></dl>
+											<dl><dd><a href="list-9.html" tppabs="http://www.jxvdy.com/tutorials/shooting/list.html">微影拍摄</a></dd></dl>
+											<dl><dd><a href="list-10.html" tppabs="http://www.jxvdy.com/tutorials/late/list.html">影视后期</a></dd></dl>
+											<dl><dd><a href="list-11.html" tppabs="http://www.jxvdy.com/tutorials/equipment/list.html">拍摄器材</a></dd></dl>
+										</div>
+				</div>
+							</div>
+		</div>
+		<!-- /.head-jxv -->
+	</div>
+	<!-- header-wrap -->
+</header>
+<!--t1517408890-->
+
+<section class="container mt20">
+	<ol class="breadcrumb-wrap">
+		<li><i class="fa fa-home color-gray"></i><a href="index.htm" tppabs="http://www.jxvdy.com/">金象微电影网首页</a></li>
+				<li><i>/</i><a href="list-18.html" tppabs="http://www.jxvdy.com/tutorials/list.html">教学</a></li>
+				<li><i>/</i><a href="list-9.html" tppabs="http://www.jxvdy.com/tutorials/shooting/list.html">微影拍摄</a></li>
+				<li><i>/</i><a href="javascript:if(confirm('http://www.jxvdy.com/tutorials/shooting/sysx/list.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/tutorials/shooting/sysx/list.html'" tppabs="http://www.jxvdy.com/tutorials/shooting/sysx/list.html">摄影摄像</a></li>
+				<li class="active"><i>/</i>正文</li>
+	</ol>
+</section>
+
+<section class="container">
+	<div class="content-wrap">
+		<div class="content clearfix">
+			<div class="articl-header">
+				<h3>通过摄影机的运动表现意义：黑泽明的《罗生门》</h3>
+				<div class="article-other-info">
+					<div class="article-field clearfix">
+						<span class="muted"><i class="fa fa-user"></i><a href="javascript:if(confirm('http://www.jxvdy.com/member/dynamic.html?id=313138  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/member/dynamic.html?id=313138'" tppabs="http://www.jxvdy.com/member/dynamic.html?id=313138">yuanyin2208</a></span>						<span class="muted"><i class="fa fa-clock-o"></i>2016-01-25 12:10:19</span>
+						<span class="muted"><i class="fa fa-eye"></i><span>0</span>℃</span>
+						<span class="muted"><i class="fa fa-globe"></i>独立鱼</span>
+						<span class="muted"><i class="fa fa-comments-o" js_data="32718" js_coc_id="22"></i><a href="#comments"><span></span>评论</a></span>
+					</div>
+					<blockquote class="article-city hidden-xs"><p><strong>摘要：</strong>（文/斯坦利·梭罗门，译/齐宙）黑泽明的《罗生门》（Rashomon，1950）采用了始终变幻不定的摄影机运动模式，而且是对这种模式的发展产生了最大影响的影片之一。黑泽明拍摄的那些穿越森林的出色推拉镜头，也许是《罗生门》在技术方面的最惊人成就。</p></blockquote>
+				</div>
+			</div>
+			<div class="articl-content clearfix js_loadmore" js_data="32718" js_page="1" js_total="1">
+				<p><span style="font-size:12px;">黑泽明的《罗生门》（Rashomon，1950）采用了始终变幻不定的摄影机运动模式，而且是对这种模式的发展产生了最大影响的影片之一。黑泽明拍摄的那些穿越森林的出色推拉镜头，也许是《罗生门》在技术方面的最惊人成就。在这以前，从来没有一台活动的摄影机曾经这样优雅地表现强烈的紧张；从来没有一台摄影机曾经这样迅速而又巧妙地移动。虽然运动是电影的基本思想，而且电影创作者并不想让人注意拍摄过程本身，但是《罗生门》的摄影工作仍然是卓越技巧的范例，掌握这种技巧的是具有最高水平的电影大师，他能够十全十美地实现每一段的美学目的。</span></p><p><span style="font-size:12px;">这部影片由讲述同一个事件的四个片段组成，每个片段都由一个不同的人物从主观的立场出发叙述自己目击的情况。这四个人介绍的情况又并入另一个自成体系的故事，这个故事同四个片段中所描绘的中心事件并无必然联系。由于结构这样复杂，因此每一段的情调几乎都要有变化。黑泽明既做到了这一点，而又没有使自己的风格显得支离破碎。摄影风格自始至终反映了这位电影创作者善于使影片成为统一体的敏锐感受力。<br /></span></p><p><span style="font-size:12px;">另外也有一些影片用一个场面或地点作为框架来演出一些互不关联的故事，这些故事中的人物只是偶然来到那个特定的环境（例如《愚人船》[Ship of Fools，1965]、《大饭店》[ Grand Hotel，1932]），但是黑泽明的这部影片却做了前人从未做过的事：它把着重点稍加变动，使框架故事同内含故事能互为补充，并因而具有意义。<br /></span></p><p style="text-align: center;"><span style="font-size:12px;">&nbsp;&nbsp;<img alt="通过摄影机的运动表现意义：黑泽明的《罗生门》" class="js_show_big_img" src="0001191933-1.html" tppabs="http://image.jxvdy.com/2016/0125/56a586a369d9a9c42294b_0.jpg" js_data="2016/0125/56a586a369d9a9c42294b_1.jpg"  /><br /></span></p><p style="text-align: center;"><span style="font-size:12px;">《罗生门》剧照<br /></span></p><p style="text-align: left;"><span style="font-size:12px;">内含故事涉及三个人物：武士金泽武弘、他的妻子真砂和强盗多襄丸。在影片开始前，这三个人已经向调查武士死亡事件的纠察使陈述了各自的说法。（武士已经死去，因此他是通过一个中间人即巫女讲话的。）这三个人的叙述又通过一个行脚僧和一个卖柴人同观众联系起来，他们两人对电影文学剧本中称为打杂儿的人讲话，而这三个人都在罗生门遗址避雨。罗生门是十二世纪日本残破的首都——京都城的城门或城楼。在纠察使审案子时，卖柴人和行脚僧听到了当事人的三种不同说法。在整个影片中，卖柴人看来一直对招供人的不老实很反感，最后他承认自己是目击者，讲述了他看到的事件经过。他因为认识到人性的堕落而极为沮丧，这主要不是因为事件本身可怕，而是因为武弘、真砂和多襄丸都觉得有必要撒谎，使自己尽可能显得体面。在卖柴人看来，上述的每个人都企图篡改客观现实，以满足自我的需要，这就完全丧失了人类的尊严。行脚僧对于人可以为达到目的而不择手段也开始感到泄气，因此在影片临近结束时对卖柴人的一个行动十分怀疑。换句话说，卖柴人关于这次事件的说法影响了一个敏感的听话人即行脚僧，而另一个听话人，即粗野的打杂儿的，却要么是没有受到影响，要么是受到了引诱，在影片结束时进行了一次可卑的偷窃。<br /></span></p><p style="text-align: left;"><span style="font-size:12px;">我们必须先比较详细地了解对基本事件的四种不同说法的错综复杂的基本内容，才能进而分析移动摄影机在这部影片中的技术和艺术成就。后文将会说明，黑泽明怎样运用摄影机使故事成为一个整体和区分对中心故事的四种不同说法。取得这种成就本身就是困难的，而故事素材的复杂性又使困难更加严重。当事人提出的前三种说法不仅在许多细节上有出入，而且对有些基本事实的说法也相互矛盾；只有少数总的前提看来大家是一致的，例如，强盗制服了武士，把他捆在树上，再当着他的面占有了他的妻子。但是，三种说法有一点却完全相同，这就是讲述人都明显地想美化自己在事件中的表现。<br /></span></p><p style="text-align: left;"><span style="font-size:12px;">第一种说法是多襄丸讲的。这个强盗向纠察使说明，他怎样机智地诱骗武士及其妻子跟着他走进森林深处。他经过搏斗制服和捆住了武士后，企图强行占有武士的妻子。她坚决地拼死抵抗，使他钦佩她的刚强，但是她忽然发现这个强盗是可爱的，于是献身给他。到这时为止，多襄丸这个强盗讲的故事使他显得：（1）十分精通自己的本行；（2）洞察世事，能够欣赏为了自卫而企图杀死他的非凡女人；（3）富有男性美，因而能赢得这个女人的心，而不用采取暴力手段来占有她。但是，这时多襄丸还没有讲完自己的英雄事迹。他接着说，武士之妻坚持，为了维护她的荣誉，要么是她的丈夫死，要么是她的情人死。多襄丸懂得她的这个要求是有道理的，于是高尚地割断了捆住武士的绳索，同他进行了决斗。虽然这种说法的前面部分把多襄丸说成是过分谨慎，甚至胆小；但是这时他表现得像佐罗一样，经过光辉的战斗杀死了武士。他对纠察使说：“我们交锋二十三个回合。这，大家可别忘了。凡是和我交锋，斗上二十回合的，天底下也就只有那汉子一人。”他最后说，那个女人在他们交锋时跑掉了，他也懒得去找她。多襄丸就这样承认自己杀了人，因为他是一个恶名昭著的强盗，即使这次他没有犯罪，反正也会被处决。他设法赢得了我们的同情，使我们认为他的本性是英勇庄严的。<br /></span></p><p style="text-align: center;"><span style="font-size:12px;">&nbsp;<img alt="通过摄影机的运动表现意义：黑泽明的《罗生门》" class="js_show_big_img" src="57846d09bc92796c1a12d-1.jpg" tppabs="http://image.jxvdy.com/2016/0125/56a58753cff57e6dae7af_0.jpg" js_data="2016/0125/56a58753cff57e6dae7af_1.jpg"  /><br /></span></p><p style="text-align: center;"><span style="font-size:12px;">《罗生门》剧照<br /></span></p><p style="text-align: left;"><span style="font-size:12px;">第二种说法是武士之妻真砂讲的。这种说法的主调是引人怜悯。对于她来说，这相当于男性的英雄业绩，因为这种说法使她以孤苦无依的暴行受害者的姿态出现。按照她的说法，强盗确实强奸了她，然后她哭着跑进了森林。强盗和武士没有交锋，她也没有暗示过两人之一必须死去。事实上，她哭着跑向仍然捆在树上的丈夫，先是跪在地上，后来又扑向他身上，苦苦哀求他宽恕。他始终沉默，轻蔑地盯着她。在他看来，她已经可耻地失身，尽管她无力保护自己不受奸污。她割断捆住他身体的绳素，把她的短刀交给他，让他把她杀掉。他仍然毫不动容，仍然冷酷地蔑视她。电影剧本这时描写女人越来越绝望，然后是一个特写镜头：“她现在稳步向前；她的世界已经永远毁灭，她高举着短刀，而看来并不知道自己手里拿着刀子，摄影机跟着她走向她丈夫，直到她突然冲出画面。”她自称晕过去了，大概没有意识到已经杀死了自己的丈夫。她说她后来曾试图自杀未遂，她用一句问话结束了自己的陈述：“像我这样一个无依无靠的可怜女人该怎么办才好哇？”<br /></span></p><p style="text-align: left;"><span style="font-size:12px;">死去的武士借巫女的嘴讲了他的故事。（这部影片的前提是观众要把灵魂附体这种怪事当成真的。武士的说法同前两种说法一样不真实，但这并不是因为巫女篡改了武士的话。）武士金泽武弘说，多襄丸在强奸真砂以后，又转而赢得了她的欢心，劝她同他一起逃跑，因为他真心爱她。金泽武弘这样描写他妻子的反应：“我从来也不曾见过我妻子像这时候那么美。”这是由于她明显地爱上了强盗（卓越的摄影技术使真砂这时看上去果然比在影片的其他部分更美）。真砂答应同强盗一起私奔，但是正要动身时，她坚持要多襄丸把她丈夫杀死。从这时起，金泽开始像多襄丸一样编造情节，想把自己的对手说成是高尚的人。换句话说，金泽先把自己描绘成一个受罪的丈夫，因为发现妻子不贞而震惊，然后，他为了美化自己和美化他对妻子不贞的反应，不得不抬高强盗。他把多襄丸说成是同他一样为真砂真实性格的暴露而震惊。因此，金泽把妻子说成坏人，把多襄丸说成是某种规范的维护者，而金泽自己则是这种规范的化身。据金泽说，当多襄丸把真砂推倒在地并问金泽是否要杀死她时，他几乎饶恕了这个强盗，因为这个强盗维护了男性尊严的规范。女人逃走了，强盗想抓住她，但几个小时以后他空手回来了。然后多襄丸不作任何解释就割断捆缚金泽的绳子，走进了森林。这时，金泽说他听到有人在哭，银幕上出现一个特写镜头，我们看到哭的就是这位孤独的丈夫。再过不久，他用真砂的短刀扎进自己的胸口自杀了。后来他记得在他死时有人从他的胸口拔出短刀。这位丈夫的说法也像前两种说法一样，最后都声称金泽死于叙事人之手。到这时为止，只有金泽之死是可以肯定的。金泽的叙述也像前两种说法一样，是要表现自己真正具有高尚的品格，优于其他人。<br /></span></p><p style="text-align: left;"><span style="font-size:12px;">第四种说法是卖柴人讲的。他躲在暗处看到了这个事件而没有参与，但是最后可以看出他偷走了插在地上的短刀（前三种说法都说短刀一度曾插在地上，是真砂同多襄丸对抗后掉下来的；尽管她丈夫当然要声称这把短刀最后是有人从他胸口偷走的）。这把短刀既是值钱的工具，又是物证。卖柴人害怕因为拿走短刀而受牵连，没有把自己看到的情况告诉纠察使，而只在最后告诉了打杂儿的和行脚僧。黑泽明要想说明第四种说法符合事实真相，但许多评论家认为这种说法也只是相对可信。<br /></span></p><p style="text-align: left;"><span style="font-size:12px;">但是《罗生门》并不是一部探讨哪种说法比较符合事实的影片，而是要反映人们为了维护自我形象而编造什么样的谎言，因为每个人都认为自我形象最值得珍惜。<br /></span></p><p style="text-align: center;"><span style="font-size:12px;">&nbsp;<img alt="通过摄影机的运动表现意义：黑泽明的《罗生门》" class="js_show_big_img" src="0133-1.html" tppabs="http://image.jxvdy.com/2016/0125/56a587d05cd6ca7c64ed5_0.jpg" js_data="2016/0125/56a587d05cd6ca7c64ed5_1.jpg"  /><br /></span></p><p style="text-align: center;"><span style="font-size:12px;">《罗生门》剧照，女主角京町子<br /></span></p><p style="text-align: left;"><span style="font-size:12px;">在对一件事存在几种有争议的说法时，最后的一种说法通常总是代表真理的。评论家若要怀疑第四种说法，他们必然认为了解全部真相的关键在于武士最后提到有人在他临死时从他胸口拔走短刀。首先，如果他讲的这个情节是真的，那么他讲的整个故事必然基本属实。但是这一点却是不可能的，因为任何故事结构（无论是文学还是电影故事），绝不可能以既否定前两种说法又为第四种说法所否定的第三种说法为依据。有些评论家争辩说，如果武士最后说的话不是事实，那么他就是无端撒谎。但是，武士最后显然并不是无端撒谎：他撒谎是为了掩盖他编造的自杀故事中的漏洞。如果他不交代短刀的去向，那么谁也不会相信他的自杀故事。他知道如果客观地进行判断，就会看到他是在搏斗时被杀害，然后战胜者把长刀拔出来。当时发生的情况也正是这样。短刀是卖柴人后来从地上偷走的，因为这把短刀是值钱的，穷苦的卖柴人舍不得它。<br /></span></p><p style="text-align: left;"><span style="font-size:12px;">第四种说法不仅位于最后，亦即最有利于澄清事实真相的地位，而且这种说法的语调也使人感到它对人物的介绍是真实的。我们一旦知道这些人都在撒谎，那么我们也会像这种说法那样看他们。如果这些人一面撒谎，一面又急于承认自己应对金泽之死负责，那么他们实际干的事必然比他们所承认的暴力行为更恶劣得多。卖柴人向我们揭露了这些人的本性，而没有涉及他本人的性善或性恶。同时，他既没有要说谎的任何明显理由，也没有证据说明他同这些人有任何关系。因此，我们不得不认定他讲的是事实真相。即使我们不能确定他到底是从地上拾起短刀还是从死者身上拔出短刀，我们也没有理由认为他会单单为了在打杂儿的和行脚僧面前掩盖自己的小偷小摸而编上一套那么复杂的谎言。<br /></span></p><p style="text-align: left;"><span style="font-size:12px;">卖柴人讲故事时，影片没有配乐。而前三个人讲故事时，影片却十分精彩地运用音乐来确定情调。卖柴人的这一段既没有配乐，叙述者本人又没有参与其事，这就使他的叙述不同于其他人讲的故事。卖柴人谈到强奸以后的情况：多襄丸恳求他的受害者嫁给他，他愿意改过自新，不再偷盗。那个妇人的回答是割断捆绑着她丈夫的绳索，表示两个男人必须为争夺她而战。武士马上往后缩，宣称他拒绝决斗，不愿冒生命危险。黑泽明在其他影片里塑造过勇敢的武士阶层，而金泽则完全是对武士阶层的讽刺。武士接着骂妻子是贱人，要她自裁。然后两个男人互相瞪着，武士提出把妻子送给强盗，多襄丸在犹豫片刻之后同意金泽对这个女人的评价。这时候，真砂开始辱骂两个男人，说他们是胆小鬼，没有男子汉气魄，激得他们两人拔出刀来。起先两个人长时间地逡巡不前，惊慌失措，然后才开始厮杀。黑泽明在影片中描绘了他们在战斗中的无能、笨拙和懦怯，这种描绘就把影片中刻画的严肃战斗场面变成讽刺画。两人交锋时双手发抖；一方挥剑时，另一方就转身逃跑；每次进击都以摔倒告终。多襄丸举刀砍向畏缩不前的武士，而武士尖声叫起来：“我不愿意死！我不愿意死！”战斗结束时，多襄丸目瞪口呆、精疲力尽。他甚至挥动武士的长刀去砍真砂。她逃进了树林。最后，他从筱竹丛中取出他自己的和金泽的刀，一瘸一拐走进森林。<br /></span></p><p style="text-align: left;"><span style="font-size:12px;">因此，第四种说法起了揭露三个当事人的可悲本性的作用。现在我们懂得他们三个人之所以都声称自己应对武士之死负责，是为了篡改事件经过的情节来美化自己。我们最后看到这三位反面英雄的恐惧模样：武士可耻地死去，妻子拚命逃离出事地点，而胜利者神智失常，一瘸一拐走进森林。卖柴人目睹这三个人原形毕露和交相攻讦，因而对整个人类产生怀疑。<br /></span></p><p style="text-align: center;"><span style="font-size:12px;">&nbsp;<img alt="通过摄影机的运动表现意义：黑泽明的《罗生门》" class="js_show_big_img" src="54bc74b6ba5811a7b24dc-1.jpg" tppabs="http://image.jxvdy.com/2016/0125/56a5925ece33676050a64_0.jpg" js_data="2016/0125/56a5925ece33676050a64_1.jpg"  /><br /></span></p><p style="text-align: center;"><span style="font-size:12px;">《罗生门》海报<br /></span></p><p style="text-align: left;"><span style="font-size:12px;">黑泽明不但要解决把文学作品改编成电影时往往会遇到的问题，而且还面临另一个困难，这就是要把原著的主题改变为他想要表达的一个完全不同的主题。芥川龙之介的短篇小说《筱竹丛中》运用了从多种角度进行叙述的技巧：故事的主题和表现的技术是一致的。黑泽明在改编时，保留了这个故事中使他感兴趣的部分（即从多种角度叙述的技巧），但是他改变了故事中关于道德相对性的内容。黑泽明的世界观并不认为道德是相对的。芥川龙之介的小说并没有多少深刻的内容。黑泽明的其他任何影片都不像这部影片的原著那样过分简单化。黑泽明把错综复杂的外表变成一面镜子来反映导演思想（并非原作者思想）的内在发展。黑泽明第一步是要为各个人物的自我叙述找一个框架，他从芥川龙之介的另一个有趣的故事《罗生门》找到了这样的框架。《罗生门》的人道主义思想是探讨人性在悲惨的外在环境（贫困）压力下怎样堕落。因此，这部影片的主体取自《筱竹丛中》，而框架则取自《罗生门》。影片的结构把框架故事同当事人对强奸和杀人的各种说法在新的相互关系中并列起来，从而使之具有意义。<br /></span></p><p style="text-align: left;"><span style="font-size:12px;">这在技巧上是一项有意义的成就。黑泽明对前后次序的安排是聪明的和引人深省的。他具体表现各人讲的故事和全部主题，事实上也就是把主题和各人叙述的故事联系在一起，尽管这些故事和主题往往显得不连贯、根本无法解释和过于内向，因为芥川龙之介的原作看来是同电影格格不人的。<br /></span></p><p style="text-align: left;"><span style="font-size:12px;">就这方面来说，黑泽明引人入胜地使用移动摄影机就不仅仅是高明的技巧（影评家们起先是这样称赞《罗生门》的），而且是起了把影片连成一个整体的作用，同时还澄清了当事人所讲故事的主观印象成分（每个当事人在叙述带有强烈感情色彩的事件时都带有大量的主观印象成分）。我们看到飞速移动的摄影机在某些部分形成了极度激动的情调。不仅如此，各个人物得到印象（至少他后来对别人说的时候声称他当时得到了这样的印象）时所处的客观环境，是同叙述人动荡不安的内心状态相联系的。<br /></span></p><p style="text-align: left;"><span style="font-size:12px;">黑泽明为了使每个当事人用第一人称讲的故事从表面上看来显得真实，因此没有歪曲形象的本来面目。故事是在真实的环境里发生的，因此，观众会相信在银幕上映出的事物；除非有明显的理由使观众对出现在银幕上的“事实”产生怀疑，否则观众就会认为这些“事实”都是真的。黑泽明必须找出办法来避免两个极端。第一个极端是，不同当事人的说法有可能都显得十分有根有据，以致使观众把各种不同的说法都当成事实，从而把整部影片变成对同一个客观事实作出相互矛盾的种种解释，第二个极端是当事人提出的证据都过于站不住脚，使观众一看就把每种说法都加以否定。<br /></span></p><p style="text-align: left;"><span style="font-size:12px;">这部影片的风格是以运用移动摄影机作为中心的。摄影机不断地告诉观众，每种说法都完全是从叙述者本人的角度来看问题的。任何法官都知道，目击者的证词可能会有意无意地造成错误的印象，而不论目击者本人同事件本身有多少牵连。《罗生门》的风格使我们很快就察觉叙述者本人同事件有极为密切的关系，因此我们一旦发现不同的说法相互矛盾时（亦即在第二个人叙述时），就会对每个当事人的证词都采取保留的态度。<br /></span></p><p style="text-align: center;"><span style="font-size:12px;">&nbsp;<img alt="通过摄影机的运动表现意义：黑泽明的《罗生门》" class="js_show_big_img" src="0001521349-1.html" tppabs="http://image.jxvdy.com/2016/0125/56a593a7d2e55e399ab23_0.jpg" js_data="2016/0125/56a593a7d2e55e399ab23_1.jpg"  /><br /></span></p><p style="text-align: center;"><span style="font-size:12px;">《罗生门》剧照，森雅之与京町子<br /></span></p><p style="text-align: left;"><span style="font-size:12px;">移动摄影机用不同的节奏来强调当事人的叙述的主观性。例如，早在各个当事人叙述自己的故事之前，卖柴人就描写了他发现尸体的经过。在 1951 年威尼斯电影节，正是在森林中跟拍卖柴人的那一系列镜头使影评家大吃一惊并使黑泽明一举成名。然而可以肯定，对黑泽明来说，拍摄风格却是塑造人物的必要手段。卖柴人是一个普通老百姓。他在发现尸体之前迅速穿越森林的运动，表明他心情舒畅，逍遥自在，虽然音乐暗示当时存在紧张的潜流。接着是第一个人的叙述，情调就大为不同，虽然其中包括更迅速地穿越森林的运动。强盗多襄丸讲故事的角度很古怪，足以使我们从一开始就对他保持距离。迅速转动的摄影机衬托出他的乖僻性格，这种转动完全不同于对卖柴人的那一段快速跟拍。<br /></span></p><p style="text-align: left;"><span style="font-size:12px;">第二个和第三个故事的节奏比较慢，摄影机的运动也少得多，这是因为讲述这两个故事的妻子和武士并不是从相互影响的三个人之间的运动来看发生的事件：他们两个人都认为自己是在完成很有意义的戏剧性动作。两个人讲的故事都把自己说成悲剧人物。妻子讲述她的故事时，强调自己的不幸遭遇和合情合理的反应。因此，我们看到她占据了画面的绝大部分。第三个故事是她丈夫讲的，他采取了同她一模一样的做法来讲他自己。这两段的静态镜头多于影片的其他部分，这是由于两个叙述者都把自己描绘为唯一的表演者（附带可以指出，这正是看出他们的叙述不可信的关键）。第四种说法是卖柴人讲的，他从超然的立场看到了一切，因为他直到中心动作都结束之后才参与事件。他的说法基本上如实地反映了整个事件的真相。为了表现他的客观性，移动摄影机再次起了出色的作用，造成了拉开距离的印象，并对其他三个人的谎言作了讽刺性的评论。<br /></span></p><p style="text-align: left;"><span style="font-size:12px;">摄影机在探索三个当事人的观点时，并没有让我们看到在叙述人参与事件时客观地出现在他眼前的情况。相反，摄影机在叙述者扩大自己在剧中的地位时，一直对准叙述人。这当然是帮助我们了解真相的主要线索。因此我们看到的并不是叙述者所看到的情景，而是他怎样把自己饰的角色戏剧化。他企图使人相信，如果有某个客观的旁观者在场，就会看到情况是他讲的那样。这三个说谎的当事人显然都以为当时根本没有客观的旁观者。而第四种说法恰恰就是客观的旁观者所看到的情况：不相干的卖柴人碰巧来到现场，目击了事件经过，尽管由于他可耻地偷走了短刀，没有向当局讲述他看到的情况。<br /></span></p><p style="text-align: left;"><span style="font-size:12px;">在拍摄第一种说法时，摄影机强调了强盗多襄丸的夸张、浪漫而又幼稚的内心世界。在拍摄第二种说法时，摄影机表现了真砂的装腔作势。她把自己说成是受害者，因为粗暴的男人和罪孽的世界而失去了贞操，并把自己打扮成自己所幻想的样子。第三种说法是丈夫把自己描绘成一个极其高尚和有情义的人，由于世界不可能达到他的人道主义水平而不得不自杀。这三种说法都突出了叙事人的运动，从而贬低了其他两个当事人。摄影机也不声不响地按照叙事人那种不全面的介绍进行掩盖。第四种说法的摄影工作是以揭露事实真相为前提的。卖柴人讲的这个故事揭露了真相。只要我们对人们说谎的动机有起码的了解，我们就有可能猜出这种真相：丈夫、妻子和强盗都有可责备之处，而且他们都由于在另外两个人面前暴露了自己的可耻面目而感到难堪。他们主要还不是想让其他人看不到事实真相，而是要保护自己。他们所要保护的又不是他们的肉体，甚至不是他们的名誉，而是他们的真正的自我。这种自我体现了他们的可怕的生活方式。他们也许对自己有模糊的了解。但是他们肯定不愿正视自己的真实面目。<br /></span></p><p style="text-align: left;"><span style="font-size:12px;">在拍摄第四种说法时，摄影机的运动对前此的全部摄影工作（包括动态镜头和静态镜头）作了引人深思的评论，使三个“严肃”的说法都变得可笑，以揭露事实真相。多襄丸不再是勇猛大胆和为人公道的英雄，相反，他变成了一个笨手笨脚的傻瓜，既不是舞刀弄剑的能手，也不是谈情说爱的行家。真砂不再是不幸受害的柔弱美女，而是一个过于骄傲的灾星，根本不顾两个男人的死活。武士从他为自己建造的高坛上倒了下来，暴露出胆小鬼的面目，是武士的反面。他在应该奋起维护妻子的荣誉时，说出了必然是日本影片中最有喜剧性的话：“我犯不上为了这样一个女人拼命。”在拍摄前面的三种说法时，摄影机是“主观的”，小心翼翼地确立了虚构的情调；而拍摄第四种说法时，摄影机却是“客观的”，把原来的情调颠倒过来。第四段对大部分事实真相的揭露，完全是通过摄影机进行的。我们终于了解到摄影机在前面几段所摄录下来的情景并不是事实，而是当事人歪曲事实真相的说法。<br /></span></p><p style="text-align: center;"><span style="font-size:12px;">&nbsp;<img alt="通过摄影机的运动表现意义：黑泽明的《罗生门》" class="js_show_big_img" src="573e84b45a7c2eca9e110_180_253-1.jpg" tppabs="http://image.jxvdy.com/2016/0125/56a59568373ce7298ec97_0.jpg" js_data="2016/0125/56a59568373ce7298ec97_1.jpg"  /><br /></span></p><p style="text-align: center;"><span style="font-size:12px;">《罗生门》剧照，三船敏郎与森雅之<br /></span></p><p style="text-align: left;"><span style="font-size:12px;">因此，第四种说法是我们正确鉴别前几种说法的关键，我们已经看到可以证明卖柴人是讲真话的部分证据。这里还可以再加上一个证据：如果最后一个说法不是事实，那就根本没有必要用讽刺的手法来表现强盗和武士交锋的全过程。不仅如此，框架故事就会毫无意义。如果第四个说法不是事实，那么卖柴人自始至终明显存在的苦恼、他关于人类堕落得可怕的言论以及他从乱成一团的谎言中找出其意义的愿望，都是他在故意做作，在无缘无故地为了欺骗打杂儿的和行脚僧而白费力气，因此，整个框架故事也就没有意义。正因为我们确信最后一种说法是真的，因此框架故事的最后一个动作才能同整个影片联系起来。黑泽明为了保证使观众不把最后一种说法当成只是对事件的另一种未必可靠的解释，就转换了摄影机的角度，使叙述者不在画面上出现，以强调出现在观众眼前的情景是客观现实。<br /></span></p><p style="text-align: left;"><span style="font-size:12px;">黑泽明并没有用移动摄影机来代替连续的剪辑。公开发表的分镜头剧本实际上有 407 个镜头（平均长度为 13 秒钟）。绝大多数长度相似和把静态镜头放在突出地位的影片也只有这样多的镜头。黑泽明运用移动摄影机取得出色效果的主要原因，在于他是从一个移动镜头切入另一个移动镜头。即使对运动速度低于《罗生门》的绝大多数影片来说，这样的切入在技术上也是困难的。在运动时切入通常容易产生使人迷失方向的效果，除非观众可以从前后的镜头看清楚运动的地点，而《罗生门》恰恰就做到了这一点。<br /></span></p><p style="text-align: left;"><span style="font-size:12px;">由于这部影片的地点是一般性的（这一丛竹子同那一丛竹子的区别无关紧要），因此观众不难了解空间关系。可以把这种情况同黑泽明点明罗生门是框架故事的地点时所用的方法加以对照：在拍摄影片开始的几个镜头（主要是静态镜头）时，摄影机同人物（卖柴人和行脚僧）之间的距离变了好几次。这是因为让观众看清楚框架故事发生的具体地点是极为重要的。作为对照，在拍摄几个内含故事时，移动摄影机就不让我们对竹林得到完全清楚的印象，因为一旦我们把竹林完全看清楚了，就有可能感到厌烦。但是这部影片自始至终没有使我们感到厌烦，即使在看到第四部分时，也没有这种感觉。这就说明黑泽明非常注意用不同的方式拍摄竹林，而且他使用的方式又使我们不会真正费心去区分这棵竹子同那棵竹子有什么区别。在各个具体镜头中，移动摄影机所起的特殊作用主要是强调当事人发现的各种东西，或者是戏剧性地向观众揭示当事人描绘的某些方面。卖柴人发现尸体的那一场是从不同角度和距离拍摄的移动镜头剪接在一起组成的。这一系列的跟拍镜头在开始时只是产生迅速移动的感觉，最后则造成了紧张的效果。观众逐渐意识到卖柴人即将发现某种重要东西。剪辑在一起的镜头包括阳光射进竹林的几个镜头，这是一种不祥的预兆，暗示外部的观察者（我们或是自然界）将会看到某种重要事件。<br /></span></p><p style="text-align: left;"><span style="font-size:12px;">当运动按一定的规格进行时，就可以用惊人的突然方式使用静态镜头。这一段正是这样做的。这一段的开始大约是十五个镜头，其中大部分是人和摄影机都在动的镜头，然后是卖柴人突然一动不动的特写镜头，音乐同时也停止了。接着是一个静态的中景：卖柴人看着一顶仕女笠和遮脸帔子。他又继续前进，摄影机也随着他移动，直到他突然又发现了另一件东西：一顶男人的幞头。他弯下腰把幞头拣起来，接着又发现了一件东西：一个护身符口袋。他开始往前走，但是几乎刚迈步就给绊了一下，这时摄影机用摇镜头。他倒跳回来，于是我们看到一个特写镜头：两条僵直的手臂伸出来，显然是死人的手，初步的发现到此结束。摄影机跟随卖柴人前进到发现死人的地方这一段，使我们立即接触到卖柴人的心理状态。这种心理状态是十分简单的，完全是害怕和吃惊。在我们看来，他这种简单的反应是很正常的，但是实际上这是他为了使纠察使满意而装出来的反应。为了使纠察使能相信他的故事，他不得不捏造他穿过竹林的整个情节，说他在发现横死者的尸体之前，本来无忧无愁，在自己熟悉的环境中同自然界融成一体。<br /></span></p><p style="text-align: center;"><span style="font-size:12px;">&nbsp;&nbsp;<img alt="通过摄影机的运动表现意义：黑泽明的《罗生门》" class="js_show_big_img" src="0033521241-1.html" tppabs="http://image.jxvdy.com/2016/0125/56a597599f1e142c2f69f_0.jpg" js_data="2016/0125/56a597599f1e142c2f69f_1.jpg"  /><br /></span></p><p style="text-align: center;"><span style="font-size:12px;">《罗生门》剧照<br /></span></p><p style="text-align: left;"><span style="font-size:12px;">摄影机描绘发现过程的运动可以表现主观的观点，也可以表现客观的观点。在第一段里，观众看到多襄丸在树下睡觉，而且最初是同他一起看到武士及其妻子的。当摄影机移近多襄丸的脸部时，我们看到他睁开眼睛，接着摄影机完成了极为优雅的运动，很快转到一个适当的角度，拍出远方的武士和妻子，以及摄影机旁边的多襄丸的头部。这个镜头不仅让我们看到多襄丸所看到的（或者他自称看到的）事物，而且看到多襄丸想用什么姿态在我们面前出现：一个逍遥自在的强盗，在陌生人迫近时他还能假装睡觉；他从眼角看到一个美貌女人，对她十分喜爱，但在她逐渐接近时仍能完全控制自己的举止。多襄丸把自己说成是一个见过世面而又机智的强盗，对他怎样发现逐渐走近的那对夫妇的经过加以描写，目的是加强他关于自己的这种说法。<br /></span></p><p style="text-align: left;"><span style="font-size:12px;">在第四段里，移动摄影机被用来揭露三个当事人的行动毫无英雄气概。这一段里面有一系列喜剧性的镜头。第一个是真砂指责她丈夫胆小如鼠，不敢为她决斗。在她离开丈夫时，摄影机用摇镜头拍摄她的行动，把她的丈夫排除到画面之外。接着，她走向多襄丸，骂他也是胆小鬼，甚至唾他的脸。她从他面前走开，摄影机也随之离开，象征性地把准备抛弃她的两个男人抛开。两个男人相当难堪，开始拔刀，这时女人位于他们两人之间，但比较靠后，不妨碍这两个男人相互迫近。影片用四个交叉剪辑的中景镜头表现两个男人畏畏缩缩地走向对方。接着是一个极其有效的镜头，它以真砂的一个特写作为开始：她正在神经质地看着两个男人。然后摄影机逐渐后退，让现场更多地在画面上出现。这时我们看到两个男人即将在真砂面前交锋。我们没有看到人，而只看到他们的刀尖，由于双方都害怕战斗，因而两把刀都颤抖得很利害。在两把刀交锋时，我们从随之出现的一个远景镜头看到他们胆战心惊的全貌：两个人跌跌撞撞地往后退，武士转身逃走，多襄丸追过去，绊了一交，两个人乱杀乱砍，然后又朝相反的方向跑，既手足无措又怕得要死。<br /></span></p><p style="text-align: center;"><span style="font-size:12px;">&nbsp;<img alt="通过摄影机的运动表现意义：黑泽明的《罗生门》" class="js_show_big_img" src="56ebaac8a65e40f61365f_180_253-1.png" tppabs="http://image.jxvdy.com/2016/0125/56a5988fcee879bc8d494_0.jpg" js_data="2016/0125/56a5988fcee879bc8d494_1.jpg"  /><br /></span></p><p style="text-align: center;"><span style="font-size:12px;">《罗生门》剧照<br /></span></p><p style="text-align: left;"><span style="font-size:12px;">黑泽明还用另一种方式使他的画面风格影响我们对剧中人物的看法，这就是频繁地使人物脱离环境。这种效果是用摄影机的快速运动取得的。当人物在前景中的动作需要摄影机频繁运动时，我们的注意力就会集中在实际的活动上，而不会重视背景。静止的摄影机往往把不同的人物以及人物和环境联系起来，而这部影片中的各种说法却带有内在的主观性，因此使用静止的摄影机就有可能产生矛盾。例如，多襄丸谈到，在三个当事人刚到一起时，他如何骗武士说他发现了几把宝刀，并提议带武士去看。多襄丸边说边在武士夫妇面前走来走去，想估量一下这两个人，也许是想威吓他们。这时摄影机的运动强调了他的姿势所反映的自信。如果这时用静态镜头，就很有可能会强调这一景内含的戏剧性和更加突出武士的反应，而这却是讲故事的多襄丸所不愿意的。<br /></span></p><p style="text-align: left;"><span style="font-size:12px;">移动摄影机也有助于表现框架故事的含义，虽然摄影机在这方面所起的作用不如它在表现中心事件的四种说法时那样显著。画面把我们看内含故事时观察到的零星情况加以过滤，并把其中的几种思想简化为对整个故事的意义所采取的几种根本不同的态度。《罗生门》的巧妙之处就在于它既要对叙述事件经过的各种互相矛盾的说法加以评论，又要对这些说法作出反应。黑泽明决定把这种评论和反应本身变为一个故事，这就直接扩大了我们所看到的一切的意义。<br /></span></p><p style="text-align: left;"><span style="font-size:12px;">框架故事的运动涉及卖柴人、行脚僧和打杂儿的等三个人从绝望气氛到希望气氛的一系列活动。这个运动是用一种最基本的形象即天气变化来表现的：影片开始以后一直在下雨，最后才停。这个象征暗示，人类的行动参与了总的运动，走向恢复事物的正常秩序。这个象征是对影片情调发展的外在评论。它之所以有效，是因为它强有力地表现了我们对动作本身进行观察的结果。<br /></span></p><p style="text-align: left;"><span style="font-size:12px;">影片是这样提出问题的：生活在大乱之世的人，在面对背信弃义、挫折失败、自私伪善的惊人事例的情况下，是应该时刻怀疑其他人，时刻准备其他人干坏事呢，还是应该对人保持信心（尽管人类确实能干出说不完的坏事）？这是一个很大的问题。为了适当地表现这个问题，黑泽明运用摄影机来迅速、具体地明确有关两个基本要素的全面情况。第一，他描绘了故事的现场，以之作为大乱之世的象征；第二，他用三个人物来代表对当时状况的三种可能的反应。在影片开始的时候，卖柴人代表一个内心存在矛盾的人，他刚刚目击了不老实和歪曲事实真相的一些惊人事例，不知道对人性究竟应该怎么看，他代表正在追求真理的人。打杂儿的认为人性有恶无善，如果说影片中的事件对他产生了任何影响的话，那就是使他变得更坏。行脚僧开始是以正面人物出现的，他坚持相信人性是善良的，虽然他也是那个时代的受害者，甚至在影片开始以前他所看到的事情就足够动摇他的这种信念。<br /></span></p><p style="text-align: left;"><span style="font-size:12px;">黑泽明显然并不真正坚持以某个特定的时间和地点作为影片的背景。他对十二世纪的京都（这座城镇没有在影片中出现）并不是特别感兴趣的。但是京都对日本观众可能有某种象征性的意义。影片第一个镜头之前的字幕说，当时正是“这座古都毁于灾荒和内战的时代”。但是影片根本没有表现这种情景。影片开始时作为职演员名单的背景而闪现的几个镜头，是大雨中的罗生门。黑泽明力图让我们看到这座城门。这可以是随便什么地方和随便什么时候的一座废墟。然而它是一座古城门，是某种没落中的文明的象征，世道看来已经坏得没法再坏了。正如行脚僧后来说的那样，灾难不止是人祸，还有“兵荒咧、地震咧、风暴咧、火灾咧、荒年咧、疫病咧……连年灾难不断”。影片没有表现任何东西来否定剧中人物如此明确地勾画出来的阴暗景象。摄影机从一开始就用传统的方式介绍地点，主要是用静态镜头，先摄出城门，然后集中在行脚僧和卖柴人身上。接着又用较近的镜头来加强局促感，拍出了人物和背景中显然不引人喜爱的一个小部分。<br /></span></p><p style="text-align: center;"><span style="font-size:12px;">&nbsp;<img alt="通过摄影机的运动表现意义：黑泽明的《罗生门》" class="js_show_big_img" src="0033524230-1.html" tppabs="http://image.jxvdy.com/2016/0125/56a59b42a3e64a67a6d93_0.jpg" js_data="2016/0125/56a59b42a3e64a67a6d93_1.jpg"  /><br /></span></p><p style="text-align: center;"><span style="font-size:12px;">《罗生门》剧照，志村桥<br /></span></p><p style="text-align: left;"><span style="font-size:12px;">每个当事人对中心事件的叙述结束之后，影片总是回到框架故事，再次表现阴郁的气氛。移动摄影机是描绘这种气氛的工具之一。例如，在多襄丸讲完之后，我们看到暴雨泼向罗生门城头的近镜头，摄影机从上往下拍摄城门洞里的三个人，整个画面让人感到压抑，只有雨声作为伴奏。在真砂讲完之后，摄影机回到罗生门的台阶上，集中表现雨点打在石台阶上，同时拍出背景中的人物，然后逐渐往上，仰拍这三个人。武士讲完之后，摄影机转回到罗生门内部，这次不是仰拍，而是用摇镜头来表现卖柴人的激动。在第四种说法之后，影片又回到罗生门，这时我们看到的是罗生门内部的远景镜头，画面有一半被一根大柱子挡住；但是这时摄影机不像前几次重拍罗生门的镜头时那样移动。<br /></span></p><p style="text-align: left;"><span style="font-size:12px;">影片最后一段开始时的调子是低沉的。打杂儿的是彻头彻尾的性恶论者，他认为当事人的堕落理所当然，不足为奇。事实上他认为卖柴人在说谎，最后还迫使卖柴人默认自己偷走了短刀。打杂儿的提出了影片的根本问题。如果人们在关系到自己利益的问题上通常都要撒谎，那么，正如行脚僧说的，“这个世界就成了地狱了”。打杂儿的立即作出了性恶论的回答：“一点儿也不错……这个世界压根儿就是个地狱嘛。”行脚僧声称他不愿相信这一点，但是他深知自己的精神信念己经大为动摇。面对着打杂儿的那种现实主义和卖柴人的思想混乱与震惊，行脚僧提不出任何理性的或本能的论据来反驳占压倒优势的悲观证据。他只有靠自己的意志才能保持信心。<br /></span></p><p style="text-align: left;"><span style="font-size:12px;">正当三个人都已经充分说明自己的立场，他们的争论看来已经陷于僵局，只等发生某种事件把口说的态度变成电影动作的时候，我们忽然听到婴儿的哭声。虽然影片事先没有为婴儿的出现埋下伏笔，这个情节也不是在故事的发展过程中自然出现的，但是在那个地方发现弃婴并不是没有可能的。反正影片是要用这个婴儿来检验前面讲明的三种态度：性恶论、怀疑论和犹豫不决。这个情节当然是硬加进来的，但这部影片中所发生的一切都是人为地凑到一起的，影片的背景是一个概念化的寓言世界，而不是历史上特定的地点和时间。<br /></span></p><p style="text-align: left;"><span style="font-size:12px;">打杂儿的在听到哭声时，赶紧去找婴儿。他立即采取行动的原因，是先找到婴儿可能有好处。其他两个人不像他那么果断。他们顺着哭声去寻找，摄影机随着他们移动，拍出打杂儿的正在偷婴儿的衣服。这时的情况提出了一个基本问题。对于正常事态发展之外出现的新事件怎样作出反应。既然天下大乱，那么人们就该料到会发生怪事。随时会有新的灾难，婴儿被遗弃，男人遭杀害，女人被袭击。这个小故事虽然带有闹剧性，但是提出了一个问题：在出现意料之外的事情时应该怎么办？相信性恶论的打杂儿的坚持说，这个时代的人都撒谎，都偷盗，只有被抓住才算犯罪，只有傻瓜才不见便宜就拣。因此，偷婴儿衣服尽管很不道德，但在当时的情况下却是可以允许的，甚至是可取的行为。其他两个人都惊呆了。卖柴人坚持从道义上谴责打杂儿的，但打杂儿的又指责卖柴人偷了短刀。卖柴人由于内疚而感到羞耻；打杂儿的深信自己已经赢得这场争论，笑着离开古城门。<br /></span></p><p style="text-align: left;"><span style="font-size:12px;">这时只剩下两个人，行脚僧抱着婴儿，卖柴人站在他旁边，两个人看着下雨。从接连化入的三个镜头看来，他们显然站了相当长的时间：第一个是远景镜头，第二个是较近的镜头，第三个是更近的镜头。雨还在下，雨幕隔开了人和摄影机，画面和音响都以雨为主。两个人默默地站在那里，直到雨逐渐停下来。他们在看下雨的那段时间里，都在思考自己的看法是否正确。打杂儿的在离开之前，已经对是否应该相信人这个问题作了完全否定的回答。在《罗生门》最后四分钟的那一段里，我们看到行脚僧的过分简单化的信念已经动摇，不再相信人能够无私地行动。<br /></span></p><p style="text-align: center;"><span style="font-size:12px;">&nbsp;<img alt="通过摄影机的运动表现意义：黑泽明的《罗生门》" class="js_show_big_img" src="56e226b062c0942206802_180_253-1.jpg" tppabs="http://image.jxvdy.com/2016/0125/56a59c8c30a15a1ae5719_0.jpg" js_data="2016/0125/56a59c8c30a15a1ae5719_1.jpg"  /><br /></span></p><p style="text-align: center;"><span style="font-size:12px;">《罗生门》剧照，千秋实<br /></span></p><p style="text-align: left;"><span style="font-size:12px;">因此，挽回局面的唯一希望就在卖柴人身上，但他刚经历了一次道义危机。打杂儿的给他的打击使他目瞪口呆，使他认识到一切偷窃行为之间的相似之处。卖柴人看到自己在道德上应当受到责备，而且看到自己同打杂儿的有相似之处，这就使得他心情极为沉重。黑泽明巧妙地加以肯定的主题是：打杂儿的毕竟是错的，人仍然能够做到不自私。卖柴人说的这样一段话是有道理的：人在干坏事时总是要为自己的行为找借口，这就是说，无论人们的行动如何，他们总还是有道德感的，因此也就有改邪归正的可能。<br /></span></p><p style="text-align: left;"><span style="font-size:12px;">雨停后，行脚僧准备离开，这时卖柴人走近他，伸手去抱孩子。行脚僧看到卖柴人这样做连忙往回退，大声嚷道：“你干什么？你还想剥这孩子贴身的布衫吗？”这句话证实行脚僧已经转而接受打杂儿的那种观点。他极端怀疑卖柴人，尽管卖柴人自始至终像是个正派人。卖柴人立即进行解释，他的质朴使人无法怀疑他的话。他说：“我家里有六个孩子，养活六个和养活七个，也就是一个样的辛苦罢了。”这个间接的答复对当时的局面作了雄辩的总结。这个答复使行脚僧突然意识到自己不是慈悲为怀，意识到自己对人性的看法有错误。卖柴人无私地自愿收养弃婴，这一下子就证明行脚僧原来的性善论是有道理的。<br /></span></p><p style="text-align: left;"><span style="font-size:12px;">这个动作是简单的，但是它提供的证据却有重要的意义，粉碎了打杂儿的关于人总是谋求私利的论点。打杂儿的用这个论点为自己的行为辩护，同时也间接地用这个论点来解释强盗、武士和妻子的行为，影片最后清楚地表明，即使在那样的乱世，人仍然能够战胜自己内心的卑鄙欲望。堕落的人确实是什么坏事都干得出来的。然而在另一方面，影片却表明并不是环境使人堕落，而是人们的软弱性使他们有可能借口不得已（亦即切身利益）而干坏事。<br /></span></p><p style="text-align: left;"><span style="font-size:12px;">无论干多少好事也消灭不了罪恶，但是只要一件好事就可以推翻人必然干坏事这个论点。最后讲话的人是行脚僧，他对卖柴人讲的话突出了黑泽明的主题。他说：“亏得你，我还是可以相信人了。”倒数第二个镜头是摄影机跟在后面拍摄卖柴人抱着婴儿离开罗生门。他迎着逐渐后退的摄影机往前走，在他和罗生门的背后，可以看到晴朗天空的强有力形象。卖柴人走出画面时，摄影机停下，这时我们看到一个远景镜头：行脚僧在远方看着离去的卖柴人。最后一个画面是城门上的匾额。《罗生门》的最后这几个镜头扭转了影片开始部分造成的混乱和灾难的印象。阳光代替了阴雨，这就告诉我们，影片开始部分的那种灾难和混乱感，主要是同剧中人物造成的气氛有关，而同气候并没有多少关系。气候很有可能反映剧中人物的情绪，但是并不能决定剧中人物的情绪。黑泽明无疑想让影片的最后几个画面表现道德的复兴。行脚僧是在重新燃起希望的情况下走开的，而使他重新燃起希望的明显原因，就是卖柴人抱婴儿走了。框架故事的基调是对道德加以肯定，阳光就是这个基调的象征。我们通过一个活动的镜头看到了这种象征的意义。这个镜头同影片的其他许多活动的镜头是一致的。正是这些活动的镜头决定了《罗生门》的整个风格。<br /></span></p>			</div>
+			
+			<div class="jx-qq-qun">
+                <ul>
+                	                	<li><a class="item3-qq" target="_blank" href="javascript:if(confirm('http://shang.qq.com/wpa/qunwpa?idkey=c51c08f94b80c34e658bfe6e4ed8c6ee181ae2da5684567fd7d776e83f2b02f2  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://shang.qq.com/wpa/qunwpa?idkey=c51c08f94b80c34e658bfe6e4ed8c6ee181ae2da5684567fd7d776e83f2b02f2'" tppabs="http://shang.qq.com/wpa/qunwpa?idkey=c51c08f94b80c34e658bfe6e4ed8c6ee181ae2da5684567fd7d776e83f2b02f2">后期群</a></li>
+                     <li><a class="item4-qq" target="_blank" href="javascript:if(confirm('http://shang.qq.com/wpa/qunwpa?idkey=2fa9bceb1990cfdc0d3129ad1b7b08b12961d53b968db9fbd66920a053ba3e5a  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://shang.qq.com/wpa/qunwpa?idkey=2fa9bceb1990cfdc0d3129ad1b7b08b12961d53b968db9fbd66920a053ba3e5a'" tppabs="http://shang.qq.com/wpa/qunwpa?idkey=2fa9bceb1990cfdc0d3129ad1b7b08b12961d53b968db9fbd66920a053ba3e5a">拍摄群</a></li>
+                     <li><a class="item5-qq" target="_blank" href="javascript:if(confirm('http://shang.qq.com/wpa/qunwpa?idkey=08a7059b5a7a8e9f16bc028223676c1b3edbfdc4fb9a7132afc7e7d285d42e52  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://shang.qq.com/wpa/qunwpa?idkey=08a7059b5a7a8e9f16bc028223676c1b3edbfdc4fb9a7132afc7e7d285d42e52'" tppabs="http://shang.qq.com/wpa/qunwpa?idkey=08a7059b5a7a8e9f16bc028223676c1b3edbfdc4fb9a7132afc7e7d285d42e52">配音群</a></li>
+                	                </ul>
+            </div>
+			<!-- 喜欢、收藏按钮  -->
+			<div class="article-social clearfix">
+				<div class="mem-action">
+					<a href="javascript:;" onclick="collect(this, '32718', 'favorite')" class="btn btn-warning"><i class="fa fa-heart-o"></i><span>喜欢</span> (<span class="favorite_count">0</span>)</a>
+					<a href="javascript:;" onclick="collect(this, '32718', 'collect')" class="btn btn-warning"><i class="fa fa-star-o"></i><span>收藏</span></a>	
+				</div>
+				<div class="social-wrap">
+					<a href="javascript:;" onclick="share('/d/text_content/share','32718')" class="icon-share-jx" title="分享到金象好友"></a>
+					<a onclick="shareTo(this,'sinaminiblog')" href="javascript:void(0);" class="icon-share-sina" title="分享到新浪微博"></a>
+					<a onclick="shareTo(this,'qqmb')" href="javascript:void(0);" class="icon-share-tqq" title="分享到腾讯微博"></a>
+					<a onclick="shareTo(this,'qzone')" href="javascript:void(0);" class="icon-share-qzone" title="分享到QQ空间"></a>
+					<a onclick="shareTo(this,'renren')" href="javascript:void(0);" class="icon-share-renren" title="分享到人人网"></a>
+					<a onclick="shareTo(this,'douban')" href="javascript:void(0);" class="icon-share-douban" title="分享到豆瓣"></a>
+					<a onclick="shareTo(this,'weixin')" href="javascript:void(0);" class="icon-share-wechat" title="分享到微信"></a>
+					<a onclick="shareTo(this,'qqim')" href="javascript:void(0);" class="icon-share-qq" title="分享到QQ好友"></a>
+				</div>
+			</div>
+			<!-- 标签 -->
+						<div class="article-footer">
+				<div class="article-tags label-tooltip">
+					<i class="fa fa-tags"></i>
+										<a href="javascript:if(confirm('http://www.jxvdy.com/tutorials/shooting/sysx/search?kw=罗生门  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/tutorials/shooting/sysx/search?kw=罗生门'" tppabs="http://www.jxvdy.com/tutorials/shooting/sysx/search?kw=罗生门" rel="tag" data-toggle="tooltip" _src-title="查看“罗生门”相关文章">罗生门</a>
+										<a href="javascript:if(confirm('http://www.jxvdy.com/tutorials/shooting/sysx/search?kw=黑泽明  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/tutorials/shooting/sysx/search?kw=黑泽明'" tppabs="http://www.jxvdy.com/tutorials/shooting/sysx/search?kw=黑泽明" rel="tag" data-toggle="tooltip" _src-title="查看“黑泽明”相关文章">黑泽明</a>
+										<a href="javascript:if(confirm('http://www.jxvdy.com/tutorials/shooting/sysx/search?kw=影视制作详解  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/tutorials/shooting/sysx/search?kw=影视制作详解'" tppabs="http://www.jxvdy.com/tutorials/shooting/sysx/search?kw=影视制作详解" rel="tag" data-toggle="tooltip" _src-title="查看“影视制作详解”相关文章">影视制作详解</a>
+										<a href="javascript:if(confirm('http://www.jxvdy.com/tutorials/shooting/sysx/search?kw=摄影拍摄经验  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/tutorials/shooting/sysx/search?kw=摄影拍摄经验'" tppabs="http://www.jxvdy.com/tutorials/shooting/sysx/search?kw=摄影拍摄经验" rel="tag" data-toggle="tooltip" _src-title="查看“摄影拍摄经验”相关文章">摄影拍摄经验</a>
+										<a href="javascript:if(confirm('http://www.jxvdy.com/tutorials/shooting/sysx/search?kw=影视创作心得  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/tutorials/shooting/sysx/search?kw=影视创作心得'" tppabs="http://www.jxvdy.com/tutorials/shooting/sysx/search?kw=影视创作心得" rel="tag" data-toggle="tooltip" _src-title="查看“影视创作心得”相关文章">影视创作心得</a>
+									</div>
+			</div>
+						<!-- /.article-footer -->
+			<!-- /.article-nav -->
+			<div class="statement">免责声明：金象微电影网部分文章信息来源于网络以及网友投稿，本网站只负责对文章进行整理、排版、编辑，是出于传递更多信息之目的，并不意味着赞同其观点或证实其内容的真实性。</div>
+			<div class="js_reload js_pb_jxvdy widget widget-relation mt20 clearfix" js_ch_id="32718" js_action="getRecommend" js_model="text_content" js_temp="1045">
+				<div class="modal-title clearfix">
+					<div class="modal-title-left">
+						<div class="modal-title-left-inner">相关推荐</div>
+						<span class="tip-t"><i class="tip-outer"></i><i class="tip-inner"></i></span>
+					</div>
+					<div class="modal-title-right">
+						<a class="js_reload_h random" href="javascript:;" js_ch_id="32718" js_action="getRecommend" js_model="text_content" js_temp="1045"><i class="fa fa-repeat"></i>换一换</a>
+					</div>
+				</div>
+				<!-- /.modal-title -->
+				<div class="js_reload_panel widget-relation-inner">
+					<ul class="js_reload_pagecount recommend_list" js_data="0">
+		<li><i class="dot"></i><a href="javascript:if(confirm('http://www.jxvdy.com/news/ylqy/0033200941.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/news/ylqy/0033200941.html'" tppabs="http://www.jxvdy.com/news/ylqy/050549.html">陆川秦岚上演罗生门    女方承认分手男方极力否认</a></li>
+		<li><i class="dot"></i><a href="javascript:if(confirm('http://www.jxvdy.com/tutorials/plays/ysjp/56c12da7786287775db26_0.jpg  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/tutorials/plays/ysjp/56c12da7786287775db26_0.jpg'" tppabs="http://www.jxvdy.com/tutorials/plays/ysjp/0001410228.html">雨雾弥漫，梦里蝶倦倦地舞《大海的见证》</a></li>
+		<li><i class="dot"></i><a href="javascript:if(confirm('http://www.jxvdy.com/tutorials/shooting/dgbj/0033204110.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/tutorials/shooting/dgbj/0033204110.html'" tppabs="http://www.jxvdy.com/tutorials/shooting/dgbj/0001053451.html">看经典电影学习怎样布逆光</a></li>
+		<li><i class="dot"></i><a href="javascript:if(confirm('http://www.jxvdy.com/tutorials/plays/ysjp/56c1345661cfb65e589de_0.jpg  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/tutorials/plays/ysjp/56c1345661cfb65e589de_0.jpg'" tppabs="http://www.jxvdy.com/tutorials/plays/ysjp/0001403718.html">《放逐》男人们最后的晚餐</a></li>
+		<li><i class="dot"></i><a href="javascript:if(confirm('http://www.jxvdy.com/tutorials/late/jjjs/0033520945.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/tutorials/late/jjjs/0033520945.html'" tppabs="http://www.jxvdy.com/tutorials/late/jjjs/0033501357.html">电影剪辑史漫谈：从黑泽明的《七武士》说起   蒙太奇剪辑风格应运而生</a></li>
+		<li><i class="dot"></i><a href="javascript:if(confirm('http://www.jxvdy.com/news/hydt/56c66fc0e81340086e1b6_0.jpg  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/news/hydt/56c66fc0e81340086e1b6_0.jpg'" tppabs="http://www.jxvdy.com/news/hydt/111320.html">人性的弱点之又一个罗生门：《溺水》</a></li>
+		<li><i class="dot"></i><a href="javascript:if(confirm('http://www.jxvdy.com/tutorials/plays/mjdj/0033523751.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/tutorials/plays/mjdj/0033523751.html'" tppabs="http://www.jxvdy.com/tutorials/plays/mjdj/0001071016.html">黑泽明眼中的导演马丁·斯科塞斯</a></li>
+		<li><i class="dot"></i><a href="javascript:if(confirm('http://www.jxvdy.com/tutorials/plays/mjdj/568483b2cd57309cbf116_0.jpg  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/tutorials/plays/mjdj/568483b2cd57309cbf116_0.jpg'" tppabs="http://www.jxvdy.com/tutorials/plays/mjdj/0001412800.html">黑泽明：做导演从写剧本开始</a></li>
+	</ul>
+<!--t1517407830-->
+
+				</div>
+				<!-- /.widget-relation-inner -->
+			</div>
+			<!-- /.widget-relation -->
+
+			<div class="ads760-90 mt20 js_ad_record" style="height: 90px;">
+						<script type="text/javascript" src="0106.js" tppabs="http://ad.jxvdy.com/script/0106.js"></script>
+						</div>
+
+			<div class="js_video_tab widget-wdy clearfix mt20 js_pb_jxvdy" js_ch_id="2" js_action="getNew" js_model="video_info" js_temp="1040">
+				<div class="column-tab clearfix hd">
+					<span class="pull-right pdr10">
+						<a class="js_video_tab_next random" href="javascript:;" style="display: inline;" onclick="reloadVideo(this)" js_ch_id="2" js_data="1"><i class="fa fa-repeat"></i>换一换</a>
+					</span>
+					<ul class="list-unstyled video_tab">
+						<li class="js_video_tab_handle on" js_data="2">最新微电影</li>
+						<li class="js_video_tab_handle" js_data="3">最新网络剧</li>
+					</ul>
+				</div>
+				<div class="widget-wdy-inner">
+					<div class="js_video_tab_panel mod-figure-video mod-figure-v-190 clearfix js_reload_panel" js_tpl="1040">
+						<ul class="js_video_tab_pagecount video-figures-list" js_data="1684">
+		<li class="video-list-item">
+		<a class="video-figure" href="0033201616.html" tppabs="http://www.jxvdy.com/video/0033201616.html" title="敦化市小学生校园微电影《钢笔》" target="_blank">
+			<img class="lazy-video" _src="59e5c4e0db9f9dc0699f9_180_253.jpg" tppabs="http://image.jxvdy.com/2017/1017/59e5c4e0db9f9dc0699f9_180_253.jpg" alt="敦化市小学生校园微电影《钢笔》">
+			<div class="figure-caption">
+								<p class="figure-description" title="敦化市小学生校园微电影《钢笔》">敦化市小学生校园微电影《钢笔》</p>
+				<p class="figure-description">主演：</p>
+							</div>
+					</a>
+		<strong class="video-figure-title js_video_score" js_data="">
+			<a class="video-title" href="0033201616.html" tppabs="http://www.jxvdy.com/video/0033201616.html" target="_blank">敦化市小学生校园微电影《钢笔》</a>
+			<span class="video-score"><span>0</span><small>.0</small></span>
+		</strong>
+	</li>
+		<li class="video-list-item">
+		<a class="video-figure" href="0001524814.html" tppabs="http://www.jxvdy.com/video/0001524814.html" title="正能量微电影《正义为先》" target="_blank">
+			<img class="lazy-video" _src="594a4ecb812a862ca866b_0.png" tppabs="http://image.jxvdy.com/2017/0621/594a4ecb812a862ca866b_0.png" alt="正能量微电影《正义为先》">
+			<div class="figure-caption">
+								<p class="figure-description" title="正能量微电影《正义为先》！">正能量微电影《正义为先》！</p>
+				<p class="figure-description">主演：曹亮 王小爱</p>
+							</div>
+					</a>
+		<strong class="video-figure-title js_video_score" js_data="10.0">
+			<a class="video-title" href="0001524814.html" tppabs="http://www.jxvdy.com/video/0001524814.html" target="_blank">正能量微电影《正义为先》</a>
+			<span class="video-score"><span>0</span><small>.0</small></span>
+		</strong>
+	</li>
+		<li class="video-list-item">
+		<a class="video-figure" href="0033521604.html" tppabs="http://www.jxvdy.com/video/0033521604.html" title="恐怖微电影《残梦》" target="_blank">
+			<img class="lazy-video" _src="58eb5e6df2d37d4298376_180_253.jpg" tppabs="http://image.jxvdy.com/2017/0410/58eb5e6df2d37d4298376_180_253.jpg" alt="恐怖微电影《残梦》">
+			<div class="figure-caption">
+								<p class="figure-description" title="一个错乱的残缺不全的梦">一个错乱的残缺不全的梦</p>
+				<p class="figure-description">主演：张禾 小华</p>
+							</div>
+					</a>
+		<strong class="video-figure-title js_video_score" js_data="10.0">
+			<a class="video-title" href="0033521604.html" tppabs="http://www.jxvdy.com/video/0033521604.html" target="_blank">恐怖微电影《残梦》</a>
+			<span class="video-score"><span>0</span><small>.0</small></span>
+		</strong>
+	</li>
+		<li class="video-list-item">
+		<a class="video-figure" href="0033201633.html" tppabs="http://www.jxvdy.com/video/0033201633.html" title="浩哥新作来袭！《二龙湖浩哥之江湖学院》预告！" target="_blank">
+			<img class="lazy-video" _src="58eb6019be54e476e8854_0.jpg" tppabs="http://image.jxvdy.com/2017/0410/58eb6019be54e476e8854_0.jpg" alt="浩哥新作来袭！《二龙湖浩哥之江湖学院》预告！">
+			<div class="figure-caption">
+								<p class="figure-description" title="《二龙湖浩哥之江湖学院》">《二龙湖浩哥之江湖学院》</p>
+				<p class="figure-description">主演：二龙湖浩哥</p>
+							</div>
+					</a>
+		<strong class="video-figure-title js_video_score" js_data="">
+			<a class="video-title" href="0033201633.html" tppabs="http://www.jxvdy.com/video/0033201633.html" target="_blank">浩哥新作来袭！《二龙湖浩哥之江湖学院》预告！</a>
+			<span class="video-score"><span>0</span><small>.0</small></span>
+		</strong>
+	</li>
+	</ul>
+<!--t1517408340-->
+
+					</div>
+				</div>
+				<!-- /.widget-wdy-inner -->
+			</div>
+			<!-- /.widget-wdy -->
+			<!--我要评论-->
+			<p id="comments"></p>
+			<script type="text/javascript" src="0033520912-1.html" tppabs="http://www.jxvdy.com/comment/export?cid=22&oid=32718"></script>
+		</div>
+	</div>
+	<aside class="sidebar">
+				<div class="js_person_info js_pb_jxvdy person-info" js_ch_id="313138" js_action="getPubInfo" js_model="text_content" js_temp="1043" >
+		
+		</div>
+				<div class="js_reload js_pb_jxvdy widget widget-likes clearfix" js_ch_id="22" js_action="guess" js_model="text_content" js_temp="1058">
+			<div class="modal-title clearfix">
+				<div class="modal-title-left">
+					<div class="modal-title-left-inner">猜你喜欢</div>
+					<span class="tip-t"><i class="tip-outer"></i><i class="tip-inner"></i></span>
+				</div>
+				<div class="modal-title-right">
+					<a class="js_reload_h random" href="javascript:;" js_ch_id="22" js_action="guess" js_model="text_content" js_temp="1058"><i class="fa fa-repeat"></i>换一换</a>
+				</div>
+			</div>
+			<div class="js_reload_panel widget-likes-inner">
+				<ul class="js_reload_pagecount widget-likes-list" js_data="90">
+				<li><i class="dot"></i><a href="0001511257.html" tppabs="http://www.jxvdy.com/tutorials/shooting/sysx/0001511257.html" title="在限制里做出最合理，《唐人街探案》摄影手记" target="_blank">在限制里做出最合理，《唐人街探案》摄影...</a></li>
+					<li><i class="dot"></i><a href="0033514418.html" tppabs="http://www.jxvdy.com/tutorials/shooting/sysx/0033514418.html" title="通过摄影机的运动表现意义：黑泽明的《罗生门》" target="_blank">通过摄影机的运动表现意义：黑泽明的《罗...</a></li>
+					<li><i class="dot"></i><a href="javascript:if(confirm('http://www.jxvdy.com/tutorials/shooting/sysx/0001193630.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/tutorials/shooting/sysx/0001193630.html'" tppabs="http://www.jxvdy.com/tutorials/shooting/sysx/0001193630.html" title="《荒野猎人》看点解析，还原第一手的拍摄现场" target="_blank">《荒野猎人》看点解析，还原第一手的拍摄...</a></li>
+					<li><i class="dot"></i><a href="0033513659.html" tppabs="http://www.jxvdy.com/tutorials/shooting/sysx/0033513659.html" title="《卡罗尔》摄影爱德华·拉奇曼专访" target="_blank">《卡罗尔》摄影爱德华·拉奇曼专访</a></li>
+					<li><i class="dot"></i><a href="javascript:if(confirm('http://www.jxvdy.com/tutorials/shooting/sysx/0001513618.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/tutorials/shooting/sysx/0001513618.html'" tppabs="http://www.jxvdy.com/tutorials/shooting/sysx/0001513618.html" title="追随电影大师脚步：史蒂文·斯皮尔伯格（一）" target="_blank">追随电影大师脚步：史蒂文·斯皮尔伯格（...</a></li>
+										</ul>
+<ul class="widget-likes-thumb">
+														<li><figure><a href="javascript:if(confirm('http://www.jxvdy.com/tutorials/shooting/sysx/0033193426.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/tutorials/shooting/sysx/0033193426.html'" tppabs="http://www.jxvdy.com/tutorials/shooting/sysx/0033193426.html" title="如何制造电影感 － Being Cinematic － 摄影篇之构图" target="_blank"><img class="lazy-article" _src="56580e9bd45a52cf45e75_0.jpg" tppabs="http://image.jxvdy.com/2015/1127/56580e9bd45a52cf45e75_0.jpg"  onerror="this.src='http://skin.jxvdy.com/jxvdy/web/images/default/380_264.png'" alt="如何制造电影感 － Being Cinematic － 摄影篇之构图" width="140" height="98"></a></figure><a class="thumb-title" href="javascript:if(confirm('http://www.jxvdy.com/tutorials/shooting/sysx/0033193426.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/tutorials/shooting/sysx/0033193426.html'" tppabs="http://www.jxvdy.com/tutorials/shooting/sysx/0033193426.html" title="如何制造电影感 － Being Cinematic － 摄影篇之构图" target="_blank">如何制造电影感 － Being Cin...</a></li>
+					<li><figure><a href="javascript:if(confirm('http://www.jxvdy.com/tutorials/shooting/sysx/0001510037.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/tutorials/shooting/sysx/0001510037.html'" tppabs="http://www.jxvdy.com/tutorials/shooting/sysx/0001510037.html" title="几张图详细告诉你 拍摄人物如何取景最佳" target="_blank"><img class="lazy-article" _src="jquery.slimscroll-1.js.png" tppabs="http://image.jxvdy.com/2015/1117/564a96d620a6b3e208fa4_380_264.jpg"  onerror="this.src='http://skin.jxvdy.com/jxvdy/web/images/default/380_264.png'" alt="几张图详细告诉你 拍摄人物如何取景最佳" width="140" height="98"></a></figure><a class="thumb-title" href="javascript:if(confirm('http://www.jxvdy.com/tutorials/shooting/sysx/0001510037.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/tutorials/shooting/sysx/0001510037.html'" tppabs="http://www.jxvdy.com/tutorials/shooting/sysx/0001510037.html" title="几张图详细告诉你 拍摄人物如何取景最佳" target="_blank">几张图详细告诉你 拍摄人物如何取景最佳</a></li>
+					<li><figure><a href="javascript:if(confirm('http://www.jxvdy.com/tutorials/shooting/sysx/jquery.surReady.min.js  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/tutorials/shooting/sysx/jquery.surReady.min.js'" tppabs="http://www.jxvdy.com/tutorials/shooting/sysx/0001503024.html" title="国外摄影师为您讲解8个拍出梦幻照片的小技巧" target="_blank"><img class="lazy-article" _src="jquery.surCookie.min-1.js.png" tppabs="http://image.jxvdy.com/2015/1111/5642e950c82d76afa8566_0.jpg"  onerror="this.src='http://skin.jxvdy.com/jxvdy/web/images/default/380_264.png'" alt="国外摄影师为您讲解8个拍出梦幻照片的小技巧" width="140" height="98"></a></figure><a class="thumb-title" href="javascript:if(confirm('http://www.jxvdy.com/tutorials/shooting/sysx/jquery.surReady.min.js  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/tutorials/shooting/sysx/jquery.surReady.min.js'" tppabs="http://www.jxvdy.com/tutorials/shooting/sysx/0001503024.html" title="国外摄影师为您讲解8个拍出梦幻照片的小技巧" target="_blank">国外摄影师为您讲解8个拍出梦幻照片的小...</a></li>
+					<li><figure><a href="javascript:if(confirm('http://www.jxvdy.com/tutorials/shooting/sysx/util.js  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/tutorials/shooting/sysx/util.js'" tppabs="http://www.jxvdy.com/tutorials/shooting/sysx/0001186222.html" title="教你如何用手机拍出好照片" target="_blank"><img class="lazy-article" _src="shitao-1.js.png" tppabs="http://image.jxvdy.com/2015/1111/5642a6aa90afc92375c61_380_264.jpg"  onerror="this.src='http://skin.jxvdy.com/jxvdy/web/images/default/380_264.png'" alt="教你如何用手机拍出好照片" width="140" height="98"></a></figure><a class="thumb-title" href="javascript:if(confirm('http://www.jxvdy.com/tutorials/shooting/sysx/util.js  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/tutorials/shooting/sysx/util.js'" tppabs="http://www.jxvdy.com/tutorials/shooting/sysx/0001186222.html" title="教你如何用手机拍出好照片" target="_blank">教你如何用手机拍出好照片</a></li>
+		</ul>
+<!--t1517408875-->
+
+			</div>
+		</div>
+		<div class="ads300-250 mt10 js_ad_record" style="height: 250px;">
+						<script type="text/javascript" src="0102.js" tppabs="http://ad.jxvdy.com/script/0102.js"></script>
+					</div>
+		<div class="js_reload js_pb_jxvdy widget widget-thumb-text clearfix mt20" js_ch_id="22" js_action="getWatching" js_model="text_content" js_temp="1059">
+			<div class="modal-title clearfix">
+				<div class="modal-title-left">
+					<div class="modal-title-left-inner">大家都在看</div>
+					<span class="tip-t"><i class="tip-outer"></i><i class="tip-inner"></i></span>
+				</div>
+				<div class="modal-title-right">
+					<a class="js_reload_h random" href="javascript:;" js_ch_id="22" js_action="getWatching" js_model="text_content" js_temp="1059"><i class="fa fa-repeat"></i>换一换</a>
+				</div>
+			</div>
+			<div class="js_reload_panel widget-thumb-text-inner">
+					<article class="article-item js_reload_pagecount" js_data="203">
+		<figure><a href="javascript:if(confirm('http://www.jxvdy.com/tutorials/shooting/sysx/56c420b6118365b8f36c7_180_253.jpg  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/tutorials/shooting/sysx/56c420b6118365b8f36c7_180_253.jpg'" tppabs="http://www.jxvdy.com/tutorials/shooting/sysx/0001362933.html" title="嘻哈风来袭 公交车人像摄影拍摄技巧" target="_blank"><img class="img-responsive lazy-article" _src="0033524426-1.html" tppabs="http://image.jxvdy.com/old/201407/16/16-48-27-72-1531.jpg" onerror="this.src='http://skin.jxvdy.com/jxvdy/web/images/default/380_264.png'" alt="嘻哈风来袭 公交车人像摄影拍摄技巧"></a></figure>
+		<div class="widget-thumb-text-info">
+			<h5><a href="javascript:if(confirm('http://www.jxvdy.com/tutorials/shooting/sysx/56c420b6118365b8f36c7_180_253.jpg  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/tutorials/shooting/sysx/56c420b6118365b8f36c7_180_253.jpg'" tppabs="http://www.jxvdy.com/tutorials/shooting/sysx/0001362933.html" target="_blank">嘻哈风来袭 公交车人像摄影拍摄技巧</a></h5>
+			<small>280人正在浏览<span class="text-center"><a href="javascript:if(confirm('http://www.jxvdy.com/tutorials/shooting/sysx/56c420b6118365b8f36c7_180_253.jpg  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/tutorials/shooting/sysx/56c420b6118365b8f36c7_180_253.jpg'" tppabs="http://www.jxvdy.com/tutorials/shooting/sysx/0001362933.html" target="_blank"><i class="fa fa-eye"></i>围观</a></span></small>
+		</div>
+	</article>
+	<article class="article-item js_reload_pagecount" js_data="203">
+		<figure><a href="javascript:if(confirm('http://www.jxvdy.com/tutorials/shooting/sysx/0033204143.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/tutorials/shooting/sysx/0033204143.html'" tppabs="http://www.jxvdy.com/tutorials/shooting/sysx/0033325706.html" title="微电影拍摄中全景、中景" target="_blank"><img class="img-responsive lazy-article" _src="0001200933-1.html" tppabs="http://image.jxvdy.com/old/201310/30/10-40-20-73-51.jpg" onerror="this.src='http://skin.jxvdy.com/jxvdy/web/images/default/380_264.png'" alt="微电影拍摄中全景、中景"></a></figure>
+		<div class="widget-thumb-text-info">
+			<h5><a href="javascript:if(confirm('http://www.jxvdy.com/tutorials/shooting/sysx/0033204143.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/tutorials/shooting/sysx/0033204143.html'" tppabs="http://www.jxvdy.com/tutorials/shooting/sysx/0033325706.html" target="_blank">微电影拍摄中全景、中景</a></h5>
+			<small>474人正在浏览<span class="text-center"><a href="javascript:if(confirm('http://www.jxvdy.com/tutorials/shooting/sysx/0033204143.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/tutorials/shooting/sysx/0033204143.html'" tppabs="http://www.jxvdy.com/tutorials/shooting/sysx/0033325706.html" target="_blank"><i class="fa fa-eye"></i>围观</a></span></small>
+		</div>
+	</article>
+	<article class="article-item js_reload_pagecount" js_data="203">
+		<figure><a href="javascript:if(confirm('http://www.jxvdy.com/tutorials/shooting/sysx/57846d788fb3596c1a12d.jpg  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/tutorials/shooting/sysx/57846d788fb3596c1a12d.jpg'" tppabs="http://www.jxvdy.com/tutorials/shooting/sysx/0001391604.html" title="李安与摄影师罗德里格·普瑞托如何确定影片画..." target="_blank"><img class="img-responsive lazy-article" _src="0001193730-1.html" tppabs="http://image.jxvdy.com/2014/1124/5472a766eed498cda81fc_380_264.jpg" onerror="this.src='http://skin.jxvdy.com/jxvdy/web/images/default/380_264.png'" alt="李安与摄影师罗德里格·普瑞托如何确定影片画..."></a></figure>
+		<div class="widget-thumb-text-info">
+			<h5><a href="javascript:if(confirm('http://www.jxvdy.com/tutorials/shooting/sysx/57846d788fb3596c1a12d.jpg  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/tutorials/shooting/sysx/57846d788fb3596c1a12d.jpg'" tppabs="http://www.jxvdy.com/tutorials/shooting/sysx/0001391604.html" target="_blank">李安与摄影师罗德里格·普瑞托如何确定影片画...</a></h5>
+			<small>312人正在浏览<span class="text-center"><a href="javascript:if(confirm('http://www.jxvdy.com/tutorials/shooting/sysx/57846d788fb3596c1a12d.jpg  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/tutorials/shooting/sysx/57846d788fb3596c1a12d.jpg'" tppabs="http://www.jxvdy.com/tutorials/shooting/sysx/0001391604.html" target="_blank"><i class="fa fa-eye"></i>围观</a></span></small>
+		</div>
+	</article>
+	<article class="article-item js_reload_pagecount" js_data="203">
+		<figure><a href="javascript:if(confirm('http://www.jxvdy.com/tutorials/shooting/sysx/5784aaa147e3f2ace7e0d.jpg  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/tutorials/shooting/sysx/5784aaa147e3f2ace7e0d.jpg'" tppabs="http://www.jxvdy.com/tutorials/shooting/sysx/0033036122.html" title="学习摄像如此so easy 看会各类曝光组..." target="_blank"><img class="img-responsive lazy-article" _src="052800-2.html" tppabs="http://image.jxvdy.com/old/201405/28/11-28-34-89-51.jpg" onerror="this.src='http://skin.jxvdy.com/jxvdy/web/images/default/380_264.png'" alt="学习摄像如此so easy 看会各类曝光组..."></a></figure>
+		<div class="widget-thumb-text-info">
+			<h5><a href="javascript:if(confirm('http://www.jxvdy.com/tutorials/shooting/sysx/5784aaa147e3f2ace7e0d.jpg  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/tutorials/shooting/sysx/5784aaa147e3f2ace7e0d.jpg'" tppabs="http://www.jxvdy.com/tutorials/shooting/sysx/0033036122.html" target="_blank">学习摄像如此so easy 看会各类曝光组...</a></h5>
+			<small>68人正在浏览<span class="text-center"><a href="javascript:if(confirm('http://www.jxvdy.com/tutorials/shooting/sysx/5784aaa147e3f2ace7e0d.jpg  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/tutorials/shooting/sysx/5784aaa147e3f2ace7e0d.jpg'" tppabs="http://www.jxvdy.com/tutorials/shooting/sysx/0033036122.html" target="_blank"><i class="fa fa-eye"></i>围观</a></span></small>
+		</div>
+	</article>
+<!--t1517408849-->
+
+			</div>
+		</div>
+
+		<div class="widget widget-thumb-text clearfix js_pb_jxvdy" js_ch_id="4" js_action="getNew" js_temp="1062" js_model="screenplay">
+			<div class="modal-title clearfix">
+				<div class="modal-title-left">
+					<div class="modal-title-left-inner">最新剧本展示</div>
+					<span class="tip-t"><i class="tip-outer"></i><i class="tip-inner"></i></span>
+				</div>
+				<div class="modal-title-right">
+					<a class="more" href="javascript:if(confirm('http://www.jxvdy.com/screenplay/list.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/screenplay/list.html'" tppabs="http://www.jxvdy.com/screenplay/list.html">更多<i class="fa fa-caret-right"></i></a>
+				</div>
+			</div>
+			<div class="widget-thumb-text-inner js_reload_panel">
+					<article class="article-item">
+		<figure><a href="javascript:if(confirm('http://www.jxvdy.com/screenplay/056159.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/screenplay/056159.html'" tppabs="http://www.jxvdy.com/screenplay/056159.html" title="2016金丹若网络影视创新论坛暖冬开幕" target="_blank"><img class="img-responsive" src="585ddc1a5afdd1abb2dc3_380_264.jpg" tppabs="http://image.jxvdy.com/2016/1224/585ddc1a5afdd1abb2dc3_380_264.jpg" alt="2016金丹若网络影视创新论坛暖冬开幕"></a></figure>
+		<div class="widget-thumb-text-info">
+			<h5><a href="javascript:if(confirm('http://www.jxvdy.com/screenplay/056159.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/screenplay/056159.html'" tppabs="http://www.jxvdy.com/screenplay/056159.html" target="_blank" title="【2016金丹若网络影视创新论坛暖冬开幕】2016金丹若网络影视创新论坛暖冬开幕">【2016金丹若网络影视创新论坛暖冬开幕】2016金丹若网络影视创新论坛暖冬开幕</a></h5>
+			<small><i class="fa fa-clock-o"></i>2016-12-24</small>
+		</div>
+	</article>
+	<article class="article-item">
+		<figure><a href="javascript:if(confirm('http://www.jxvdy.com/screenplay/052924.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/screenplay/052924.html'" tppabs="http://www.jxvdy.com/screenplay/052924.html" title="搜魔记" target="_blank"><img class="img-responsive" src="5838efae32d7e4e9d1a2d_380_264.jpg" tppabs="http://image.jxvdy.com/2016/1126/5838efae32d7e4e9d1a2d_380_264.jpg" alt="搜魔记"></a></figure>
+		<div class="widget-thumb-text-info">
+			<h5><a href="javascript:if(confirm('http://www.jxvdy.com/screenplay/052924.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/screenplay/052924.html'" tppabs="http://www.jxvdy.com/screenplay/052924.html" target="_blank" title="【搜魔记】天下英雄在，搜魔正当时！">【搜魔记】天下英雄在，搜魔正当时！</a></h5>
+			<small><i class="fa fa-clock-o"></i>2016-11-26</small>
+		</div>
+	</article>
+	<article class="article-item">
+		<figure><a href="javascript:if(confirm('http://www.jxvdy.com/screenplay/056151.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/screenplay/056151.html'" tppabs="http://www.jxvdy.com/screenplay/056151.html" title="这个夏天遇见你" target="_blank"><img class="img-responsive" src="57db8ed218d280562ab4e_380_264.jpg" tppabs="http://image.jxvdy.com/2016/0916/57db8ed218d280562ab4e_380_264.jpg" alt="这个夏天遇见你"></a></figure>
+		<div class="widget-thumb-text-info">
+			<h5><a href="javascript:if(confirm('http://www.jxvdy.com/screenplay/056151.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/screenplay/056151.html'" tppabs="http://www.jxvdy.com/screenplay/056151.html" target="_blank" title="【这个夏天遇见你】都市情感剧">【这个夏天遇见你】都市情感剧</a></h5>
+			<small><i class="fa fa-clock-o"></i>2016-09-16</small>
+		</div>
+	</article>
+	<article class="article-item">
+		<figure><a href="javascript:if(confirm('http://www.jxvdy.com/screenplay/052916.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/screenplay/052916.html'" tppabs="http://www.jxvdy.com/screenplay/052916.html" title="大学不都这样" target="_blank"><img class="img-responsive" src="57ce359155fa9ed89d82e_380_264.jpg" tppabs="http://image.jxvdy.com/2016/0906/57ce359155fa9ed89d82e_380_264.jpg" alt="大学不都这样"></a></figure>
+		<div class="widget-thumb-text-info">
+			<h5><a href="javascript:if(confirm('http://www.jxvdy.com/screenplay/052916.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/screenplay/052916.html'" tppabs="http://www.jxvdy.com/screenplay/052916.html" target="_blank" title="【大学不都这样】我们都一样，懵懂地踏入大学，从憧憬到迷惘，不要担心，你总会找到方向。">【大学不都这样】我们都一样，懵懂地踏入大学，从憧憬到迷惘，不要担心，你总会找到方向。</a></h5>
+			<small><i class="fa fa-clock-o"></i>2016-09-06</small>
+		</div>
+	</article>
+<!--t1517407634-->
+
+			</div>
+		</div>
+		
+		<div class="widget widget-thumb-text clearfix js_pb_jxvdy" js_ch_id="5" js_action="getNew" js_temp="1062" js_model="text_content">
+			<div class="modal-title clearfix">
+				<div class="modal-title-left">
+					<div class="modal-title-left-inner">最新学院教程</div>
+					<span class="tip-t"><i class="tip-outer"></i><i class="tip-inner"></i></span>
+				</div>
+				<div class="modal-title-right">
+					<a class="more" href="list-18.html" tppabs="http://www.jxvdy.com/tutorials/list.html">更多<i class="fa fa-caret-right"></i></a>
+				</div>
+			</div>
+			<div class="widget-thumb-text-inner js_reload_panel">
+					<article class="article-item">
+		<figure><a href="0001514426.html" tppabs="http://www.jxvdy.com/tutorials/equipment/qcpc/0001514426.html" title="摄影师你好｜除了Angelababy，你还需要知道Lensbaby" target="_blank"><img class="img-responsive" src="56a7465c2e4b4627b139a_0.jpg" tppabs="http://image.jxvdy.com/2016/0126/56a7465c2e4b4627b139a_0.jpg" alt="摄影师你好｜除了Angelababy，你还需要知道Lensbaby"></a></figure>
+		<div class="widget-thumb-text-info">
+			<h5><a href="0001514426.html" tppabs="http://www.jxvdy.com/tutorials/equipment/qcpc/0001514426.html" target="_blank" title="摄影师你好｜除了Angelababy，你还需要知道Lensbaby">摄影师你好｜除了Angelababy，你还需要知道Lensbaby</a></h5>
+			<small><i class="fa fa-clock-o"></i>2016-01-26</small>
+		</div>
+	</article>
+	<article class="article-item">
+		<figure><a href="0001511257.html" tppabs="http://www.jxvdy.com/tutorials/shooting/sysx/0001511257.html" title="在限制里做出最合理，《唐人街探案》摄影手记" target="_blank"><img class="img-responsive" src="56a73e20b6b35162ad1b8_0.jpg" tppabs="http://image.jxvdy.com/2016/0126/56a73e20b6b35162ad1b8_0.jpg" alt="在限制里做出最合理，《唐人街探案》摄影手记"></a></figure>
+		<div class="widget-thumb-text-info">
+			<h5><a href="0001511257.html" tppabs="http://www.jxvdy.com/tutorials/shooting/sysx/0001511257.html" target="_blank" title="在限制里做出最合理，《唐人街探案》摄影手记">在限制里做出最合理，《唐人街探案》摄影手记</a></h5>
+			<small><i class="fa fa-clock-o"></i>2016-01-26</small>
+		</div>
+	</article>
+	<article class="article-item">
+		<figure><a href="0033514418.html" tppabs="http://www.jxvdy.com/tutorials/shooting/sysx/0033514418.html" title="通过摄影机的运动表现意义：黑泽明的《罗生门》" target="_blank"><img class="img-responsive" src="56a5a0224cc8f6a39463a_0.jpg" tppabs="http://image.jxvdy.com/2016/0125/56a5a0224cc8f6a39463a_0.jpg" alt="通过摄影机的运动表现意义：黑泽明的《罗生门》"></a></figure>
+		<div class="widget-thumb-text-info">
+			<h5><a href="0033514418.html" tppabs="http://www.jxvdy.com/tutorials/shooting/sysx/0033514418.html" target="_blank" title="通过摄影机的运动表现意义：黑泽明的《罗生门》">通过摄影机的运动表现意义：黑泽明的《罗生门》</a></h5>
+			<small><i class="fa fa-clock-o"></i>2016-01-25</small>
+		</div>
+	</article>
+	<article class="article-item">
+		<figure><a href="0001514410.html" tppabs="http://www.jxvdy.com/tutorials/shooting/dgbj/0001514410.html" title="摄影师打光如何参考光源" target="_blank"><img class="img-responsive" src="569c96710f46ff33e46f6_0.jpg" tppabs="http://image.jxvdy.com/2016/0118/569c96710f46ff33e46f6_0.jpg" alt="摄影师打光如何参考光源"></a></figure>
+		<div class="widget-thumb-text-info">
+			<h5><a href="0001514410.html" tppabs="http://www.jxvdy.com/tutorials/shooting/dgbj/0001514410.html" target="_blank" title="摄影师打光如何参考光源">摄影师打光如何参考光源</a></h5>
+			<small><i class="fa fa-clock-o"></i>2016-01-18</small>
+		</div>
+	</article>
+<!--t1517407634-->
+
+			</div>
+		</div>
+		
+		<!--热门排行 -->
+		<div id="sidebar">
+			<div class="js_rank widget clearfix">
+				<div class="modal-title clearfix">
+					<div class="modal-title-left">
+						<div class="modal-title-left-inner">热门排行</div>
+						<span class="tip-t"><i class="tip-outer"></i><i class="tip-inner"></i></span>
+					</div>
+				</div>
+				<!-- /.modal-title  -->
+				<div class="modal-title-tab channel-tab-nav">
+					<ul class="rank-tab clearfix">
+						<li class="js_rank_handle " js_data_m="text_content" js_data_c="1" js_data="week"><a href="javascript:;">资讯</a></li>
+						<li class="js_rank_handle" js_data_m="screenplay" js_data_c="4" js_data="week"><a href="javascript:;">剧本</a></li>
+						<li class="js_rank_handle on" js_data_m="text_content" js_data_c="5" js_data="week"><a href="javascript:;">教程</a></li>
+						<li class="js_rank_handle" js_data_m="video_info" js_data_c="2" js_data="week"><a href="javascript:;">微电影</a></li>
+						<li class="js_rank_handle last" js_data_m="video_info" js_data_c="3" js_data="week"><a href="javascript:;">网络剧</a></li>
+					</ul>
+				</div>
+				<div class="channel-tab-inner clearfix">
+										<div class="hots-rank">
+	<ul class="js_col list-unstyled">
+					<li class="rank-title"><i class="rank-num num-1">1</i><a href="0001514426.html" tppabs="http://www.jxvdy.com/tutorials/equipment/qcpc/0001514426.html" target="_blank" title="摄影师你好｜除了Angelababy，你还需要知道Lensbaby">摄影师你好｜除了Angelababy，你还需要知道Lensbaby</a></li>
+					<li class="rank-title"><i class="rank-num num-2">2</i><a href="0001511257.html" tppabs="http://www.jxvdy.com/tutorials/shooting/sysx/0001511257.html" target="_blank" title="在限制里做出最合理，《唐人街探案》摄影手记">在限制里做出最合理，《唐人街探案》摄影手记</a></li>
+					<li class="rank-title"><i class="rank-num num-3">3</i><a href="0033514418.html" tppabs="http://www.jxvdy.com/tutorials/shooting/sysx/0033514418.html" target="_blank" title="通过摄影机的运动表现意义：黑泽明的《罗生门》">通过摄影机的运动表现意义：黑泽明的《罗生门》</a></li>
+					<li class="rank-title"><i class="rank-num num-4">4</i><a href="0001514410.html" tppabs="http://www.jxvdy.com/tutorials/shooting/dgbj/0001514410.html" target="_blank" title="摄影师打光如何参考光源">摄影师打光如何参考光源</a></li>
+					<li class="rank-title"><i class="rank-num num-5">5</i><a href="0001511241.html" tppabs="http://www.jxvdy.com/tutorials/shooting/psxd/0001511241.html" target="_blank" title="2015年最美的爱情电影《卡罗尔》拍摄手记">2015年最美的爱情电影《卡罗尔》拍摄手记</a></li>
+					<li class="rank-title"><i class="rank-num num-6">6</i><a href="0001511208.html" tppabs="http://www.jxvdy.com/tutorials/late/ystx/0001511208.html" target="_blank" title="图文解析：[蚁人]服装设计师讲解战斗套装玄机">图文解析：[蚁人]服装设计师讲解战斗套装玄机</a></li>
+					<li class="rank-title"><i class="rank-num num-7">7</i><a href="0001194439.html" tppabs="http://www.jxvdy.com/tutorials/plays/mjdj/0001194439.html" target="_blank" title="《老炮儿》:良知的生命时光">《老炮儿》:良知的生命时光</a></li>
+					<li class="rank-title"><i class="rank-num num-8">8</i><a href="0033511233.html" tppabs="http://www.jxvdy.com/tutorials/plays/jzfx/0033511233.html" target="_blank" title="《万万没想到》：拉长到95分钟也还是一部网剧">《万万没想到》：拉长到95分钟也还是一部网剧</a></li>
+					<li class="rank-title"><i class="rank-num num-9">9</i><a href="0033511200.html" tppabs="http://www.jxvdy.com/tutorials/plays/ysjp/0033511200.html" target="_blank" title="“老炮儿”六爷骤倒冰面 结局走向意义何在？">“老炮儿”六爷骤倒冰面 结局走向意义何在？</a></li>
+					<li class="rank-title"><i class="rank-num num-10">10</i><a href="0033511004.html" tppabs="http://www.jxvdy.com/tutorials/plays/ysjp/0033511004.html" target="_blank" title="《老炮儿》全解读，导演这么拍“年度最佳”">《老炮儿》全解读，导演这么拍“年度最佳”</a></li>
+			</ul>
+</div>
+<ul class="js_tpl hidden">
+	<li class="rank-title"><i class="rank-num"></i><a href="#" title="" target="_blank"></a></li>
+</ul>
+<!--t1517408533-->
+
+									</div>
+				<!-- /.tab-content -->
+			</div>
+			<!-- /.widget-thumb-text -->
+			<div class="mt10 ads300-250 mb20 js_ad_record" style="height: 250px;">
+						<script type="text/javascript" src="0135.js" tppabs="http://ad.jxvdy.com/script/0135.js"></script>
+						</div>
+		</div>
+		<!-- /.sidebar -->
+	</aside>
+	<a class="js_popup hidden" id="popup_login" js_popup="js_popup_login"></a>
+	<a class="js_popup hidden" id="popup_private" js_popup="js_popup_private" href="javascript:;"></a>
+	<a class="js_popup hide" id="popup_verify" js_popup="js_popup_verify" href="javascript:;"></a>
+	<!-- 邮箱验证弹出层 -->
+<div id="js_popup_verify" class="js_popup_content popup-wrap popup-login-wrap">
+    <div class="popup-title">
+        <a href="javascript:;" title="关闭" class="js_popup_closed closed">×</a>
+        <h4>邮箱验证</h4>
+    </div>
+    <div class="popup-body clearfix">
+        <div class="user-group-wrap text-center">
+            您的账户邮箱未验证，请验证您的邮箱
+        </div>
+        <!-- /.user-group-wrap -->
+        <div class="user-group-wrap text-center mt20">
+            <div class="user-group">
+                <a class="btn btn-warning" href="javascript:if(confirm('http://www.jxvdy.com/my/checkEmail  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/my/checkEmail'" tppabs="http://www.jxvdy.com/my/checkEmail">验证邮箱</a>
+                <a class="js_popup_closed btn btn-default ml10" href="javascript:;">取消</a>
+            </div>
+        </div>
+        <!-- /.user-group-wrap -->
+    </div>
+    <!-- /.popup-body -->
+</div>
+
+<!--t1517407913-->
+ 
+	<div id="js_popup_private" class="js_popup_content popup-wrap popup-private-wrap">
+<form action="/message/addsubmit" method="post" class="js_form" js_validrules="mess_validRules" onsubmit="return false">
+  	<input type="hidden" name="id" value="">
+    <div class="popup-title">
+        <a href="javascript:;" title="关闭" class="js_popup_closed closed">×</a>
+        <h4>发送私信</h4>
+    </div>
+    <div class="popup-body clearfix">
+        <div class="message-talk-wrap">
+            <form action="">
+                <div class="user-group-wrap">
+                    <label for="" class="label-name">收件人:</label>
+                    <div class="user-group">
+                        <input type="text" name="username" class="form-control input-nick user-profile" autocomplete="off" placeholder="请输入收件人用户名" value="">
+                        <p class="user-tip-wrap" id="js_username_tip"></p>
+                    </div>
+                </div>
+                <!-- /.user-group-wrap -->
+                <div class="user-group-wrap">
+                    <label for="" class="label-name">内容:</label>
+                    <div class="user-group">
+                        <textarea name="content" cols="30" rows="5" class="textarea textarea-profile" maxlength="99999" placeholder="请输入内容"></textarea>
+                        <p class="user-tip-wrap" id="js_content_tip"></p>
+                    </div>
+                </div>
+                <!-- /.user-group-wrap -->
+                <div class="user-group-wrap">
+                    <label for="" class="label-name"></label>
+                    <div class="user-group">
+                        <input type="button" class="btn btn-warning btn_mess_submit" value="确定" />
+                    </div>
+                </div>
+                <!-- /.user-group-wrap -->
+            </form>
+        </div>
+        <!-- /.message-talk-wrap -->
+    </div>
+    <!-- /.popup-body -->
+</form>
+</div>
+<div class="popup-wrap-mask"></div>
+<!--t1517408224-->
+	<script type="text/javascript" src="my_login.js" tppabs="http://skin.jxvdy.com/jxvdy2/public/javascripts/my_login.js"></script>
+<script language="JavaScript">
+<!--
+var CHECK_FIELD_URL = '/my/logincheck';
+//-->
+</script>
+<!-- 会员登录弹出层 -->
+<div id="js_popup_login" class="js_popup_content popup-wrap popup-login-wrap">
+	<div class="popup-title">
+		<a href="javascript:;" title="关闭" class="js_popup_closed closed">×</a>
+		<h4>登录金象微电影账号</h4>
+	</div>
+	<div class="popup-body clearfix">
+		<div class="setting-wrap setting-profile">
+			<form class="js_form form-usr" action="http://www.jxvdy.com/my/loginsubmit" method="post" js_validrules="validRules" onsubmit="return false;">
+				<input type="hidden" name="jumpto" value="" />
+				<div class="user-group-wrap">
+					<div class="user-group">
+						<input type="text" id="js_name" name="name" class="input-username form-control" autocomplete="off" maxlength="35" placeholder="用户名/邮箱">
+						<p class="user-tip-wrap" id="js_name_tip"></p>
+					</div>
+				</div>
+				<!-- /.user-group-wrap -->
+				<div class="user-group-wrap">
+					<div class="user-group">
+						<input type="password" id="js_pwd" name="pwd" class="input-password form-control" autocomplete="off" placeholder="请输入密码" maxlength="35" />
+						<p class="user-tip-wrap" id="js_pwd_tip"></p>
+					</div>
+				</div>
+				<!-- /.user-group-wrap -->
+				<div class="user-group-wrap">
+					<div class="user-group aotu-login">
+						<span class="form-checkbox pull-left">
+							<input type="checkbox" id="js_autologin" name="autologin" style="-webkit-appearance:display" value="1" checked="checked">
+							<label for="js_autologin">下次自动登录</label>
+						</span>
+						<a href="javascript:if(confirm('http://www.jxvdy.com/my/forgetpwd  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.jxvdy.com/my/forgetpwd'" tppabs="http://www.jxvdy.com/my/forgetpwd" class="color-gray pull-right">忘记密码？</a>
+					</div>
+				</div>
+				<!-- /.user-group-wrap -->
+				<div class="user-group-wrap">
+					<div class="user-group">
+						<input type="submit" class="btn btn-warning btn-login-submit" value="登 录" />
+					</div>
+				</div>
+				<div id="js_ok_tip" style="display: none;"></div>
+				<!-- /.user-group-wrap -->
+				<div class="user-group-wrap">
+					<div class="user-group aotu-login">
+						<span class="pull-right">还没有金象微电影账号？<a href="regist.htm" tppabs="http://www.jxvdy.com/my/regist" class="brand-warning">立即注册</a></span>
+					</div>
+				</div>
+				<!-- /.user-group-wrap -->
+			</form>
+		</div>
+		<!-- /.lsetting-wrap -->
+		<dl class="login-other-wrap">
+			<dt class="login-other-title color-gray">一键授权，快速登录 </dt>
+			<dd class="login-sina login-other-btn"><a href="javascript:void(0)" onclick="return window.open('http://www.jxvdy.com/oauth2/authorize?p=sinaweibo&login=1', 'oauth2Login_sinaweibo' ,'height=562,width=754, toolbar=no, menubar=no, scrollbars=no, status=no, location=yes, resizable=yes').noAim = true;"><i class="icon-login-sina"></i><span>新浪微博登录</span></a></dd>
+			<dd class="login-tqq login-other-btn"><a href="javascript:void(0)" onclick="return window.open('http://www.jxvdy.com/oauth2/authorize?p=txweibo&login=1', 'oauth2Login_txweibo' ,'height=420,width=610, toolbar=no, menubar=no, scrollbars=no, status=no, location=yes, resizable=yes').noAim = true;"><i class="icon-login-tqq"></i><span>腾讯微博登录</span></a></dd>
+			<dd class="login-qq login-other-btn tencent"><a href="javascript:void(0)" onclick="return window.open('http://www.jxvdy.com/oauth2/authorize?p=txqq&login=1', 'oauth2Login_txqq' ,'height=525,width=585, toolbar=no, menubar=no, scrollbars=no, status=no, location=yes, resizable=yes').noAim = true;"><i class="icon-login-qq"></i><span>腾讯QQ登录</span></a></dd>
+		</dl>
+		<!-- /.login-other -->
+	</div>
+	<!-- /.popup-body -->
+</div>
+<!-- /.popup-wrap -->
+<!-- 弹出层遮罩 -->
+<div class="popup-wrap-mask"></div>
+<!--t1517408404-->
+	<a class="js_popup hide" id="popup_dynamic" js_popup="js_popup_dynamic" href="javascript:;"></a>
+	<div id="js_popup_dynamic" class="js_popup_content popup-wrap popup-comment-wrap">
+    <div class="popup-title">
+        <a href="javascript:;" title="关闭" class="js_popup_closed closed">×</a>
+        <h4>分享到金象动态</h4>
+    </div>
+    <div class="popup-body clearfix">
+    <form id="js_comment" class="js_form">
+        <div class="user-group-wrap">
+            <div class="user-group">
+                <textarea name="share_comment" onkeyup="checkLength(this);" cols="62" rows="5" class="textarea" placeholder="分享到金象动态..." js_mltip="#sy_share" js_ml="130"></textarea>
+                <p class="text-right" id="sy_share">还可以再输入130字</p>
+            </div>
+        </div>
+        <!-- /.user-group-wrap -->
+        <div class="user-group-wrap text-center">
+            <div class="user-group">
+                <input type="button" class="btn btn-warning pop_share_submit" hidefocus="true" value="分享" />
+            </div>
+        </div>
+        <!-- /.user-group-wrap -->
+    </form>
+    </div>
+    <!-- /.popup-body -->
+</div>
+<!--t1517407913-->
+</section>
+<!-- 隐藏代码盒子 S -->
+<div id="displayBox">
+	<div class="hd"><a></a></div>
+	<div class="bd" style="height: 0;">
+		<iframe scrolling="yse" src="" frameborder="0"></iframe>
+	</div>
+</div>
+<footer id="footer" class="footer-wrap clearfix">
+	<div class="container">
+		<div class="foot text-center">
+			<div class="clearfix foot-link">
+				<a href="about.html" tppabs="http://www.jxvdy.com/about.html" target="_blank">关于我们</a><span class="divide">|</span>
+				<a href="contact.html" tppabs="http://www.jxvdy.com/contact.html" target="_blank">联系我们</a><span class="divide">|</span>
+				<a href="guestbook.html" tppabs="http://www.jxvdy.com/guestbook.html" target="_blank">网站留言</a><span class="divide">|</span>
+				<a href="help.html" tppabs="http://www.jxvdy.com/help.html" target="_blank">帮助中心</a><span class="divide">|</span>
+				<a href="disclaimer.html" tppabs="http://www.jxvdy.com/disclaimer.html" target="_blank">免责声明</a><span class="divide">|</span>
+				<a href="copyright.html" tppabs="http://www.jxvdy.com/copyright.html" target="_blank">版权声明</a><span class="divide">|</span>
+				<a href="agreement.html" tppabs="http://www.jxvdy.com/agreement.html" target="_blank">使用协议</a>
+			</div>
+			<p>Copyright &copy; 2013-2018 jxvdy.com，All Rights Reserved&nbsp;&nbsp;使用本网站即表示接受金象微电影网用户协议<br><a href="javascript:if(confirm('http://www.miitbeian.gov.cn/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://www.miitbeian.gov.cn/'" tppabs="http://www.miitbeian.gov.cn/" target="_blank">ICP备案证书号：豫ICP备12020961号</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="licence.html" tppabs="http://www.jxvdy.com/licence.html" target="_blank">广播电视节目制作经营许可证 （豫）字第00213号</a><br>版权所有 金象微电影网</p>
+		</div>
+	</div>
+</footer>
+
+<!-- 页面右侧浮动控件 -->
+<div id="js_float_left" class="float-wx"><span class="jx-wx"></span></div>
+<div id="js_float_right" class="side-bar side-pannel" style="display: none;">
+    <div id="side-bar"><a class="gotop" href="javascript:;" style="display: none"></a></div>
+    <a class="block-text jx-app" href="javascript:;"><span class="jx-app-icon"></span></a>
+    <a class="block-text jx-kf" href="javascript:if(confirm('http://wpa.qq.com/msgrd?v=3&uin=1606173530&site=qq&menu=yes  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://wpa.qq.com/msgrd?v=3&uin=1606173530&site=qq&menu=yes'" tppabs="http://wpa.qq.com/msgrd?v=3&uin=1606173530&site=qq&menu=yes" target="_blank">
+        <span class="jx-kf-con">
+            官方客服QQ：1605173530<br>工作日9:00-18:00在线
+            <i></i>
+        </span>
+    </a>
+    <a class="block-text jx-wb" href="javascript:if(confirm('http://weibo.com/jinxiangv  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://weibo.com/jinxiangv'" tppabs="http://weibo.com/jinxiangv" target="_blank">
+        <span class="jx-wb-con">
+            <script src="wb.js" tppabs="http://tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8"></script>
+            <wb:follow-button uid="3568758305" type="red_2" width="136" height="24" ></wb:follow-button>
+            <i></i>
+        </span>
+    </a>
+    <a class="jx-ly" href="guestbook.html" tppabs="http://www.jxvdy.com/guestbook.html" target="_blank"></a>
+</div>
+<!--300_250_s-->
+<div class="js_ad_record" style="height: 250px;position:fixed; right:0; bottom:0;z-index:2147483648;"><script type="text/javascript" src="0112.js" tppabs="http://ad.jxvdy.com/script/0112.js"></script></div>
+<!--300_250_e-->
+<script type="text/javascript">
+//  返回置顶
+    $(function(){
+        $(window).scroll(function(){
+            if($(window).scrollTop()>100){
+                $("#side-bar .gotop").fadeIn();
+            }
+            else{
+                $("#side-bar .gotop").hide();
+            }
+        });
+        $("#side-bar .gotop").click(function(){
+            $('html,body').animate({'scrollTop':0},500);
+        });
+    });
+//    页面两侧浮动随屏幕滚动显示
+    function float_nav(dom){
+        var right_nav=$(dom);
+        var nav_height=right_nav.height();
+        function right_nav_position(bool){
+            var window_height=$(window).height();
+            var nav_top=(window_height-nav_height)/2;
+            if(bool){
+                right_nav.stop(true,false).animate({top:nav_top+$(window).scrollTop()},500);
+            }else{
+                right_nav.stop(true,false).animate({top:nav_top},400);
+            }
+            right_nav.show();
+        }
+
+        if(!+'\v1' && !window.XMLHttpRequest ){
+            $(window).bind('scroll resize',function(){
+                if($(window).scrollTop()>400){
+                    right_nav_position(true);
+                }else{
+                    right_nav.hide();
+                }
+            })
+        }else{
+            $(window).bind('scroll resize',function(){
+                if($(window).scrollTop()>400){
+                    right_nav_position();
+                }else{
+                    right_nav.hide();
+                }
+            })
+        }
+    }
+    float_nav('#js_float_left');
+    float_nav('#js_float_right');
+    
+    $(function(){
+        recordShow();
+        $(window).scroll(recordShow);
+    })
+    
+    function recordShow()
+    {
+		var Hei = $(window).height();
+        var scrTop = $(document).scrollTop();
+        $('.js_ad_record').each(function(){
+        	var offHei = $(this).offset().top
+			var objHei = $(this).height();
+			if((offHei < scrTop + Hei && offHei > scrTop) || (offHei + objHei < scrTop + Hei && offHei + objHei > scrTop))
+			{
+				if(!$(this).hasClass('js_recorded'))
+				{
+					$(this).addClass('js_recorded');
+					var _u = $(this).children("div:last-child").attr('js_data');
+					$.ajax({cache:false,type:'GET',url: _u});
+				}
+			}
+        })
+    }
+</script>
+</body>
+</html>
+<!--t1517408166-->
+
+<!--t1517408298-->

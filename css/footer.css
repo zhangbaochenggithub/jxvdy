@@ -1,0 +1,27 @@
+.bottom_copy{	
+		width:100%;
+		margin:0 auto;
+		background-color:rgb(238,238,238);
+		margin-top:20px;
+		height:130px;
+
+	}
+	.bottom_copy>div>ul{
+		padding:20px 0 15px 0;
+		width:480px;
+		margin:0 auto;
+	}
+	.bottom_copy>div>p{
+		margin-bottom:10px;
+	}
+	.bottom_copy>div>ul>li{
+		display:inline-block;
+	}
+	.bottom_copy>div>ul>li a{
+		
+		padding-right:5px;
+		border-right:1px solid #666;
+	}
+	.bottom_copy>div>ul>li:last-child a{
+		border:none;
+	}

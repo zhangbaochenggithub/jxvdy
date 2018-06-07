@@ -1,0 +1,1 @@
+document.write('<script type=\"text/javascript\">var cpro_id = \"u1899453\";</script><script src=\"http://cpro.baidustatic.com/cpro/ui/c.js\" type=\"text/javascript\"></script>	<div js_data="http://ad.jxvdy.com/record?id=10&p=25" style="display:none"/></div>');

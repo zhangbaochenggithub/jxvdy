@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title></title>
+	<link rel="stylesheet" href="../css/header.css">
+	<link rel="stylesheet" href="../css/footer.css">
+	<link rel="stylesheet" href="../css/base.css">
+	<link rel="stylesheet" href="../css/listContent.css">
+	<link rel="stylesheet" href="../css/list.css">
+	<style>
+	.disabled{
+	 color:#bfbfbf;
+   background:#f2f2f2;
+}
+
+	span.disabled{
+			pointer-events:none;
+		}
+		.v_ad div#bgImg{
+		border:1px solid #eee;
+		width:300px;
+		height:300px;
+		position:absolute;
+		left:310px;
+		top:0;
+	}
+	#bgImg{
+		display:none;
+	}
+	#mask{
+     position: absolute;
+     width: 120px;
+     height: 120px;
+     background: #ffa;
+     opacity: 0.5;
+     top: 0;
+     left: 0;
+     display:none;
+ }
+	#superMask{
+     position: absolute;
+     width: 350px;
+     height: 350px;
+     opacity: 0;
+     top: 0;
+     left: 0;
+     cursor: move;
+ }
+ .v_ad>p img.img_show{
+	opacity:1;
+}
+	</style>
+ </head>
+ <body>
+   <!--引用头部-->
+   <header id="header"></header>
+	 <!--影库-->
+	 <div class="v_flim">
+		<div>
+				<ul id="list_show">
+				
+			</ul>	
+			<img src="../images/third_page/fimg001.png" alt="">
+			<p id="show_score">
+			</p>
+		</div>
+	 </div>
+	 <!--简介-->
+	 <div class="v_content" id="show">
+		
+		
+	 </div>
+	 <!--影片推荐-->
+		<div class="reco">
+			<p>
+				<img src="../images/third_page/fimg021.png" alt="" >
+				<img src="../images/third_page/fimg022.png" alt="" id="v_click">
+			</p>
+			<div class="v_list">
+			<ul id="v_list_show">
+				
+				</ul>			
+			</div>
+	 </div>
+	 <!--评论-->
+	 <div class="comment">
+			<img src="../images/third_page/fimg023.png" alt="">
+			<textarea name="" id="" cols="109" rows="12"></textarea>	
+			<p>还可以输入<span>140</span>个字<a href="">确定</a></p>
+			<div>
+				<p>
+					<a href="">最热</a>
+					<a href="">最新</a>
+				</p>
+				<p>共<span>0</span>条评论</p>
+			</div>
+			<p>暂无评论</p>
+	 </div>
+   <!--固定广告-->
+	 <div class="v_ad">
+		<div id="mdImg"><img src="../images/third_page/md01.jpg" alt=""></div>
+		<div id="mask"></div>
+		<div id="superMask"></div>
+		<span id="forward"><img src="../images/third_page/arrow-left.png" ></span>
+		<a href=""><ul id="show_sm"></ul></a>
+		<span id="backward" class="disabled"><img src="../images/third_page/arrow-right.png" ></span>
+		<div id="bgImg"></div>
+		<p id="img_show" >
+			<img src="../images/third_page/md01.jpg" class="img_show">
+			<img src="../images/third_page/md02.jpg">
+			<img src="../images/third_page/md03.jpg">
+			<img src="../images/third_page/md04.jpg">
+			<img src="../images/third_page/md05.jpg">
+		</p>
+	 </div>
+	 <!--引用尾部-->
+	 <footer id="footer"></footer>
+	<script src="../js/jquery-1.11.3.js"></script>
+	<script src="../js/header.js"></script>
+	<script src="../js/footer.js"></script> 
+	<script src="../js/ajax.js"></script>
+	<script src="../js/listContent.js"></script> 
+ </body>
+</html>

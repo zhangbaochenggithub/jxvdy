@@ -1,0 +1,1 @@
+document.write('<a href="http://www.jxvdy.com/news/ylqy/0033095463.html" target="_blank"  onclick="js_click_record(\'http://ad.jxvdy.com/record?type=1&id=8&p=8\')"><img src="http://ad.jxvdy.com/media/2015/0504/554713490e5f97d3d7b99.jpg" width="300" height="100"></a><div js_data="http://ad.jxvdy.com/record?id=8&p=8" style="display:none"/></div>');

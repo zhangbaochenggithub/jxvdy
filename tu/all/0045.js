@@ -1,0 +1,1 @@
+document.write('<a href="http://www.jxvdy.com/video/spec/0147.html" target="_blank"  onclick="js_click_record(\'http://ad.jxvdy.com/record?type=1&id=22&p=13\')"><img src="http://ad.jxvdy.com/media/2015/0511/55500a73aca141801294c.jpg" width="1100" height="90"></a><div js_data="http://ad.jxvdy.com/record?id=22&p=13" style="display:none"/></div>');

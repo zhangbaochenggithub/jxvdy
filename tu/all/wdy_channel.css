@@ -1,0 +1,120 @@
+@charset "utf-8";
+/* CSS Document */
+.wdy_channel_main{ width:1200px; height:auto; display:block; overflow:hidden; margin:0 auto;  margin-top:23px;}
+.wdy_channel_main01{ width:100%; height:auto; display:block; overflow:hidden; margin-bottom:15px;}
+.wdy_channel_main01_left{ width:890px; height:auto; display:block; overflow:hidden; float:left; margin-right:30px;}
+.wdy_channel_main01_right{ width:280px; height:auto; display:block; overflow:hidden; float:left}
+.wdy_channel_main01_right_title{ width:280px; height:35px; display:block; overflow:hidden; margin-bottom:10px;}
+.wdy_channel_main01_right_title ul {margin:0px; padding:0px; list-style:none; text-align:center;}
+.wdy_channel_main01_right_title ul li {display:inline; height:35px; line-height:35px; font-size:16px; margin-left:8px; margin-right:8px;}
+.wdy_channel_main01_right_title ul li a {color:#000; height:35px; border-bottom:2px solid #FFF; padding-bottom:3px;}
+.wdy_channel_main01_right_title ul li a.tabactive {color:#F39C12;  position:relative; border-bottom:2px solid #F39C12; padding-bottom:3px; }
+.wdy_channel_main01_right_title_left{ width:auto; height:40px; line-height:35px; font-size:24px; color:#333; display:block; float:left; margin-right:-28px;}
+.wdy_channel_main01_right_title_left a{ color:#333333}
+
+.wdy_channel_main01_right_eye{ width:100%; height:auto; overflow:hidden; margin-bottom:10px;}
+.wdy_channel_main01_right_eye_img{ width:110px; height:154px; display:block; overflow:hidden; float:left; margin-right:15px;}
+.wdy_channel_main01_right_eye_text{ width:155px; height:auto; display:block; float:left;}
+.wdy_channel_main01_right_eye_text_title{ width:100%; height:25px; display:block; overflow:hidden; line-height:25px; color:#333333}
+.wdy_channel_main01_right_eye_text_title_left{ width:auto; height:25px; display:block; float:left; font-size:#333333; padding-left:35px; }
+.wdy_channel_main01_right_eye_text_title_left a{ width:85px; height:25px; display:block; overflow:hidden; white-space:nowrap; text-overflow:ellipsis}
+.wdy_channel_main01_right_eye_text_title_left i{ width:25px; height:25px; display:block; background:#F39C12; text-align:center; font-size:24px; margin-top:-25px; color:#FFF; font-family:Arial; margin-left:-35px; }
+.wdy_channel_main01_right_eye_text_title_left a{ color:#333333}
+.wdy_channel_main01_right_eye_text_title_right{ width:auto; height:25px; display:block; float:right; color:#F39C12}
+.score_l{ font-size:24px; font-family:Aparajita}
+.score_s{ font-size:14px; font-family:Aparajita}
+.wdy_channel_main01_right_eye_text_text{ width:100%; height:auto; display:block; overflow:hidden; line-height:24px; font-size:12px; color:#999999; margin-top:10px;}
+.wdy_channel_main01_right_eye_text_text a{ color:#999} 
+.wdy_channel_main01_right_eye_text_tip{ width:100%; height:24px; display:block; font-family:Arial; font-size:12px; line-height:24px;}
+.wdy_channel_main01_right_eye_text_tip_left{ width:auto; height:24px; color:#999999; font-size:12px; float:left; padding-left:18px;}
+.wdy_channel_main01_right_eye_text_tip_left i{ width:11px; height:11px; display:block; margin-top:-19px; background:url("wdy.png"/*tpa=http://skin.jxvdy.com/jxvdy/web/images/wdy.png*/) no-repeat; background-position:0px -60px; margin-left:-18px;}
+.wdy_channel_main01_right_eye_text_tip_right{ width:auto; height:24px; color:#999999; font-size:12px; padding-left:18px; float:left;  margin-left:20px;}
+.wdy_channel_main01_right_eye_text_tip_right i{ width:14px; height:14px; display:block; margin-top:-19px; background:url("wdy.png"/*tpa=http://skin.jxvdy.com/jxvdy/web/images/wdy.png*/) no-repeat; background-position:-64px -58px; margin-left:-18px;}
+.wdy_channel_main01_right_list{ width:100%; height:auto; overflow:hidden; margin-bottom:10px; }
+.wdy_channel_main01_right_list_son{ width:100%; height:37px; display:block; border-bottom:1px dashed #cccccc; line-height:37px}
+.wdy_channel_main01_right_list_son_left{ width:auto; height:37px; display:block; float:left; font-size:14px; color:#000000; padding-left:28px; line-height:37px;}
+.wdy_channel_main01_right_list_son_left a{ width:180px; height:37px; display:block; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;}
+.wdy_channel_main01_right_list_son_left i{width:18px; height:18px; display:block; background:#F39C12; text-align:center; font-size:18px; line-height:18px; margin-top:-28px; color:#FFF; font-family:Arial; margin-left:-28px;}
+
+.wdy_channel_main01_right_list_son_left_grey{ width:auto; height:37px; display:block; float:left; font-size:14px; color:#000000; padding-left:28px; line-height:37px;}
+.wdy_channel_main01_right_list_son_left_grey a{ width:180px; height:37px; display:block; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;}
+.wdy_channel_main01_right_list_son_left_grey i{width:18px; height:18px; display:block; background:#aaaaaa; text-align:center; font-size:18px; line-height:18px; margin-top:-28px; color:#FFF; font-family:Arial; margin-left:-28px;}
+
+
+.wdy_channel_main01_right_list_son_right{ width:auto; height:37px; display:block; float:right; line-height:37px; color:#F39C12}
+
+.wdy_channel_main02_left_title{ width:100%; height:55px; display:block;}
+.wdy_channel_main02_left_title01{ width:auto; _width:120px; height:55px; display:block; font-size:24px; color:#000000; line-height:55px; float:left;}
+.wdy_channel_main02_left_title02{ width:auto; _width:400px; height:25px; display:block; float:left; font-size:18px; color:#333333; margin-top:15px;}
+.wdy_channel_main02_left_title02 li{ width:auto; _width:80px; height:25px; display:block; float:left; margin-right:10px; margin-left:10px; line-height:25px;}
+.wdy_channel_main02_left_title02 li a{width:auto; _width:80px; height:25px; display:block; _float:left; }
+.wdy_channel_main02_left_title02 li a:hover{width:auto; _width:80px; height:25px; display:block; border-bottom:2px solid #F39C12; color:#F39C12; _float:left; }
+.wdy_channel_main02_left_title02_select{width:auto; _width:80px; height:25px; display:block; border-bottom:2px solid #F39C12; color:#F39C12}
+.wdy_channel_main02_left_title02_select a{width:auto; _width:80px; height:25px; display:block; border-bottom:2px solid #F39C12; color:#F39C12} 
+.wdy_channel_main02_left_title03{ width:auto; _width:100px; height:55px; display:block; font-size:14px; line-height:55px; color:#666666; line-height:55px; float:right;}
+.wdy_channel_main02_left_title03 a{ color:#666666}
+.wdy_channel_main02_left_title03 i{ width:18px; height:18px; display:block; background:url("wdy.png"/*tpa=http://skin.jxvdy.com/jxvdy/web/images/wdy.png*/) no-repeat; background-position:-113px -55px; margin-top:-35px; margin-left:-25px;}
+.wdy_channel_main02_left_text{ width:910px; height:auto; display:block; overflow:hidden; padding-top:10px; }
+
+.wdy_list_son{ width:162px; height:250px; display:block; float:left; margin:-10px 5px 16px 5px; padding:5px;}
+.wdy_list_son:hover{ background-color:#ededed}
+
+
+.wdy_list_son_img{ width:162px; height:227px; display:block;}
+
+
+
+.wdy_list_son_translucent{ width:162px; height:auto; display:block; background:rgba(0,0,0,.50); margin-top:-30px; position:absolute;}
+.wdy_list_son_translucent_title{ width:140px; height:auto;  display:block; line-height:25px; font-size:12px; color:#FFF; padding:0 5px; margin-top:5px}
+.wdy_list_son_translucent_title a{ color:#FFF}
+
+.wdy_list_son_translucent_text{ width:140px; height:20px; display:block; line-height:20px; padding:0px 5px;}
+.wdy_list_son_translucent_text_left{ width:90px; height:20px; display:block; float:left; line-height:15px; font-size:12px; font-family:Arial; color:#FFF;}
+.wdy_list_son_translucent_text_left a{ color:#FFF; margin-left:15px; width:60px; height:20px; display:block; overflow:hidden; white-space:nowrap; text-overflow:ellipsis}
+.wdy_list_son_translucent_text_left i{ width:11px; height:11px; display:block; background:url("jxv_icon.png"/*tpa=http://skin.jxvdy.com/jxvdy/web/images/jxv_icon.png*/) no-repeat; background-position:0px -1103px; margin-top:-19px; margin-right:5px;}
+.wdy_list_son_translucent_text_right{ width:30px; height:26px; display:block; float:right; font-family:Arial; color:#F39C12;}
+.wdy_list_son_translucent_text_right_big{ width:15px; height:26px; margin-top:3px; font-size:22px; float:left; font-weight:100; font-family:Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", serif}
+.wdy_list_son_translucent_text_right_small{ width:15px; height:26px; font-size:16px;  float:left; margin-top:5px;  font-weight:100;  font-family:Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", serif}
+.wdy_list_son_text{ width:162px; height:26px; display:block; overflow:hidden;font-size:14px; color:#333333; line-height:26px;}
+.wdy_list_son_text_left{ width:120px; height:26px; display:block; float:left; margin-right:5px; overflow:hidden; white-space:nowrap; text-overflow:ellipsis}
+.wdy_list_son_text_right{ float:right; margin-right:5px;}
+.wdy_list_son_text a{ color:#333333}
+
+
+/*鼠标滑过隐藏层*/
+.layer{ width:307px; height:157px; display:block; background:url("layer.png"/*tpa=http://skin.jxvdy.com/jxvdy/web/images/layer.png*/) no-repeat; margin-top:-235px; margin-left:135px; padding:15px; padding-left:35px; display:none; position:absolute; z-index:100}
+.layers{ width:307px; height:157px; display:block; background:url("layers.png"/*tpa=http://skin.jxvdy.com/jxvdy/web/images/layers.png*/) no-repeat; margin-top:-235px; margin-right:135px; padding:15px; padding-left:35px; display:none; position:absolute; z-index:100}
+.layertitle{ width:100%; height:26px; font-size:16px; line-height:26px; color:#333333}
+.layertitle a{ color:#333333}
+.layertitletip{ width:auto; height:auto; line-height:22px; font-size:13px; color:#666666}
+.layertitletip a{ width:auto; height:auto; margin-left:5px; margin-right:5px; color:#f2a73c}
+.layertext{ width:auto; height:auto; line-height:22px; font-size:12px; color:#999999}
+/*鼠标滑过隐藏层*/
+
+.wdy_channel_main02_left_title04{ width:auto; height:55px; display:block; font-size:12px; line-height:55px; color:#666666; line-height:55px; float:left; margin-left:10px;}
+.wdy_channel_main02_left_title04 a{ color:#666666}
+.wdy_channel_main02_left_title04 i{ width:13px; height:13px; display:block; background:url("wdy.png"/*tpa=http://skin.jxvdy.com/jxvdy/web/images/wdy.png*/) no-repeat; background-position:-159px -64px; margin-top:-33px; margin-left:32px;}
+.wdy_channel_main02_left_title05{ width:auto; height:55px; display:block; font-size:14px; line-height:55px; color:#666666; line-height:55px; float:right; margin-right:30px;}
+.wdy_channel_main02_left_title05 a{ color:#F39C12}
+.margin-bottom42{ margin-bottom:24px;}
+
+.wdy_channel_main01_right_title{ width:100%; height:35px; display:block; margin-bottom:15px; font-size:24px; line-height:35px; color:#000000} 
+.wdy_channel_main01_right_text{ width:100%; height:auto; display:block; overflow:hidden; margin-top:20px;}
+.wdy_channel_main01_right_text_top{width:100%; height:auto; display:block; overflow:hidden; margin-bottom:10px;}
+.wdy_channel_main01_right_text_end{width:100%; height:auto; display:block; overflow:hidden;}
+.wdy_channel_main01_right_text_end ul{ width:100%; height:auto; display:block; overflow:hidden; padding-bottom:10px; margin-bottom:10px;}
+
+.wdy_channel_main01_right_text_end ul li{ width:100%; height:26px; display:block; line-height:26px; font-size:14px; overflow:hidden; color:#C8D0DD}
+.wdy_channel_main01_right_text_end ul li a{ color:#333; margin-right:5px; margin-left:5px;}
+.wdy_channel_main01_right_text_end ul li a:hover{ color:#F39C12}
+.wdy_channel_main01_right_text_end ul li span{ margin-left:-5px; color:#F39C12}
+.wdy_channel_main01_right_text_end ul li span a{color:#F39C12}
+.wdy_channel_main01_right_text_end ul li span a:hover{ color:#F39C12; text-decoration:underline;}
+
+.wdy_channel_main02_right_text{width:100%; height:auto; display:block; overflow:hidden; margin-top:20px;}
+.wdy_channel_main02_right_textson{ width:100%; height:auto; display:block; overflow:hidden; border-bottom:1px dashed #cccccc; margin-bottom:10px;}
+.wdy_channel_main02_right_textson_title{ width:100%; height:26px; display:block; overflow:hidden; font-size:14px; color:#333333}
+.wdy_channel_main02_right_textson_text{ width:238px; height:60px; line-height:20px; font-size:12px; display:block; overflow:hidden; background:url("channel01.png"/*tpa=http://skin.jxvdy.com/jxvdy/web/images/channel01.png*/) no-repeat; padding:21px; padding-bottom:10px;}
+.wdy_channel_main02_right_textson_tip{ width:100%; height:26px; display:block; color:#999999; line-height:26px; font-size:14px; text-align:right; margin-bottom:5px; margin-top:5px;}
+.wdy_channel_main02_right_textson_tip span{ color:#F39C12; margin-right:15px;}
+.width200{ width:200px; height:20px; display:block; text-overflow:ellipsis; white-space:nowrap; overflow:hidden}

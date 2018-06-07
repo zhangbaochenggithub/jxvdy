@@ -1,0 +1,1 @@
+document.write('<a href="http://my.tv.sohu.com/user/232446647" target="_blank"  onclick="js_click_record(\'http://ad.jxvdy.com/record?type=1&id=11&p=11\')"><img src="http://ad.jxvdy.com/media/2015/0504/5547138e9c03c71c8895e.jpg" width="300" height="134"></a><div js_data="http://ad.jxvdy.com/record?id=11&p=11" style="display:none"/></div>');

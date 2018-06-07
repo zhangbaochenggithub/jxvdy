@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style>
+		#ss{
+			border:1px solid red;
+			width:300px;
+			height:400px;
+			line-height:25px;
+			color:blue;
+			margin:0 auto;
+		}
+	</style>
+</head>
+<body>
+	<div id="ss"></div>
+	<a href="index.html">123456</a>
+	<a href="http://www.it211.com.cn/web/index_new.html?tedu">222</a>
+	<script>
+		if(navigator.cookieEnable){
+			var tag=document.getElementById("ss");
+		}
+		var N=10;
+		var listCount=10;
+		var myTitle=escape(document.title)+"^";
+		var myUrl=escape(location.pathname)+"$";
+		var expTime = new Date(new Date().setDate(new Date().getDate()+500));
+		var edp="|;expires="+expTime.toGMTString()+";path=/";
+		var allCookie=document.cookie;
+		if(allCookie.indexOf("news=")!=-1||allCookie.indexOf("$|"!=-1)){
+			var myCookieStart=allCookie.indexOf("news=")+"news=".length;
+			var myCookieEnd=allCookie.indexOf("$|",myCookieStart);
+			var myCookieall=unescape(allCookie.substring(myCookieStart,myCookieEnd));
+			var myCookie=myCookieall.split("$");
+			var myCookieTit=new Array();
+			var myCookieUrl=new Array();
+			for(var i=0;i<myCookie.length;i++){
+				var myCookieOne=myCookie[i].split("^");
+				myCookieTit[i]=myCookieOne[0];
+				myCookieUrl[i]=myCookieOne[1];
+			}
+	
+			var tagDat="";
+			for(var i=myCookieTit.length-1;i>=0;i--){
+				var textCount=myCookieTit[i].replace(/[^\x00-\xff]/g,"aa").length;
+				if(textCount<=N*2){
+					texts=myCookieTit[i];
+				}else{
+					for(var a=N;a<textCount;a++){
+						texts=myCookieTit[i].substr(0,a);
+						if(texts.replace(/[^\x00-\xff]/g,"aa").length>=N*2){
+							texts+="..."
+							break;
+						}
+					}
+				}
+				tagDat+="<a href=\""+myCookieUrl[i]+"\""+"title=\""+myCookieTit[i]+"\">"+texts+"</a><br/>"
+			}
+			console.log(tagDat);
+			tag.innerHTML=tagDat.title;
+			console.log(tagDat.href);
+			var newCookie="";
+			if(myCookie.length<listCount){
+				for(i in myCookie){
+					if(myCookieTit[i]==document.title)continue;
+					newCookie+=escape(myCookieTit[i])+"^"+escape(myCookieUrl[i])+"$";
+				}
+			}
+			document.cookie="news="+newCookie+myTitle+myUrl+edp;
+			}else{
+				tag.innerHTML="您关闭了cookie,不能为您保存浏览记录";
+			}
+	</script>
+</body>
+</html>

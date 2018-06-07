@@ -1,0 +1,1 @@
+document.write('<a href="http://www.jxvdy.com/tutorials/shooting/mshz/0033494906.html" target="_blank"  onclick="js_click_record(\'http://ad.jxvdy.com/record?type=1&id=30&p=18\')"><img src="http://ad.jxvdy.com/media/2015/0610/5577cc419c288156005c5.jpg" width="300" height="100"></a><div js_data="http://ad.jxvdy.com/record?id=30&p=18" style="display:none"/></div>');

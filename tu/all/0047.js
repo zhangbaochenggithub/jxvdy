@@ -1,0 +1,1 @@
+document.write('<a href="http://www.baomihua.com/user/21582" target="_blank"  onclick="js_click_record(\'http://ad.jxvdy.com/record?type=1&id=14&p=15\')"><img src="http://ad.jxvdy.com/media/2015/0504/554713daf38fb94806831.jpg" width="330" height="90"></a><div js_data="http://ad.jxvdy.com/record?id=14&p=15" style="display:none"/></div>');

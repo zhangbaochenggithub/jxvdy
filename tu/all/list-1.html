@@ -1,0 +1,1138 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset=utf-8"utf-8" />
+<meta name="renderer" content="webkit" />
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+<meta name="description" content="äº‘é›†æœ€å‰æ²¿çš„å¾®ç”µå½±è¡Œä¸šèµ„è®¯,æœ€å¥½çŽ©çš„å¨±ä¹å…«å¦,æœ€ç²¾å½©çš„äººç‰©è®¿è°ˆ,è®©å¾®ç”µå½±äººè¿…é€ŸæŽŒæ¡å¾®ç”µå½±åŠ¨å‘ã€‚" />
+<meta name="keywords" content="å¾®ç”µå½±,å¾®ç”µå½±èµ„è®¯,è¡Œä¸šèµ„è®¯,å½±è§†ä¸šç•Œ,å¨±ä¹å…«å¦,äººç‰©è®¿è°ˆ" />
+<meta name="author" content="Gold elephant Group" />
+<link rel="icon" href="http://skin.jxvdy.com/jxvdy2/public/images/favicon.ico" />
+<title>å¨±ä¹å‰æ²¿-èµ„è®¯-é‡‘è±¡å¾®ç”µå½±ç½‘</title>
+<link rel="stylesheet" href="jxvdy.css" tppabs="http://skin.jxvdy.com/jxvdy2/public/stylesheets/jxvdy.css" />
+<link rel="stylesheet" href="font-awesome.min.css" tppabs="http://skin.jxvdy.com/jxvdy2/public/stylesheets/font-awesome.min.css" />
+<!--[if lt IE 9]>
+<link rel="stylesheet" href="font-awesome-ie7.min.css-v=4.2.css" tppabs="http://skin.jxvdy.com/jxvdy2/public/stylesheets/font-awesome-ie7.min.css?v=4.2">
+<script src="html5hack.min.js" tppabs="http://skin.jxvdy.com/jxvdy2/public/javascripts/html5hack.min.js"></script>
+<![endif]-->
+	<script src="jquery-1.8.3.min.js" tppabs="http://skin.jxvdy.com/jxvdy2/public/javascripts/jquery-1.8.3.min.js"></script>
+	<script src="jquery.SuperSlide.js" tppabs="http://skin.jxvdy.com/jxvdy2/public/javascripts/jspack/jquery.SuperSlide.js"></script>
+	<script src="headroom.min.js" tppabs="http://skin.jxvdy.com/jxvdy2/public/javascripts/jspack/headroom.min.js"></script>
+	<script src="simplePagination.js" tppabs="http://skin.jxvdy.com/jxvdy2/public/javascripts/jspack/simplePagination.js"></script>
+	<script src="jquery.slimscroll.js" tppabs="http://skin.jxvdy.com/jxvdy2/public/javascripts/jspack/jquery.slimscroll.js"></script>
+	<script src="jquery.surReady.min.js" tppabs="http://skin.jxvdy.com/jxvdy2/public/javascripts/jspack/jquery.surReady.min.js"></script>
+	<script src="jquery.surCookie.min.js" tppabs="http://skin.jxvdy.com/jxvdy2/public/javascripts/jspack/jquery.surCookie.min.js"></script>
+	<script type="text/javascript">
+	<!--
+	//é»‘å¤´ä¿¡æ ‡æŸ¥æ‰¾
+	$('#js_black_head').surReady(function(){
+		$('body').addClass('page-index-min');
+		$('#header').addClass('header-min-wrap');
+	});
+	
+	//æ¸…ç©ºåŽ†å²è®°å½•
+	function clearHistory()
+	{
+		$.delCookie('video_jxvdy');
+		$.delCookie('drama_jxvdy');
+		$("#history-scrollbar").html('æ‚¨è¿˜æœªè§‚çœ‹å¾®ç”µå½±ï¼Œæš‚æ— æ’­æ”¾è®°å½•ï¼');
+	}
+	
+	//åˆ¤æ–­æ˜¯å¦å·²ç™»å½•
+	$('#js_login_user_info').surReady(function(){
+		$.ajax({
+			url : '/d/member/mess'
+			,type : 'post'
+			,success: function(d){
+				var data = JSON.parse(d);
+				if(typeof(data['m_nick']) == 'string')
+				{
+					$('.js_login_user_info').removeClass('login-before').addClass('login-after')
+					$('.js_login_link').hide();
+					$('.js_user_login_btn').hide();
+					$('.js_user_name_wrap').show().find('img').attr('src', data['i_path']).attr('alt', data['m_nick']);
+					$('.js_user_name_wrap .js_user_nick').html(data['m_nick']);
+					$('.js_user_icon').show().find('img').attr('src', data['i_path']).attr('alt', data['m_nick']);
+					$('.js_user_icon div a').html(data['m_nick']);
+					$('.js_user_icon ul').children('li').first().find('a').html(data['attention']);
+					$('.js_user_icon ul').children('li').last().find('a').html(data['fans']);
+					$('.js_user_footer').show();
+				}
+				if(typeof(data['notice']) == 'string' && data['notice'] != 0)
+				{
+					$('.js_mess_total').show();
+				}
+			}
+		})
+	});
+	//-->
+	</script>
+	<script src="util.js" tppabs="http://skin.jxvdy.com/jxvdy2/public/javascripts/util.js"></script>
+	<script src="shitao.js" tppabs="http://skin.jxvdy.com/jxvdy2/public/javascripts/jspack/shitao.js"></script>
+	<script src="zebra_tooltips.js" tppabs="http://skin.jxvdy.com/jxvdy2/public/javascripts/jspack/zebra_tooltips.js"></script>
+<script>
+	//ç™¾åº¦ç»Ÿè®¡
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "hm.js-e64f7f2c081e3417386b861e0882c9d9"/*tpa=http://hm.baidu.com/hm.js?e64f7f2c081e3417386b861e0882c9d9*/;
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+</script>
+
+<script type="text/javascript">
+<!--
+function js_click_record(url)
+{
+	$.ajax({cache:false,type:'GET',url: url});
+}
+
+//-->
+</script>
+<script language="JavaScript">
+<!--
+//ç«ç‹img onerror
+var FIREFOXBULLSHIT = null
+,	FIREFOXBULLSHITC = 0;
+$(function(){
+	FIREFOXBULLSHIT = setInterval("$('img:not(.js_error_off)').each(function(){$(this).attr('src')=='' && $(this).trigger('error') && $(this).attr('js_error_off');});15<=++FIREFOXBULLSHITC && clearInterval(FIREFOXBULLSHIT);", 200);
+});
+//-->
+</script>
+<!--t1517408218-->
+<script type="text/javascript" src="rank.js" tppabs="http://skin.jxvdy.com/jxvdy2/public/javascripts/rank.js"></script>
+<script type="text/javascript" src="reload.js" tppabs="http://skin.jxvdy.com/jxvdy2/public/javascripts/reload.js"></script>
+<script type="text/javascript" src="pb.js" tppabs="http://skin.jxvdy.com/jxvdy2/public/javascripts/pb.js"></script>
+<script type="text/javascript" src="text_content_list.js" tppabs="http://skin.jxvdy.com/jxvdy2/public/javascripts/text_content_list.js"></script>
+<!--<script type="text/javascript" src="http://skin.jxvdy.com/jxvdy2/public/javascripts/public.js"></script>-->
+<script type="text/javascript">
+	var keyword = '';
+</script>
+<script type="text/javascript" src="public.js" tppabs="http://skin.jxvdy.com/jxvdy2/public/javascripts/public.js"></script>
+</head>
+<body class="page-index" id="lazyload_content">
+<header id="header" class="header-fixed">
+	<div class="header-wrap clearfix">
+		<div class="container header-inner">
+			<!-- logo -->
+			<h1 class="logo-wrap"><a href="index.htm" tppabs="http://www.jxvdy.com/" title="é‡‘è±¡å¾®ç”µå½±ç½‘"><img src="logo.png" tppabs="http://skin.jxvdy.com/jxvdy2/public/images/logo.png" alt="é‡‘è±¡å¾®ç”µå½±ç½‘"/></a></h1>
+			<!-- miniå¯¼èˆª -->
+			<div class="mini-nav dropdown-wrap">
+				<div class="dropdown-object">
+				<span class="dropdown-name"><i class="fa fa-bars"></i>å¯¼èˆª</span>
+					<div class="dropdown-inner">
+						<div class="user-inner">
+							<span class="tip-t"><i class="tip-outer"></i><i class="tip-inner"></i></span>
+														<div class="item-menu clearfix">
+								<div class="item-column"><a href="news.html" tppabs="http://www.jxvdy.com/news.html">èµ„è®¯</a></div>
+								<div class="item-subcolumn">
+																		<a href="list.html" tppabs="http://www.jxvdy.com/news/hydt/list.html">è¡Œä¸šåŠ¨æ€</a>
+																		<a href="list-1.html" tppabs="http://www.jxvdy.com/news/ylqy/list.html">å¨±ä¹å‰æ²¿</a>
+																		<a href="list-2.html" tppabs="http://www.jxvdy.com/news/mrzl/list.html">åäººä¸“æ </a>
+																		<a href="list-3.html" tppabs="http://www.jxvdy.com/news/jxbb/list.html">é‡‘è±¡æ’­æŠ¥</a>
+																		<a href="list-4.html" tppabs="http://www.jxvdy.com/news/ysmp/list.html">å½±è§†åç‰‡</a>
+																	</div>
+							</div>
+														<div class="item-menu clearfix">
+								<div class="item-column"><a href="video.html" tppabs="http://www.jxvdy.com/video.html">å¾®ç”µå½±</a></div>
+								<div class="item-subcolumn">
+																		<a href="list-t1.html" tppabs="http://www.jxvdy.com/video/list-t1.html">çˆ±æƒ…</a>
+																		<a href="list-t2.html" tppabs="http://www.jxvdy.com/video/list-t2.html">æ ¡å›­</a>
+																		<a href="list-t3.html" tppabs="http://www.jxvdy.com/video/list-t3.html">æ¸©æƒ…</a>
+																		<a href="list-t6.html" tppabs="http://www.jxvdy.com/video/list-t6.html">åŠ±å¿—</a>
+																		<a href="list-t8.html" tppabs="http://www.jxvdy.com/video/list-t8.html">ç¤¾ä¼š</a>
+																		<a href="list-t7.html" tppabs="http://www.jxvdy.com/video/list-t7.html">èŒåœº</a>
+																		<a href="list-t4.html" tppabs="http://www.jxvdy.com/video/list-t4.html">æžç¬‘</a>
+																		<a href="list-t5.html" tppabs="http://www.jxvdy.com/video/list-t5.html">æ‚¬ç–‘</a>
+																		<a href="list-t14.html" tppabs="http://www.jxvdy.com/video/list-t14.html">ç©¿è¶Š</a>
+																		<a href="list-t17.html" tppabs="http://www.jxvdy.com/video/list-t17.html">ææ€–</a>
+																		<a href="list-t9.html" tppabs="http://www.jxvdy.com/video/list-t9.html">åˆ‘ä¾¦</a>
+																		<a href="list-t13.html" tppabs="http://www.jxvdy.com/video/list-t13.html">åŠ¨ä½œ</a>
+																		<a href="list-t12.html" tppabs="http://www.jxvdy.com/video/list-t12.html">ç§‘å¹»</a>
+																		<a href="list-t11.html" tppabs="http://www.jxvdy.com/video/list-t11.html">å¤è£…</a>
+																		<a href="list-t16.html" tppabs="http://www.jxvdy.com/video/list-t16.html">å…¬ç›Š</a>
+																		<a href="list-t18.html" tppabs="http://www.jxvdy.com/video/list-t18.html">æ–‡è‰º</a>
+																		<a href="list-t10.html" tppabs="http://www.jxvdy.com/video/list-t10.html">æˆ˜äº‰</a>
+																		<a href="list-t20.html" tppabs="http://www.jxvdy.com/video/list-t20.html">åŠ¨ç”»</a>
+																		<a href="list-t21.html" tppabs="http://www.jxvdy.com/video/list-t21.html">å‰§æƒ…</a>
+																		<a href="list-t19.html" tppabs="http://www.jxvdy.com/video/list-t19.html">çºªå½•</a>
+																		<a href="list-t15.html" tppabs="http://www.jxvdy.com/video/list-t15.html">å¹¿å‘Š</a>
+																		<a href="list-t22.html" tppabs="http://www.jxvdy.com/video/list-t22.html">å…¶ä»–</a>
+																	</div>
+							</div>
+														<div class="item-menu clearfix">
+								<div class="item-column"><a href="drama.html" tppabs="http://www.jxvdy.com/drama.html">å¾®å‰§é›†</a></div>
+								<div class="item-subcolumn">
+																		<a href="list-t29.html" tppabs="http://www.jxvdy.com/drama/list-t29.html">éƒ½å¸‚çˆ±æƒ…</a>
+																		<a href="list-t30.html" tppabs="http://www.jxvdy.com/drama/list-t30.html">é’æ˜¥åŠ±å¿—</a>
+																		<a href="list-t31.html" tppabs="http://www.jxvdy.com/drama/list-t31.html">åˆ›æ„æžç¬‘</a>
+																		<a href="list-t32.html" tppabs="http://www.jxvdy.com/drama/list-t32.html">ææ€–æ‚¬ç–‘</a>
+																		<a href="list-t33.html" tppabs="http://www.jxvdy.com/drama/list-t33.html">åŠ¨ç”»å„¿ç«¥</a>
+																		<a href="list-t34.html" tppabs="http://www.jxvdy.com/drama/list-t34.html">ç¤¾ä¼šçºªå®ž</a>
+																	</div>
+							</div>
+														<div class="item-menu clearfix">
+								<div class="item-column"><a href="screenplay.html" tppabs="http://www.jxvdy.com/screenplay.html">å‰§æœ¬</a></div>
+								<div class="item-subcolumn">
+																		<a href="javascript:if(confirm('http://www.jxvdy.com/screenplay/list.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/screenplay/list.html'" tppabs="http://www.jxvdy.com/screenplay/show/list.html">å‰§æœ¬å±•ç¤º</a>
+																		<a href="list-6.html" tppabs="http://www.jxvdy.com/screenplay/sale/list.html">å‰§æœ¬å‡ºå”®</a>
+																		<a href="list-7.html" tppabs="http://www.jxvdy.com/screenplay/collection/list.html">å‰§æœ¬å¾é›†</a>
+																	</div>
+							</div>
+														<div class="item-menu clearfix">
+								<div class="item-column"><a href="tutorials.html" tppabs="http://www.jxvdy.com/tutorials.html">æ•™å­¦</a></div>
+								<div class="item-subcolumn">
+																		<a href="list-8.html" tppabs="http://www.jxvdy.com/tutorials/plays/list.html">å‰§ä½œæ•™ç¨‹</a>
+																		<a href="list-9.html" tppabs="http://www.jxvdy.com/tutorials/shooting/list.html">å¾®å½±æ‹æ‘„</a>
+																		<a href="list-10.html" tppabs="http://www.jxvdy.com/tutorials/late/list.html">å½±è§†åŽæœŸ</a>
+																		<a href="list-11.html" tppabs="http://www.jxvdy.com/tutorials/equipment/list.html">æ‹æ‘„å™¨æ</a>
+																	</div>
+							</div>
+														<div class="item-menu clearfix">
+								<div class="item-column">å¾®å½±ä¸“é¢˜</div>
+								<div class="item-subcolumn">
+									<a href="list-12.html" tppabs="http://www.jxvdy.com/activities/spec/list.html" class="brand-warning">å¾®å½±æ´»åŠ¨</a>
+									<!--<a href="">ç½‘ç«™ä¸“é¢˜</a>-->
+									<!--<a href="">èµ„è®¯ä¸“é¢˜</a>-->
+									<a href="list-13.html" tppabs="http://www.jxvdy.com/video/spec/list.html">å¾®ç”µå½±ä¸“é¢˜</a>
+								</div>
+							</div>
+							<!-- /.item-menu -->
+							<div class="item-menu clearfix">
+								<div class="item-column">APPä¸‹è½½</div>
+								<div class="item-subcolumn">
+									<a href="javascript:if(confirm('https://itunes.apple.com/cn/app/jin-xiang-wei-dian-ying/id828237631?mt=8  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://itunes.apple.com/cn/app/jin-xiang-wei-dian-ying/id828237631?mt=8'" tppabs="http://www.jxvdy.com/app/iphone" target="_blank">iPhoneå®¢æˆ·ç«¯</a>
+									<a href="javascript:if(confirm('http://www.jxvdy.com/404.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ·þÎñÆ÷±¨¸æ¸ÃÎÄ¼þÎ´ÕÒµ½¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/404.html'" tppabs="http://www.jxvdy.com/app/jxvdy.apk" target="_blank">Androidå®¢æˆ·ç«¯</a>
+									<a href="javascript:if(confirm('https://itunes.apple.com/cn/app/jin-xiang-wei-dian-yinghd/id879977586?mt=8  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://itunes.apple.com/cn/app/jin-xiang-wei-dian-yinghd/id879977586?mt=8'" tppabs="http://www.jxvdy.com/app/ipad" target="_blank">iPadå®¢æˆ·ç«¯</a>
+								</div>
+							</div>
+							<!-- /.item-menu -->
+						</div>
+					</div>
+				</div>
+				<!-- /.dropdown-menu -->
+			</div>
+			<!-- æœç´¢æ¡† -->
+			<div class="search-wrap">
+				<form class="clearfix" action="http://www.jxvdy.com/news/ylqy/search" method="get" role="search" target="_blank">
+					<div class="mod-search">
+						<input type="text" class="search-txt" name="kw" placeholder="è¯·è¾“å…¥â€œå¾®å½±èµ„è®¯â€å…³é”®è¯">
+						<i class="fa fa-search"></i>
+					</div>
+					<input type="submit" class="btn-search" value="æœç´¢"> 
+				</form>
+			</div>
+			<!-- ç”¨æˆ·ä¸­å¿ƒ -->
+			<div class="user-info-wrap" id="js_login_user_info">
+				<div class="user-wrap login-before dropdown-wrap js_login_user_info">
+					<div class="dropdown-object">
+						<div class="user-name-wrap js_user_name_wrap" style="display: none;">
+							<span class="user-icon">
+								<a class="" href="login.html-jumpto=-my-index.html" tppabs="http://www.jxvdy.com/my/index.html" target="_blank"><img src="" onerror="this.src='http://skin.jxvdy.com/jxvdy2/public/images/avatar80_80.jpg'" width="40" height="40"  alt=""/></a>
+							</span>
+							<a class="user-txt js_user_nick" href="login.html-jumpto=-my-index.html" tppabs="http://www.jxvdy.com/my/index.html" target="_blank"></a>
+						</div>
+						<a class="link js_login_link" href="javascript:;"><i class="fa fa-user"></i>ç™»å½•</a>
+						<div class="dropdown-inner">
+							<div class="user-inner">
+								<span class="tip-t"><i class="tip-outer"></i><i class="tip-inner"></i></span>
+								<div class="menu-hd">
+									<div class="user-btns clearfix">
+										<div class="user-icon clearfix js_user_icon" style="display: none;">
+											<a class="" href="login.html-jumpto=-my-index.html" tppabs="http://www.jxvdy.com/my/index.html" target="_blank"><img src="" onerror="this.src='http://skin.jxvdy.com/jxvdy2/public/images/avatar80_80.jpg'" width="50" height="50"  alt=""/></a>
+											<div class="user-name">
+												<a href="login.html-jumpto=-my-index.html" tppabs="http://www.jxvdy.com/my/index.html" target="_blank"></a>
+												<ul class="mem-sta">
+													<li><span>å…³æ³¨</span> <strong><a href="login.html-jumpto=-my-friend-list.html-t=follow.htm" tppabs="http://www.jxvdy.com/my/friend/list.html?t=follow" target="_blank"></a></strong></li>
+													<li><span>ç²‰ä¸</span> <strong><a href="login.html-jumpto=-my-friend-list.html-t=fans.htm" tppabs="http://www.jxvdy.com/my/friend/list.html?t=fans" target="_blank"></a></strong></li>
+												</ul>
+											</div>
+										</div>
+										<a class="btn btn-warning user-login-btn js_user_login_btn" href="login.htm" tppabs="http://www.jxvdy.com/my/login">é©¬ä¸Šç™»å½•</a>
+										<a class="btn btn-warning user-login-btn ml10 js_user_login_btn" href="regist.htm" tppabs="http://www.jxvdy.com/my/regist">å…è´¹æ³¨å†Œ</a>
+									</div>
+								</div>
+								<div class="menu-bd">
+									<ul class="list-unstyled clearfix">
+										<li><a href="login.html-jumpto=-my-index.html" tppabs="http://www.jxvdy.com/my/index.html" target="_blank"><i class="fa fa-home"></i>æˆ‘çš„é‡‘è±¡</a></li>
+										<li><a href="login.html-jumpto=-my-video-list.html-t=release.htm" tppabs="http://www.jxvdy.com/my/video/list.html?t=release" target="_blank"><i class="fa fa-video-camera"></i>æˆ‘çš„å¾®å½±</a></li>
+										<li><a href="login.html-jumpto=-my-screenplay-list.html-t=release.htm" tppabs="http://www.jxvdy.com/my/screenplay/list.html?t=release" target="_blank"><i class="fa fa-film"></i>æˆ‘çš„å‰§æœ¬</a></li>
+										<li><a href="login.html-jumpto=-my-tutorials-list.html-t=release.htm" tppabs="http://www.jxvdy.com/my/tutorials/list.html?t=release" target="_blank"><i class="fa fa-file-powerpoint-o"></i>æˆ‘çš„æ•™å­¦</a></li>
+										<li><a href="login.html-jumpto=-my-news-list.html-t=collect.htm" tppabs="http://www.jxvdy.com/my/news/list.html?t=collect" target="_blank"><i class="fa fa-newspaper-o"></i>æˆ‘çš„èµ„è®¯</a></li>
+										<li><a href="login.html" tppabs="http://www.jxvdy.com/my/login.html" target="_blank"><i class="fa fa-volume-up"></i>æ¶ˆæ¯ä¸­å¿ƒ</a></li>
+									</ul>
+								</div>
+								<div class="user-footer js_user_footer" style="display: none;">
+									<a class="user-setting pull-left" href="login.html-jumpto=-my-profile-edit.html" tppabs="http://www.jxvdy.com/my/profile/edit.html"><i class="fa fa-cog"></i>è´¦æˆ·è®¾ç½®</a>
+									<a class="user-exit pull-right" href="login.htm" tppabs="http://www.jxvdy.com/my/logout"><i class="fa fa-power-off"></i>é€€å‡º</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="upload-wrap dropdown-wrap">
+					<div class="dropdown-object">
+						<a class="link" href="javascript:;" target="_blank"><i class="fa fa-cloud-upload"></i>å‘å¸ƒ</a>
+						<div class="dropdown-inner">
+							<div class="user-inner">
+								<span class="tip-t"><i class="tip-outer"></i><i class="tip-inner"></i></span>
+								<div class="menu-bd">
+									<ul class="list-unstyled clearfix">
+										<li><a href="login-jumpto=http---www.jxvdy.com-my-video_release.html" tppabs="http://www.jxvdy.com/my/video_release.html" target="_blank"><i class="fa fa-video-camera"></i>å‘å¸ƒå¾®ç”µå½±</a></li>
+										<li><a href="login-jumpto=http---www.jxvdy.com-my-drama_release.html" tppabs="http://www.jxvdy.com/my/drama_release.html" target="_blank"><i class="fa fa-file-video-o"></i>å‘å¸ƒç½‘ç»œå‰§</a></li>
+										<li><a href="login-jumpto=http---www.jxvdy.com-my-screenplay_release.html" tppabs="http://www.jxvdy.com/my/screenplay_release.html" target="_blank"><i class="fa fa-film"></i>å‘å¸ƒå‰§æœ¬</a></li>
+										<li><a href="login-jumpto=http---www.jxvdy.com-my-screenplay-collection_release.html" tppabs="http://www.jxvdy.com/my/screenplay/collection_release.html" target="_blank"><i class="fa fa-film"></i>å‘å¸ƒå‰§æœ¬å¾é›†</a></li>
+										<li><a href="login-jumpto=http---www.jxvdy.com-my-tutorials_release.html" tppabs="http://www.jxvdy.com/my/tutorials_release.html" target="_blank"><i class="fa fa-file-powerpoint-o"></i>å‘å¸ƒæ•™ç¨‹</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="history-wrap dropdown-wrap">
+					<div class="dropdown-object">
+					<a class="link" href="javascript:void(0)"><i class="fa fa-history"></i>è®°å½•</a>
+					<div id="js_history_tab" class="dropdown-inner history-tab">
+						<div class="user-inner">
+							<span class="tip-t"><i class="tip-outer"></i><i class="tip-inner"></i></span>
+							<div id="history-scrollbar" class="history-inner">
+								<div class="history-list clearfix">
+																<p>æ‚¨è¿˜æœªè§‚çœ‹å¾®ç”µå½±ï¼Œæš‚æ— æ’­æ”¾è®°å½•ï¼</p>
+																</div>
+							</div>
+							<div class="user-footer">
+								<a class="history-clear" href="javascript:;" onclick="clearHistory()"><i class="fa fa-trash-o"></i>æ¸…ç©º</a>
+							</div>
+						</div>
+					</div>
+					</div>
+				</div>
+
+				<div class="message-wrap">
+					<a class="link" href="login-jumpto=-my-message-list.html-t=private.htm" tppabs="http://www.jxvdy.com/my/message/list.html?t=private" target="_blank"><i class="fa fa-bell-o"></i>æ¶ˆæ¯</a>
+					<em class="total js_mess_total" style="display: none;"><i class="fa fa-circle"></i></em>
+				</div>
+			</div>
+		</div>
+
+		<div id="js_nav" class="head-jxv">
+			<div class="navigation-up">
+				<div class="navigation-inner">
+					<div class="navigation-jxv">
+						<ul id="js_nav_highlight">
+							<li class="js_navdown js_navbtn_" js_navdown="">
+								<h2><a href="index.htm" tppabs="http://www.jxvdy.com/">é¦–é¡µ</a></h2>
+							</li>
+														<li class="js_navdown js_navbtn_news" js_navdown="news">
+								<h2><a href="news.html" tppabs="http://www.jxvdy.com/news.html">èµ„è®¯</a></h2>
+							</li>
+														<li class="js_navdown js_navbtn_video" js_navdown="video">
+								<h2><a href="video.html" tppabs="http://www.jxvdy.com/video.html">å¾®ç”µå½±</a></h2>
+							</li>
+														<li class="js_navdown js_navbtn_screenplay" js_navdown="screenplay">
+								<h2><a href="screenplay.html" tppabs="http://www.jxvdy.com/screenplay.html">å‰§æœ¬</a></h2>
+							</li>
+														<li class="js_navdown js_navbtn_tutorials" js_navdown="tutorials">
+								<h2><a href="tutorials.html" tppabs="http://www.jxvdy.com/tutorials.html">æ•™å­¦</a></h2>
+							</li>
+														<li class="js_navdown js_navbtn_activities" js_navdown="activities">
+								<h2><a href="list-12.html" tppabs="http://www.jxvdy.com/activities/spec/list.html">æ´»åŠ¨</a></h2>
+							</li>
+						</ul>
+					</div>
+					<div class="downapp">
+						<a href="app.htm" tppabs="http://www.jxvdy.com/app" title="ä¸‹è½½ç§»åŠ¨å®¢æˆ·ç«¯" target="_blank"><i class="fa fa-mobile"></i>ä¸‹è½½ç§»åŠ¨å®¢æˆ·ç«¯</a>
+					</div>
+				</div>
+			</div>
+			<div class="navigation-down">
+								<div id="js_navsub_news" class="js_navdown nav-down-menu" js_navdown="news" style="display: none;">
+					<div class="navigation-down-inner">
+											<dl><dd><a href="list.html" tppabs="http://www.jxvdy.com/news/hydt/list.html">è¡Œä¸šåŠ¨æ€</a></dd></dl>
+											<dl><dd><a href="list-1.html" tppabs="http://www.jxvdy.com/news/ylqy/list.html">å¨±ä¹å‰æ²¿</a></dd></dl>
+											<dl><dd><a href="list-2.html" tppabs="http://www.jxvdy.com/news/mrzl/list.html">åäººä¸“æ </a></dd></dl>
+											<dl><dd><a href="list-3.html" tppabs="http://www.jxvdy.com/news/jxbb/list.html">é‡‘è±¡æ’­æŠ¥</a></dd></dl>
+											<dl><dd><a href="list-4.html" tppabs="http://www.jxvdy.com/news/ysmp/list.html">å½±è§†åç‰‡</a></dd></dl>
+										</div>
+				</div>
+								<div id="js_navsub_video" class="js_navdown nav-down-menu" js_navdown="video" style="display: none;">
+					<div class="navigation-down-inner">
+											<dl><dd><a href="list-16.html" tppabs="http://www.jxvdy.com/video/list.html">å¾®ç”µå½±</a></dd></dl>
+											<dl><dd><a href="list-17.html" tppabs="http://www.jxvdy.com/drama/list.html">ç½‘ç»œå‰§</a></dd></dl>
+											<dl><dd><a href="list-13.html" tppabs="http://www.jxvdy.com/video/spec/list.html">å¾®ç”µå½±ä¸“é¢˜</a></dd></dl>
+										</div>
+				</div>
+								<div id="js_navsub_screenplay" class="js_navdown nav-down-menu" js_navdown="screenplay" style="display: none;">
+					<div class="navigation-down-inner">
+											<dl><dd><a href="javascript:if(confirm('http://www.jxvdy.com/screenplay/list.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/screenplay/list.html'" tppabs="http://www.jxvdy.com/screenplay/show/list.html">å‰§æœ¬å±•ç¤º</a></dd></dl>
+											<dl><dd><a href="list-6.html" tppabs="http://www.jxvdy.com/screenplay/sale/list.html">å‰§æœ¬å‡ºå”®</a></dd></dl>
+											<dl><dd><a href="list-7.html" tppabs="http://www.jxvdy.com/screenplay/collection/list.html">å‰§æœ¬å¾é›†</a></dd></dl>
+										</div>
+				</div>
+								<div id="js_navsub_tutorials" class="js_navdown nav-down-menu" js_navdown="tutorials" style="display: none;">
+					<div class="navigation-down-inner">
+											<dl><dd><a href="list-8.html" tppabs="http://www.jxvdy.com/tutorials/plays/list.html">å‰§ä½œæ•™ç¨‹</a></dd></dl>
+											<dl><dd><a href="list-9.html" tppabs="http://www.jxvdy.com/tutorials/shooting/list.html">å¾®å½±æ‹æ‘„</a></dd></dl>
+											<dl><dd><a href="list-10.html" tppabs="http://www.jxvdy.com/tutorials/late/list.html">å½±è§†åŽæœŸ</a></dd></dl>
+											<dl><dd><a href="list-11.html" tppabs="http://www.jxvdy.com/tutorials/equipment/list.html">æ‹æ‘„å™¨æ</a></dd></dl>
+										</div>
+				</div>
+							</div>
+		</div>
+		<!-- /.head-jxv -->
+	</div>
+	<!-- header-wrap -->
+</header>
+<!--t1517408188-->
+
+<section class="container">
+	<div class="content-wrap">
+		<div class="content clearfix">
+			<div class="type-select-wrap">
+			<div class="column-select">
+	<div class="item-content">
+		<span class="item-name">é¢‘é“ï¼š</span>
+		<ul class="item-list clearfix">
+			<li  class="active" ><a href="javascript:if(confirm('http://www.jxvdy.com/news/list.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/news/list.html'" tppabs="http://www.jxvdy.com/news/list.html">èµ„è®¯</a></li>
+	        <li ><a href="list-16.html" tppabs="http://www.jxvdy.com/video/list.html">å¾®ç”µå½±</a></li>
+	        <li ><a href="javascript:if(confirm('http://www.jxvdy.com/screenplay/list.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/screenplay/list.html'" tppabs="http://www.jxvdy.com/screenplay/list.html">å‰§æœ¬</a></li> 
+	        <li ><a href="list-18.html" tppabs="http://www.jxvdy.com/tutorials/list.html">æ•™å­¦</a></li>
+	        <li ><a href="list-12.html" tppabs="http://www.jxvdy.com/activities/spec/list.html">æ´»åŠ¨</a></li>
+		</ul>
+	</div>
+	<!-- /.item-content -->
+	<div class="item-content">
+		<span class="item-name">æ ç›®ï¼š</span>
+		<ul class="item-list clearfix">
+			<li ><a href="javascript:if(confirm('http://www.jxvdy.com/news/list.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/news/list.html'" tppabs="http://www.jxvdy.com/news/list.html" >æ‰€æœ‰æ–‡ç« </a></li>							<li ><a href="list.html" tppabs="http://www.jxvdy.com/news/hydt/list.html">è¡Œä¸šåŠ¨æ€</a></li>
+							<li  class="active" ><a href="list-1.html" tppabs="http://www.jxvdy.com/news/ylqy/list.html">å¨±ä¹å‰æ²¿</a></li>
+							<li ><a href="list-2.html" tppabs="http://www.jxvdy.com/news/mrzl/list.html">åäººä¸“æ </a></li>
+							<li ><a href="list-3.html" tppabs="http://www.jxvdy.com/news/jxbb/list.html">é‡‘è±¡æ’­æŠ¥</a></li>
+							<li ><a href="list-4.html" tppabs="http://www.jxvdy.com/news/ysmp/list.html">å½±è§†åç‰‡</a></li>
+					</ul>
+	</div>
+	<!-- /.item-content -->
+</div>
+<!-- /.column-select -->
+
+<!--t1517407890-->
+
+			</div>
+						<div class="sort-wrap clearfix">
+				<ul class="sort-list list-unstyled">
+					<li><a  class="active"  href="javascript:if(confirm('http://www.jxvdy.com/news/ylqy/list-time.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/news/ylqy/list-time.html'" tppabs="http://www.jxvdy.com/news/ylqy/list-time.html">æœ€æ–°å‘å¸ƒ</a></li>
+					<li><a  href="javascript:if(confirm('http://www.jxvdy.com/news/ylqy/list-hit.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/news/ylqy/list-hit.html'" tppabs="http://www.jxvdy.com/news/ylqy/list-hit.html">æŸ¥çœ‹æœ€å¤š</a></li>
+					<li><a  href="javascript:if(confirm('http://www.jxvdy.com/news/ylqy/list-like.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/news/ylqy/list-like.html'" tppabs="http://www.jxvdy.com/news/ylqy/list-like.html">å–œæ¬¢æœ€å¤š</a></li>
+				</ul>
+			</div>
+										<article class="excerpt clearfix content_33071 content-list-jxvdy js_search_jxvdy" js_data="33071" js_ch_id="8">
+					<div class="excert-header">
+						<span class="column-label"><a href="list-1.html" tppabs="http://www.jxvdy.com/news/ylqy/list.html">å¨±ä¹å‰æ²¿</a><i class="label-arrow"></i></span>
+						<h4><a class="js_title" target="_blank"  href="javascript:if(confirm('http://www.jxvdy.com/news/ylqy/0001515839.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/news/ylqy/0001515839.html'" tppabs="http://www.jxvdy.com/news/ylqy/0001515839.html" >äººæ°‘å¨±è¯„ï¼šé‡‘åƒå¥–å¼ºè°ƒæœ¬åœŸç‰¹è‰²ï¼Œèƒ½å¦æ”¹å†™æ¸¯ç‰‡æ²¡è½ï¼Ÿ</a></h4>
+					</div>
+															<p class="color-gray js_summary">4æœˆ9æ—¥ï¼Œç¬¬36å±Šé¦™æ¸¯ç”µå½±é‡‘åƒå¥–é¢å‡ºå„å¤§å¥–é¡¹ï¼Œé¦™æ¸¯ç”µå½±å¤§èŽ·å…¨èƒœã€‚æœ¬å±Šé‡‘åƒå¥–å‡ ä¹Žå¯¹å†…åœ°å½±äººå…³ä¸Šå¤§é—¨ï¼Œä»…æœ‰ã€Šæ‘†æ¸¡äººã€‹çš„å†…åœ°æ‘„å½±å¸ˆæ›¹éƒä¸Žé¦™æ¸¯æ‘„å½±å¸ˆé²å¾·ç†¹åˆ†äº«äº†ä¸€åº§æœ€ä½³æ‘„å½±å¥–æ¯ï¼Œç®—æ˜¯ä¸ºå†…åœ°ç”µå½±æ‹¿äº†åŠä¸ªå¥–ã€‚</p>
+					<p class="js_tag_jxvdy">
+						<i class="fa fa-tags color-gray"></i>
+																								<a class="brand-warning article-tag" href="javascript:if(confirm('http://www.jxvdy.com/news/ylqy/search?kw=å…±é¸£  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/news/ylqy/search?kw=å…±é¸£'" tppabs="http://www.jxvdy.com/news/ylqy/search?kw=å…±é¸£" target="_blank">å…±é¸£</a>
+												<a class="brand-warning article-tag" href="javascript:if(confirm('http://www.jxvdy.com/news/ylqy/search?kw=é‡‘è±¡å¥–  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/news/ylqy/search?kw=é‡‘è±¡å¥–'" tppabs="http://www.jxvdy.com/news/ylqy/search?kw=é‡‘è±¡å¥–" target="_blank">é‡‘è±¡å¥–</a>
+												<a class="brand-warning article-tag" href="javascript:if(confirm('http://www.jxvdy.com/news/ylqy/search?kw=æ¸¯ç‰‡  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/news/ylqy/search?kw=æ¸¯ç‰‡'" tppabs="http://www.jxvdy.com/news/ylqy/search?kw=æ¸¯ç‰‡" target="_blank">æ¸¯ç‰‡</a>
+																							</p>
+					<div class="auth-span">
+												<span class="muted"><i class="fa fa-clock-o"></i>2017-04-10</span>
+						<span class="muted"><i class="fa fa-eye"></i><span>0</span>â„ƒ</span>
+						<span class="muted"><i class="fa fa-heart-o"></i><span>0</span>äººå–œæ¬¢</span>
+												<span class="muted"><a href="javascript:;" class="action" onclick="collect(this,'33071')"><i class="fa fa-star-o"></i><span>æ”¶è—</span></a></span>
+					</div>
+				</article>
+							<article class="excerpt clearfix content_33063 content-list-jxvdy js_search_jxvdy" js_data="33063" js_ch_id="8">
+					<div class="excert-header">
+						<span class="column-label"><a href="list-1.html" tppabs="http://www.jxvdy.com/news/ylqy/list.html">å¨±ä¹å‰æ²¿</a><i class="label-arrow"></i></span>
+						<h4><a class="js_title" target="_blank"  href="javascript:if(confirm('http://www.jxvdy.com/news/ylqy/0033515763.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/news/ylqy/0033515763.html'" tppabs="http://www.jxvdy.com/news/ylqy/0033515763.html" >ã€Šè’å±±å¿ƒé‡Žä¹‹ä¸ƒæ—¥ã€‹3æœˆ30çˆ±å¥‡è‰ºç‹¬å®¶ä¸Šæ˜ ï¼ŒæƒŠé™©åˆºæ¿€ä½ æ€•äº†å—ï¼Ÿ</a></h4>
+					</div>
+											<div class="focus"><a target="_blank"  href="javascript:if(confirm('http://www.jxvdy.com/news/ylqy/0033515763.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/news/ylqy/0033515763.html'" tppabs="http://www.jxvdy.com/news/ylqy/0033515763.html" ><img class="lazy-article" _src="58d36c5406c487625f6d7_380_264.jpg" tppabs="http://image.jxvdy.com/2017/0323/58d36c5406c487625f6d7_380_264.jpg" alt="ã€Šè’å±±å¿ƒé‡Žä¹‹ä¸ƒæ—¥ã€‹3æœˆ30çˆ±å¥‡è‰ºç‹¬å®¶ä¸Šæ˜ ï¼ŒæƒŠé™©åˆºæ¿€ä½ æ€•äº†å—ï¼Ÿ" onerror="this.src='http://skin.jxvdy.com/jxvdy/web/images/default/380_264.png'"></a></div>
+										<p class="color-gray js_summary">æ®æ‚‰ï¼Œç”±æ²³å—é•œåƒå½±è§†åˆ¶ä½œæœ‰é™å…¬å¸å‡ºå“ï¼Œé›¨æœ¨æ—¶ä»£ç‹¬å®¶å®£ä¼ å‘è¡Œï¼Œé’å¹´æ¼”å‘˜æœ±æ´ªéœ–ã€çŽ‹æ—­ä¸œã€å¯‡é’Ÿåã€æŽçº¢é™¶ã€æ˜“æ€æ–¯ã€æœ±ç¾Žç’‡é¢†è¡”ä¸»æ¼”ï¼Œåˆ¶ç‰‡äººä»˜é‘«ã€å¯¼æ¼”è‚å²©ä¼Ÿï¼Œç¼–å‰§ç‚€å®¶çŠŸå…±åŒåˆ¶ä½œå®Œæˆçš„ç½‘ç»œé™¢çº¿ç”µå½±ã€Šè’å±±å¿ƒé‡Žä¹‹ä¸ƒæ—¥...</p>
+					<p class="js_tag_jxvdy">
+						<i class="fa fa-tags color-gray"></i>
+																								<a class="brand-warning article-tag" href="javascript:if(confirm('http://www.jxvdy.com/news/ylqy/search?kw=ç½‘ç»œå¤§ç”µå½±  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/news/ylqy/search?kw=ç½‘ç»œå¤§ç”µå½±'" tppabs="http://www.jxvdy.com/news/ylqy/search?kw=ç½‘ç»œå¤§ç”µå½±" target="_blank">ç½‘ç»œå¤§ç”µå½±</a>
+												<a class="brand-warning article-tag" href="javascript:if(confirm('http://www.jxvdy.com/news/ylqy/search?kw=è’å±±å¿ƒé‡Žä¹‹ä¸ƒæ—¥  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/news/ylqy/search?kw=è’å±±å¿ƒé‡Žä¹‹ä¸ƒæ—¥'" tppabs="http://www.jxvdy.com/news/ylqy/search?kw=è’å±±å¿ƒé‡Žä¹‹ä¸ƒæ—¥" target="_blank">è’å±±å¿ƒé‡Žä¹‹ä¸ƒæ—¥</a>
+												<a class="brand-warning article-tag" href="javascript:if(confirm('http://www.jxvdy.com/news/ylqy/search?kw=çˆ±å¥‡è‰ºç‹¬æ’­  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/news/ylqy/search?kw=çˆ±å¥‡è‰ºç‹¬æ’­'" tppabs="http://www.jxvdy.com/news/ylqy/search?kw=çˆ±å¥‡è‰ºç‹¬æ’­" target="_blank">çˆ±å¥‡è‰ºç‹¬æ’­</a>
+																							</p>
+					<div class="auth-span">
+												<span class="muted"><i class="fa fa-clock-o"></i>2017-03-23</span>
+						<span class="muted"><i class="fa fa-eye"></i><span>0</span>â„ƒ</span>
+						<span class="muted"><i class="fa fa-heart-o"></i><span>0</span>äººå–œæ¬¢</span>
+												<span class="muted"><a href="javascript:;" class="action" onclick="collect(this,'33063')"><i class="fa fa-star-o"></i><span>æ”¶è—</span></a></span>
+					</div>
+				</article>
+							<article class="excerpt clearfix content_33023 content-list-jxvdy js_search_jxvdy" js_data="33023" js_ch_id="8">
+					<div class="excert-header">
+						<span class="column-label"><a href="list-1.html" tppabs="http://www.jxvdy.com/news/ylqy/list.html">å¨±ä¹å‰æ²¿</a><i class="label-arrow"></i></span>
+						<h4><a class="js_title" target="_blank"  href="javascript:if(confirm('http://www.jxvdy.com/news/ylqy/0001515655.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/news/ylqy/0001515655.html'" tppabs="http://www.jxvdy.com/news/ylqy/0001515655.html" >ç”µå½±ã€Šç›—å¢“ç¬”è®°ã€‹å¯¼æ¼”æŽä»æ¸¯å®£å¸ƒç­¾çº¦ä¹è§†å½±ä¸š å¤§å¯¼æ¼”çº·çº·ç­¾çº¦äº’è”ç½‘å½±è§†å…¬å¸</a></h4>
+					</div>
+											<div class="focus"><a target="_blank"  href="javascript:if(confirm('http://www.jxvdy.com/news/ylqy/0001515655.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/news/ylqy/0001515655.html'" tppabs="http://www.jxvdy.com/news/ylqy/0001515655.html" ><img class="lazy-article" _src="57a0113ba245b5876f028_0.jpg" tppabs="http://image.jxvdy.com/2016/0802/57a0113ba245b5876f028_0.jpg" alt="ç”µå½±ã€Šç›—å¢“ç¬”è®°ã€‹å¯¼æ¼”æŽä»æ¸¯å®£å¸ƒç­¾çº¦ä¹è§†å½±ä¸š å¤§å¯¼æ¼”çº·çº·ç­¾çº¦äº’è”ç½‘å½±è§†å…¬å¸" onerror="this.src='http://skin.jxvdy.com/jxvdy/web/images/default/380_264.png'"></a></div>
+										<p class="color-gray js_summary">å½“æ‹ç”µå½±ä¸å†æ˜¯ç”µå½±å…¬å¸çš„ä¸“åˆ©æ—¶ï¼Œå¤§å¯¼æ¼”ä»¬å°±å¼€å¯äº†è‡ªæˆ‘æ•‘èµŽçš„é“è·¯â€”â€”å¼ è‰ºè°‹ã€çŽ‹å®¶å«ã€é™ˆå¯è¾›ã€çŽ‹æ™¶ç­‰äººçº·çº·ç­¾çº¦äº’è”ç½‘å½±è§†å…¬å¸ã€‚è®°è€…èŽ·æ‚‰ï¼Œç»§å¼ è‰ºè°‹ã€é™†å·ç­¾çº¦ä¹è§†å½±ä¸šä¹‹åŽï¼ŒæŽä»æ¸¯å¯¼æ¼”å’Œæ›¾ä½©çŠç›‘åˆ¶åˆç­¾çº¦ä¹è§†å½±ä¸š...</p>
+					<p class="js_tag_jxvdy">
+						<i class="fa fa-tags color-gray"></i>
+											</p>
+					<div class="auth-span">
+												<span class="muted"><i class="fa fa-clock-o"></i>2016-08-02</span>
+						<span class="muted"><i class="fa fa-eye"></i><span>0</span>â„ƒ</span>
+						<span class="muted"><i class="fa fa-heart-o"></i><span>0</span>äººå–œæ¬¢</span>
+												<span class="muted"><a href="javascript:;" class="action" onclick="collect(this,'33023')"><i class="fa fa-star-o"></i><span>æ”¶è—</span></a></span>
+					</div>
+				</article>
+							<article class="excerpt clearfix content_33010 content-list-jxvdy js_search_jxvdy" js_data="33010" js_ch_id="8">
+					<div class="excert-header">
+						<span class="column-label"><a href="list-1.html" tppabs="http://www.jxvdy.com/news/ylqy/list.html">å¨±ä¹å‰æ²¿</a><i class="label-arrow"></i></span>
+						<h4><a class="js_title" target="_blank"  href="javascript:if(confirm('http://www.jxvdy.com/news/ylqy/0033195610.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/news/ylqy/0033195610.html'" tppabs="http://www.jxvdy.com/news/ylqy/0033195610.html" >åŽå½•ç™¾çº³å…¬å¸è·Ÿè¸ªæŠ¥å‘Š:å½±è§†+ç»¼è‰º+ä½“è‚²,æ‰“é€ äº’è”ç½‘æ—¶ä»£ä¼ åª’å¨±ä¹å¤§å¹³å°</a></h4>
+					</div>
+											<div class="focus"><a target="_blank"  href="javascript:if(confirm('http://www.jxvdy.com/news/ylqy/0033195610.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/news/ylqy/0033195610.html'" tppabs="http://www.jxvdy.com/news/ylqy/0033195610.html" ><img class="lazy-article" _src="579985c7187a664ac4a85_0.jpg" tppabs="http://image.jxvdy.com/2016/0728/579985c7187a664ac4a85_0.jpg" alt="åŽå½•ç™¾çº³å…¬å¸è·Ÿè¸ªæŠ¥å‘Š:å½±è§†+ç»¼è‰º+ä½“è‚²,æ‰“é€ äº’è”ç½‘æ—¶ä»£ä¼ åª’å¨±ä¹å¤§å¹³å°" onerror="this.src='http://skin.jxvdy.com/jxvdy/web/images/default/380_264.png'"></a></div>
+										<p class="color-gray js_summary">å½±è§†ä¸šåŠ¡:èµ°å‡ºä½Žè°·,å›žå½’å¸¸æ€é¾™å¤´æ°´å¹³ã€‚ç”µè§†å‰§ä¸šåŠ¡æ˜¯åŽå½•ç™¾çº³çš„ä¼ ç»Ÿä¸šåŠ¡ã€‚éšç€äº’è”ç½‘çš„å½±å“,ç”µè§†å‰§å¸‚åœºçš„äº§å“ç±»åž‹ã€å¸‚åœºå–å‘ã€ä»·æ ¼ä½“ç³»å˜åŒ–è¾ƒå¤§ã€‚ä¸ºäº†è¿Žåˆè¿™ç§å˜åŒ–,2015å¹´å…¬å¸å½±è§†ä¸šåŠ¡è¿›è¡Œæˆ˜ç•¥è°ƒæ•´:ä¸€æ–¹é¢æ¶ˆ...</p>
+					<p class="js_tag_jxvdy">
+						<i class="fa fa-tags color-gray"></i>
+											</p>
+					<div class="auth-span">
+												<span class="muted"><i class="fa fa-clock-o"></i>2016-07-28</span>
+						<span class="muted"><i class="fa fa-eye"></i><span>0</span>â„ƒ</span>
+						<span class="muted"><i class="fa fa-heart-o"></i><span>0</span>äººå–œæ¬¢</span>
+												<span class="muted"><a href="javascript:;" class="action" onclick="collect(this,'33010')"><i class="fa fa-star-o"></i><span>æ”¶è—</span></a></span>
+					</div>
+				</article>
+							<article class="excerpt clearfix content_32975 content-list-jxvdy js_search_jxvdy" js_data="32975" js_ch_id="8">
+					<div class="excert-header">
+						<span class="column-label"><a href="list-1.html" tppabs="http://www.jxvdy.com/news/ylqy/list.html">å¨±ä¹å‰æ²¿</a><i class="label-arrow"></i></span>
+						<h4><a class="js_title" target="_blank"  href="javascript:if(confirm('http://www.jxvdy.com/news/ylqy/0033515443.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/news/ylqy/0033515443.html'" tppabs="http://www.jxvdy.com/news/ylqy/0033515443.html" >æ‰˜é›·æ–¯æºæ‰‹ä¸­å›½è¶³çƒå‡ºæ¼”ç½‘ç»œå¤§ç”µå½± å‰å¤®è§†åå˜´æ‰§å¯¼</a></h4>
+					</div>
+															<p class="color-gray js_summary">ç»è¿‡å‰æœŸç–¯ç‹‚ç‚’ä½œï¼Œä¸€åº¦æ²¸æ²¸æ‰¬æ‰¬çš„æ‰˜é›·æ–¯å‚æ¼”ä¸­å›½ç½‘ç»œå¤§ç”µå½±çš„ä¼ é—»æœ€ç»ˆå˜ä¸ºçŽ°å®žã€‚7æœˆ2æ—¥ç”±å‰å¤®è§†åå˜´çŽ‹æ¶›é¦–æ¬¡æ‰§å¯¼çš„ç½‘ç»œå¤§ç”µå½±ã€Šçº¦å—æ‰˜é›·æ–¯ã€‹åœ¨æ­£å¼ä¸Šçº¿ã€‚è¿™æ˜¯ç¬¬ä¸€æ¬¡æœ‰çŽ°å½¹çƒæ˜Ÿå‚æ¼”ç½‘ç»œå¤§ç”µå½±ï¼Œç¼ºå¸­äº†æ¬§æ´²æ¯çš„æ‰˜é›·...</p>
+					<p class="js_tag_jxvdy">
+						<i class="fa fa-tags color-gray"></i>
+																								<a class="brand-warning article-tag" href="javascript:if(confirm('http://www.jxvdy.com/news/ylqy/search?kw=çƒæ˜Ÿ  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/news/ylqy/search?kw=çƒæ˜Ÿ'" tppabs="http://www.jxvdy.com/news/ylqy/search?kw=çƒæ˜Ÿ" target="_blank">çƒæ˜Ÿ</a>
+												<a class="brand-warning article-tag" href="javascript:if(confirm('http://www.jxvdy.com/news/ylqy/search?kw=ç½‘ç»œå¤§ç”µå½±  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/news/ylqy/search?kw=ç½‘ç»œå¤§ç”µå½±'" tppabs="http://www.jxvdy.com/news/ylqy/search?kw=ç½‘ç»œå¤§ç”µå½±" target="_blank">ç½‘ç»œå¤§ç”µå½±</a>
+												<a class="brand-warning article-tag" href="javascript:if(confirm('http://www.jxvdy.com/news/ylqy/search?kw=æ‰˜é›·æ–¯  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/news/ylqy/search?kw=æ‰˜é›·æ–¯'" tppabs="http://www.jxvdy.com/news/ylqy/search?kw=æ‰˜é›·æ–¯" target="_blank">æ‰˜é›·æ–¯</a>
+																							</p>
+					<div class="auth-span">
+												<span class="muted"><i class="fa fa-clock-o"></i>2016-07-04</span>
+						<span class="muted"><i class="fa fa-eye"></i><span>0</span>â„ƒ</span>
+						<span class="muted"><i class="fa fa-heart-o"></i><span>0</span>äººå–œæ¬¢</span>
+												<span class="muted"><a href="javascript:;" class="action" onclick="collect(this,'32975')"><i class="fa fa-star-o"></i><span>æ”¶è—</span></a></span>
+					</div>
+				</article>
+							<article class="excerpt clearfix content_32963 content-list-jxvdy js_search_jxvdy" js_data="32963" js_ch_id="8">
+					<div class="excert-header">
+						<span class="column-label"><a href="list-1.html" tppabs="http://www.jxvdy.com/news/ylqy/list.html">å¨±ä¹å‰æ²¿</a><i class="label-arrow"></i></span>
+						<h4><a class="js_title" target="_blank"  href="javascript:if(confirm('http://www.jxvdy.com/news/ylqy/0001195363.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/news/ylqy/0001195363.html'" tppabs="http://www.jxvdy.com/news/ylqy/0001195363.html" >æœæµ·æ¶›é¦–æ¼”ç½‘ç»œå¤§ç”µå½± ç›®æ ‡100å¤©å†…ç»ƒå‡ºå…«å—è…¹è‚Œ</a></h4>
+					</div>
+															<p class="color-gray js_summary">æ—¥å‰ï¼Œç½‘ç»œå–œå‰§ç”µå½±ã€Šæœ¨å¶ä¼ è¯´ã€‹æ­£åœ¨çƒ­æ‹ä¸­ã€‚6æœˆ28æ—¥ï¼Œè¯¥ç‰‡ä¸¾è¡Œäº†åª’ä½“æŽ¢ç­ã€‚è¯¥ç‰‡å¯¼æ¼”å´”ç‚Žé¾™ã€å¾ä»•å…´æºä¸»æ¼”æœæµ·æ¶›çŽ°èº«æŽ¢ç­æ´»åŠ¨å¹¶æŽ¥å—äº†åª’ä½“çš„é‡‡è®¿ã€‚æœæµ·æ¶›åœ¨é‡‡è®¿ä¸­è¡¨ç¤ºï¼Œè¿™æ˜¯è‡ªå·±ç¬¬ä¸€æ¬¡å‡ºæ¼”ç½‘ç»œå¤§ç”µå½±ï¼Œæ„Ÿåˆ°ååˆ†å…´...</p>
+					<p class="js_tag_jxvdy">
+						<i class="fa fa-tags color-gray"></i>
+																								<a class="brand-warning article-tag" href="javascript:if(confirm('http://www.jxvdy.com/news/ylqy/search?kw=å–œå‰§  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/news/ylqy/search?kw=å–œå‰§'" tppabs="http://www.jxvdy.com/news/ylqy/search?kw=å–œå‰§" target="_blank">å–œå‰§</a>
+												<a class="brand-warning article-tag" href="javascript:if(confirm('http://www.jxvdy.com/news/ylqy/search?kw=æœæµ·æ¶›  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/news/ylqy/search?kw=æœæµ·æ¶›'" tppabs="http://www.jxvdy.com/news/ylqy/search?kw=æœæµ·æ¶›" target="_blank">æœæµ·æ¶›</a>
+												<a class="brand-warning article-tag" href="javascript:if(confirm('http://www.jxvdy.com/news/ylqy/search?kw=ç½‘ç»œå¤§ç”µå½±  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/news/ylqy/search?kw=ç½‘ç»œå¤§ç”µå½±'" tppabs="http://www.jxvdy.com/news/ylqy/search?kw=ç½‘ç»œå¤§ç”µå½±" target="_blank">ç½‘ç»œå¤§ç”µå½±</a>
+																							</p>
+					<div class="auth-span">
+												<span class="muted"><i class="fa fa-clock-o"></i>2016-06-29</span>
+						<span class="muted"><i class="fa fa-eye"></i><span>0</span>â„ƒ</span>
+						<span class="muted"><i class="fa fa-heart-o"></i><span>0</span>äººå–œæ¬¢</span>
+												<span class="muted"><a href="javascript:;" class="action" onclick="collect(this,'32963')"><i class="fa fa-star-o"></i><span>æ”¶è—</span></a></span>
+					</div>
+				</article>
+							<article class="excerpt clearfix content_32948 content-list-jxvdy js_search_jxvdy" js_data="32948" js_ch_id="8">
+					<div class="excert-header">
+						<span class="column-label"><a href="list-1.html" tppabs="http://www.jxvdy.com/news/ylqy/list.html">å¨±ä¹å‰æ²¿</a><i class="label-arrow"></i></span>
+						<h4><a class="js_title" target="_blank"  href="javascript:if(confirm('http://www.jxvdy.com/news/ylqy/0001512116.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/news/ylqy/0001512116.html'" tppabs="http://www.jxvdy.com/news/ylqy/0001512116.html" >æŒ‘æˆ˜æƒŠæ‚š ç«¥æ˜Ÿéƒ­æ˜Ÿæ˜¾ä¸»æ¼”ç½‘ç»œå¤§ç”µå½±ã€Šä¸Šèº«ã€‹</a></h4>
+					</div>
+											<div class="focus"><a target="_blank"  href="javascript:if(confirm('http://www.jxvdy.com/news/ylqy/0001512116.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/news/ylqy/0001512116.html'" tppabs="http://www.jxvdy.com/news/ylqy/0001512116.html" ><img class="lazy-article" _src="576b90fb286f0799bad5a_0.jpg" tppabs="http://image.jxvdy.com/2016/0623/576b90fb286f0799bad5a_0.jpg" alt="æŒ‘æˆ˜æƒŠæ‚š ç«¥æ˜Ÿéƒ­æ˜Ÿæ˜¾ä¸»æ¼”ç½‘ç»œå¤§ç”µå½±ã€Šä¸Šèº«ã€‹" onerror="this.src='http://skin.jxvdy.com/jxvdy/web/images/default/380_264.png'"></a></div>
+										<p class="color-gray js_summary">6æœˆ22æ—¥ï¼Œç”±æ·±åœ³å¸‚åæ–¹ä¼ åª’æœ‰é™å…¬å¸ã€æ¹–åŒ—æ­£åŸºå½±è§†ä¼ åª’æœ‰é™å…¬å¸ã€åŒ—äº¬æ­£ä¸œä¸­æ¸¯å½±è§†æ–‡åŒ–ä¼ åª’æœ‰é™å…¬å¸è”åˆæ‘„åˆ¶çš„åŽŸåˆ›ç½‘ç»œå¤§ç”µå½±ã€Šä¸Šèº«ã€‹å…¨ç½‘éš†é‡ä¸Šæ˜ ã€‚è¯¥ç‰‡ç¼–å‰§éƒ‘é’Ÿæµ·ï¼Œå¯¼æ¼”å¼ è‰ºé¾™ã€æŽç•¯ï¼Œæ€»å¯¼æ¼”ç¥æ–Œï¼Œåˆ¶ç‰‡äººå»–æŒ¯å‡¯...</p>
+					<p class="js_tag_jxvdy">
+						<i class="fa fa-tags color-gray"></i>
+																								<a class="brand-warning article-tag" href="javascript:if(confirm('http://www.jxvdy.com/news/ylqy/search?kw=ç½‘ç»œå¤§ç”µå½±  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/news/ylqy/search?kw=ç½‘ç»œå¤§ç”µå½±'" tppabs="http://www.jxvdy.com/news/ylqy/search?kw=ç½‘ç»œå¤§ç”µå½±" target="_blank">ç½‘ç»œå¤§ç”µå½±</a>
+																							</p>
+					<div class="auth-span">
+												<span class="muted"><i class="fa fa-clock-o"></i>2016-06-23</span>
+						<span class="muted"><i class="fa fa-eye"></i><span>0</span>â„ƒ</span>
+						<span class="muted"><i class="fa fa-heart-o"></i><span>0</span>äººå–œæ¬¢</span>
+												<span class="muted"><a href="javascript:;" class="action" onclick="collect(this,'32948')"><i class="fa fa-star-o"></i><span>æ”¶è—</span></a></span>
+					</div>
+				</article>
+							<article class="excerpt clearfix content_32943 content-list-jxvdy js_search_jxvdy" js_data="32943" js_ch_id="8">
+					<div class="excert-header">
+						<span class="column-label"><a href="list-1.html" tppabs="http://www.jxvdy.com/news/ylqy/list.html">å¨±ä¹å‰æ²¿</a><i class="label-arrow"></i></span>
+						<h4><a class="js_title" target="_blank"  href="javascript:if(confirm('http://www.jxvdy.com/news/ylqy/0033515343.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/news/ylqy/0033515343.html'" tppabs="http://www.jxvdy.com/news/ylqy/0033515343.html" >æµ™æ±Ÿæ›²è‰ºæ‚æŠ€æºæ‰‹TVBè€æˆéª¨ ã€Šä»™åŒ»ç¥žåŽ¨ã€‹æœ¬æœˆä¸Šçº¿</a></h4>
+					</div>
+											<div class="focus"><a target="_blank"  href="javascript:if(confirm('http://www.jxvdy.com/news/ylqy/0033515343.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/news/ylqy/0033515343.html'" tppabs="http://www.jxvdy.com/news/ylqy/0033515343.html" ><img class="lazy-article" _src="576a1d909f17a63bd351f_0.jpg" tppabs="http://image.jxvdy.com/2016/0622/576a1d909f17a63bd351f_0.jpg" alt="æµ™æ±Ÿæ›²è‰ºæ‚æŠ€æºæ‰‹TVBè€æˆéª¨ ã€Šä»™åŒ»ç¥žåŽ¨ã€‹æœ¬æœˆä¸Šçº¿" onerror="this.src='http://skin.jxvdy.com/jxvdy/web/images/default/380_264.png'"></a></div>
+										<p class="color-gray js_summary">æ˜¨å¤©ï¼Œç”±æµ™æ±Ÿæ›²è‰ºæ‚æŠ€æ€»å›¢æœ‰é™å…¬å¸ç­‰å¤šå®¶å…¬å¸è”åˆå‡ºå“çš„ç½‘ç»œå¤§ç”µå½±ã€Šä»™åŒ»ç¥žåŽ¨ã€‹åœ¨æ­å·žä¸¾è¡Œæ–°é—»å‘å¸ƒä¼šï¼Œåœ¨å½±ç‰‡é‡Œï¼Œä¼ ç»Ÿæ›²è‰ºæ‚æŠ€å’Œç½‘ç»œå¤§ç”µå½±ç›¸é‡ï¼Œæ‚æŠ€æ¼”å‘˜ä¸ŽTVBè€æˆéª¨å¯¹æˆã€‚</p>
+					<p class="js_tag_jxvdy">
+						<i class="fa fa-tags color-gray"></i>
+																								<a class="brand-warning article-tag" href="javascript:if(confirm('http://www.jxvdy.com/news/ylqy/search?kw=TVB  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/news/ylqy/search?kw=TVB'" tppabs="http://www.jxvdy.com/news/ylqy/search?kw=TVB" target="_blank">TVB</a>
+												<a class="brand-warning article-tag" href="javascript:if(confirm('http://www.jxvdy.com/news/ylqy/search?kw=ç½‘ç»œå¤§ç”µå½±  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/news/ylqy/search?kw=ç½‘ç»œå¤§ç”µå½±'" tppabs="http://www.jxvdy.com/news/ylqy/search?kw=ç½‘ç»œå¤§ç”µå½±" target="_blank">ç½‘ç»œå¤§ç”µå½±</a>
+												<a class="brand-warning article-tag" href="javascript:if(confirm('http://www.jxvdy.com/news/ylqy/search?kw=ä»™åŒ»ç¥žåŽ¨  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/news/ylqy/search?kw=ä»™åŒ»ç¥žåŽ¨'" tppabs="http://www.jxvdy.com/news/ylqy/search?kw=ä»™åŒ»ç¥žåŽ¨" target="_blank">ä»™åŒ»ç¥žåŽ¨</a>
+																							</p>
+					<div class="auth-span">
+												<span class="muted"><i class="fa fa-clock-o"></i>2016-06-22</span>
+						<span class="muted"><i class="fa fa-eye"></i><span>0</span>â„ƒ</span>
+						<span class="muted"><i class="fa fa-heart-o"></i><span>0</span>äººå–œæ¬¢</span>
+												<span class="muted"><a href="javascript:;" class="action" onclick="collect(this,'32943')"><i class="fa fa-star-o"></i><span>æ”¶è—</span></a></span>
+					</div>
+				</article>
+							<article class="excerpt clearfix content_32936 content-list-jxvdy js_search_jxvdy" js_data="32936" js_ch_id="8">
+					<div class="excert-header">
+						<span class="column-label"><a href="list-1.html" tppabs="http://www.jxvdy.com/news/ylqy/list.html">å¨±ä¹å‰æ²¿</a><i class="label-arrow"></i></span>
+						<h4><a class="js_title" target="_blank"  href="javascript:if(confirm('http://www.jxvdy.com/news/ylqy/0033192104.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/news/ylqy/0033192104.html'" tppabs="http://www.jxvdy.com/news/ylqy/0033192104.html" >ç½‘ç»œå¤§ç”µå½±ã€Šå¤±è”ä¹‹eè·¯æƒ¶å¥”ã€‹åœ¨æ±‰å¼€æœº</a></h4>
+					</div>
+											<div class="focus"><a target="_blank"  href="javascript:if(confirm('http://www.jxvdy.com/news/ylqy/0033192104.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/news/ylqy/0033192104.html'" tppabs="http://www.jxvdy.com/news/ylqy/0033192104.html" ><img class="lazy-article" _src="5767553606163b524bfad_0.jpg" tppabs="http://image.jxvdy.com/2016/0620/5767553606163b524bfad_0.jpg" alt="ç½‘ç»œå¤§ç”µå½±ã€Šå¤±è”ä¹‹eè·¯æƒ¶å¥”ã€‹åœ¨æ±‰å¼€æœº" onerror="this.src='http://skin.jxvdy.com/jxvdy/web/images/default/380_264.png'"></a></div>
+										<p class="color-gray js_summary">6æœˆ19æ—¥ï¼Œç½‘ç»œå¤§ç”µå½±ã€Šå¤±è”ä¹‹eè·¯æƒ¶å¥”ã€‹åœ¨æ­¦æ±‰å®£å¸ƒå¼€æœºã€‚</p>
+					<p class="js_tag_jxvdy">
+						<i class="fa fa-tags color-gray"></i>
+											</p>
+					<div class="auth-span">
+												<span class="muted"><i class="fa fa-clock-o"></i>2016-06-20</span>
+						<span class="muted"><i class="fa fa-eye"></i><span>0</span>â„ƒ</span>
+						<span class="muted"><i class="fa fa-heart-o"></i><span>0</span>äººå–œæ¬¢</span>
+												<span class="muted"><a href="javascript:;" class="action" onclick="collect(this,'32936')"><i class="fa fa-star-o"></i><span>æ”¶è—</span></a></span>
+					</div>
+				</article>
+							<article class="excerpt clearfix content_32930 content-list-jxvdy js_search_jxvdy" js_data="32930" js_ch_id="8">
+					<div class="excert-header">
+						<span class="column-label"><a href="list-1.html" tppabs="http://www.jxvdy.com/news/ylqy/list.html">å¨±ä¹å‰æ²¿</a><i class="label-arrow"></i></span>
+						<h4><a class="js_title" target="_blank"  href="javascript:if(confirm('http://www.jxvdy.com/news/ylqy/0001195230.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/news/ylqy/0001195230.html'" tppabs="http://www.jxvdy.com/news/ylqy/0001195230.html" >IPåŒäººç½‘ç»œå¤§ç”µå½±ã€Šæ½˜é‡‘èŽ²å¤ä»‡è®°ã€‹å…¨ç½‘ä¸Šçº¿</a></h4>
+					</div>
+											<div class="focus"><a target="_blank"  href="javascript:if(confirm('http://www.jxvdy.com/news/ylqy/0001195230.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/news/ylqy/0001195230.html'" tppabs="http://www.jxvdy.com/news/ylqy/0001195230.html" ><img class="lazy-article" _src="5760c3e2253597b5cfe72_0.png" tppabs="http://image.jxvdy.com/2016/0615/5760c3e2253597b5cfe72_0.png" alt="IPåŒäººç½‘ç»œå¤§ç”µå½±ã€Šæ½˜é‡‘èŽ²å¤ä»‡è®°ã€‹å…¨ç½‘ä¸Šçº¿" onerror="this.src='http://skin.jxvdy.com/jxvdy/web/images/default/380_264.png'"></a></div>
+										<p class="color-gray js_summary">ç”±å´åŒå¯¼æ¼”ã€æ¨æµ·è‰‡ç›‘åˆ¶çš„IPåŒäººç½‘ç»œå¤§ç”µå½±ã€Šæ½˜é‡‘èŽ²å¤ä»‡è®°ã€‹äºŽ2016å¹´6æœˆ14æ—¥åœ¨å„å¤§ç½‘ç»œè§†é¢‘å¹³å°ä¸Šæ˜ ã€‚å­”èŽ¹è™¹ã€æœäº­å›ã€æŽç¹é¢†è¡”ä¸»æ¼”ï¼Œç¬¬ä¸€â€œçŸ®æ˜Ÿâ€é™ˆä¸‰æœ¨å€¾æƒ…åŠ ç›Ÿï¼Œå…±åŒæ¼”ç»Žæ½˜é‡‘èŽ²ä¸Žå‡ ä¸ªç”·äººé—´çš„çˆ±æ¨æƒ…ä»‡ã€‚</p>
+					<p class="js_tag_jxvdy">
+						<i class="fa fa-tags color-gray"></i>
+											</p>
+					<div class="auth-span">
+												<span class="muted"><i class="fa fa-clock-o"></i>2016-06-15</span>
+						<span class="muted"><i class="fa fa-eye"></i><span>0</span>â„ƒ</span>
+						<span class="muted"><i class="fa fa-heart-o"></i><span>0</span>äººå–œæ¬¢</span>
+												<span class="muted"><a href="javascript:;" class="action" onclick="collect(this,'32930')"><i class="fa fa-star-o"></i><span>æ”¶è—</span></a></span>
+					</div>
+				</article>
+							<article class="excerpt clearfix content_32928 content-list-jxvdy js_search_jxvdy" js_data="32928" js_ch_id="8">
+					<div class="excert-header">
+						<span class="column-label"><a href="list-1.html" tppabs="http://www.jxvdy.com/news/ylqy/list.html">å¨±ä¹å‰æ²¿</a><i class="label-arrow"></i></span>
+						<h4><a class="js_title" target="_blank"  href="javascript:if(confirm('http://www.jxvdy.com/news/ylqy/0001192028.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/news/ylqy/0001192028.html'" tppabs="http://www.jxvdy.com/news/ylqy/0001192028.html" >éŸ³æ‚¦å°è”åˆçŽ‹é’å†¯å»ºå®‡ å¼€å¯ç½‘ç»œå¤§ç”µå½±æ–°â€œçŽ©æ³•â€</a></h4>
+					</div>
+															<p class="color-gray js_summary">ç”±çŽ‹é’ã€å†¯å»ºå®‡é¢†è¡”ä¸»æ¼”çš„ç½‘ç»œç”µå½±ã€Šæ— é™æ–—ç•Œä¹‹æš—å¤œåŒé¾™ã€‹å³å°†åœ¨éŸ³æ‚¦å°STAR-TVå…¨ç½‘ç‹¬å®¶é¦–å‘ï¼Œè¿™æ˜¯åŒæ–¹ç»§ç¬¬å››å±ŠéŸ³æ‚¦Væ¦œç››å…¸éŸ³ä¹ç¢°æ’žåŽï¼Œé¼ŽåŠ›è”æ‰‹å‡ºå‡»ï¼Œæ¬²å¼€åˆ›ç½‘ç»œç”µå½±è¡Œä¸šæ–°â€œçŽ©æ³•â€ï¼
+
+ </p>
+					<p class="js_tag_jxvdy">
+						<i class="fa fa-tags color-gray"></i>
+																								<a class="brand-warning article-tag" href="javascript:if(confirm('http://www.jxvdy.com/news/ylqy/search?kw=éŸ³æ‚¦å°  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/news/ylqy/search?kw=éŸ³æ‚¦å°'" tppabs="http://www.jxvdy.com/news/ylqy/search?kw=éŸ³æ‚¦å°" target="_blank">éŸ³æ‚¦å°</a>
+																							</p>
+					<div class="auth-span">
+												<span class="muted"><i class="fa fa-clock-o"></i>2016-06-08</span>
+						<span class="muted"><i class="fa fa-eye"></i><span>0</span>â„ƒ</span>
+						<span class="muted"><i class="fa fa-heart-o"></i><span>0</span>äººå–œæ¬¢</span>
+												<span class="muted"><a href="javascript:;" class="action" onclick="collect(this,'32928')"><i class="fa fa-star-o"></i><span>æ”¶è—</span></a></span>
+					</div>
+				</article>
+							<article class="excerpt clearfix content_32922 content-list-jxvdy js_search_jxvdy" js_data="32922" js_ch_id="8">
+					<div class="excert-header">
+						<span class="column-label"><a href="list-1.html" tppabs="http://www.jxvdy.com/news/ylqy/list.html">å¨±ä¹å‰æ²¿</a><i class="label-arrow"></i></span>
+						<h4><a class="js_title" target="_blank"  href="javascript:if(confirm('http://www.jxvdy.com/news/ylqy/0033195222.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/news/ylqy/0033195222.html'" tppabs="http://www.jxvdy.com/news/ylqy/0033195222.html" >æ˜”æ—¥å‘¨æ¶¦å‘æ›¿èº«ï¼Œä»Šæœå¤§ç”µå½±ä¸»è§’</a></h4>
+					</div>
+															<p class="color-gray js_summary">æ¹–å—æ—¥æŠ¥6æœˆ3æ—¥è®¯ï¼ˆè®°è€… å¾äºšå¹³ è†å½©ï¼‰ä»Šå¤©ä¸‹åˆï¼Œæ¹–å—ç šæ³‰æ–‡åŒ–ä¼ åª’æœ‰é™å…¬å¸å‡ºå“çš„ç½‘ç»œå¤§ç”µå½±ã€Šæˆ‘ä¸æ˜¯å‘¨æ¶¦å‘ã€‹é¦–æ˜ ç¤¼ï¼Œåœ¨é•¿æ²™ä¸‡å®¶ä¸½å›½é™…MALLä¸¾è¡Œã€‚</p>
+					<p class="js_tag_jxvdy">
+						<i class="fa fa-tags color-gray"></i>
+																								<a class="brand-warning article-tag" href="javascript:if(confirm('http://www.jxvdy.com/news/ylqy/search?kw=å‘¨æ¶¦å‘æ›¿èº«  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/news/ylqy/search?kw=å‘¨æ¶¦å‘æ›¿èº«'" tppabs="http://www.jxvdy.com/news/ylqy/search?kw=å‘¨æ¶¦å‘æ›¿èº«" target="_blank">å‘¨æ¶¦å‘æ›¿èº«</a>
+																							</p>
+					<div class="auth-span">
+												<span class="muted"><i class="fa fa-clock-o"></i>2016-06-04</span>
+						<span class="muted"><i class="fa fa-eye"></i><span>0</span>â„ƒ</span>
+						<span class="muted"><i class="fa fa-heart-o"></i><span>0</span>äººå–œæ¬¢</span>
+												<span class="muted"><a href="javascript:;" class="action" onclick="collect(this,'32922')"><i class="fa fa-star-o"></i><span>æ”¶è—</span></a></span>
+					</div>
+				</article>
+							<article class="excerpt clearfix content_32920 content-list-jxvdy js_search_jxvdy" js_data="32920" js_ch_id="8">
+					<div class="excert-header">
+						<span class="column-label"><a href="list-1.html" tppabs="http://www.jxvdy.com/news/ylqy/list.html">å¨±ä¹å‰æ²¿</a><i class="label-arrow"></i></span>
+						<h4><a class="js_title" target="_blank"  href="javascript:if(confirm('http://www.jxvdy.com/news/ylqy/0033192020.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/news/ylqy/0033192020.html'" tppabs="http://www.jxvdy.com/news/ylqy/0033192020.html" >ç½‘ç»œç”µå½±ã€Šåƒµå°¸å½’æ¥3é£Žå¹å¤´å¼¯ã€‹6æœˆ4æ—¥ä¸Šçº¿</a></h4>
+					</div>
+											<div class="focus"><a target="_blank"  href="javascript:if(confirm('http://www.jxvdy.com/news/ylqy/0033192020.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/news/ylqy/0033192020.html'" tppabs="http://www.jxvdy.com/news/ylqy/0033192020.html" ><img class="lazy-article" _src="57523636351a464ac4a85_0.jpg" tppabs="http://image.jxvdy.com/2016/0604/57523636351a464ac4a85_0.jpg" alt="ç½‘ç»œç”µå½±ã€Šåƒµå°¸å½’æ¥3é£Žå¹å¤´å¼¯ã€‹6æœˆ4æ—¥ä¸Šçº¿" onerror="this.src='http://skin.jxvdy.com/jxvdy/web/images/default/380_264.png'"></a></div>
+										<p class="color-gray js_summary">6æœˆ3æ—¥ç”µ 3æ—¥ï¼Œç½‘ç»œç”µå½±ã€Šåƒµå°¸å½’æ¥3é£Žå¹å¤´å¼¯ã€‹åœ¨åŒ—äº¬ä¸¾è¡Œé¦–æ˜ ç¤¼ï¼Œè¯¥ç‰‡å°†äºŽ6æœˆ4æ—¥åœ¨çˆ±å¥‡è‰ºä¸Šçº¿ã€‚æ´»åŠ¨çŽ°åœºï¼Œéšå¤„å¯è§â€œæ‹›é­‚å¹¡â€å’Œåˆ°å¤„è¡Œèµ°çš„â€œé»‘ç™½æ— å¸¸â€ï¼Œå¼•å¾—ç²‰ä¸å°–å«è¿žè¿žã€‚</p>
+					<p class="js_tag_jxvdy">
+						<i class="fa fa-tags color-gray"></i>
+																								<a class="brand-warning article-tag" href="javascript:if(confirm('http://www.jxvdy.com/news/ylqy/search?kw=åƒµå°¸å½’æ¥3  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/news/ylqy/search?kw=åƒµå°¸å½’æ¥3'" tppabs="http://www.jxvdy.com/news/ylqy/search?kw=åƒµå°¸å½’æ¥3" target="_blank">åƒµå°¸å½’æ¥3</a>
+																							</p>
+					<div class="auth-span">
+												<span class="muted"><i class="fa fa-clock-o"></i>2016-06-04</span>
+						<span class="muted"><i class="fa fa-eye"></i><span>0</span>â„ƒ</span>
+						<span class="muted"><i class="fa fa-heart-o"></i><span>0</span>äººå–œæ¬¢</span>
+												<span class="muted"><a href="javascript:;" class="action" onclick="collect(this,'32920')"><i class="fa fa-star-o"></i><span>æ”¶è—</span></a></span>
+					</div>
+				</article>
+							<article class="excerpt clearfix content_32918 content-list-jxvdy js_search_jxvdy" js_data="32918" js_ch_id="8">
+					<div class="excert-header">
+						<span class="column-label"><a href="list-1.html" tppabs="http://www.jxvdy.com/news/ylqy/list.html">å¨±ä¹å‰æ²¿</a><i class="label-arrow"></i></span>
+						<h4><a class="js_title" target="_blank"  href="javascript:if(confirm('http://www.jxvdy.com/news/ylqy/0001515218.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/news/ylqy/0001515218.html'" tppabs="http://www.jxvdy.com/news/ylqy/0001515218.html" >æ–°æµªæ½®ç½‘ç»œå¤§ç”µå½±è®¡åˆ’å‘å¸ƒä¼šåœ¨äº¬ä¸¾è¡Œ</a></h4>
+					</div>
+											<div class="focus"><a target="_blank"  href="javascript:if(confirm('http://www.jxvdy.com/news/ylqy/0001515218.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/news/ylqy/0001515218.html'" tppabs="http://www.jxvdy.com/news/ylqy/0001515218.html" ><img class="lazy-article" _src="5750ed2a2583497621625_380_264.jpg" tppabs="http://image.jxvdy.com/2016/0603/5750ed2a2583497621625_380_264.jpg" alt="æ–°æµªæ½®ç½‘ç»œå¤§ç”µå½±è®¡åˆ’å‘å¸ƒä¼šåœ¨äº¬ä¸¾è¡Œ" onerror="this.src='http://skin.jxvdy.com/jxvdy/web/images/default/380_264.png'"></a></div>
+										<p class="color-gray js_summary">ä¸­æ–°ç½‘6æœˆ2æ—¥ç”µ ç”±å°é•‡é’å¹´ç”µå½±ä¼—ç­¹ç½‘ä¸»åŠžçš„â€”â€”NEWæµªæ½® ç½‘ç»œå¤§ç”µå½±è®¡åˆ’å‘å¸ƒä¼šåœ¨åŒ—äº¬å¯å¹•ï¼Œä¸ºæŽ¨åŠ¨ç½‘ç»œå¤§ç”µå½±é¢†åŸŸå‘å±•å’Œé’å¹´æŠ•èµ„æ–°å½¢åŠ¿åšå‡ºäº†æˆ˜ç•¥å¸ƒå±€ã€‚å½“å¤©ï¼Œå°é•‡é’å¹´ç”µå½±ä¼—ç­¹ç½‘CEOåŽå®¶è±ªï¼Œå°é•‡é’å¹´ç”µå½±ä¼—...</p>
+					<p class="js_tag_jxvdy">
+						<i class="fa fa-tags color-gray"></i>
+																								<a class="brand-warning article-tag" href="javascript:if(confirm('http://www.jxvdy.com/news/ylqy/search?kw=æ–°æµªæ½®  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/news/ylqy/search?kw=æ–°æµªæ½®'" tppabs="http://www.jxvdy.com/news/ylqy/search?kw=æ–°æµªæ½®" target="_blank">æ–°æµªæ½®</a>
+																							</p>
+					<div class="auth-span">
+												<span class="muted"><i class="fa fa-clock-o"></i>2016-06-03</span>
+						<span class="muted"><i class="fa fa-eye"></i><span>0</span>â„ƒ</span>
+						<span class="muted"><i class="fa fa-heart-o"></i><span>0</span>äººå–œæ¬¢</span>
+												<span class="muted"><a href="javascript:;" class="action" onclick="collect(this,'32918')"><i class="fa fa-star-o"></i><span>æ”¶è—</span></a></span>
+					</div>
+				</article>
+							<article class="excerpt clearfix content_32917 content-list-jxvdy js_search_jxvdy" js_data="32917" js_ch_id="8">
+					<div class="excert-header">
+						<span class="column-label"><a href="list-1.html" tppabs="http://www.jxvdy.com/news/ylqy/list.html">å¨±ä¹å‰æ²¿</a><i class="label-arrow"></i></span>
+						<h4><a class="js_title" target="_blank"  href="javascript:if(confirm('http://www.jxvdy.com/news/ylqy/0001512049.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/news/ylqy/0001512049.html'" tppabs="http://www.jxvdy.com/news/ylqy/0001512049.html" >ã€Šæˆ‘çš„é»‘é“å¦¹å¦¹ã€‹å°†æ˜  ç½‘ç»œå¤§ç”µå½±å¯â€œæ‰“æ—¶ä»£â€</a></h4>
+					</div>
+															<p class="color-gray js_summary">ç”±çœŸåˆæ—¶ä»£æ‰¿åˆ¶ï¼ŒçœŸåˆæ—¶ä»£ã€ä¹äº«æ˜Ÿäº‘è”åˆå‡ºå“çš„ç½‘ç»œå¤§ç”µå½±ã€Šæˆ‘çš„é»‘é“å¦¹å¦¹ã€‹å³å°†äºŽ6æœˆ7æ—¥åœ¨çˆ±å¥‡è‰ºç‹¬å®¶ä¸Šæ˜ ï¼</p>
+					<p class="js_tag_jxvdy">
+						<i class="fa fa-tags color-gray"></i>
+																								<a class="brand-warning article-tag" href="javascript:if(confirm('http://www.jxvdy.com/news/ylqy/search?kw=ç½‘ç»œå¤§ç”µå½±å¯  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/news/ylqy/search?kw=ç½‘ç»œå¤§ç”µå½±å¯'" tppabs="http://www.jxvdy.com/news/ylqy/search?kw=ç½‘ç»œå¤§ç”µå½±å¯" target="_blank">ç½‘ç»œå¤§ç”µå½±å¯</a>
+												<a class="brand-warning article-tag" href="javascript:if(confirm('http://www.jxvdy.com/news/ylqy/search?kw=æ‰“æ—¶ä»£  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/news/ylqy/search?kw=æ‰“æ—¶ä»£'" tppabs="http://www.jxvdy.com/news/ylqy/search?kw=æ‰“æ—¶ä»£" target="_blank">æ‰“æ—¶ä»£</a>
+																							</p>
+					<div class="auth-span">
+												<span class="muted"><i class="fa fa-clock-o"></i>2016-06-03</span>
+						<span class="muted"><i class="fa fa-eye"></i><span>0</span>â„ƒ</span>
+						<span class="muted"><i class="fa fa-heart-o"></i><span>0</span>äººå–œæ¬¢</span>
+												<span class="muted"><a href="javascript:;" class="action" onclick="collect(this,'32917')"><i class="fa fa-star-o"></i><span>æ”¶è—</span></a></span>
+					</div>
+				</article>
+						<div class="pagination-wrap clearfix">
+				<div id="light-pagination" class="light-theme simple-pagination pagination">
+<ul class="js_pagination_jxvdy">
+	
+							<li class="active"><span class="current">1</span></li>
+											<li><a href="javascript:if(confirm('http://www.jxvdy.com/news/ylqy/list-2.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/news/ylqy/list-2.html'" tppabs="http://www.jxvdy.com/news/ylqy/list-2.html">2</a></li>
+														<li><a href="javascript:if(confirm('http://www.jxvdy.com/news/ylqy/list-3.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/news/ylqy/list-3.html'" tppabs="http://www.jxvdy.com/news/ylqy/list-3.html">3</a></li>
+														<li><a href="javascript:if(confirm('http://www.jxvdy.com/news/ylqy/list-4.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/news/ylqy/list-4.html'" tppabs="http://www.jxvdy.com/news/ylqy/list-4.html">4</a></li>
+														<li><a href="javascript:if(confirm('http://www.jxvdy.com/news/ylqy/list-5.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/news/ylqy/list-5.html'" tppabs="http://www.jxvdy.com/news/ylqy/list-5.html">5</a></li>
+														<li><a href="javascript:if(confirm('http://www.jxvdy.com/news/ylqy/list-6.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/news/ylqy/list-6.html'" tppabs="http://www.jxvdy.com/news/ylqy/list-6.html">6</a></li>
+														<li><a href="javascript:if(confirm('http://www.jxvdy.com/news/ylqy/list-7.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/news/ylqy/list-7.html'" tppabs="http://www.jxvdy.com/news/ylqy/list-7.html">7</a></li>
+														<li><a href="javascript:if(confirm('http://www.jxvdy.com/news/ylqy/list-8.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/news/ylqy/list-8.html'" tppabs="http://www.jxvdy.com/news/ylqy/list-8.html">8</a></li>
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																															
+			<li><a href="javascript:if(confirm('http://www.jxvdy.com/news/ylqy/list-2.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/news/ylqy/list-2.html'" tppabs="http://www.jxvdy.com/news/ylqy/list-2.html" rel="first">ä¸‹ä¸€é¡µ</a></li>
+	
+			<li><a href="javascript:if(confirm('http://www.jxvdy.com/news/ylqy/list-735.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/news/ylqy/list-735.html'" tppabs="http://www.jxvdy.com/news/ylqy/list-735.html" rel="first">æœ«é¡µ</a></li>
+	</ul>
+</div>
+
+
+<!--<li class="active"><span class="current prev">ä¸Šä¸€é¡µ</span></li><li class="active"><span class="current">1</span></li><li><a href="http://192.168.201.88:3000/list_video-2.html" class="page-link">2</a></li><li><a href="http://192.168.201.88:3000/list_video-3.html" class="page-link">3</a></li><li><a href="http://192.168.201.88:3000/list_video-4.html" class="page-link">4</a></li><li><a href="http://192.168.201.88:3000/list_video-5.html" class="page-link">5</a></li><li class="disabled"><span class="ellipse">â€¦</span></li><li><a href="http://192.168.201.88:3000/list_video-19.html" class="page-link">19</a></li><li><a href="http://192.168.201.88:3000/list_video-20.html" class="page-link">20</a></li><li><a href="http://192.168.201.88:3000/list_video-2.html" class="page-link next">ä¸‹ä¸€é¡µ</a></li></ul></div>-->
+<!--t1517408128-->
+			</div>
+		</div>
+	</div>
+	<aside class="sidebar">
+		<div class="js_reload js_pb_jxvdy widget widget-likes clearfix mt20" js_ch_id="8" js_action="guess" js_model="text_content" js_temp="1058">
+			<div class="modal-title clearfix">
+				<div class="modal-title-left">
+					<div class="modal-title-left-inner">çŒœä½ å–œæ¬¢</div>
+					<span class="tip-t"><i class="tip-outer"></i><i class="tip-inner"></i></span>
+				</div>
+				<div class="modal-title-right">
+					<a class="js_reload_h random" href="javascript:;" js_ch_id="8" js_action="guess" js_model="text_content" js_temp="1058"><i class="fa fa-repeat"></i>æ¢ä¸€æ¢</a>
+				</div>
+			</div>
+			<div class="js_reload_panel widget-likes-inner">
+				<ul class="js_reload_pagecount widget-likes-list" js_data="500">
+				<li><i class="dot"></i><a href="javascript:if(confirm('http://www.jxvdy.com/news/ylqy/0033515763.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/news/ylqy/0033515763.html'" tppabs="http://www.jxvdy.com/news/ylqy/0033515763.html" title="ã€Šè’å±±å¿ƒé‡Žä¹‹ä¸ƒæ—¥ã€‹3æœˆ30çˆ±å¥‡è‰ºç‹¬å®¶ä¸Šæ˜ ï¼ŒæƒŠé™©åˆºæ¿€ä½ æ€•äº†å—ï¼Ÿ" target="_blank">ã€Šè’å±±å¿ƒé‡Žä¹‹ä¸ƒæ—¥ã€‹3æœˆ30çˆ±å¥‡è‰ºç‹¬å®¶ä¸Š...</a></li>
+					<li><i class="dot"></i><a href="javascript:if(confirm('http://www.jxvdy.com/news/ylqy/0001515655.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/news/ylqy/0001515655.html'" tppabs="http://www.jxvdy.com/news/ylqy/0001515655.html" title="ç”µå½±ã€Šç›—å¢“ç¬”è®°ã€‹å¯¼æ¼”æŽä»æ¸¯å®£å¸ƒç­¾çº¦ä¹è§†å½±ä¸š å¤§å¯¼æ¼”çº·çº·ç­¾çº¦äº’è”ç½‘å½±è§†å…¬å¸" target="_blank">ç”µå½±ã€Šç›—å¢“ç¬”è®°ã€‹å¯¼æ¼”æŽä»æ¸¯å®£å¸ƒç­¾çº¦ä¹è§†...</a></li>
+					<li><i class="dot"></i><a href="javascript:if(confirm('http://www.jxvdy.com/news/ylqy/0033195610.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/news/ylqy/0033195610.html'" tppabs="http://www.jxvdy.com/news/ylqy/0033195610.html" title="åŽå½•ç™¾çº³å…¬å¸è·Ÿè¸ªæŠ¥å‘Š:å½±è§†+ç»¼è‰º+ä½“è‚²,æ‰“é€ äº’è”ç½‘æ—¶ä»£ä¼ åª’å¨±ä¹å¤§å¹³å°" target="_blank">åŽå½•ç™¾çº³å…¬å¸è·Ÿè¸ªæŠ¥å‘Š:å½±è§†+ç»¼è‰º+ä½“è‚²...</a></li>
+					<li><i class="dot"></i><a href="javascript:if(confirm('http://www.jxvdy.com/news/ylqy/0001512116.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/news/ylqy/0001512116.html'" tppabs="http://www.jxvdy.com/news/ylqy/0001512116.html" title="æŒ‘æˆ˜æƒŠæ‚š ç«¥æ˜Ÿéƒ­æ˜Ÿæ˜¾ä¸»æ¼”ç½‘ç»œå¤§ç”µå½±ã€Šä¸Šèº«ã€‹" target="_blank">æŒ‘æˆ˜æƒŠæ‚š ç«¥æ˜Ÿéƒ­æ˜Ÿæ˜¾ä¸»æ¼”ç½‘ç»œå¤§ç”µå½±ã€Šä¸Š...</a></li>
+					<li><i class="dot"></i><a href="javascript:if(confirm('http://www.jxvdy.com/news/ylqy/0033515343.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/news/ylqy/0033515343.html'" tppabs="http://www.jxvdy.com/news/ylqy/0033515343.html" title="æµ™æ±Ÿæ›²è‰ºæ‚æŠ€æºæ‰‹TVBè€æˆéª¨ ã€Šä»™åŒ»ç¥žåŽ¨ã€‹æœ¬æœˆä¸Šçº¿" target="_blank">æµ™æ±Ÿæ›²è‰ºæ‚æŠ€æºæ‰‹TVBè€æˆéª¨ ã€Šä»™åŒ»ç¥ž...</a></li>
+										</ul>
+<ul class="widget-likes-thumb">
+														<li><figure><a href="javascript:if(confirm('http://www.jxvdy.com/news/ylqy/0033192104.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/news/ylqy/0033192104.html'" tppabs="http://www.jxvdy.com/news/ylqy/0033192104.html" title="ç½‘ç»œå¤§ç”µå½±ã€Šå¤±è”ä¹‹eè·¯æƒ¶å¥”ã€‹åœ¨æ±‰å¼€æœº" target="_blank"><img class="lazy-article" _src="5767553606163b524bfad_0.jpg" tppabs="http://image.jxvdy.com/2016/0620/5767553606163b524bfad_0.jpg"  onerror="this.src='http://skin.jxvdy.com/jxvdy/web/images/default/380_264.png'" alt="ç½‘ç»œå¤§ç”µå½±ã€Šå¤±è”ä¹‹eè·¯æƒ¶å¥”ã€‹åœ¨æ±‰å¼€æœº" width="140" height="98"></a></figure><a class="thumb-title" href="javascript:if(confirm('http://www.jxvdy.com/news/ylqy/0033192104.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/news/ylqy/0033192104.html'" tppabs="http://www.jxvdy.com/news/ylqy/0033192104.html" title="ç½‘ç»œå¤§ç”µå½±ã€Šå¤±è”ä¹‹eè·¯æƒ¶å¥”ã€‹åœ¨æ±‰å¼€æœº" target="_blank">ç½‘ç»œå¤§ç”µå½±ã€Šå¤±è”ä¹‹eè·¯æƒ¶å¥”ã€‹åœ¨æ±‰å¼€æœº</a></li>
+					<li><figure><a href="javascript:if(confirm('http://www.jxvdy.com/news/ylqy/0001195230.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/news/ylqy/0001195230.html'" tppabs="http://www.jxvdy.com/news/ylqy/0001195230.html" title="IPåŒäººç½‘ç»œå¤§ç”µå½±ã€Šæ½˜é‡‘èŽ²å¤ä»‡è®°ã€‹å…¨ç½‘ä¸Šçº¿" target="_blank"><img class="lazy-article" _src="5760c3e2253597b5cfe72_0.png" tppabs="http://image.jxvdy.com/2016/0615/5760c3e2253597b5cfe72_0.png"  onerror="this.src='http://skin.jxvdy.com/jxvdy/web/images/default/380_264.png'" alt="IPåŒäººç½‘ç»œå¤§ç”µå½±ã€Šæ½˜é‡‘èŽ²å¤ä»‡è®°ã€‹å…¨ç½‘ä¸Šçº¿" width="140" height="98"></a></figure><a class="thumb-title" href="javascript:if(confirm('http://www.jxvdy.com/news/ylqy/0001195230.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/news/ylqy/0001195230.html'" tppabs="http://www.jxvdy.com/news/ylqy/0001195230.html" title="IPåŒäººç½‘ç»œå¤§ç”µå½±ã€Šæ½˜é‡‘èŽ²å¤ä»‡è®°ã€‹å…¨ç½‘ä¸Šçº¿" target="_blank">IPåŒäººç½‘ç»œå¤§ç”µå½±ã€Šæ½˜é‡‘èŽ²å¤ä»‡è®°ã€‹å…¨ç½‘...</a></li>
+					<li><figure><a href="javascript:if(confirm('http://www.jxvdy.com/news/ylqy/0033192020.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/news/ylqy/0033192020.html'" tppabs="http://www.jxvdy.com/news/ylqy/0033192020.html" title="ç½‘ç»œç”µå½±ã€Šåƒµå°¸å½’æ¥3é£Žå¹å¤´å¼¯ã€‹6æœˆ4æ—¥ä¸Šçº¿" target="_blank"><img class="lazy-article" _src="57523636351a464ac4a85_0.jpg" tppabs="http://image.jxvdy.com/2016/0604/57523636351a464ac4a85_0.jpg"  onerror="this.src='http://skin.jxvdy.com/jxvdy/web/images/default/380_264.png'" alt="ç½‘ç»œç”µå½±ã€Šåƒµå°¸å½’æ¥3é£Žå¹å¤´å¼¯ã€‹6æœˆ4æ—¥ä¸Šçº¿" width="140" height="98"></a></figure><a class="thumb-title" href="javascript:if(confirm('http://www.jxvdy.com/news/ylqy/0033192020.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/news/ylqy/0033192020.html'" tppabs="http://www.jxvdy.com/news/ylqy/0033192020.html" title="ç½‘ç»œç”µå½±ã€Šåƒµå°¸å½’æ¥3é£Žå¹å¤´å¼¯ã€‹6æœˆ4æ—¥ä¸Šçº¿" target="_blank">ç½‘ç»œç”µå½±ã€Šåƒµå°¸å½’æ¥3é£Žå¹å¤´å¼¯ã€‹6æœˆ4æ—¥...</a></li>
+					<li><figure><a href="javascript:if(confirm('http://www.jxvdy.com/news/ylqy/0001515218.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/news/ylqy/0001515218.html'" tppabs="http://www.jxvdy.com/news/ylqy/0001515218.html" title="æ–°æµªæ½®ç½‘ç»œå¤§ç”µå½±è®¡åˆ’å‘å¸ƒä¼šåœ¨äº¬ä¸¾è¡Œ" target="_blank"><img class="lazy-article" _src="5750ed2a2583497621625_380_264.jpg" tppabs="http://image.jxvdy.com/2016/0603/5750ed2a2583497621625_380_264.jpg"  onerror="this.src='http://skin.jxvdy.com/jxvdy/web/images/default/380_264.png'" alt="æ–°æµªæ½®ç½‘ç»œå¤§ç”µå½±è®¡åˆ’å‘å¸ƒä¼šåœ¨äº¬ä¸¾è¡Œ" width="140" height="98"></a></figure><a class="thumb-title" href="javascript:if(confirm('http://www.jxvdy.com/news/ylqy/0001515218.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/news/ylqy/0001515218.html'" tppabs="http://www.jxvdy.com/news/ylqy/0001515218.html" title="æ–°æµªæ½®ç½‘ç»œå¤§ç”µå½±è®¡åˆ’å‘å¸ƒä¼šåœ¨äº¬ä¸¾è¡Œ" target="_blank">æ–°æµªæ½®ç½‘ç»œå¤§ç”µå½±è®¡åˆ’å‘å¸ƒä¼šåœ¨äº¬ä¸¾è¡Œ</a></li>
+		</ul>
+<!--t1517408234-->
+
+			</div>
+		</div>
+		<div class="ads300-250 mt10 js_ad_record" style="height: 250px;">
+						<script type="text/javascript" src="0053.js" tppabs="http://ad.jxvdy.com/script/0053.js"></script>
+					</div>
+		<div class="js_reload widget widget-thumb-text clearfix mt20 js_pb_jxvdy" js_ch_id="8" js_action="getWatching" js_model="text_content" js_temp="1059">
+			<div class="modal-title clearfix">
+				<div class="modal-title-left">
+					<div class="modal-title-left-inner">å¤§å®¶éƒ½åœ¨çœ‹</div>
+					<span class="tip-t"><i class="tip-outer"></i><i class="tip-inner"></i></span>
+				</div>
+				<div class="modal-title-right">
+					<a class="js_reload_h random" href="javascript:;" js_ch_id="8" js_action="getWatching" js_model="text_content" js_temp="1059"><i class="fa fa-repeat"></i>æ¢ä¸€æ¢</a>
+				</div>
+			</div>
+			<div class="js_reload_panel widget-thumb-text-inner">
+					<article class="article-item js_reload_pagecount" js_data="1126">
+		<figure><a href="javascript:if(confirm('http://www.jxvdy.com/news/ylqy/075439.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/news/ylqy/075439.html'" tppabs="http://www.jxvdy.com/news/ylqy/075439.html" title="å¥³æ€§è‡ªå¼ºå‰§ ã€Šæ‘©çº³å“¥çŽ‹å¦ƒã€‹6æœˆ20æ—¥æš‘æœŸæ¡£..." target="_blank"><img class="img-responsive lazy-article" _src="16-45-17-85-961.jpg.png" tppabs="http://image.jxvdy.com/old/201405/28/16-45-17-85-961.jpg" onerror="this.src='http://skin.jxvdy.com/jxvdy/web/images/default/380_264.png'" alt="å¥³æ€§è‡ªå¼ºå‰§ ã€Šæ‘©çº³å“¥çŽ‹å¦ƒã€‹6æœˆ20æ—¥æš‘æœŸæ¡£..."></a></figure>
+		<div class="widget-thumb-text-info">
+			<h5><a href="javascript:if(confirm('http://www.jxvdy.com/news/ylqy/075439.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/news/ylqy/075439.html'" tppabs="http://www.jxvdy.com/news/ylqy/075439.html" target="_blank">å¥³æ€§è‡ªå¼ºå‰§ ã€Šæ‘©çº³å“¥çŽ‹å¦ƒã€‹6æœˆ20æ—¥æš‘æœŸæ¡£...</a></h5>
+			<small>134äººæ­£åœ¨æµè§ˆ<span class="text-center"><a href="javascript:if(confirm('http://www.jxvdy.com/news/ylqy/075439.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/news/ylqy/075439.html'" tppabs="http://www.jxvdy.com/news/ylqy/075439.html" target="_blank"><i class="fa fa-eye"></i>å›´è§‚</a></span></small>
+		</div>
+	</article>
+	<article class="article-item js_reload_pagecount" js_data="1126">
+		<figure><a href="javascript:if(confirm('http://www.jxvdy.com/news/ylqy/015826.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/news/ylqy/015826.html'" tppabs="http://www.jxvdy.com/news/ylqy/015826.html" title="æƒå¿—é¾™æ–°ä¸“è¾‘å…«å›½å¤ºå†  MVé‚€åƒåç²‰ä¸å½•åˆ¶" target="_blank"><img class="img-responsive lazy-article" _src="10-39-41-95-21.jpg.png" tppabs="http://image.jxvdy.com/old/201310/12/10-39-41-95-21.jpg" onerror="this.src='http://skin.jxvdy.com/jxvdy/web/images/default/380_264.png'" alt="æƒå¿—é¾™æ–°ä¸“è¾‘å…«å›½å¤ºå†  MVé‚€åƒåç²‰ä¸å½•åˆ¶"></a></figure>
+		<div class="widget-thumb-text-info">
+			<h5><a href="javascript:if(confirm('http://www.jxvdy.com/news/ylqy/015826.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/news/ylqy/015826.html'" tppabs="http://www.jxvdy.com/news/ylqy/015826.html" target="_blank">æƒå¿—é¾™æ–°ä¸“è¾‘å…«å›½å¤ºå†  MVé‚€åƒåç²‰ä¸å½•åˆ¶</a></h5>
+			<small>77äººæ­£åœ¨æµè§ˆ<span class="text-center"><a href="javascript:if(confirm('http://www.jxvdy.com/news/ylqy/015826.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/news/ylqy/015826.html'" tppabs="http://www.jxvdy.com/news/ylqy/015826.html" target="_blank"><i class="fa fa-eye"></i>å›´è§‚</a></span></small>
+		</div>
+	</article>
+	<article class="article-item js_reload_pagecount" js_data="1126">
+		<figure><a href="javascript:if(confirm('http://www.jxvdy.com/news/ylqy/0001086263.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/news/ylqy/0001086263.html'" tppabs="http://www.jxvdy.com/news/ylqy/0001086263.html" title="ã€Šé’Ÿé¦—ä¼é­”ã€‹é’Ÿé¦—è½éš¾æŒ¨æ‰“ é™ˆå¤è‡ªæ›å…¥æˆå¤ªæ·±" target="_blank"><img class="img-responsive lazy-article" _src="54bc7480ad2adfe5df232_0.jpg" tppabs="http://image.jxvdy.com/2015/0119/54bc7480ad2adfe5df232_0.jpg" onerror="this.src='http://skin.jxvdy.com/jxvdy/web/images/default/380_264.png'" alt="ã€Šé’Ÿé¦—ä¼é­”ã€‹é’Ÿé¦—è½éš¾æŒ¨æ‰“ é™ˆå¤è‡ªæ›å…¥æˆå¤ªæ·±"></a></figure>
+		<div class="widget-thumb-text-info">
+			<h5><a href="javascript:if(confirm('http://www.jxvdy.com/news/ylqy/0001086263.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/news/ylqy/0001086263.html'" tppabs="http://www.jxvdy.com/news/ylqy/0001086263.html" target="_blank">ã€Šé’Ÿé¦—ä¼é­”ã€‹é’Ÿé¦—è½éš¾æŒ¨æ‰“ é™ˆå¤è‡ªæ›å…¥æˆå¤ªæ·±</a></h5>
+			<small>2209äººæ­£åœ¨æµè§ˆ<span class="text-center"><a href="javascript:if(confirm('http://www.jxvdy.com/news/ylqy/0001086263.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/news/ylqy/0001086263.html'" tppabs="http://www.jxvdy.com/news/ylqy/0001086263.html" target="_blank"><i class="fa fa-eye"></i>å›´è§‚</a></span></small>
+		</div>
+	</article>
+	<article class="article-item js_reload_pagecount" js_data="1126">
+		<figure><a href="javascript:if(confirm('http://www.jxvdy.com/news/ylqy/0033401349.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/news/ylqy/0033401349.html'" tppabs="http://www.jxvdy.com/news/ylqy/0033401349.html" title="å‘¨æ°ä¼¦æ‰¿è®¤å·²åœ¨è‹±å›½æ±‚å©š æœªæ¥æƒ³ç”Ÿäº”ä¸ªå°å­©" target="_blank"><img class="img-responsive lazy-article" _src="549cc3a6f25f3799bad5a_0.jpg" tppabs="http://image.jxvdy.com/2014/1226/549cc3a6f25f3799bad5a_0.jpg" onerror="this.src='http://skin.jxvdy.com/jxvdy/web/images/default/380_264.png'" alt="å‘¨æ°ä¼¦æ‰¿è®¤å·²åœ¨è‹±å›½æ±‚å©š æœªæ¥æƒ³ç”Ÿäº”ä¸ªå°å­©"></a></figure>
+		<div class="widget-thumb-text-info">
+			<h5><a href="javascript:if(confirm('http://www.jxvdy.com/news/ylqy/0033401349.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/news/ylqy/0033401349.html'" tppabs="http://www.jxvdy.com/news/ylqy/0033401349.html" target="_blank">å‘¨æ°ä¼¦æ‰¿è®¤å·²åœ¨è‹±å›½æ±‚å©š æœªæ¥æƒ³ç”Ÿäº”ä¸ªå°å­©</a></h5>
+			<small>1633äººæ­£åœ¨æµè§ˆ<span class="text-center"><a href="javascript:if(confirm('http://www.jxvdy.com/news/ylqy/0033401349.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/news/ylqy/0033401349.html'" tppabs="http://www.jxvdy.com/news/ylqy/0033401349.html" target="_blank"><i class="fa fa-eye"></i>å›´è§‚</a></span></small>
+		</div>
+	</article>
+<!--t1517408234-->
+
+			</div>
+		</div>
+
+		<div class="widget widget-thumb-text clearfix js_pb_jxvdy" js_ch_id="4" js_action="getNew" js_temp="1062" js_model="screenplay">
+			<div class="modal-title clearfix">
+				<div class="modal-title-left">
+					<div class="modal-title-left-inner">æœ€æ–°å‰§æœ¬å±•ç¤º</div>
+					<span class="tip-t"><i class="tip-outer"></i><i class="tip-inner"></i></span>
+				</div>
+				<div class="modal-title-right">
+					<a class="more" href="javascript:if(confirm('http://www.jxvdy.com/screenplay/list.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/screenplay/list.html'" tppabs="http://www.jxvdy.com/screenplay/list.html" target="_blank">æ›´å¤š<i class="fa fa-caret-right"></i></a>
+				</div>
+			</div>
+			<div class="widget-thumb-text-inner js_reload_panel">
+					<article class="article-item">
+		<figure><a href="javascript:if(confirm('http://www.jxvdy.com/screenplay/056159.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/screenplay/056159.html'" tppabs="http://www.jxvdy.com/screenplay/056159.html" title="2016é‡‘ä¸¹è‹¥ç½‘ç»œå½±è§†åˆ›æ–°è®ºå›æš–å†¬å¼€å¹•" target="_blank"><img class="img-responsive" src="585ddc1a5afdd1abb2dc3_380_264.jpg" tppabs="http://image.jxvdy.com/2016/1224/585ddc1a5afdd1abb2dc3_380_264.jpg" alt="2016é‡‘ä¸¹è‹¥ç½‘ç»œå½±è§†åˆ›æ–°è®ºå›æš–å†¬å¼€å¹•"></a></figure>
+		<div class="widget-thumb-text-info">
+			<h5><a href="javascript:if(confirm('http://www.jxvdy.com/screenplay/056159.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/screenplay/056159.html'" tppabs="http://www.jxvdy.com/screenplay/056159.html" target="_blank" title="ã€2016é‡‘ä¸¹è‹¥ç½‘ç»œå½±è§†åˆ›æ–°è®ºå›æš–å†¬å¼€å¹•ã€‘2016é‡‘ä¸¹è‹¥ç½‘ç»œå½±è§†åˆ›æ–°è®ºå›æš–å†¬å¼€å¹•">ã€2016é‡‘ä¸¹è‹¥ç½‘ç»œå½±è§†åˆ›æ–°è®ºå›æš–å†¬å¼€å¹•ã€‘2016é‡‘ä¸¹è‹¥ç½‘ç»œå½±è§†åˆ›æ–°è®ºå›æš–å†¬å¼€å¹•</a></h5>
+			<small><i class="fa fa-clock-o"></i>2016-12-24</small>
+		</div>
+	</article>
+	<article class="article-item">
+		<figure><a href="javascript:if(confirm('http://www.jxvdy.com/screenplay/052924.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/screenplay/052924.html'" tppabs="http://www.jxvdy.com/screenplay/052924.html" title="æœé­”è®°" target="_blank"><img class="img-responsive" src="5838efae32d7e4e9d1a2d_380_264.jpg" tppabs="http://image.jxvdy.com/2016/1126/5838efae32d7e4e9d1a2d_380_264.jpg" alt="æœé­”è®°"></a></figure>
+		<div class="widget-thumb-text-info">
+			<h5><a href="javascript:if(confirm('http://www.jxvdy.com/screenplay/052924.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/screenplay/052924.html'" tppabs="http://www.jxvdy.com/screenplay/052924.html" target="_blank" title="ã€æœé­”è®°ã€‘å¤©ä¸‹è‹±é›„åœ¨ï¼Œæœé­”æ­£å½“æ—¶ï¼">ã€æœé­”è®°ã€‘å¤©ä¸‹è‹±é›„åœ¨ï¼Œæœé­”æ­£å½“æ—¶ï¼</a></h5>
+			<small><i class="fa fa-clock-o"></i>2016-11-26</small>
+		</div>
+	</article>
+	<article class="article-item">
+		<figure><a href="javascript:if(confirm('http://www.jxvdy.com/screenplay/056151.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/screenplay/056151.html'" tppabs="http://www.jxvdy.com/screenplay/056151.html" title="è¿™ä¸ªå¤å¤©é‡è§ä½ " target="_blank"><img class="img-responsive" src="57db8ed218d280562ab4e_380_264.jpg" tppabs="http://image.jxvdy.com/2016/0916/57db8ed218d280562ab4e_380_264.jpg" alt="è¿™ä¸ªå¤å¤©é‡è§ä½ "></a></figure>
+		<div class="widget-thumb-text-info">
+			<h5><a href="javascript:if(confirm('http://www.jxvdy.com/screenplay/056151.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/screenplay/056151.html'" tppabs="http://www.jxvdy.com/screenplay/056151.html" target="_blank" title="ã€è¿™ä¸ªå¤å¤©é‡è§ä½ ã€‘éƒ½å¸‚æƒ…æ„Ÿå‰§">ã€è¿™ä¸ªå¤å¤©é‡è§ä½ ã€‘éƒ½å¸‚æƒ…æ„Ÿå‰§</a></h5>
+			<small><i class="fa fa-clock-o"></i>2016-09-16</small>
+		</div>
+	</article>
+	<article class="article-item">
+		<figure><a href="javascript:if(confirm('http://www.jxvdy.com/screenplay/052916.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/screenplay/052916.html'" tppabs="http://www.jxvdy.com/screenplay/052916.html" title="å¤§å­¦ä¸éƒ½è¿™æ ·" target="_blank"><img class="img-responsive" src="57ce359155fa9ed89d82e_380_264.jpg" tppabs="http://image.jxvdy.com/2016/0906/57ce359155fa9ed89d82e_380_264.jpg" alt="å¤§å­¦ä¸éƒ½è¿™æ ·"></a></figure>
+		<div class="widget-thumb-text-info">
+			<h5><a href="javascript:if(confirm('http://www.jxvdy.com/screenplay/052916.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/screenplay/052916.html'" tppabs="http://www.jxvdy.com/screenplay/052916.html" target="_blank" title="ã€å¤§å­¦ä¸éƒ½è¿™æ ·ã€‘æˆ‘ä»¬éƒ½ä¸€æ ·ï¼Œæ‡µæ‡‚åœ°è¸å…¥å¤§å­¦ï¼Œä»Žæ†§æ†¬åˆ°è¿·æƒ˜ï¼Œä¸è¦æ‹…å¿ƒï¼Œä½ æ€»ä¼šæ‰¾åˆ°æ–¹å‘ã€‚">ã€å¤§å­¦ä¸éƒ½è¿™æ ·ã€‘æˆ‘ä»¬éƒ½ä¸€æ ·ï¼Œæ‡µæ‡‚åœ°è¸å…¥å¤§å­¦ï¼Œä»Žæ†§æ†¬åˆ°è¿·æƒ˜ï¼Œä¸è¦æ‹…å¿ƒï¼Œä½ æ€»ä¼šæ‰¾åˆ°æ–¹å‘ã€‚</a></h5>
+			<small><i class="fa fa-clock-o"></i>2016-09-06</small>
+		</div>
+	</article>
+<!--t1517407634-->
+
+			</div>
+		</div>
+		
+		<div class="widget widget-thumb-text clearfix js_pb_jxvdy" js_ch_id="5" js_action="getNew" js_temp="1062" js_model="text_content">
+			<div class="modal-title clearfix">
+				<div class="modal-title-left">
+					<div class="modal-title-left-inner">æœ€æ–°å­¦é™¢æ•™ç¨‹</div>
+					<span class="tip-t"><i class="tip-outer"></i><i class="tip-inner"></i></span>
+				</div>
+				<div class="modal-title-right">
+					<a class="more" href="list-18.html" tppabs="http://www.jxvdy.com/tutorials/list.html" target="_blank">æ›´å¤š<i class="fa fa-caret-right"></i></a>
+				</div>
+			</div>
+			<div class="widget-thumb-text-inner js_reload_panel">
+					<article class="article-item">
+		<figure><a href="0001514426.html" tppabs="http://www.jxvdy.com/tutorials/equipment/qcpc/0001514426.html" title="æ‘„å½±å¸ˆä½ å¥½ï½œé™¤äº†Angelababyï¼Œä½ è¿˜éœ€è¦çŸ¥é“Lensbaby" target="_blank"><img class="img-responsive" src="56a7465c2e4b4627b139a_0.jpg" tppabs="http://image.jxvdy.com/2016/0126/56a7465c2e4b4627b139a_0.jpg" alt="æ‘„å½±å¸ˆä½ å¥½ï½œé™¤äº†Angelababyï¼Œä½ è¿˜éœ€è¦çŸ¥é“Lensbaby"></a></figure>
+		<div class="widget-thumb-text-info">
+			<h5><a href="0001514426.html" tppabs="http://www.jxvdy.com/tutorials/equipment/qcpc/0001514426.html" target="_blank" title="æ‘„å½±å¸ˆä½ å¥½ï½œé™¤äº†Angelababyï¼Œä½ è¿˜éœ€è¦çŸ¥é“Lensbaby">æ‘„å½±å¸ˆä½ å¥½ï½œé™¤äº†Angelababyï¼Œä½ è¿˜éœ€è¦çŸ¥é“Lensbaby</a></h5>
+			<small><i class="fa fa-clock-o"></i>2016-01-26</small>
+		</div>
+	</article>
+	<article class="article-item">
+		<figure><a href="0001511257.html" tppabs="http://www.jxvdy.com/tutorials/shooting/sysx/0001511257.html" title="åœ¨é™åˆ¶é‡Œåšå‡ºæœ€åˆç†ï¼Œã€Šå”äººè¡—æŽ¢æ¡ˆã€‹æ‘„å½±æ‰‹è®°" target="_blank"><img class="img-responsive" src="56a73e20b6b35162ad1b8_0.jpg" tppabs="http://image.jxvdy.com/2016/0126/56a73e20b6b35162ad1b8_0.jpg" alt="åœ¨é™åˆ¶é‡Œåšå‡ºæœ€åˆç†ï¼Œã€Šå”äººè¡—æŽ¢æ¡ˆã€‹æ‘„å½±æ‰‹è®°"></a></figure>
+		<div class="widget-thumb-text-info">
+			<h5><a href="0001511257.html" tppabs="http://www.jxvdy.com/tutorials/shooting/sysx/0001511257.html" target="_blank" title="åœ¨é™åˆ¶é‡Œåšå‡ºæœ€åˆç†ï¼Œã€Šå”äººè¡—æŽ¢æ¡ˆã€‹æ‘„å½±æ‰‹è®°">åœ¨é™åˆ¶é‡Œåšå‡ºæœ€åˆç†ï¼Œã€Šå”äººè¡—æŽ¢æ¡ˆã€‹æ‘„å½±æ‰‹è®°</a></h5>
+			<small><i class="fa fa-clock-o"></i>2016-01-26</small>
+		</div>
+	</article>
+	<article class="article-item">
+		<figure><a href="0033514418.html" tppabs="http://www.jxvdy.com/tutorials/shooting/sysx/0033514418.html" title="é€šè¿‡æ‘„å½±æœºçš„è¿åŠ¨è¡¨çŽ°æ„ä¹‰ï¼šé»‘æ³½æ˜Žçš„ã€Šç½—ç”Ÿé—¨ã€‹" target="_blank"><img class="img-responsive" src="56a5a0224cc8f6a39463a_0.jpg" tppabs="http://image.jxvdy.com/2016/0125/56a5a0224cc8f6a39463a_0.jpg" alt="é€šè¿‡æ‘„å½±æœºçš„è¿åŠ¨è¡¨çŽ°æ„ä¹‰ï¼šé»‘æ³½æ˜Žçš„ã€Šç½—ç”Ÿé—¨ã€‹"></a></figure>
+		<div class="widget-thumb-text-info">
+			<h5><a href="0033514418.html" tppabs="http://www.jxvdy.com/tutorials/shooting/sysx/0033514418.html" target="_blank" title="é€šè¿‡æ‘„å½±æœºçš„è¿åŠ¨è¡¨çŽ°æ„ä¹‰ï¼šé»‘æ³½æ˜Žçš„ã€Šç½—ç”Ÿé—¨ã€‹">é€šè¿‡æ‘„å½±æœºçš„è¿åŠ¨è¡¨çŽ°æ„ä¹‰ï¼šé»‘æ³½æ˜Žçš„ã€Šç½—ç”Ÿé—¨ã€‹</a></h5>
+			<small><i class="fa fa-clock-o"></i>2016-01-25</small>
+		</div>
+	</article>
+	<article class="article-item">
+		<figure><a href="0001514410.html" tppabs="http://www.jxvdy.com/tutorials/shooting/dgbj/0001514410.html" title="æ‘„å½±å¸ˆæ‰“å…‰å¦‚ä½•å‚è€ƒå…‰æº" target="_blank"><img class="img-responsive" src="569c96710f46ff33e46f6_0.jpg" tppabs="http://image.jxvdy.com/2016/0118/569c96710f46ff33e46f6_0.jpg" alt="æ‘„å½±å¸ˆæ‰“å…‰å¦‚ä½•å‚è€ƒå…‰æº"></a></figure>
+		<div class="widget-thumb-text-info">
+			<h5><a href="0001514410.html" tppabs="http://www.jxvdy.com/tutorials/shooting/dgbj/0001514410.html" target="_blank" title="æ‘„å½±å¸ˆæ‰“å…‰å¦‚ä½•å‚è€ƒå…‰æº">æ‘„å½±å¸ˆæ‰“å…‰å¦‚ä½•å‚è€ƒå…‰æº</a></h5>
+			<small><i class="fa fa-clock-o"></i>2016-01-18</small>
+		</div>
+	</article>
+<!--t1517407634-->
+
+			</div>
+		</div>
+		
+		<!--çƒ­é—¨æŽ’è¡Œ -->
+		<div id="sidebar">
+			<div class="js_rank widget clearfix">
+				<div class="modal-title clearfix">
+					<div class="modal-title-left">
+						<div class="modal-title-left-inner">çƒ­é—¨æŽ’è¡Œ</div>
+						<span class="tip-t"><i class="tip-outer"></i><i class="tip-inner"></i></span>
+					</div>
+				</div>
+				<!-- /.modal-title  -->
+				<div class="modal-title-tab channel-tab-nav">
+					<ul class="rank-tab clearfix">
+						<li class="js_rank_handle on" js_data_m="text_content" js_data_c="1" js_data="week"><a href="javascript:;">èµ„è®¯</a></li>
+						<li class="js_rank_handle" js_data_m="screenplay" js_data_c="4" js_data="week"><a href="javascript:;">å‰§æœ¬</a></li>
+						<li class="js_rank_handle " js_data_m="text_content" js_data_c="5" js_data="week"><a href="javascript:;">æ•™ç¨‹</a></li>
+						<li class="js_rank_handle" js_data_m="video_info" js_data_c="2" js_data="week"><a href="javascript:;">å¾®ç”µå½±</a></li>
+						<li class="js_rank_handle last" js_data_m="video_info" js_data_c="3" js_data="week"><a href="javascript:;">ç½‘ç»œå‰§</a></li>
+					</ul>
+				</div>
+				<div class="channel-tab-inner clearfix">
+										<div class="hots-rank">
+	<ul class="js_col list-unstyled">
+					<li class="rank-title"><i class="rank-num num-1">1</i><a href="0033515863.html" tppabs="http://www.jxvdy.com/news/hydt/0033515863.html" target="_blank" title="ã€Šç¾žç¾žçš„é“æ‹³ã€‹16äº¿ç ´å–œå‰§ç¥¨æˆ¿çºªå½•ï¼Œå¼€å¿ƒéº»èŠ±â€œè™šç«â€ä¹‹åŽè¿Žæ¥æ˜¥å¤©ï¼Ÿ">ã€Šç¾žç¾žçš„é“æ‹³ã€‹16äº¿ç ´å–œå‰§ç¥¨æˆ¿çºªå½•ï¼Œå¼€å¿ƒéº»èŠ±â€œè™šç«â€ä¹‹åŽè¿Žæ¥æ˜¥å¤©ï¼Ÿ</a></li>
+					<li class="rank-title"><i class="rank-num num-2">2</i><a href="0033515830.html" tppabs="http://www.jxvdy.com/news/hydt/0033515830.html" target="_blank" title="äººæ°‘æ—¥æŠ¥å†æ¬¡å‘æ–‡æŠ¨å‡»å½“ä»Šçš„æµé‡æ˜Žæ˜Ÿï¼šè‹¥æ— æ¼”æŠ€ç»ˆæˆâ€œæµæ˜Ÿâ€ï¼">äººæ°‘æ—¥æŠ¥å†æ¬¡å‘æ–‡æŠ¨å‡»å½“ä»Šçš„æµé‡æ˜Žæ˜Ÿï¼šè‹¥æ— æ¼”æŠ€ç»ˆæˆâ€œæµæ˜Ÿâ€ï¼</a></li>
+					<li class="rank-title"><i class="rank-num num-3">3</i><a href="0033195859.html" tppabs="http://www.jxvdy.com/news/hydt/0033195859.html" target="_blank" title="é©¬ä¸­éª:å½±è§†åˆ¶ä½œä¸­è¿‡äºŽè¿½æ±‚å®‰å…¨æ„Ÿä¼šæ‰¼æ€åŽŸåˆ›æ€§">é©¬ä¸­éª:å½±è§†åˆ¶ä½œä¸­è¿‡äºŽè¿½æ±‚å®‰å…¨æ„Ÿä¼šæ‰¼æ€åŽŸåˆ›æ€§</a></li>
+					<li class="rank-title"><i class="rank-num num-4">4</i><a href="0033195826.html" tppabs="http://www.jxvdy.com/news/hydt/0033195826.html" target="_blank" title="è¿ªå£«å°¼æœªä¸Šæ˜ æ–°ç‰‡è¢«çªƒ æƒ¨é­é»‘å®¢å‹’ç´¢ï¼">è¿ªå£«å°¼æœªä¸Šæ˜ æ–°ç‰‡è¢«çªƒ æƒ¨é­é»‘å®¢å‹’ç´¢ï¼</a></li>
+					<li class="rank-title"><i class="rank-num num-5">5</i><a href="0033192657.html" tppabs="http://www.jxvdy.com/news/hydt/0033192657.html" target="_blank" title="ç¬¬70å±Šæˆ›çº³å›½é™…ç”µå½±èŠ‚å°†äºŽ5æœˆåœ¨æ³•å›½æˆ›çº³ä¸¾åŠžã€‚è€Œå°±åœ¨æœ€è¿‘æˆ›çº³ç”µå½±èŠ‚å®˜æ–¹çªç„¶å®£å¸ƒï¼Œ">ç¬¬70å±Šæˆ›çº³å›½é™…ç”µå½±èŠ‚å°†äºŽ5æœˆåœ¨æ³•å›½æˆ›çº³ä¸¾åŠžã€‚è€Œå°±åœ¨æœ€è¿‘æˆ›çº³ç”µå½±èŠ‚å®˜æ–¹çªç„¶å®£å¸ƒï¼Œ</a></li>
+					<li class="rank-title"><i class="rank-num num-6">6</i><a href="0033192624.html" tppabs="http://www.jxvdy.com/news/hydt/0033192624.html" target="_blank" title="Facebookè¿›å…¥è§†é¢‘è¡Œä¸šæ…å±€ï¼Ÿç»“æžœç«Ÿæ˜¯ä¸ºäº†å–......">Facebookè¿›å…¥è§†é¢‘è¡Œä¸šæ…å±€ï¼Ÿç»“æžœç«Ÿæ˜¯ä¸ºäº†å–......</a></li>
+					<li class="rank-title"><i class="rank-num num-7">7</i><a href="0001515855.html" tppabs="http://www.jxvdy.com/news/hydt/0001515855.html" target="_blank" title="ã€Šæ‘”è·¤å§ï¼çˆ¸çˆ¸ã€‹é«˜å£ç¢‘é­é‡ä½ŽæŽ’ç‰‡ è°åœ¨å·¦å³ç”µå½±æŽ’ç‰‡ï¼Ÿ">ã€Šæ‘”è·¤å§ï¼çˆ¸çˆ¸ã€‹é«˜å£ç¢‘é­é‡ä½ŽæŽ’ç‰‡ è°åœ¨å·¦å³ç”µå½±æŽ’ç‰‡ï¼Ÿ</a></li>
+					<li class="rank-title"><i class="rank-num num-8">8</i><a href="0001515822.html" tppabs="http://www.jxvdy.com/news/hydt/0001515822.html" target="_blank" title="å½±è§†å‘¨æŠ¥2017ç¬¬19å‘¨ |ã€Šæˆ˜ç‹¼2ã€‹é™·ç‰ˆæƒçº çº·ï¼Œæˆ–æ— ç¼˜æš‘æœŸæ¡£/å“ä¼Ÿæ‘„å½±å›¢é˜Ÿé›†ä½“">å½±è§†å‘¨æŠ¥2017ç¬¬19å‘¨ |ã€Šæˆ˜ç‹¼2ã€‹é™·ç‰ˆæƒçº çº·ï¼Œæˆ–æ— ç¼˜æš‘æœŸæ¡£/å“ä¼Ÿæ‘„å½±å›¢é˜Ÿé›†ä½“</a></li>
+					<li class="rank-title"><i class="rank-num num-9">9</i><a href="0001512653.html" tppabs="http://www.jxvdy.com/news/hydt/0001512653.html" target="_blank" title="8äº¿ä¿åº•çš„ã€Šæˆ˜ç‹¼2ã€‹è¢«å‘Šä¾µæƒæˆ–é­ç¦æ’­ï¼Œä¿åº•å‘è¡ŒçœŸèƒ½ä¿åº•ï¼Ÿ">8äº¿ä¿åº•çš„ã€Šæˆ˜ç‹¼2ã€‹è¢«å‘Šä¾µæƒæˆ–é­ç¦æ’­ï¼Œä¿åº•å‘è¡ŒçœŸèƒ½ä¿åº•ï¼Ÿ</a></li>
+					<li class="rank-title"><i class="rank-num num-10">10</i><a href="0001512620.html" tppabs="http://www.jxvdy.com/news/hydt/0001512620.html" target="_blank" title="ç½‘ç»œæ–‡å­¦æœ‰è¢«è¿‡åº¦æ¶ˆè´¹ä¹‹å«Œ IPä»·å€¼è¢«æŒ–å°½åŽå°†å¦‚ä½•">ç½‘ç»œæ–‡å­¦æœ‰è¢«è¿‡åº¦æ¶ˆè´¹ä¹‹å«Œ IPä»·å€¼è¢«æŒ–å°½åŽå°†å¦‚ä½•</a></li>
+			</ul>
+</div>
+<ul class="js_tpl hidden">
+	<li class="rank-title"><i class="rank-num"></i><a href="#" title="" target="_blank"></a></li>
+</ul>
+<!--t1517408533-->
+
+									</div>
+				<!-- /.tab-content -->
+			</div>
+			<!-- /.widget-thumb-text -->
+			<div class="mt10 ads300-250 mb20 js_ad_record" style="height: 250px;">
+						<script type="text/javascript" src="0022.js" tppabs="http://ad.jxvdy.com/script/0022.js"></script>
+						</div>
+		</div>
+		<!-- /.sidebar -->
+	</aside>
+	<a class="js_popup hidden" js_popup="js_popup_login"></a>
+	<script type="text/javascript" src="my_login.js" tppabs="http://skin.jxvdy.com/jxvdy2/public/javascripts/my_login.js"></script>
+<script language="JavaScript">
+<!--
+var CHECK_FIELD_URL = '/my/logincheck';
+//-->
+</script>
+<!-- ä¼šå‘˜ç™»å½•å¼¹å‡ºå±‚ -->
+<div id="js_popup_login" class="js_popup_content popup-wrap popup-login-wrap">
+	<div class="popup-title">
+		<a href="javascript:;" title="å…³é—­" class="js_popup_closed closed">Ã—</a>
+		<h4>ç™»å½•é‡‘è±¡å¾®ç”µå½±è´¦å·</h4>
+	</div>
+	<div class="popup-body clearfix">
+		<div class="setting-wrap setting-profile">
+			<form class="js_form form-usr" action="http://www.jxvdy.com/my/loginsubmit" method="post" js_validrules="validRules" onsubmit="return false;">
+				<input type="hidden" name="jumpto" value="" />
+				<div class="user-group-wrap">
+					<div class="user-group">
+						<input type="text" id="js_name" name="name" class="input-username form-control" autocomplete="off" maxlength="35" placeholder="ç”¨æˆ·å/é‚®ç®±">
+						<p class="user-tip-wrap" id="js_name_tip"></p>
+					</div>
+				</div>
+				<!-- /.user-group-wrap -->
+				<div class="user-group-wrap">
+					<div class="user-group">
+						<input type="password" id="js_pwd" name="pwd" class="input-password form-control" autocomplete="off" placeholder="è¯·è¾“å…¥å¯†ç " maxlength="35" />
+						<p class="user-tip-wrap" id="js_pwd_tip"></p>
+					</div>
+				</div>
+				<!-- /.user-group-wrap -->
+				<div class="user-group-wrap">
+					<div class="user-group aotu-login">
+						<span class="form-checkbox pull-left">
+							<input type="checkbox" id="js_autologin" name="autologin" style="-webkit-appearance:display" value="1" checked="checked">
+							<label for="js_autologin">ä¸‹æ¬¡è‡ªåŠ¨ç™»å½•</label>
+						</span>
+						<a href="javascript:if(confirm('http://www.jxvdy.com/my/forgetpwd  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/my/forgetpwd'" tppabs="http://www.jxvdy.com/my/forgetpwd" class="color-gray pull-right">å¿˜è®°å¯†ç ï¼Ÿ</a>
+					</div>
+				</div>
+				<!-- /.user-group-wrap -->
+				<div class="user-group-wrap">
+					<div class="user-group">
+						<input type="submit" class="btn btn-warning btn-login-submit" value="ç™» å½•" />
+					</div>
+				</div>
+				<div id="js_ok_tip" style="display: none;"></div>
+				<!-- /.user-group-wrap -->
+				<div class="user-group-wrap">
+					<div class="user-group aotu-login">
+						<span class="pull-right">è¿˜æ²¡æœ‰é‡‘è±¡å¾®ç”µå½±è´¦å·ï¼Ÿ<a href="regist.htm" tppabs="http://www.jxvdy.com/my/regist" class="brand-warning">ç«‹å³æ³¨å†Œ</a></span>
+					</div>
+				</div>
+				<!-- /.user-group-wrap -->
+			</form>
+		</div>
+		<!-- /.lsetting-wrap -->
+		<dl class="login-other-wrap">
+			<dt class="login-other-title color-gray">ä¸€é”®æŽˆæƒï¼Œå¿«é€Ÿç™»å½• </dt>
+			<dd class="login-sina login-other-btn"><a href="javascript:void(0)" onclick="return window.open('http://www.jxvdy.com/oauth2/authorize?p=sinaweibo&login=1', 'oauth2Login_sinaweibo' ,'height=562,width=754, toolbar=no, menubar=no, scrollbars=no, status=no, location=yes, resizable=yes').noAim = true;"><i class="icon-login-sina"></i><span>æ–°æµªå¾®åšç™»å½•</span></a></dd>
+			<dd class="login-tqq login-other-btn"><a href="javascript:void(0)" onclick="return window.open('http://www.jxvdy.com/oauth2/authorize?p=txweibo&login=1', 'oauth2Login_txweibo' ,'height=420,width=610, toolbar=no, menubar=no, scrollbars=no, status=no, location=yes, resizable=yes').noAim = true;"><i class="icon-login-tqq"></i><span>è…¾è®¯å¾®åšç™»å½•</span></a></dd>
+			<dd class="login-qq login-other-btn tencent"><a href="javascript:void(0)" onclick="return window.open('http://www.jxvdy.com/oauth2/authorize?p=txqq&login=1', 'oauth2Login_txqq' ,'height=525,width=585, toolbar=no, menubar=no, scrollbars=no, status=no, location=yes, resizable=yes').noAim = true;"><i class="icon-login-qq"></i><span>è…¾è®¯QQç™»å½•</span></a></dd>
+		</dl>
+		<!-- /.login-other -->
+	</div>
+	<!-- /.popup-body -->
+</div>
+<!-- /.popup-wrap -->
+<!-- å¼¹å‡ºå±‚é®ç½© -->
+<div class="popup-wrap-mask"></div>
+<!--t1517408404-->
+</section>
+<!-- éšè—ä»£ç ç›’å­ S -->
+<div id="displayBox">
+	<div class="hd"><a></a></div>
+	<div class="bd" style="height: 0;">
+		<iframe scrolling="yse" src="" frameborder="0"></iframe>
+	</div>
+</div>
+<footer id="footer" class="footer-wrap clearfix">
+	<div class="container">
+		<div class="foot text-center">
+			<div class="clearfix foot-link">
+				<a href="about.html" tppabs="http://www.jxvdy.com/about.html" target="_blank">å…³äºŽæˆ‘ä»¬</a><span class="divide">|</span>
+				<a href="contact.html" tppabs="http://www.jxvdy.com/contact.html" target="_blank">è”ç³»æˆ‘ä»¬</a><span class="divide">|</span>
+				<a href="guestbook.html" tppabs="http://www.jxvdy.com/guestbook.html" target="_blank">ç½‘ç«™ç•™è¨€</a><span class="divide">|</span>
+				<a href="help.html" tppabs="http://www.jxvdy.com/help.html" target="_blank">å¸®åŠ©ä¸­å¿ƒ</a><span class="divide">|</span>
+				<a href="disclaimer.html" tppabs="http://www.jxvdy.com/disclaimer.html" target="_blank">å…è´£å£°æ˜Ž</a><span class="divide">|</span>
+				<a href="copyright.html" tppabs="http://www.jxvdy.com/copyright.html" target="_blank">ç‰ˆæƒå£°æ˜Ž</a><span class="divide">|</span>
+				<a href="agreement.html" tppabs="http://www.jxvdy.com/agreement.html" target="_blank">ä½¿ç”¨åè®®</a>
+			</div>
+			<p>Copyright &copy; 2013-2018 jxvdy.comï¼ŒAll Rights Reserved&nbsp;&nbsp;ä½¿ç”¨æœ¬ç½‘ç«™å³è¡¨ç¤ºæŽ¥å—é‡‘è±¡å¾®ç”µå½±ç½‘ç”¨æˆ·åè®®<br><a href="javascript:if(confirm('http://www.miitbeian.gov.cn/  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.miitbeian.gov.cn/'" tppabs="http://www.miitbeian.gov.cn/" target="_blank">ICPå¤‡æ¡ˆè¯ä¹¦å·ï¼šè±«ICPå¤‡12020961å·</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="licence.html" tppabs="http://www.jxvdy.com/licence.html" target="_blank">å¹¿æ’­ç”µè§†èŠ‚ç›®åˆ¶ä½œç»è¥è®¸å¯è¯ ï¼ˆè±«ï¼‰å­—ç¬¬00213å·</a><br>ç‰ˆæƒæ‰€æœ‰ é‡‘è±¡å¾®ç”µå½±ç½‘</p>
+		</div>
+	</div>
+</footer>
+
+<!-- é¡µé¢å³ä¾§æµ®åŠ¨æŽ§ä»¶ -->
+<div id="js_float_left" class="float-wx"><span class="jx-wx"></span></div>
+<div id="js_float_right" class="side-bar side-pannel" style="display: none;">
+    <div id="side-bar"><a class="gotop" href="javascript:;" style="display: none"></a></div>
+    <a class="block-text jx-app" href="javascript:;"><span class="jx-app-icon"></span></a>
+    <a class="block-text jx-kf" href="javascript:if(confirm('http://wpa.qq.com/msgrd?v=3&uin=1606173530&site=qq&menu=yes  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://wpa.qq.com/msgrd?v=3&uin=1606173530&site=qq&menu=yes'" tppabs="http://wpa.qq.com/msgrd?v=3&uin=1606173530&site=qq&menu=yes" target="_blank">
+        <span class="jx-kf-con">
+            å®˜æ–¹å®¢æœQQï¼š1605173530<br>å·¥ä½œæ—¥9:00-18:00åœ¨çº¿
+            <i></i>
+        </span>
+    </a>
+    <a class="block-text jx-wb" href="javascript:if(confirm('http://weibo.com/jinxiangv  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://weibo.com/jinxiangv'" tppabs="http://weibo.com/jinxiangv" target="_blank">
+        <span class="jx-wb-con">
+            <script src="wb.js" tppabs="http://tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8"></script>
+            <wb:follow-button uid="3568758305" type="red_2" width="136" height="24" ></wb:follow-button>
+            <i></i>
+        </span>
+    </a>
+    <a class="jx-ly" href="guestbook.html" tppabs="http://www.jxvdy.com/guestbook.html" target="_blank"></a>
+</div>
+<!--300_250_s-->
+<div class="js_ad_record" style="height: 250px;position:fixed; right:0; bottom:0;z-index:2147483648;"><script type="text/javascript" src="0112.js" tppabs="http://ad.jxvdy.com/script/0112.js"></script></div>
+<!--300_250_e-->
+<script type="text/javascript">
+//  è¿”å›žç½®é¡¶
+    $(function(){
+        $(window).scroll(function(){
+            if($(window).scrollTop()>100){
+                $("#side-bar .gotop").fadeIn();
+            }
+            else{
+                $("#side-bar .gotop").hide();
+            }
+        });
+        $("#side-bar .gotop").click(function(){
+            $('html,body').animate({'scrollTop':0},500);
+        });
+    });
+//    é¡µé¢ä¸¤ä¾§æµ®åŠ¨éšå±å¹•æ»šåŠ¨æ˜¾ç¤º
+    function float_nav(dom){
+        var right_nav=$(dom);
+        var nav_height=right_nav.height();
+        function right_nav_position(bool){
+            var window_height=$(window).height();
+            var nav_top=(window_height-nav_height)/2;
+            if(bool){
+                right_nav.stop(true,false).animate({top:nav_top+$(window).scrollTop()},500);
+            }else{
+                right_nav.stop(true,false).animate({top:nav_top},400);
+            }
+            right_nav.show();
+        }
+
+        if(!+'\v1' && !window.XMLHttpRequest ){
+            $(window).bind('scroll resize',function(){
+                if($(window).scrollTop()>400){
+                    right_nav_position(true);
+                }else{
+                    right_nav.hide();
+                }
+            })
+        }else{
+            $(window).bind('scroll resize',function(){
+                if($(window).scrollTop()>400){
+                    right_nav_position();
+                }else{
+                    right_nav.hide();
+                }
+            })
+        }
+    }
+    float_nav('#js_float_left');
+    float_nav('#js_float_right');
+    
+    $(function(){
+        recordShow();
+        $(window).scroll(recordShow);
+    })
+    
+    function recordShow()
+    {
+		var Hei = $(window).height();
+        var scrTop = $(document).scrollTop();
+        $('.js_ad_record').each(function(){
+        	var offHei = $(this).offset().top
+			var objHei = $(this).height();
+			if((offHei < scrTop + Hei && offHei > scrTop) || (offHei + objHei < scrTop + Hei && offHei + objHei > scrTop))
+			{
+				if(!$(this).hasClass('js_recorded'))
+				{
+					$(this).addClass('js_recorded');
+					var _u = $(this).children("div:last-child").attr('js_data');
+					$.ajax({cache:false,type:'GET',url: _u});
+				}
+			}
+        })
+    }
+</script>
+</body>
+</html>
+<!--t1517408166-->
+
+<!--t1517408188-->

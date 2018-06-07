@@ -1,0 +1,1 @@
+document.write('<a href="http://www.jxvdy.com/tutorials/equipment/syjq/0033174951.html" target="_blank"  onclick="js_click_record(\'http://ad.jxvdy.com/record?type=1&id=31&p=20\')"><img src="http://ad.jxvdy.com/media/2015/0610/5577cd8f8672ff3ccdd27.jpg" width="300" height="100"></a><div js_data="http://ad.jxvdy.com/record?id=31&p=20" style="display:none"/></div>');

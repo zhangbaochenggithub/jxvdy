@@ -1,0 +1,1190 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset=utf-8"utf-8" />
+<meta name="renderer" content="webkit" />
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+<meta name="description" content="é‡‘è±¡ç½‘æ±‡é›†å¾®ç”µå½±æ•™ç¨‹ï¼ŒåŒ…å«ï¼šå¾®ç”µå½±æ‹æ‘„æ•™ç¨‹ï¼Œå¾®ç”µå½±åŽæœŸæ•™ç¨‹ï¼Œå‰ªè¾‘æŠ€å·§ï¼Œpsæ•™ç¨‹ï¼Œå¾®ç”µå½±å™¨æä½¿ç”¨æ•™ç¨‹ï¼Œæ‹æ‘„æµç¨‹ç­‰ä¸€ç³»åˆ—æ•™ç¨‹å†…å®¹ï¼Œæ•™å­¦é¢‘é“ç«­å°½æ‰€èƒ½è®©å¾®ç”µå½±äººéƒ½èƒ½æ‹å‡ºæœ‰è´¨é‡çš„å¾®ç”µå½±ï¼Œæ›´é«˜ç«¯çš„å¾®ç”µå½±ã€‚" />
+<meta name="keywords" content="å¾®ç”µå½±,å¾®å‰§é›†,å‰§ä½œæ•™ç¨‹,å¾®å½±æ‹æ‘„,å½±è§†åŽæœŸ,æ‹æ‘„å™¨æ" />
+<meta name="author" content="Gold elephant Group" />
+<link rel="icon" href="http://skin.jxvdy.com/jxvdy2/public/images/favicon.ico" />
+<title>æ‹æ‘„å™¨æ-æ•™å­¦-é‡‘è±¡å¾®ç”µå½±ç½‘</title>
+<link rel="stylesheet" href="jxvdy.css" tppabs="http://skin.jxvdy.com/jxvdy2/public/stylesheets/jxvdy.css" />
+<link rel="stylesheet" href="font-awesome.min.css" tppabs="http://skin.jxvdy.com/jxvdy2/public/stylesheets/font-awesome.min.css" />
+<!--[if lt IE 9]>
+<link rel="stylesheet" href="font-awesome-ie7.min.css-v=4.2.css" tppabs="http://skin.jxvdy.com/jxvdy2/public/stylesheets/font-awesome-ie7.min.css?v=4.2">
+<script src="html5hack.min.js" tppabs="http://skin.jxvdy.com/jxvdy2/public/javascripts/html5hack.min.js"></script>
+<![endif]-->
+	<script src="jquery-1.8.3.min.js" tppabs="http://skin.jxvdy.com/jxvdy2/public/javascripts/jquery-1.8.3.min.js"></script>
+	<script src="jquery.SuperSlide.js" tppabs="http://skin.jxvdy.com/jxvdy2/public/javascripts/jspack/jquery.SuperSlide.js"></script>
+	<script src="headroom.min.js" tppabs="http://skin.jxvdy.com/jxvdy2/public/javascripts/jspack/headroom.min.js"></script>
+	<script src="simplePagination.js" tppabs="http://skin.jxvdy.com/jxvdy2/public/javascripts/jspack/simplePagination.js"></script>
+	<script src="jquery.slimscroll.js" tppabs="http://skin.jxvdy.com/jxvdy2/public/javascripts/jspack/jquery.slimscroll.js"></script>
+	<script src="jquery.surReady.min.js" tppabs="http://skin.jxvdy.com/jxvdy2/public/javascripts/jspack/jquery.surReady.min.js"></script>
+	<script src="jquery.surCookie.min.js" tppabs="http://skin.jxvdy.com/jxvdy2/public/javascripts/jspack/jquery.surCookie.min.js"></script>
+	<script type="text/javascript">
+	<!--
+	//é»‘å¤´ä¿¡æ ‡æŸ¥æ‰¾
+	$('#js_black_head').surReady(function(){
+		$('body').addClass('page-index-min');
+		$('#header').addClass('header-min-wrap');
+	});
+	
+	//æ¸…ç©ºåŽ†å²è®°å½•
+	function clearHistory()
+	{
+		$.delCookie('video_jxvdy');
+		$.delCookie('drama_jxvdy');
+		$("#history-scrollbar").html('æ‚¨è¿˜æœªè§‚çœ‹å¾®ç”µå½±ï¼Œæš‚æ— æ’­æ”¾è®°å½•ï¼');
+	}
+	
+	//åˆ¤æ–­æ˜¯å¦å·²ç™»å½•
+	$('#js_login_user_info').surReady(function(){
+		$.ajax({
+			url : '/d/member/mess'
+			,type : 'post'
+			,success: function(d){
+				var data = JSON.parse(d);
+				if(typeof(data['m_nick']) == 'string')
+				{
+					$('.js_login_user_info').removeClass('login-before').addClass('login-after')
+					$('.js_login_link').hide();
+					$('.js_user_login_btn').hide();
+					$('.js_user_name_wrap').show().find('img').attr('src', data['i_path']).attr('alt', data['m_nick']);
+					$('.js_user_name_wrap .js_user_nick').html(data['m_nick']);
+					$('.js_user_icon').show().find('img').attr('src', data['i_path']).attr('alt', data['m_nick']);
+					$('.js_user_icon div a').html(data['m_nick']);
+					$('.js_user_icon ul').children('li').first().find('a').html(data['attention']);
+					$('.js_user_icon ul').children('li').last().find('a').html(data['fans']);
+					$('.js_user_footer').show();
+				}
+				if(typeof(data['notice']) == 'string' && data['notice'] != 0)
+				{
+					$('.js_mess_total').show();
+				}
+			}
+		})
+	});
+	//-->
+	</script>
+	<script src="util.js" tppabs="http://skin.jxvdy.com/jxvdy2/public/javascripts/util.js"></script>
+	<script src="shitao.js" tppabs="http://skin.jxvdy.com/jxvdy2/public/javascripts/jspack/shitao.js"></script>
+	<script src="zebra_tooltips.js" tppabs="http://skin.jxvdy.com/jxvdy2/public/javascripts/jspack/zebra_tooltips.js"></script>
+<script>
+	//ç™¾åº¦ç»Ÿè®¡
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "hm.js-e64f7f2c081e3417386b861e0882c9d9"/*tpa=http://hm.baidu.com/hm.js?e64f7f2c081e3417386b861e0882c9d9*/;
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+</script>
+
+<script type="text/javascript">
+<!--
+function js_click_record(url)
+{
+	$.ajax({cache:false,type:'GET',url: url});
+}
+
+//-->
+</script>
+<script language="JavaScript">
+<!--
+//ç«ç‹img onerror
+var FIREFOXBULLSHIT = null
+,	FIREFOXBULLSHITC = 0;
+$(function(){
+	FIREFOXBULLSHIT = setInterval("$('img:not(.js_error_off)').each(function(){$(this).attr('src')=='' && $(this).trigger('error') && $(this).attr('js_error_off');});15<=++FIREFOXBULLSHITC && clearInterval(FIREFOXBULLSHIT);", 200);
+});
+//-->
+</script>
+<!--t1517408218-->
+<script type="text/javascript" src="rank.js" tppabs="http://skin.jxvdy.com/jxvdy2/public/javascripts/rank.js"></script>
+<script type="text/javascript" src="reload.js" tppabs="http://skin.jxvdy.com/jxvdy2/public/javascripts/reload.js"></script>
+<script type="text/javascript" src="pb.js" tppabs="http://skin.jxvdy.com/jxvdy2/public/javascripts/pb.js"></script>
+<script type="text/javascript" src="text_content_list.js" tppabs="http://skin.jxvdy.com/jxvdy2/public/javascripts/text_content_list.js"></script>
+<!--<script type="text/javascript" src="http://skin.jxvdy.com/jxvdy2/public/javascripts/public.js"></script>-->
+<script type="text/javascript">
+	var keyword = '';
+</script>
+<script type="text/javascript" src="public.js" tppabs="http://skin.jxvdy.com/jxvdy2/public/javascripts/public.js"></script>
+</head>
+<body class="page-index" id="lazyload_content">
+<header id="header" class="header-fixed">
+	<div class="header-wrap clearfix">
+		<div class="container header-inner">
+			<!-- logo -->
+			<h1 class="logo-wrap"><a href="index.htm" tppabs="http://www.jxvdy.com/" title="é‡‘è±¡å¾®ç”µå½±ç½‘"><img src="logo.png" tppabs="http://skin.jxvdy.com/jxvdy2/public/images/logo.png" alt="é‡‘è±¡å¾®ç”µå½±ç½‘"/></a></h1>
+			<!-- miniå¯¼èˆª -->
+			<div class="mini-nav dropdown-wrap">
+				<div class="dropdown-object">
+				<span class="dropdown-name"><i class="fa fa-bars"></i>å¯¼èˆª</span>
+					<div class="dropdown-inner">
+						<div class="user-inner">
+							<span class="tip-t"><i class="tip-outer"></i><i class="tip-inner"></i></span>
+														<div class="item-menu clearfix">
+								<div class="item-column"><a href="news.html" tppabs="http://www.jxvdy.com/news.html">èµ„è®¯</a></div>
+								<div class="item-subcolumn">
+																		<a href="list.html" tppabs="http://www.jxvdy.com/news/hydt/list.html">è¡Œä¸šåŠ¨æ€</a>
+																		<a href="list-1.html" tppabs="http://www.jxvdy.com/news/ylqy/list.html">å¨±ä¹å‰æ²¿</a>
+																		<a href="list-2.html" tppabs="http://www.jxvdy.com/news/mrzl/list.html">åäººä¸“æ </a>
+																		<a href="list-3.html" tppabs="http://www.jxvdy.com/news/jxbb/list.html">é‡‘è±¡æ’­æŠ¥</a>
+																		<a href="list-4.html" tppabs="http://www.jxvdy.com/news/ysmp/list.html">å½±è§†åç‰‡</a>
+																	</div>
+							</div>
+														<div class="item-menu clearfix">
+								<div class="item-column"><a href="video.html" tppabs="http://www.jxvdy.com/video.html">å¾®ç”µå½±</a></div>
+								<div class="item-subcolumn">
+																		<a href="list-t1.html" tppabs="http://www.jxvdy.com/video/list-t1.html">çˆ±æƒ…</a>
+																		<a href="list-t2.html" tppabs="http://www.jxvdy.com/video/list-t2.html">æ ¡å›­</a>
+																		<a href="list-t3.html" tppabs="http://www.jxvdy.com/video/list-t3.html">æ¸©æƒ…</a>
+																		<a href="list-t6.html" tppabs="http://www.jxvdy.com/video/list-t6.html">åŠ±å¿—</a>
+																		<a href="list-t8.html" tppabs="http://www.jxvdy.com/video/list-t8.html">ç¤¾ä¼š</a>
+																		<a href="list-t7.html" tppabs="http://www.jxvdy.com/video/list-t7.html">èŒåœº</a>
+																		<a href="list-t4.html" tppabs="http://www.jxvdy.com/video/list-t4.html">æžç¬‘</a>
+																		<a href="list-t5.html" tppabs="http://www.jxvdy.com/video/list-t5.html">æ‚¬ç–‘</a>
+																		<a href="list-t14.html" tppabs="http://www.jxvdy.com/video/list-t14.html">ç©¿è¶Š</a>
+																		<a href="list-t17.html" tppabs="http://www.jxvdy.com/video/list-t17.html">ææ€–</a>
+																		<a href="list-t9.html" tppabs="http://www.jxvdy.com/video/list-t9.html">åˆ‘ä¾¦</a>
+																		<a href="list-t13.html" tppabs="http://www.jxvdy.com/video/list-t13.html">åŠ¨ä½œ</a>
+																		<a href="list-t12.html" tppabs="http://www.jxvdy.com/video/list-t12.html">ç§‘å¹»</a>
+																		<a href="list-t11.html" tppabs="http://www.jxvdy.com/video/list-t11.html">å¤è£…</a>
+																		<a href="list-t16.html" tppabs="http://www.jxvdy.com/video/list-t16.html">å…¬ç›Š</a>
+																		<a href="list-t18.html" tppabs="http://www.jxvdy.com/video/list-t18.html">æ–‡è‰º</a>
+																		<a href="list-t10.html" tppabs="http://www.jxvdy.com/video/list-t10.html">æˆ˜äº‰</a>
+																		<a href="list-t20.html" tppabs="http://www.jxvdy.com/video/list-t20.html">åŠ¨ç”»</a>
+																		<a href="list-t21.html" tppabs="http://www.jxvdy.com/video/list-t21.html">å‰§æƒ…</a>
+																		<a href="list-t19.html" tppabs="http://www.jxvdy.com/video/list-t19.html">çºªå½•</a>
+																		<a href="list-t15.html" tppabs="http://www.jxvdy.com/video/list-t15.html">å¹¿å‘Š</a>
+																		<a href="list-t22.html" tppabs="http://www.jxvdy.com/video/list-t22.html">å…¶ä»–</a>
+																	</div>
+							</div>
+														<div class="item-menu clearfix">
+								<div class="item-column"><a href="drama.html" tppabs="http://www.jxvdy.com/drama.html">å¾®å‰§é›†</a></div>
+								<div class="item-subcolumn">
+																		<a href="list-t29.html" tppabs="http://www.jxvdy.com/drama/list-t29.html">éƒ½å¸‚çˆ±æƒ…</a>
+																		<a href="list-t30.html" tppabs="http://www.jxvdy.com/drama/list-t30.html">é’æ˜¥åŠ±å¿—</a>
+																		<a href="list-t31.html" tppabs="http://www.jxvdy.com/drama/list-t31.html">åˆ›æ„æžç¬‘</a>
+																		<a href="list-t32.html" tppabs="http://www.jxvdy.com/drama/list-t32.html">ææ€–æ‚¬ç–‘</a>
+																		<a href="list-t33.html" tppabs="http://www.jxvdy.com/drama/list-t33.html">åŠ¨ç”»å„¿ç«¥</a>
+																		<a href="list-t34.html" tppabs="http://www.jxvdy.com/drama/list-t34.html">ç¤¾ä¼šçºªå®ž</a>
+																	</div>
+							</div>
+														<div class="item-menu clearfix">
+								<div class="item-column"><a href="screenplay.html" tppabs="http://www.jxvdy.com/screenplay.html">å‰§æœ¬</a></div>
+								<div class="item-subcolumn">
+																		<a href="javascript:if(confirm('http://www.jxvdy.com/screenplay/list.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/screenplay/list.html'" tppabs="http://www.jxvdy.com/screenplay/show/list.html">å‰§æœ¬å±•ç¤º</a>
+																		<a href="list-6.html" tppabs="http://www.jxvdy.com/screenplay/sale/list.html">å‰§æœ¬å‡ºå”®</a>
+																		<a href="list-7.html" tppabs="http://www.jxvdy.com/screenplay/collection/list.html">å‰§æœ¬å¾é›†</a>
+																	</div>
+							</div>
+														<div class="item-menu clearfix">
+								<div class="item-column"><a href="tutorials.html" tppabs="http://www.jxvdy.com/tutorials.html">æ•™å­¦</a></div>
+								<div class="item-subcolumn">
+																		<a href="list-8.html" tppabs="http://www.jxvdy.com/tutorials/plays/list.html">å‰§ä½œæ•™ç¨‹</a>
+																		<a href="list-9.html" tppabs="http://www.jxvdy.com/tutorials/shooting/list.html">å¾®å½±æ‹æ‘„</a>
+																		<a href="list-10.html" tppabs="http://www.jxvdy.com/tutorials/late/list.html">å½±è§†åŽæœŸ</a>
+																		<a href="list-11.html" tppabs="http://www.jxvdy.com/tutorials/equipment/list.html">æ‹æ‘„å™¨æ</a>
+																	</div>
+							</div>
+														<div class="item-menu clearfix">
+								<div class="item-column">å¾®å½±ä¸“é¢˜</div>
+								<div class="item-subcolumn">
+									<a href="list-12.html" tppabs="http://www.jxvdy.com/activities/spec/list.html" class="brand-warning">å¾®å½±æ´»åŠ¨</a>
+									<!--<a href="">ç½‘ç«™ä¸“é¢˜</a>-->
+									<!--<a href="">èµ„è®¯ä¸“é¢˜</a>-->
+									<a href="list-13.html" tppabs="http://www.jxvdy.com/video/spec/list.html">å¾®ç”µå½±ä¸“é¢˜</a>
+								</div>
+							</div>
+							<!-- /.item-menu -->
+							<div class="item-menu clearfix">
+								<div class="item-column">APPä¸‹è½½</div>
+								<div class="item-subcolumn">
+									<a href="javascript:if(confirm('https://itunes.apple.com/cn/app/jin-xiang-wei-dian-ying/id828237631?mt=8  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://itunes.apple.com/cn/app/jin-xiang-wei-dian-ying/id828237631?mt=8'" tppabs="http://www.jxvdy.com/app/iphone" target="_blank">iPhoneå®¢æˆ·ç«¯</a>
+									<a href="javascript:if(confirm('http://www.jxvdy.com/404.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ·þÎñÆ÷±¨¸æ¸ÃÎÄ¼þÎ´ÕÒµ½¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/404.html'" tppabs="http://www.jxvdy.com/app/jxvdy.apk" target="_blank">Androidå®¢æˆ·ç«¯</a>
+									<a href="javascript:if(confirm('https://itunes.apple.com/cn/app/jin-xiang-wei-dian-yinghd/id879977586?mt=8  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://itunes.apple.com/cn/app/jin-xiang-wei-dian-yinghd/id879977586?mt=8'" tppabs="http://www.jxvdy.com/app/ipad" target="_blank">iPadå®¢æˆ·ç«¯</a>
+								</div>
+							</div>
+							<!-- /.item-menu -->
+						</div>
+					</div>
+				</div>
+				<!-- /.dropdown-menu -->
+			</div>
+			<!-- æœç´¢æ¡† -->
+			<div class="search-wrap">
+				<form class="clearfix" action="http://www.jxvdy.com/tutorials/equipment/search" method="get" role="search" target="_blank">
+					<div class="mod-search">
+						<input type="text" class="search-txt" name="kw" placeholder="è¯·è¾“å…¥â€œæ•™ç¨‹â€å…³é”®è¯">
+						<i class="fa fa-search"></i>
+					</div>
+					<input type="submit" class="btn-search" value="æœç´¢"> 
+				</form>
+			</div>
+			<!-- ç”¨æˆ·ä¸­å¿ƒ -->
+			<div class="user-info-wrap" id="js_login_user_info">
+				<div class="user-wrap login-before dropdown-wrap js_login_user_info">
+					<div class="dropdown-object">
+						<div class="user-name-wrap js_user_name_wrap" style="display: none;">
+							<span class="user-icon">
+								<a class="" href="login.html-jumpto=-my-index.html" tppabs="http://www.jxvdy.com/my/index.html" target="_blank"><img src="" onerror="this.src='http://skin.jxvdy.com/jxvdy2/public/images/avatar80_80.jpg'" width="40" height="40"  alt=""/></a>
+							</span>
+							<a class="user-txt js_user_nick" href="login.html-jumpto=-my-index.html" tppabs="http://www.jxvdy.com/my/index.html" target="_blank"></a>
+						</div>
+						<a class="link js_login_link" href="javascript:;"><i class="fa fa-user"></i>ç™»å½•</a>
+						<div class="dropdown-inner">
+							<div class="user-inner">
+								<span class="tip-t"><i class="tip-outer"></i><i class="tip-inner"></i></span>
+								<div class="menu-hd">
+									<div class="user-btns clearfix">
+										<div class="user-icon clearfix js_user_icon" style="display: none;">
+											<a class="" href="login.html-jumpto=-my-index.html" tppabs="http://www.jxvdy.com/my/index.html" target="_blank"><img src="" onerror="this.src='http://skin.jxvdy.com/jxvdy2/public/images/avatar80_80.jpg'" width="50" height="50"  alt=""/></a>
+											<div class="user-name">
+												<a href="login.html-jumpto=-my-index.html" tppabs="http://www.jxvdy.com/my/index.html" target="_blank"></a>
+												<ul class="mem-sta">
+													<li><span>å…³æ³¨</span> <strong><a href="login.html-jumpto=-my-friend-list.html-t=follow.htm" tppabs="http://www.jxvdy.com/my/friend/list.html?t=follow" target="_blank"></a></strong></li>
+													<li><span>ç²‰ä¸</span> <strong><a href="login.html-jumpto=-my-friend-list.html-t=fans.htm" tppabs="http://www.jxvdy.com/my/friend/list.html?t=fans" target="_blank"></a></strong></li>
+												</ul>
+											</div>
+										</div>
+										<a class="btn btn-warning user-login-btn js_user_login_btn" href="login.htm" tppabs="http://www.jxvdy.com/my/login">é©¬ä¸Šç™»å½•</a>
+										<a class="btn btn-warning user-login-btn ml10 js_user_login_btn" href="regist.htm" tppabs="http://www.jxvdy.com/my/regist">å…è´¹æ³¨å†Œ</a>
+									</div>
+								</div>
+								<div class="menu-bd">
+									<ul class="list-unstyled clearfix">
+										<li><a href="login.html-jumpto=-my-index.html" tppabs="http://www.jxvdy.com/my/index.html" target="_blank"><i class="fa fa-home"></i>æˆ‘çš„é‡‘è±¡</a></li>
+										<li><a href="login.html-jumpto=-my-video-list.html-t=release.htm" tppabs="http://www.jxvdy.com/my/video/list.html?t=release" target="_blank"><i class="fa fa-video-camera"></i>æˆ‘çš„å¾®å½±</a></li>
+										<li><a href="login.html-jumpto=-my-screenplay-list.html-t=release.htm" tppabs="http://www.jxvdy.com/my/screenplay/list.html?t=release" target="_blank"><i class="fa fa-film"></i>æˆ‘çš„å‰§æœ¬</a></li>
+										<li><a href="login.html-jumpto=-my-tutorials-list.html-t=release.htm" tppabs="http://www.jxvdy.com/my/tutorials/list.html?t=release" target="_blank"><i class="fa fa-file-powerpoint-o"></i>æˆ‘çš„æ•™å­¦</a></li>
+										<li><a href="login.html-jumpto=-my-news-list.html-t=collect.htm" tppabs="http://www.jxvdy.com/my/news/list.html?t=collect" target="_blank"><i class="fa fa-newspaper-o"></i>æˆ‘çš„èµ„è®¯</a></li>
+										<li><a href="login.html" tppabs="http://www.jxvdy.com/my/login.html" target="_blank"><i class="fa fa-volume-up"></i>æ¶ˆæ¯ä¸­å¿ƒ</a></li>
+									</ul>
+								</div>
+								<div class="user-footer js_user_footer" style="display: none;">
+									<a class="user-setting pull-left" href="login.html-jumpto=-my-profile-edit.html" tppabs="http://www.jxvdy.com/my/profile/edit.html"><i class="fa fa-cog"></i>è´¦æˆ·è®¾ç½®</a>
+									<a class="user-exit pull-right" href="login.htm" tppabs="http://www.jxvdy.com/my/logout"><i class="fa fa-power-off"></i>é€€å‡º</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="upload-wrap dropdown-wrap">
+					<div class="dropdown-object">
+						<a class="link" href="javascript:;" target="_blank"><i class="fa fa-cloud-upload"></i>å‘å¸ƒ</a>
+						<div class="dropdown-inner">
+							<div class="user-inner">
+								<span class="tip-t"><i class="tip-outer"></i><i class="tip-inner"></i></span>
+								<div class="menu-bd">
+									<ul class="list-unstyled clearfix">
+										<li><a href="login-jumpto=http---www.jxvdy.com-my-video_release.html" tppabs="http://www.jxvdy.com/my/video_release.html" target="_blank"><i class="fa fa-video-camera"></i>å‘å¸ƒå¾®ç”µå½±</a></li>
+										<li><a href="login-jumpto=http---www.jxvdy.com-my-drama_release.html" tppabs="http://www.jxvdy.com/my/drama_release.html" target="_blank"><i class="fa fa-file-video-o"></i>å‘å¸ƒç½‘ç»œå‰§</a></li>
+										<li><a href="login-jumpto=http---www.jxvdy.com-my-screenplay_release.html" tppabs="http://www.jxvdy.com/my/screenplay_release.html" target="_blank"><i class="fa fa-film"></i>å‘å¸ƒå‰§æœ¬</a></li>
+										<li><a href="login-jumpto=http---www.jxvdy.com-my-screenplay-collection_release.html" tppabs="http://www.jxvdy.com/my/screenplay/collection_release.html" target="_blank"><i class="fa fa-film"></i>å‘å¸ƒå‰§æœ¬å¾é›†</a></li>
+										<li><a href="login-jumpto=http---www.jxvdy.com-my-tutorials_release.html" tppabs="http://www.jxvdy.com/my/tutorials_release.html" target="_blank"><i class="fa fa-file-powerpoint-o"></i>å‘å¸ƒæ•™ç¨‹</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="history-wrap dropdown-wrap">
+					<div class="dropdown-object">
+					<a class="link" href="javascript:void(0)"><i class="fa fa-history"></i>è®°å½•</a>
+					<div id="js_history_tab" class="dropdown-inner history-tab">
+						<div class="user-inner">
+							<span class="tip-t"><i class="tip-outer"></i><i class="tip-inner"></i></span>
+							<div id="history-scrollbar" class="history-inner">
+								<div class="history-list clearfix">
+																<p>æ‚¨è¿˜æœªè§‚çœ‹å¾®ç”µå½±ï¼Œæš‚æ— æ’­æ”¾è®°å½•ï¼</p>
+																</div>
+							</div>
+							<div class="user-footer">
+								<a class="history-clear" href="javascript:;" onclick="clearHistory()"><i class="fa fa-trash-o"></i>æ¸…ç©º</a>
+							</div>
+						</div>
+					</div>
+					</div>
+				</div>
+
+				<div class="message-wrap">
+					<a class="link" href="login-jumpto=-my-message-list.html-t=private.htm" tppabs="http://www.jxvdy.com/my/message/list.html?t=private" target="_blank"><i class="fa fa-bell-o"></i>æ¶ˆæ¯</a>
+					<em class="total js_mess_total" style="display: none;"><i class="fa fa-circle"></i></em>
+				</div>
+			</div>
+		</div>
+
+		<div id="js_nav" class="head-jxv">
+			<div class="navigation-up">
+				<div class="navigation-inner">
+					<div class="navigation-jxv">
+						<ul id="js_nav_highlight">
+							<li class="js_navdown js_navbtn_" js_navdown="">
+								<h2><a href="index.htm" tppabs="http://www.jxvdy.com/">é¦–é¡µ</a></h2>
+							</li>
+														<li class="js_navdown js_navbtn_news" js_navdown="news">
+								<h2><a href="news.html" tppabs="http://www.jxvdy.com/news.html">èµ„è®¯</a></h2>
+							</li>
+														<li class="js_navdown js_navbtn_video" js_navdown="video">
+								<h2><a href="video.html" tppabs="http://www.jxvdy.com/video.html">å¾®ç”µå½±</a></h2>
+							</li>
+														<li class="js_navdown js_navbtn_screenplay" js_navdown="screenplay">
+								<h2><a href="screenplay.html" tppabs="http://www.jxvdy.com/screenplay.html">å‰§æœ¬</a></h2>
+							</li>
+														<li class="js_navdown js_navbtn_tutorials" js_navdown="tutorials">
+								<h2><a href="tutorials.html" tppabs="http://www.jxvdy.com/tutorials.html">æ•™å­¦</a></h2>
+							</li>
+														<li class="js_navdown js_navbtn_activities" js_navdown="activities">
+								<h2><a href="list-12.html" tppabs="http://www.jxvdy.com/activities/spec/list.html">æ´»åŠ¨</a></h2>
+							</li>
+						</ul>
+					</div>
+					<div class="downapp">
+						<a href="app.htm" tppabs="http://www.jxvdy.com/app" title="ä¸‹è½½ç§»åŠ¨å®¢æˆ·ç«¯" target="_blank"><i class="fa fa-mobile"></i>ä¸‹è½½ç§»åŠ¨å®¢æˆ·ç«¯</a>
+					</div>
+				</div>
+			</div>
+			<div class="navigation-down">
+								<div id="js_navsub_news" class="js_navdown nav-down-menu" js_navdown="news" style="display: none;">
+					<div class="navigation-down-inner">
+											<dl><dd><a href="list.html" tppabs="http://www.jxvdy.com/news/hydt/list.html">è¡Œä¸šåŠ¨æ€</a></dd></dl>
+											<dl><dd><a href="list-1.html" tppabs="http://www.jxvdy.com/news/ylqy/list.html">å¨±ä¹å‰æ²¿</a></dd></dl>
+											<dl><dd><a href="list-2.html" tppabs="http://www.jxvdy.com/news/mrzl/list.html">åäººä¸“æ </a></dd></dl>
+											<dl><dd><a href="list-3.html" tppabs="http://www.jxvdy.com/news/jxbb/list.html">é‡‘è±¡æ’­æŠ¥</a></dd></dl>
+											<dl><dd><a href="list-4.html" tppabs="http://www.jxvdy.com/news/ysmp/list.html">å½±è§†åç‰‡</a></dd></dl>
+										</div>
+				</div>
+								<div id="js_navsub_video" class="js_navdown nav-down-menu" js_navdown="video" style="display: none;">
+					<div class="navigation-down-inner">
+											<dl><dd><a href="list-16.html" tppabs="http://www.jxvdy.com/video/list.html">å¾®ç”µå½±</a></dd></dl>
+											<dl><dd><a href="list-17.html" tppabs="http://www.jxvdy.com/drama/list.html">ç½‘ç»œå‰§</a></dd></dl>
+											<dl><dd><a href="list-13.html" tppabs="http://www.jxvdy.com/video/spec/list.html">å¾®ç”µå½±ä¸“é¢˜</a></dd></dl>
+										</div>
+				</div>
+								<div id="js_navsub_screenplay" class="js_navdown nav-down-menu" js_navdown="screenplay" style="display: none;">
+					<div class="navigation-down-inner">
+											<dl><dd><a href="javascript:if(confirm('http://www.jxvdy.com/screenplay/list.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/screenplay/list.html'" tppabs="http://www.jxvdy.com/screenplay/show/list.html">å‰§æœ¬å±•ç¤º</a></dd></dl>
+											<dl><dd><a href="list-6.html" tppabs="http://www.jxvdy.com/screenplay/sale/list.html">å‰§æœ¬å‡ºå”®</a></dd></dl>
+											<dl><dd><a href="list-7.html" tppabs="http://www.jxvdy.com/screenplay/collection/list.html">å‰§æœ¬å¾é›†</a></dd></dl>
+										</div>
+				</div>
+								<div id="js_navsub_tutorials" class="js_navdown nav-down-menu" js_navdown="tutorials" style="display: none;">
+					<div class="navigation-down-inner">
+											<dl><dd><a href="list-8.html" tppabs="http://www.jxvdy.com/tutorials/plays/list.html">å‰§ä½œæ•™ç¨‹</a></dd></dl>
+											<dl><dd><a href="list-9.html" tppabs="http://www.jxvdy.com/tutorials/shooting/list.html">å¾®å½±æ‹æ‘„</a></dd></dl>
+											<dl><dd><a href="list-10.html" tppabs="http://www.jxvdy.com/tutorials/late/list.html">å½±è§†åŽæœŸ</a></dd></dl>
+											<dl><dd><a href="list-11.html" tppabs="http://www.jxvdy.com/tutorials/equipment/list.html">æ‹æ‘„å™¨æ</a></dd></dl>
+										</div>
+				</div>
+							</div>
+		</div>
+		<!-- /.head-jxv -->
+	</div>
+	<!-- header-wrap -->
+</header>
+<!--t1517408188-->
+
+<section class="container">
+	<div class="content-wrap">
+		<div class="content clearfix">
+			<div class="type-select-wrap">
+			<div class="column-select">
+	<div class="item-content">
+		<span class="item-name">é¢‘é“ï¼š</span>
+		<ul class="item-list clearfix">
+			<li ><a href="javascript:if(confirm('http://www.jxvdy.com/news/list.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/news/list.html'" tppabs="http://www.jxvdy.com/news/list.html">èµ„è®¯</a></li>
+	        <li ><a href="list-16.html" tppabs="http://www.jxvdy.com/video/list.html">å¾®ç”µå½±</a></li>
+	        <li ><a href="javascript:if(confirm('http://www.jxvdy.com/screenplay/list.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/screenplay/list.html'" tppabs="http://www.jxvdy.com/screenplay/list.html">å‰§æœ¬</a></li> 
+	        <li  class="active" ><a href="list-18.html" tppabs="http://www.jxvdy.com/tutorials/list.html">æ•™å­¦</a></li>
+	        <li ><a href="list-12.html" tppabs="http://www.jxvdy.com/activities/spec/list.html">æ´»åŠ¨</a></li>
+		</ul>
+	</div>
+	<!-- /.item-content -->
+	<div class="item-content">
+		<span class="item-name">æ ç›®ï¼š</span>
+		<ul class="item-list clearfix">
+			<li ><a href="list-18.html" tppabs="http://www.jxvdy.com/tutorials/list.html" >æ‰€æœ‰æ–‡ç« </a></li>							<li ><a href="list-8.html" tppabs="http://www.jxvdy.com/tutorials/plays/list.html">å‰§ä½œæ•™ç¨‹</a></li>
+							<li ><a href="list-9.html" tppabs="http://www.jxvdy.com/tutorials/shooting/list.html">å¾®å½±æ‹æ‘„</a></li>
+							<li ><a href="list-10.html" tppabs="http://www.jxvdy.com/tutorials/late/list.html">å½±è§†åŽæœŸ</a></li>
+							<li  class="active" ><a href="list-11.html" tppabs="http://www.jxvdy.com/tutorials/equipment/list.html">æ‹æ‘„å™¨æ</a></li>
+					</ul>
+	</div>
+	<!-- /.item-content -->
+</div>
+<!-- /.column-select -->
+<div class="subcolumn-select" style="display:block;">
+	<div class="hr"></div>
+	<div class="item-content">
+		<p class="item-name">ç±»åž‹ï¼š</p>
+		<ul class="item-list">
+							          					          					          										          				<li  class="active" ><a href="list-11.html" tppabs="http://www.jxvdy.com/tutorials/equipment/list.html" >å…¨éƒ¨</a></li>
+          			          				<li ><a href="javascript:if(confirm('http://www.jxvdy.com/tutorials/equipment/qcpc/list.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/tutorials/equipment/qcpc/list.html'" tppabs="http://www.jxvdy.com/tutorials/equipment/qcpc/list.html" >å™¨æè¯„æµ‹</a></li>
+          			          				<li ><a href="javascript:if(confirm('http://www.jxvdy.com/tutorials/equipment/syjq/list.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/tutorials/equipment/syjq/list.html'" tppabs="http://www.jxvdy.com/tutorials/equipment/syjq/list.html" >ä½¿ç”¨æŠ€å·§</a></li>
+          			          				<li ><a href="javascript:if(confirm('http://www.jxvdy.com/tutorials/equipment/jyfx/list.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/tutorials/equipment/jyfx/list.html'" tppabs="http://www.jxvdy.com/tutorials/equipment/jyfx/list.html" >ç»éªŒåˆ†äº«</a></li>
+          			          		          			</ul>
+	</div>
+	<!-- /.item-content -->
+</div>
+
+<!--t1517408498-->
+
+			</div>
+						<div class="sort-wrap clearfix">
+				<ul class="sort-list list-unstyled">
+					<li><a  class="active"  href="javascript:if(confirm('http://www.jxvdy.com/tutorials/equipment/list-time.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/tutorials/equipment/list-time.html'" tppabs="http://www.jxvdy.com/tutorials/equipment/list-time.html">æœ€æ–°å‘å¸ƒ</a></li>
+					<li><a  href="javascript:if(confirm('http://www.jxvdy.com/tutorials/equipment/list-hit.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/tutorials/equipment/list-hit.html'" tppabs="http://www.jxvdy.com/tutorials/equipment/list-hit.html">æŸ¥çœ‹æœ€å¤š</a></li>
+					<li><a  href="javascript:if(confirm('http://www.jxvdy.com/tutorials/equipment/list-like.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/tutorials/equipment/list-like.html'" tppabs="http://www.jxvdy.com/tutorials/equipment/list-like.html">å–œæ¬¢æœ€å¤š</a></li>
+				</ul>
+			</div>
+										<article class="excerpt clearfix content_32726 content-list-jxvdy js_search_jxvdy" js_data="32726" js_ch_id="31">
+					<div class="excert-header">
+						<span class="column-label"><a href="javascript:if(confirm('http://www.jxvdy.com/tutorials/equipment/qcpc/list.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/tutorials/equipment/qcpc/list.html'" tppabs="http://www.jxvdy.com/tutorials/equipment/qcpc/list.html">å™¨æè¯„æµ‹</a><i class="label-arrow"></i></span>
+						<h4><a class="js_title" target="_blank"  href="0001514426.html" tppabs="http://www.jxvdy.com/tutorials/equipment/qcpc/0001514426.html" >æ‘„å½±å¸ˆä½ å¥½ï½œé™¤äº†Angelababyï¼Œä½ è¿˜éœ€è¦çŸ¥é“Lensbaby</a></h4>
+					</div>
+											<div class="focus"><a target="_blank"  href="0001514426.html" tppabs="http://www.jxvdy.com/tutorials/equipment/qcpc/0001514426.html" ><img class="lazy-article" _src="56a7465c2e4b4627b139a_0.jpg" tppabs="http://image.jxvdy.com/2016/0126/56a7465c2e4b4627b139a_0.jpg" alt="æ‘„å½±å¸ˆä½ å¥½ï½œé™¤äº†Angelababyï¼Œä½ è¿˜éœ€è¦çŸ¥é“Lensbaby" onerror="this.src='http://skin.jxvdy.com/jxvdy/web/images/default/380_264.png'"></a></div>
+										<p class="color-gray js_summary">åœ¨ç”µå½±ã€ŠæŽ¨æ‹¿ã€‹ä¸­ï¼Œæ‘„å½±å¸ˆä¸ºäº†å®žçŽ°ç›²äººä¸–ç•Œé‡Œçš„è§†è§‰æ„Ÿå—ï¼Œä½¿ç”¨äº†â€œLensbabyâ€è¿™ä¸ªå’Œlomoç›¸æœºä¸€æ ·çš„å°çŽ©å…·ï¼Œåˆ©ç”¨äº†â€œLensbabyâ€å‘¨å›´æ¸…æ™°å››å‘¨æ¨¡ç³Šçš„ç‰¹ç‚¹ï¼Œå°†è§‚ä¼—å¸¦å…¥äº†å¦‚æ¢¦å¦‚å¹»çš„å‰§æƒ…å½“ä¸­ã€‚</p>
+					<p class="js_tag_jxvdy">
+						<i class="fa fa-tags color-gray"></i>
+																								<a class="brand-warning article-tag" href="javascript:if(confirm('http://www.jxvdy.com/tutorials/equipment/qcpc/search?kw=Angelababy  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/tutorials/equipment/qcpc/search?kw=Angelababy'" tppabs="http://www.jxvdy.com/tutorials/equipment/qcpc/search?kw=Angelababy" target="_blank">Angelababy</a>
+												<a class="brand-warning article-tag" href="javascript:if(confirm('http://www.jxvdy.com/tutorials/equipment/qcpc/search?kw=æŽ¨æ‹¿  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/tutorials/equipment/qcpc/search?kw=æŽ¨æ‹¿'" tppabs="http://www.jxvdy.com/tutorials/equipment/qcpc/search?kw=æŽ¨æ‹¿" target="_blank">æŽ¨æ‹¿</a>
+												<a class="brand-warning article-tag" href="javascript:if(confirm('http://www.jxvdy.com/tutorials/equipment/qcpc/search?kw=å»¶æ—¶ç§»è½´æ‘„å½±  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/tutorials/equipment/qcpc/search?kw=å»¶æ—¶ç§»è½´æ‘„å½±'" tppabs="http://www.jxvdy.com/tutorials/equipment/qcpc/search?kw=å»¶æ—¶ç§»è½´æ‘„å½±" target="_blank">å»¶æ—¶ç§»è½´æ‘„å½±</a>
+												<a class="brand-warning article-tag" href="javascript:if(confirm('http://www.jxvdy.com/tutorials/equipment/qcpc/search?kw=lensbaby  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/tutorials/equipment/qcpc/search?kw=lensbaby'" tppabs="http://www.jxvdy.com/tutorials/equipment/qcpc/search?kw=lensbaby" target="_blank">lensbaby</a>
+																							</p>
+					<div class="auth-span">
+						<span class="muted"><i class="fa fa-user"></i><a href="javascript:if(confirm('http://www.jxvdy.com/member/dynamic.html?id=313613  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/member/dynamic.html?id=313613'" tppabs="http://www.jxvdy.com/member/dynamic.html?id=313613" target="_blank">miaoliduan74081</a></span>						<span class="muted"><i class="fa fa-clock-o"></i>2016-01-26</span>
+						<span class="muted"><i class="fa fa-eye"></i><span>0</span>â„ƒ</span>
+						<span class="muted"><i class="fa fa-heart-o"></i><span>0</span>äººå–œæ¬¢</span>
+												<span class="muted"><a href="javascript:;" class="action" onclick="collect(this,'32726')"><i class="fa fa-star-o"></i><span>æ”¶è—</span></a></span>
+					</div>
+				</article>
+							<article class="excerpt clearfix content_32594 content-list-jxvdy js_search_jxvdy" js_data="32594" js_ch_id="33">
+					<div class="excert-header">
+						<span class="column-label"><a href="javascript:if(confirm('http://www.jxvdy.com/tutorials/equipment/jyfx/list.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/tutorials/equipment/jyfx/list.html'" tppabs="http://www.jxvdy.com/tutorials/equipment/jyfx/list.html">ç»éªŒåˆ†äº«</a><i class="label-arrow"></i></span>
+						<h4><a class="js_title" target="_blank"  href="javascript:if(confirm('http://www.jxvdy.com/tutorials/equipment/jyfx/0001193830.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/tutorials/equipment/jyfx/0001193830.html'" tppabs="http://www.jxvdy.com/tutorials/equipment/jyfx/0001193830.html" >èƒ½æ‰“ç¡¬ä»—â€”â€”ä½³èƒ½C300 Mark IIå®Œæˆæ–°åª’ä½“å½±è§†åˆ¶ä½œ</a></h4>
+					</div>
+											<div class="focus"><a target="_blank"  href="javascript:if(confirm('http://www.jxvdy.com/tutorials/equipment/jyfx/0001193830.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/tutorials/equipment/jyfx/0001193830.html'" tppabs="http://www.jxvdy.com/tutorials/equipment/jyfx/0001193830.html" ><img class="lazy-article" _src="566fea1c78f270e09665d_0.jpg" tppabs="http://image.jxvdy.com/2015/1215/566fea1c78f270e09665d_0.jpg" alt="èƒ½æ‰“ç¡¬ä»—â€”â€”ä½³èƒ½C300 Mark IIå®Œæˆæ–°åª’ä½“å½±è§†åˆ¶ä½œ" onerror="this.src='http://skin.jxvdy.com/jxvdy/web/images/default/380_264.png'"></a></div>
+										<p class="color-gray js_summary">ã€ŠæŒ–å®å¥‡é‡ã€‹è®²è¿°äº†ä¸€ä¸ªå†œæ°‘æ— æ„ä¸­æ¡åˆ°ä¸€ä¸ªå®‹ä»£çš„ç“·å™¨ã€è¢«æ‚è´§åº—è€æ¿è°ƒåŒ…ä¹‹åŽæ‹¿ç€èµå“åˆ°åŒ—äº¬é‰´å®šã€æœ€åŽè¿½å›žçœŸå“ä¸Šäº¤å›½å®¶çš„æ•…äº‹ã€‚è¿™éƒ¨å½±ç‰‡æ­£æ˜¯ç”¨å½±è§†å·¥ä¸šç½‘æä¾›è¯•ç”¨çš„ä½³èƒ½C300 Mark IIæ‹æ‘„çš„ï¼Œåœ¨æ­¤ï¼Œä½œè€…...</p>
+					<p class="js_tag_jxvdy">
+						<i class="fa fa-tags color-gray"></i>
+																								<a class="brand-warning article-tag" href="javascript:if(confirm('http://www.jxvdy.com/tutorials/equipment/jyfx/search?kw=å¾®ç”µå½±  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/tutorials/equipment/jyfx/search?kw=å¾®ç”µå½±'" tppabs="http://www.jxvdy.com/tutorials/equipment/jyfx/search?kw=å¾®ç”µå½±" target="_blank">å¾®ç”µå½±</a>
+												<a class="brand-warning article-tag" href="javascript:if(confirm('http://www.jxvdy.com/tutorials/equipment/jyfx/search?kw=å½±è§†  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/tutorials/equipment/jyfx/search?kw=å½±è§†'" tppabs="http://www.jxvdy.com/tutorials/equipment/jyfx/search?kw=å½±è§†" target="_blank">å½±è§†</a>
+												<a class="brand-warning article-tag" href="javascript:if(confirm('http://www.jxvdy.com/tutorials/equipment/jyfx/search?kw=ç”µå½±  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/tutorials/equipment/jyfx/search?kw=ç”µå½±'" tppabs="http://www.jxvdy.com/tutorials/equipment/jyfx/search?kw=ç”µå½±" target="_blank">ç”µå½±</a>
+												<a class="brand-warning article-tag" href="javascript:if(confirm('http://www.jxvdy.com/tutorials/equipment/jyfx/search?kw=å½±è§†åˆ¶ä½œ  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/tutorials/equipment/jyfx/search?kw=å½±è§†åˆ¶ä½œ'" tppabs="http://www.jxvdy.com/tutorials/equipment/jyfx/search?kw=å½±è§†åˆ¶ä½œ" target="_blank">å½±è§†åˆ¶ä½œ</a>
+												<a class="brand-warning article-tag" href="javascript:if(confirm('http://www.jxvdy.com/tutorials/equipment/jyfx/search?kw=å½±è§†å™¨æ  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/tutorials/equipment/jyfx/search?kw=å½±è§†å™¨æ'" tppabs="http://www.jxvdy.com/tutorials/equipment/jyfx/search?kw=å½±è§†å™¨æ" target="_blank">å½±è§†å™¨æ</a>
+												<a class="brand-warning article-tag" href="javascript:if(confirm('http://www.jxvdy.com/tutorials/equipment/jyfx/search?kw=ä½³èƒ½æ‹æ‘„  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/tutorials/equipment/jyfx/search?kw=ä½³èƒ½æ‹æ‘„'" tppabs="http://www.jxvdy.com/tutorials/equipment/jyfx/search?kw=ä½³èƒ½æ‹æ‘„" target="_blank">ä½³èƒ½æ‹æ‘„</a>
+																							</p>
+					<div class="auth-span">
+						<span class="muted"><i class="fa fa-user"></i><a href="javascript:if(confirm('http://www.jxvdy.com/member/dynamic.html?id=313411  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/member/dynamic.html?id=313411'" tppabs="http://www.jxvdy.com/member/dynamic.html?id=313411" target="_blank">sunxingzhe097</a></span>						<span class="muted"><i class="fa fa-clock-o"></i>2015-12-15</span>
+						<span class="muted"><i class="fa fa-eye"></i><span>0</span>â„ƒ</span>
+						<span class="muted"><i class="fa fa-heart-o"></i><span>0</span>äººå–œæ¬¢</span>
+												<span class="muted"><a href="javascript:;" class="action" onclick="collect(this,'32594')"><i class="fa fa-star-o"></i><span>æ”¶è—</span></a></span>
+					</div>
+				</article>
+							<article class="excerpt clearfix content_32576 content-list-jxvdy js_search_jxvdy" js_data="32576" js_ch_id="32">
+					<div class="excert-header">
+						<span class="column-label"><a href="javascript:if(confirm('http://www.jxvdy.com/tutorials/equipment/syjq/list.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/tutorials/equipment/syjq/list.html'" tppabs="http://www.jxvdy.com/tutorials/equipment/syjq/list.html">ä½¿ç”¨æŠ€å·§</a><i class="label-arrow"></i></span>
+						<h4><a class="js_title" target="_blank"  href="0001190612.html" tppabs="http://www.jxvdy.com/tutorials/equipment/syjq/0001190612.html" >æ‘„å½±å¸ˆéƒ½æ˜¯è¿™æ ·æ“ä½œæ‘„å½±è½¦çš„ï¼</a></h4>
+					</div>
+											<div class="focus"><a target="_blank"  href="0001190612.html" tppabs="http://www.jxvdy.com/tutorials/equipment/syjq/0001190612.html" ><img class="lazy-article" _src="566a8cc1bcfdbe9e5a1b1_0.jpg" tppabs="http://image.jxvdy.com/2015/1211/566a8cc1bcfdbe9e5a1b1_0.jpg" alt="æ‘„å½±å¸ˆéƒ½æ˜¯è¿™æ ·æ“ä½œæ‘„å½±è½¦çš„ï¼" onerror="this.src='http://skin.jxvdy.com/jxvdy/web/images/default/380_264.png'"></a></div>
+										<p class="color-gray js_summary">æ‘„å½±å¸ˆåœ¨ç‰‡åœºæ“ä½œæ‘„å½±è½¦çš„æ—¶å€™éƒ½æœ‰ä¸€å¥—è§„èŒƒä¸“ä¸šæœ¯è¯­ï¼ŒæŽŒæ¡è¿™äº›ä¸“ä¸šæœ¯è¯­æœ‰åŠ©äºŽå¸®åŠ©æˆ‘ä»¬æ›´å‡†ç¡®åœ°åœ¨ç‰‡åœºè¿›è¡Œäº¤æµä»Žè€Œæé«˜ç‰‡åœºå·¥ä½œæ•ˆçŽ‡ã€‚ </p>
+					<p class="js_tag_jxvdy">
+						<i class="fa fa-tags color-gray"></i>
+																								<a class="brand-warning article-tag" href="javascript:if(confirm('http://www.jxvdy.com/tutorials/equipment/syjq/search?kw=å¾®å½±æ‹æ‘„  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/tutorials/equipment/syjq/search?kw=å¾®å½±æ‹æ‘„'" tppabs="http://www.jxvdy.com/tutorials/equipment/syjq/search?kw=å¾®å½±æ‹æ‘„" target="_blank">å¾®å½±æ‹æ‘„</a>
+												<a class="brand-warning article-tag" href="javascript:if(confirm('http://www.jxvdy.com/tutorials/equipment/syjq/search?kw=æ‘„å½±æœ¯è¯­  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/tutorials/equipment/syjq/search?kw=æ‘„å½±æœ¯è¯­'" tppabs="http://www.jxvdy.com/tutorials/equipment/syjq/search?kw=æ‘„å½±æœ¯è¯­" target="_blank">æ‘„å½±æœ¯è¯­</a>
+												<a class="brand-warning article-tag" href="javascript:if(confirm('http://www.jxvdy.com/tutorials/equipment/syjq/search?kw=å½±è§†æ‘„åƒ  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/tutorials/equipment/syjq/search?kw=å½±è§†æ‘„åƒ'" tppabs="http://www.jxvdy.com/tutorials/equipment/syjq/search?kw=å½±è§†æ‘„åƒ" target="_blank">å½±è§†æ‘„åƒ</a>
+												<a class="brand-warning article-tag" href="javascript:if(confirm('http://www.jxvdy.com/tutorials/equipment/syjq/search?kw=æ‘„å½±æœºæ“ä½œç»éªŒ  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/tutorials/equipment/syjq/search?kw=æ‘„å½±æœºæ“ä½œç»éªŒ'" tppabs="http://www.jxvdy.com/tutorials/equipment/syjq/search?kw=æ‘„å½±æœºæ“ä½œç»éªŒ" target="_blank">æ‘„å½±æœºæ“ä½œç»éªŒ</a>
+																							</p>
+					<div class="auth-span">
+						<span class="muted"><i class="fa fa-user"></i><a href="javascript:if(confirm('http://www.jxvdy.com/member/dynamic.html?id=313508  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/member/dynamic.html?id=313508'" tppabs="http://www.jxvdy.com/member/dynamic.html?id=313508" target="_blank">shinvqiu181177</a></span>						<span class="muted"><i class="fa fa-clock-o"></i>2015-12-11</span>
+						<span class="muted"><i class="fa fa-eye"></i><span>0</span>â„ƒ</span>
+						<span class="muted"><i class="fa fa-heart-o"></i><span>0</span>äººå–œæ¬¢</span>
+												<span class="muted"><a href="javascript:;" class="action" onclick="collect(this,'32576')"><i class="fa fa-star-o"></i><span>æ”¶è—</span></a></span>
+					</div>
+				</article>
+							<article class="excerpt clearfix content_32545 content-list-jxvdy js_search_jxvdy" js_data="32545" js_ch_id="32">
+					<div class="excert-header">
+						<span class="column-label"><a href="javascript:if(confirm('http://www.jxvdy.com/tutorials/equipment/syjq/list.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/tutorials/equipment/syjq/list.html'" tppabs="http://www.jxvdy.com/tutorials/equipment/syjq/list.html">ä½¿ç”¨æŠ€å·§</a><i class="label-arrow"></i></span>
+						<h4><a class="js_title" target="_blank"  href="javascript:if(confirm('http://www.jxvdy.com/tutorials/equipment/syjq/0001190545.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/tutorials/equipment/syjq/0001190545.html'" tppabs="http://www.jxvdy.com/tutorials/equipment/syjq/0001190545.html" >æ‹æ‘„é•œå­çš„ç”»é¢æ—¶ï¼Œæ‘„å½±æœºä¸ºä½•ä¸ä¼šç©¿å¸®</a></h4>
+					</div>
+											<div class="focus"><a target="_blank"  href="javascript:if(confirm('http://www.jxvdy.com/tutorials/equipment/syjq/0001190545.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/tutorials/equipment/syjq/0001190545.html'" tppabs="http://www.jxvdy.com/tutorials/equipment/syjq/0001190545.html" ><img class="lazy-article" _src="566663e3104648eb42773_0.jpg" tppabs="http://image.jxvdy.com/2015/1208/566663e3104648eb42773_0.jpg" alt="æ‹æ‘„é•œå­çš„ç”»é¢æ—¶ï¼Œæ‘„å½±æœºä¸ºä½•ä¸ä¼šç©¿å¸®" onerror="this.src='http://skin.jxvdy.com/jxvdy/web/images/default/380_264.png'"></a></div>
+										<p class="color-gray js_summary">ç©¿å¸®ä¸€ç›´æ˜¯å½±è§†ä½œå“ä¸­çš„å¤§å¿Œï¼Œå¾ˆå¤šä¼˜ç§€çš„ä½œå“ä¹Ÿæ— æ³•é¿å…ç©¿å¸®çš„â€œåŽ„è¿â€ï¼Œè¿™æ ·ä¸€æ¥å¦‚ä½•é¿å…ç©¿å¸®ä¹Ÿæˆäº†åˆ›ä½œè€…çš„é‡è¦ä»»åŠ¡ï¼Œå½“ç„¶ä¸€äº›ä½Žçº§çš„ç©¿å¸®é•œå¤´ï¼ˆæ¯”å¦‚æ¸…å®«æˆå‡ºçŽ°é£žæœºåˆ’è¿‡ç©ºä¸­ï¼‰æ— éœ€ä»€ä¹ˆæŠ€æœ¯æ‰‹æ®µç¨å¾®ç”¨å¿ƒå°±èƒ½é¿å…ï¼Œä½†...</p>
+					<p class="js_tag_jxvdy">
+						<i class="fa fa-tags color-gray"></i>
+																								<a class="brand-warning article-tag" href="javascript:if(confirm('http://www.jxvdy.com/tutorials/equipment/syjq/search?kw=å½±è§†æ‹æ‘„  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/tutorials/equipment/syjq/search?kw=å½±è§†æ‹æ‘„'" tppabs="http://www.jxvdy.com/tutorials/equipment/syjq/search?kw=å½±è§†æ‹æ‘„" target="_blank">å½±è§†æ‹æ‘„</a>
+												<a class="brand-warning article-tag" href="javascript:if(confirm('http://www.jxvdy.com/tutorials/equipment/syjq/search?kw=æ‹æ‘„å¿ƒå¾—  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/tutorials/equipment/syjq/search?kw=æ‹æ‘„å¿ƒå¾—'" tppabs="http://www.jxvdy.com/tutorials/equipment/syjq/search?kw=æ‹æ‘„å¿ƒå¾—" target="_blank">æ‹æ‘„å¿ƒå¾—</a>
+												<a class="brand-warning article-tag" href="javascript:if(confirm('http://www.jxvdy.com/tutorials/equipment/syjq/search?kw=ç©¿å¸®é•œå¤´  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/tutorials/equipment/syjq/search?kw=ç©¿å¸®é•œå¤´'" tppabs="http://www.jxvdy.com/tutorials/equipment/syjq/search?kw=ç©¿å¸®é•œå¤´" target="_blank">ç©¿å¸®é•œå¤´</a>
+												<a class="brand-warning article-tag" href="javascript:if(confirm('http://www.jxvdy.com/tutorials/equipment/syjq/search?kw=å¾®å½±åˆ¶ä½œå¿ƒå¾—ç»éªŒ  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/tutorials/equipment/syjq/search?kw=å¾®å½±åˆ¶ä½œå¿ƒå¾—ç»éªŒ'" tppabs="http://www.jxvdy.com/tutorials/equipment/syjq/search?kw=å¾®å½±åˆ¶ä½œå¿ƒå¾—ç»éªŒ" target="_blank">å¾®å½±åˆ¶ä½œå¿ƒå¾—ç»éªŒ</a>
+																							</p>
+					<div class="auth-span">
+						<span class="muted"><i class="fa fa-user"></i><a href="javascript:if(confirm('http://www.jxvdy.com/member/dynamic.html?id=313250  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/member/dynamic.html?id=313250'" tppabs="http://www.jxvdy.com/member/dynamic.html?id=313250" target="_blank">yiheisong63301</a></span>						<span class="muted"><i class="fa fa-clock-o"></i>2015-12-08</span>
+						<span class="muted"><i class="fa fa-eye"></i><span>0</span>â„ƒ</span>
+						<span class="muted"><i class="fa fa-heart-o"></i><span>0</span>äººå–œæ¬¢</span>
+												<span class="muted"><a href="javascript:;" class="action" onclick="collect(this,'32545')"><i class="fa fa-star-o"></i><span>æ”¶è—</span></a></span>
+					</div>
+				</article>
+							<article class="excerpt clearfix content_32402 content-list-jxvdy js_search_jxvdy" js_data="32402" js_ch_id="32">
+					<div class="excert-header">
+						<span class="column-label"><a href="javascript:if(confirm('http://www.jxvdy.com/tutorials/equipment/syjq/list.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/tutorials/equipment/syjq/list.html'" tppabs="http://www.jxvdy.com/tutorials/equipment/syjq/list.html">ä½¿ç”¨æŠ€å·§</a><i class="label-arrow"></i></span>
+						<h4><a class="js_title" target="_blank"  href="javascript:if(confirm('http://www.jxvdy.com/tutorials/equipment/syjq/0001193202.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/tutorials/equipment/syjq/0001193202.html'" tppabs="http://www.jxvdy.com/tutorials/equipment/syjq/0001193202.html" >é€‚é©¬dpæ„å¤–ä¹‹å–œ æ•™ä½ çŽ©è½¬é«˜é€ŸåŒæ­¥é—ªå…‰</a></h4>
+					</div>
+											<div class="focus"><a target="_blank"  href="javascript:if(confirm('http://www.jxvdy.com/tutorials/equipment/syjq/0001193202.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/tutorials/equipment/syjq/0001193202.html'" tppabs="http://www.jxvdy.com/tutorials/equipment/syjq/0001193202.html" ><img class="lazy-article" _src="5645b0511b3209f51552b_380_264.jpg" tppabs="http://image.jxvdy.com/2015/1113/5645b0511b3209f51552b_380_264.jpg" alt="é€‚é©¬dpæ„å¤–ä¹‹å–œ æ•™ä½ çŽ©è½¬é«˜é€ŸåŒæ­¥é—ªå…‰" onerror="this.src='http://skin.jxvdy.com/jxvdy/web/images/default/380_264.png'"></a></div>
+										<p class="color-gray js_summary">é€‚é©¬dpä½œä¸ºä¸€æ¬¾ä¾¿æºå¼ç›¸æœºï¼Œéžå¸¸é€‚åˆçƒ­çˆ±æ‰«è¡—å¹¶ä¸”å¯¹ç”»è´¨æœ‰ä¸€å®šè¿½æ±‚çš„äººç¾¤ï¼ŒæŠ›å¼€å•åæ²‰é‡çš„èº«èº¯ï¼Œé€‚é©¬dpåŸºæœ¬èƒ½æ»¡è¶³æ—¥å¸¸æ‰€éœ€ã€‚è€Œå®ƒé•œé—´å¼çš„å¿«é—¨è®¾è®¡ï¼Œå¯¹äºŽé—ªç¯ç‹‚çƒ­çˆ±å¥½è€…æ¥è¯´ï¼Œç»å¯¹æ˜¯ä¸ªæ„å¤–ä¹‹å–œï¼</p>
+					<p class="js_tag_jxvdy">
+						<i class="fa fa-tags color-gray"></i>
+																								<a class="brand-warning article-tag" href="javascript:if(confirm('http://www.jxvdy.com/tutorials/equipment/syjq/search?kw=æ‘„å½±å™¨æ  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/tutorials/equipment/syjq/search?kw=æ‘„å½±å™¨æ'" tppabs="http://www.jxvdy.com/tutorials/equipment/syjq/search?kw=æ‘„å½±å™¨æ" target="_blank">æ‘„å½±å™¨æ</a>
+												<a class="brand-warning article-tag" href="javascript:if(confirm('http://www.jxvdy.com/tutorials/equipment/syjq/search?kw=æ‘„å½±æŠ€å·§  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/tutorials/equipment/syjq/search?kw=æ‘„å½±æŠ€å·§'" tppabs="http://www.jxvdy.com/tutorials/equipment/syjq/search?kw=æ‘„å½±æŠ€å·§" target="_blank">æ‘„å½±æŠ€å·§</a>
+												<a class="brand-warning article-tag" href="javascript:if(confirm('http://www.jxvdy.com/tutorials/equipment/syjq/search?kw=ç›¸æœºé•œå¤´  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/tutorials/equipment/syjq/search?kw=ç›¸æœºé•œå¤´'" tppabs="http://www.jxvdy.com/tutorials/equipment/syjq/search?kw=ç›¸æœºé•œå¤´" target="_blank">ç›¸æœºé•œå¤´</a>
+												<a class="brand-warning article-tag" href="javascript:if(confirm('http://www.jxvdy.com/tutorials/equipment/syjq/search?kw=æ–°æ‰‹å…¥é—¨  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/tutorials/equipment/syjq/search?kw=æ–°æ‰‹å…¥é—¨'" tppabs="http://www.jxvdy.com/tutorials/equipment/syjq/search?kw=æ–°æ‰‹å…¥é—¨" target="_blank">æ–°æ‰‹å…¥é—¨</a>
+												<a class="brand-warning article-tag" href="javascript:if(confirm('http://www.jxvdy.com/tutorials/equipment/syjq/search?kw=ç›¸æœºé…ä»¶  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/tutorials/equipment/syjq/search?kw=ç›¸æœºé…ä»¶'" tppabs="http://www.jxvdy.com/tutorials/equipment/syjq/search?kw=ç›¸æœºé…ä»¶" target="_blank">ç›¸æœºé…ä»¶</a>
+																							</p>
+					<div class="auth-span">
+						<span class="muted"><i class="fa fa-user"></i><a href="javascript:if(confirm('http://www.jxvdy.com/member/dynamic.html?id=341656  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/member/dynamic.html?id=341656'" tppabs="http://www.jxvdy.com/member/dynamic.html?id=341656" target="_blank">å¿ƒè¿¹</a></span>						<span class="muted"><i class="fa fa-clock-o"></i>2015-11-13</span>
+						<span class="muted"><i class="fa fa-eye"></i><span>0</span>â„ƒ</span>
+						<span class="muted"><i class="fa fa-heart-o"></i><span>0</span>äººå–œæ¬¢</span>
+												<span class="muted"><a href="javascript:;" class="action" onclick="collect(this,'32402')"><i class="fa fa-star-o"></i><span>æ”¶è—</span></a></span>
+					</div>
+				</article>
+							<article class="excerpt clearfix content_32396 content-list-jxvdy js_search_jxvdy" js_data="32396" js_ch_id="31">
+					<div class="excert-header">
+						<span class="column-label"><a href="javascript:if(confirm('http://www.jxvdy.com/tutorials/equipment/qcpc/list.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/tutorials/equipment/qcpc/list.html'" tppabs="http://www.jxvdy.com/tutorials/equipment/qcpc/list.html">å™¨æè¯„æµ‹</a><i class="label-arrow"></i></span>
+						<h4><a class="js_title" target="_blank"  href="0033503100.html" tppabs="http://www.jxvdy.com/tutorials/equipment/qcpc/0033503100.html" >é«˜ç”»è´¨ä½Žå™ªç‚¹ ä½³èƒ½å‘å¸ƒXA35/XA30æ‘„åƒæœº</a></h4>
+					</div>
+											<div class="focus"><a target="_blank"  href="0033503100.html" tppabs="http://www.jxvdy.com/tutorials/equipment/qcpc/0033503100.html" ><img class="lazy-article" _src="5644370f119e469fae496_0.jpg" tppabs="http://image.jxvdy.com/2015/1112/5644370f119e469fae496_0.jpg" alt="é«˜ç”»è´¨ä½Žå™ªç‚¹ ä½³èƒ½å‘å¸ƒXA35/XA30æ‘„åƒæœº" onerror="this.src='http://skin.jxvdy.com/jxvdy/web/images/default/380_264.png'"></a></div>
+										<p class="color-gray js_summary">015å¹´11æœˆ11æ—¥ï¼Œä½³èƒ½å‘å¸ƒäº†ç´§å‡‘åž‹ä¸“ä¸šå…¨é«˜æ¸…æ‘„åƒæœºXA35/XA30ï¼Œæ–°æœºåž‹æ­è½½äº†æ–°å¼€å‘çš„CMOSå½±åƒæ„Ÿåº”å™¨ï¼Œå®žçŽ°é«˜ç”»è´¨ã€ä½Žå™ªç‚¹è¡¨çŽ°ã€‚è¿™ä¸¤æ¬¾æ–°å“è¿˜æ–°æ·»åŠ äº†2ç§å¯ä½¿å½±åƒè¡¨çŽ°åŠ›æ›´åŠ ä¸°å¯Œçš„è§†é¢‘è®°å½•æ¨¡å¼ï¼š...</p>
+					<p class="js_tag_jxvdy">
+						<i class="fa fa-tags color-gray"></i>
+																								<a class="brand-warning article-tag" href="javascript:if(confirm('http://www.jxvdy.com/tutorials/equipment/qcpc/search?kw=å¤§å…‰åœˆ  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/tutorials/equipment/qcpc/search?kw=å¤§å…‰åœˆ'" tppabs="http://www.jxvdy.com/tutorials/equipment/qcpc/search?kw=å¤§å…‰åœˆ" target="_blank">å¤§å…‰åœˆ</a>
+												<a class="brand-warning article-tag" href="javascript:if(confirm('http://www.jxvdy.com/tutorials/equipment/qcpc/search?kw=å…¨ç”»å¹…  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/tutorials/equipment/qcpc/search?kw=å…¨ç”»å¹…'" tppabs="http://www.jxvdy.com/tutorials/equipment/qcpc/search?kw=å…¨ç”»å¹…" target="_blank">å…¨ç”»å¹…</a>
+												<a class="brand-warning article-tag" href="javascript:if(confirm('http://www.jxvdy.com/tutorials/equipment/qcpc/search?kw=sony  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/tutorials/equipment/qcpc/search?kw=sony'" tppabs="http://www.jxvdy.com/tutorials/equipment/qcpc/search?kw=sony" target="_blank">sony</a>
+												<a class="brand-warning article-tag" href="javascript:if(confirm('http://www.jxvdy.com/tutorials/equipment/qcpc/search?kw=2016  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/tutorials/equipment/qcpc/search?kw=2016'" tppabs="http://www.jxvdy.com/tutorials/equipment/qcpc/search?kw=2016" target="_blank">2016</a>
+												<a class="brand-warning article-tag" href="javascript:if(confirm('http://www.jxvdy.com/tutorials/equipment/qcpc/search?kw=å¼¯æ›²ä¼ æ„Ÿå™¨  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/tutorials/equipment/qcpc/search?kw=å¼¯æ›²ä¼ æ„Ÿå™¨'" tppabs="http://www.jxvdy.com/tutorials/equipment/qcpc/search?kw=å¼¯æ›²ä¼ æ„Ÿå™¨" target="_blank">å¼¯æ›²ä¼ æ„Ÿå™¨</a>
+																							</p>
+					<div class="auth-span">
+						<span class="muted"><i class="fa fa-user"></i><a href="javascript:if(confirm('http://www.jxvdy.com/member/dynamic.html?id=341656  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/member/dynamic.html?id=341656'" tppabs="http://www.jxvdy.com/member/dynamic.html?id=341656" target="_blank">å¿ƒè¿¹</a></span>						<span class="muted"><i class="fa fa-clock-o"></i>2015-11-12</span>
+						<span class="muted"><i class="fa fa-eye"></i><span>0</span>â„ƒ</span>
+						<span class="muted"><i class="fa fa-heart-o"></i><span>0</span>äººå–œæ¬¢</span>
+												<span class="muted"><a href="javascript:;" class="action" onclick="collect(this,'32396')"><i class="fa fa-star-o"></i><span>æ”¶è—</span></a></span>
+					</div>
+				</article>
+							<article class="excerpt clearfix content_32395 content-list-jxvdy js_search_jxvdy" js_data="32395" js_ch_id="32">
+					<div class="excert-header">
+						<span class="column-label"><a href="javascript:if(confirm('http://www.jxvdy.com/tutorials/equipment/syjq/list.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/tutorials/equipment/syjq/list.html'" tppabs="http://www.jxvdy.com/tutorials/equipment/syjq/list.html">ä½¿ç”¨æŠ€å·§</a><i class="label-arrow"></i></span>
+						<h4><a class="js_title" target="_blank"  href="0033186263.html" tppabs="http://www.jxvdy.com/tutorials/equipment/syjq/0033186263.html" >ä¸åªæ˜¯ç³–æ°´ 85mmå®šç„¦é™¤äº†äººåƒè¿˜å¯ä»¥æ‹ä»€ä¹ˆ</a></h4>
+					</div>
+											<div class="focus"><a target="_blank"  href="0033186263.html" tppabs="http://www.jxvdy.com/tutorials/equipment/syjq/0033186263.html" ><img class="lazy-article" _src="5644302883780fd3325f4_0.jpg" tppabs="http://image.jxvdy.com/2015/1112/5644302883780fd3325f4_0.jpg" alt="ä¸åªæ˜¯ç³–æ°´ 85mmå®šç„¦é™¤äº†äººåƒè¿˜å¯ä»¥æ‹ä»€ä¹ˆ" onerror="this.src='http://skin.jxvdy.com/jxvdy/web/images/default/380_264.png'"></a></div>
+										<p class="color-gray js_summary">æ€»ä¼šä¸æ–­æœ‰æœ‹å‹é—®æˆ‘è¯´ï¼šç”¨å®šç„¦æ‹é£Žæ™¯ï¼Œä¼šä¸ä¼šä¸æ–¹ä¾¿ï¼Ÿ æˆ‘ä¹Ÿä¸æ–­æ€»åé—®ä»–ä»¬ï¼šä½ éœ€è¦ä»€ä¹ˆéƒ½æ‹ï¼Ÿè¿˜æ˜¯æ›´ä¸“æ³¨äºŽè‡ªå·±èƒ½æ‹å¥½çš„å±‚é¢ï¼Ÿå…¶å®žè¿™åªæ˜¯ä¸€ä¸ªå–èˆå¤šå°‘çš„é—®é¢˜ï¼Œæœ‰äººæ›´å–œæ¬¢ä»€ä¹ˆéƒ½æ‹ï¼Œä¹Ÿæœ‰äººåªæ˜¯å¸Œæœ›æ‹ç‚¹è‡ªå·±æœ‰å…´è¶£çš„è§†...</p>
+					<p class="js_tag_jxvdy">
+						<i class="fa fa-tags color-gray"></i>
+																								<a class="brand-warning article-tag" href="javascript:if(confirm('http://www.jxvdy.com/tutorials/equipment/syjq/search?kw=æ‘„å½±å™¨æ  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/tutorials/equipment/syjq/search?kw=æ‘„å½±å™¨æ'" tppabs="http://www.jxvdy.com/tutorials/equipment/syjq/search?kw=æ‘„å½±å™¨æ" target="_blank">æ‘„å½±å™¨æ</a>
+												<a class="brand-warning article-tag" href="javascript:if(confirm('http://www.jxvdy.com/tutorials/equipment/syjq/search?kw=ç›¸æœºé•œå¤´  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/tutorials/equipment/syjq/search?kw=ç›¸æœºé•œå¤´'" tppabs="http://www.jxvdy.com/tutorials/equipment/syjq/search?kw=ç›¸æœºé•œå¤´" target="_blank">ç›¸æœºé•œå¤´</a>
+												<a class="brand-warning article-tag" href="javascript:if(confirm('http://www.jxvdy.com/tutorials/equipment/syjq/search?kw=ç›¸æœºé…ä»¶  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/tutorials/equipment/syjq/search?kw=ç›¸æœºé…ä»¶'" tppabs="http://www.jxvdy.com/tutorials/equipment/syjq/search?kw=ç›¸æœºé…ä»¶" target="_blank">ç›¸æœºé…ä»¶</a>
+												<a class="brand-warning article-tag" href="javascript:if(confirm('http://www.jxvdy.com/tutorials/equipment/syjq/search?kw=85mmmå®šç„¦  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/tutorials/equipment/syjq/search?kw=85mmmå®šç„¦'" tppabs="http://www.jxvdy.com/tutorials/equipment/syjq/search?kw=85mmmå®šç„¦" target="_blank">85mmmå®šç„¦</a>
+																							</p>
+					<div class="auth-span">
+						<span class="muted"><i class="fa fa-user"></i><a href="javascript:if(confirm('http://www.jxvdy.com/member/dynamic.html?id=341656  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/member/dynamic.html?id=341656'" tppabs="http://www.jxvdy.com/member/dynamic.html?id=341656" target="_blank">å¿ƒè¿¹</a></span>						<span class="muted"><i class="fa fa-clock-o"></i>2015-11-12</span>
+						<span class="muted"><i class="fa fa-eye"></i><span>0</span>â„ƒ</span>
+						<span class="muted"><i class="fa fa-heart-o"></i><span>0</span>äººå–œæ¬¢</span>
+												<span class="muted"><a href="javascript:;" class="action" onclick="collect(this,'32395')"><i class="fa fa-star-o"></i><span>æ”¶è—</span></a></span>
+					</div>
+				</article>
+							<article class="excerpt clearfix content_32391 content-list-jxvdy js_search_jxvdy" js_data="32391" js_ch_id="33">
+					<div class="excert-header">
+						<span class="column-label"><a href="javascript:if(confirm('http://www.jxvdy.com/tutorials/equipment/jyfx/list.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/tutorials/equipment/jyfx/list.html'" tppabs="http://www.jxvdy.com/tutorials/equipment/jyfx/list.html">ç»éªŒåˆ†äº«</a><i class="label-arrow"></i></span>
+						<h4><a class="js_title" target="_blank"  href="javascript:if(confirm('http://www.jxvdy.com/tutorials/equipment/jyfx/0001506259.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/tutorials/equipment/jyfx/0001506259.html'" tppabs="http://www.jxvdy.com/tutorials/equipment/jyfx/0001506259.html" >ä¸ä¸€æ ·çš„è§†è§’ å‘Šè¯‰ä½ ç©¶ç«Ÿä»€ä¹ˆé•œå¤´é€‚åˆæ‹ä»€ä¹ˆ</a></h4>
+					</div>
+											<div class="focus"><a target="_blank"  href="javascript:if(confirm('http://www.jxvdy.com/tutorials/equipment/jyfx/0001506259.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/tutorials/equipment/jyfx/0001506259.html'" tppabs="http://www.jxvdy.com/tutorials/equipment/jyfx/0001506259.html" ><img class="lazy-article" _src="564417e3ac8e49f51552b_0.jpg" tppabs="http://image.jxvdy.com/2015/1112/564417e3ac8e49f51552b_0.jpg" alt="ä¸ä¸€æ ·çš„è§†è§’ å‘Šè¯‰ä½ ç©¶ç«Ÿä»€ä¹ˆé•œå¤´é€‚åˆæ‹ä»€ä¹ˆ" onerror="this.src='http://skin.jxvdy.com/jxvdy/web/images/default/380_264.png'"></a></div>
+										<p class="color-gray js_summary">è·³å‡ºæ€ç»´æž·é”ï¼šåŽ‚å®¶åœ¨ç”Ÿäº§é•œå¤´çš„æ—¶å€™åˆæ²¡æœ‰ç»™å‡ºè¯´å“ªä¸ªé•œå¤´åº”è¯¥æ‹ä»€ä¹ˆï¼Œå“ªä¸ªé•œå¤´ä¸èƒ½æ‹ä»€ä¹ˆï¼Œä¸ºä»€ä¹ˆå´è¦è¢«åŽæ¥äººå¼ºåŠ ä¸€äº›äººä¸ºçš„æ¦‚å¿µï¼Ÿ è¿™ä¸ªæ¦‚å¿µæœ‰æ—¶æ˜¯å¼•å¯¼ï¼Œæœ‰æ—¶ä¹Ÿä¼šæˆäº†æž·é”ã€‚æžå¾—å¤§å®¶éƒ½ä¸€æ ·ï¼Œä¸€æ ·çš„è§’åº¦ï¼Œä¸€æ ·çš„è§†...</p>
+					<p class="js_tag_jxvdy">
+						<i class="fa fa-tags color-gray"></i>
+																								<a class="brand-warning article-tag" href="javascript:if(confirm('http://www.jxvdy.com/tutorials/equipment/jyfx/search?kw=æ‘„å½±æŠ€å·§  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/tutorials/equipment/jyfx/search?kw=æ‘„å½±æŠ€å·§'" tppabs="http://www.jxvdy.com/tutorials/equipment/jyfx/search?kw=æ‘„å½±æŠ€å·§" target="_blank">æ‘„å½±æŠ€å·§</a>
+												<a class="brand-warning article-tag" href="javascript:if(confirm('http://www.jxvdy.com/tutorials/equipment/jyfx/search?kw=äººåƒæ‘„å½±  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/tutorials/equipment/jyfx/search?kw=äººåƒæ‘„å½±'" tppabs="http://www.jxvdy.com/tutorials/equipment/jyfx/search?kw=äººåƒæ‘„å½±" target="_blank">äººåƒæ‘„å½±</a>
+												<a class="brand-warning article-tag" href="javascript:if(confirm('http://www.jxvdy.com/tutorials/equipment/jyfx/search?kw=ç›¸æœºé•œå¤´  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/tutorials/equipment/jyfx/search?kw=ç›¸æœºé•œå¤´'" tppabs="http://www.jxvdy.com/tutorials/equipment/jyfx/search?kw=ç›¸æœºé•œå¤´" target="_blank">ç›¸æœºé•œå¤´</a>
+												<a class="brand-warning article-tag" href="javascript:if(confirm('http://www.jxvdy.com/tutorials/equipment/jyfx/search?kw=æ–°æ‰‹å…¥é—¨  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/tutorials/equipment/jyfx/search?kw=æ–°æ‰‹å…¥é—¨'" tppabs="http://www.jxvdy.com/tutorials/equipment/jyfx/search?kw=æ–°æ‰‹å…¥é—¨" target="_blank">æ–°æ‰‹å…¥é—¨</a>
+																							</p>
+					<div class="auth-span">
+						<span class="muted"><i class="fa fa-user"></i><a href="javascript:if(confirm('http://www.jxvdy.com/member/dynamic.html?id=341656  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/member/dynamic.html?id=341656'" tppabs="http://www.jxvdy.com/member/dynamic.html?id=341656" target="_blank">å¿ƒè¿¹</a></span>						<span class="muted"><i class="fa fa-clock-o"></i>2015-11-12</span>
+						<span class="muted"><i class="fa fa-eye"></i><span>0</span>â„ƒ</span>
+						<span class="muted"><i class="fa fa-heart-o"></i><span>0</span>äººå–œæ¬¢</span>
+												<span class="muted"><a href="javascript:;" class="action" onclick="collect(this,'32391')"><i class="fa fa-star-o"></i><span>æ”¶è—</span></a></span>
+					</div>
+				</article>
+							<article class="excerpt clearfix content_32353 content-list-jxvdy js_search_jxvdy" js_data="32353" js_ch_id="32">
+					<div class="excert-header">
+						<span class="column-label"><a href="javascript:if(confirm('http://www.jxvdy.com/tutorials/equipment/syjq/list.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/tutorials/equipment/syjq/list.html'" tppabs="http://www.jxvdy.com/tutorials/equipment/syjq/list.html">ä½¿ç”¨æŠ€å·§</a><i class="label-arrow"></i></span>
+						<h4><a class="js_title" target="_blank"  href="0001182953.html" tppabs="http://www.jxvdy.com/tutorials/equipment/syjq/0001182953.html" >å¦‚ä½•æ‰«è¡—ï¼Œè®ºè¡—å¤´æ‘„å½±ä¸­èƒ½å¦ä½¿ç”¨é•¿ç„¦é•œå¤´</a></h4>
+					</div>
+											<div class="focus"><a target="_blank"  href="0001182953.html" tppabs="http://www.jxvdy.com/tutorials/equipment/syjq/0001182953.html" ><img class="lazy-article" _src="563c2a6e2a1e59f51552b_380_264.jpg" tppabs="http://image.jxvdy.com/2015/1106/563c2a6e2a1e59f51552b_380_264.jpg" alt="å¦‚ä½•æ‰«è¡—ï¼Œè®ºè¡—å¤´æ‘„å½±ä¸­èƒ½å¦ä½¿ç”¨é•¿ç„¦é•œå¤´" onerror="this.src='http://skin.jxvdy.com/jxvdy/web/images/default/380_264.png'"></a></div>
+										<p class="color-gray js_summary">å…³äºŽè¿™ä¸ªé—®é¢˜ï¼Œåœ¨æˆ‘åˆšåˆšæŽ¥è§¦è¡—å¤´æ‘„å½±æ—¶ä¹Ÿå¸¸å¸¸æ„Ÿåˆ°è¿·æƒ‘ä¸è§£ã€‚ä»Žç¬¬ä¸€å¤©æ‰«è¡—èµ·ï¼Œä¸€äº›è€å‰è¾ˆå°±è€å¿ƒçš„å‘Šè¯‰æˆ‘ï¼šå°ä¼™å­ï¼Œæ‰«è¡—è¦ç”¨å¹¿è§’å®šç„¦å¤´ï¼Œç„¶åŽæ‰‘é¢è€Œæ¥çš„å°±æ˜¯ä¸€äº›æ‘„å½±å¤§å¸ˆçš„åå­—ï¼Œç”¨28mmç„¦æ®µæ‰«è¡—çš„æ£®å±±å¤§é“ï¼Œç”¨35...</p>
+					<p class="js_tag_jxvdy">
+						<i class="fa fa-tags color-gray"></i>
+																								<a class="brand-warning article-tag" href="javascript:if(confirm('http://www.jxvdy.com/tutorials/equipment/syjq/search?kw=æ‹æ‘„  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/tutorials/equipment/syjq/search?kw=æ‹æ‘„'" tppabs="http://www.jxvdy.com/tutorials/equipment/syjq/search?kw=æ‹æ‘„" target="_blank">æ‹æ‘„</a>
+												<a class="brand-warning article-tag" href="javascript:if(confirm('http://www.jxvdy.com/tutorials/equipment/syjq/search?kw=å¹¿è§’  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/tutorials/equipment/syjq/search?kw=å¹¿è§’'" tppabs="http://www.jxvdy.com/tutorials/equipment/syjq/search?kw=å¹¿è§’" target="_blank">å¹¿è§’</a>
+												<a class="brand-warning article-tag" href="javascript:if(confirm('http://www.jxvdy.com/tutorials/equipment/syjq/search?kw=æ‘„å½±æŠ€å·§  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/tutorials/equipment/syjq/search?kw=æ‘„å½±æŠ€å·§'" tppabs="http://www.jxvdy.com/tutorials/equipment/syjq/search?kw=æ‘„å½±æŠ€å·§" target="_blank">æ‘„å½±æŠ€å·§</a>
+												<a class="brand-warning article-tag" href="javascript:if(confirm('http://www.jxvdy.com/tutorials/equipment/syjq/search?kw=æ‰«è¡—  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/tutorials/equipment/syjq/search?kw=æ‰«è¡—'" tppabs="http://www.jxvdy.com/tutorials/equipment/syjq/search?kw=æ‰«è¡—" target="_blank">æ‰«è¡—</a>
+																							</p>
+					<div class="auth-span">
+						<span class="muted"><i class="fa fa-user"></i><a href="javascript:if(confirm('http://www.jxvdy.com/member/dynamic.html?id=341656  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/member/dynamic.html?id=341656'" tppabs="http://www.jxvdy.com/member/dynamic.html?id=341656" target="_blank">å¿ƒè¿¹</a></span>						<span class="muted"><i class="fa fa-clock-o"></i>2015-11-06</span>
+						<span class="muted"><i class="fa fa-eye"></i><span>0</span>â„ƒ</span>
+						<span class="muted"><i class="fa fa-heart-o"></i><span>0</span>äººå–œæ¬¢</span>
+												<span class="muted"><a href="javascript:;" class="action" onclick="collect(this,'32353')"><i class="fa fa-star-o"></i><span>æ”¶è—</span></a></span>
+					</div>
+				</article>
+							<article class="excerpt clearfix content_32037 content-list-jxvdy js_search_jxvdy" js_data="32037" js_ch_id="33">
+					<div class="excert-header">
+						<span class="column-label"><a href="javascript:if(confirm('http://www.jxvdy.com/tutorials/equipment/jyfx/list.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/tutorials/equipment/jyfx/list.html'" tppabs="http://www.jxvdy.com/tutorials/equipment/jyfx/list.html">ç»éªŒåˆ†äº«</a><i class="label-arrow"></i></span>
+						<h4><a class="js_title" target="_blank"  href="javascript:if(confirm('http://www.jxvdy.com/tutorials/equipment/jyfx/0001501737.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/tutorials/equipment/jyfx/0001501737.html'" tppabs="http://www.jxvdy.com/tutorials/equipment/jyfx/0001501737.html" > åŸ¹å…»å–„äºŽè§‚å¯Ÿäº‹ç‰©çš„ä¹ æƒ¯   å°†çµé­‚æ³¨å…¥æ‘„å½±ä½œå“  ä½¿å…¶å“ä½å‡åŽ</a></h4>
+					</div>
+											<div class="focus"><a target="_blank"  href="javascript:if(confirm('http://www.jxvdy.com/tutorials/equipment/jyfx/0001501737.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/tutorials/equipment/jyfx/0001501737.html'" tppabs="http://www.jxvdy.com/tutorials/equipment/jyfx/0001501737.html" ><img class="lazy-article" _src="559236d947ddef3ccdd27_0.jpg" tppabs="http://image.jxvdy.com/2015/0630/559236d947ddef3ccdd27_0.jpg" alt=" åŸ¹å…»å–„äºŽè§‚å¯Ÿäº‹ç‰©çš„ä¹ æƒ¯   å°†çµé­‚æ³¨å…¥æ‘„å½±ä½œå“  ä½¿å…¶å“ä½å‡åŽ" onerror="this.src='http://skin.jxvdy.com/jxvdy/web/images/default/380_264.png'"></a></div>
+										<p class="color-gray js_summary">æ‘„å½±æ˜¯ä¸€ç§æ—¢è®²æŠ€æœ¯åˆè®²è‰ºæœ¯çš„ç»¼åˆæ€§çš„èŒä¸šï¼Œå¾ˆå¤šäººéƒ½æ›¾çƒ­è¡·äºŽæ‰¾æ‘„å½±ä¸“å®¶æ‹œå¸ˆå­¦è‰ºï¼Œå¯åˆ°æœ€åŽä¹Ÿæ²¡æœ‰å‡ ä¸ªçœŸæ­£åšæŒä¸‹æ¥çš„ï¼Œä»Šå¤©ï¼Œå°±å¸¦å¤§å®¶ä¸€èµ·å­¦ä¹ ä¸€ä¸‹æœ‰å…³æ‘„å½±å­¦ä¹ å’Œæ‘„å½±å…‰çº¿è¿ç”¨çš„æ™®åŠçŸ¥è¯†ï¼Œå¿«æ¥ä¸€èµ·çœ‹çœ‹å§ã€‚</p>
+					<p class="js_tag_jxvdy">
+						<i class="fa fa-tags color-gray"></i>
+																								<a class="brand-warning article-tag" href="javascript:if(confirm('http://www.jxvdy.com/tutorials/equipment/jyfx/search?kw=æ‘„å½±  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/tutorials/equipment/jyfx/search?kw=æ‘„å½±'" tppabs="http://www.jxvdy.com/tutorials/equipment/jyfx/search?kw=æ‘„å½±" target="_blank">æ‘„å½±</a>
+												<a class="brand-warning article-tag" href="javascript:if(confirm('http://www.jxvdy.com/tutorials/equipment/jyfx/search?kw=å…‰çº¿  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/tutorials/equipment/jyfx/search?kw=å…‰çº¿'" tppabs="http://www.jxvdy.com/tutorials/equipment/jyfx/search?kw=å…‰çº¿" target="_blank">å…‰çº¿</a>
+												<a class="brand-warning article-tag" href="javascript:if(confirm('http://www.jxvdy.com/tutorials/equipment/jyfx/search?kw=ç»éªŒ  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/tutorials/equipment/jyfx/search?kw=ç»éªŒ'" tppabs="http://www.jxvdy.com/tutorials/equipment/jyfx/search?kw=ç»éªŒ" target="_blank">ç»éªŒ</a>
+																							</p>
+					<div class="auth-span">
+						<span class="muted"><i class="fa fa-user"></i><a href="javascript:if(confirm('http://www.jxvdy.com/member/dynamic.html?id=309139  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/member/dynamic.html?id=309139'" tppabs="http://www.jxvdy.com/member/dynamic.html?id=309139" target="_blank">jiezhengxian0129</a></span>						<span class="muted"><i class="fa fa-clock-o"></i>2015-06-30</span>
+						<span class="muted"><i class="fa fa-eye"></i><span>0</span>â„ƒ</span>
+						<span class="muted"><i class="fa fa-heart-o"></i><span>0</span>äººå–œæ¬¢</span>
+												<span class="muted"><a href="javascript:;" class="action" onclick="collect(this,'32037')"><i class="fa fa-star-o"></i><span>æ”¶è—</span></a></span>
+					</div>
+				</article>
+							<article class="excerpt clearfix content_32033 content-list-jxvdy js_search_jxvdy" js_data="32033" js_ch_id="32">
+					<div class="excert-header">
+						<span class="column-label"><a href="javascript:if(confirm('http://www.jxvdy.com/tutorials/equipment/syjq/list.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/tutorials/equipment/syjq/list.html'" tppabs="http://www.jxvdy.com/tutorials/equipment/syjq/list.html">ä½¿ç”¨æŠ€å·§</a><i class="label-arrow"></i></span>
+						<h4><a class="js_title" target="_blank"  href="javascript:if(confirm('http://www.jxvdy.com/tutorials/equipment/syjq/0001181733.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/tutorials/equipment/syjq/0001181733.html'" tppabs="http://www.jxvdy.com/tutorials/equipment/syjq/0001181733.html" >æˆä¸ºå‡ºè‰²çš„è‚–åƒæ‘„å½±å¸ˆ  æ•°ç ç›¸æœºç…§ç›¸å¸ˆæ‘„å½±æŠ€å·§</a></h4>
+					</div>
+											<div class="focus"><a target="_blank"  href="javascript:if(confirm('http://www.jxvdy.com/tutorials/equipment/syjq/0001181733.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/tutorials/equipment/syjq/0001181733.html'" tppabs="http://www.jxvdy.com/tutorials/equipment/syjq/0001181733.html" ><img class="lazy-article" _src="55922f3f4838af3ccdd27_0.jpg" tppabs="http://image.jxvdy.com/2015/0630/55922f3f4838af3ccdd27_0.jpg" alt="æˆä¸ºå‡ºè‰²çš„è‚–åƒæ‘„å½±å¸ˆ  æ•°ç ç›¸æœºç…§ç›¸å¸ˆæ‘„å½±æŠ€å·§" onerror="this.src='http://skin.jxvdy.com/jxvdy/web/images/default/380_264.png'"></a></div>
+										<p class="color-gray js_summary">å¯¹äºŽè¦ä»Žäº‹æ£šå†…æ‹ç…§çš„æ‘„å½±çˆ±å¥½è€…æ¥è¯´ï¼Œé¦–å…ˆè¦äº†è§£çš„å°±æ˜¯ç…§ç›¸å¸ˆæ‘„å½±çš„åŸºç¡€å¸ƒå±€å’Œä½¿ç”¨å™¨æï¼Œä»Šå¤©ï¼Œå°±ä¸ºå¤§å®¶ä»‹ç»ä¸€äº›æƒ³æ˜“å­¦å¹¶ä¸”æ˜“ç”¨çš„æ£šå†…æ‘„å½±å™¨æè®¾å¤‡ï¼Œå¿«æ¥çœ‹çœ‹å§ã€‚</p>
+					<p class="js_tag_jxvdy">
+						<i class="fa fa-tags color-gray"></i>
+																								<a class="brand-warning article-tag" href="javascript:if(confirm('http://www.jxvdy.com/tutorials/equipment/syjq/search?kw=å…‰çº¿  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/tutorials/equipment/syjq/search?kw=å…‰çº¿'" tppabs="http://www.jxvdy.com/tutorials/equipment/syjq/search?kw=å…‰çº¿" target="_blank">å…‰çº¿</a>
+												<a class="brand-warning article-tag" href="javascript:if(confirm('http://www.jxvdy.com/tutorials/equipment/syjq/search?kw=æ•°ç ç›¸æœº  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/tutorials/equipment/syjq/search?kw=æ•°ç ç›¸æœº'" tppabs="http://www.jxvdy.com/tutorials/equipment/syjq/search?kw=æ•°ç ç›¸æœº" target="_blank">æ•°ç ç›¸æœº</a>
+												<a class="brand-warning article-tag" href="javascript:if(confirm('http://www.jxvdy.com/tutorials/equipment/syjq/search?kw=å‘å…‰æ¿  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/tutorials/equipment/syjq/search?kw=å‘å…‰æ¿'" tppabs="http://www.jxvdy.com/tutorials/equipment/syjq/search?kw=å‘å…‰æ¿" target="_blank">å‘å…‰æ¿</a>
+																							</p>
+					<div class="auth-span">
+						<span class="muted"><i class="fa fa-user"></i><a href="javascript:if(confirm('http://www.jxvdy.com/member/dynamic.html?id=310332  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/member/dynamic.html?id=310332'" tppabs="http://www.jxvdy.com/member/dynamic.html?id=310332" target="_blank">lanqingluanxing</a></span>						<span class="muted"><i class="fa fa-clock-o"></i>2015-06-30</span>
+						<span class="muted"><i class="fa fa-eye"></i><span>0</span>â„ƒ</span>
+						<span class="muted"><i class="fa fa-heart-o"></i><span>0</span>äººå–œæ¬¢</span>
+												<span class="muted"><a href="javascript:;" class="action" onclick="collect(this,'32033')"><i class="fa fa-star-o"></i><span>æ”¶è—</span></a></span>
+					</div>
+				</article>
+							<article class="excerpt clearfix content_32029 content-list-jxvdy js_search_jxvdy" js_data="32029" js_ch_id="33">
+					<div class="excert-header">
+						<span class="column-label"><a href="javascript:if(confirm('http://www.jxvdy.com/tutorials/equipment/jyfx/list.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/tutorials/equipment/jyfx/list.html'" tppabs="http://www.jxvdy.com/tutorials/equipment/jyfx/list.html">ç»éªŒåˆ†äº«</a><i class="label-arrow"></i></span>
+						<h4><a class="js_title" target="_blank"  href="javascript:if(confirm('http://www.jxvdy.com/tutorials/equipment/jyfx/0033501661.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/tutorials/equipment/jyfx/0033501661.html'" tppabs="http://www.jxvdy.com/tutorials/equipment/jyfx/0033501661.html" >åŸŽå¸‚æ—…æ¸¸æ‘„å½±æ”»ç•¥ï¼šæœç»åƒç¯‡ä¸€å¾‹çš„â€œæ ‡å‡†æ˜Žä¿¡ç‰‡â€  è¥é€ è‡ªå·±çš„æ‹æ‘„é£Žæ ¼</a></h4>
+					</div>
+											<div class="focus"><a target="_blank"  href="javascript:if(confirm('http://www.jxvdy.com/tutorials/equipment/jyfx/0033501661.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/tutorials/equipment/jyfx/0033501661.html'" tppabs="http://www.jxvdy.com/tutorials/equipment/jyfx/0033501661.html" ><img class="lazy-article" _src="55922a9a6e5abf3ccdd27_0.jpg" tppabs="http://image.jxvdy.com/2015/0630/55922a9a6e5abf3ccdd27_0.jpg" alt="åŸŽå¸‚æ—…æ¸¸æ‘„å½±æ”»ç•¥ï¼šæœç»åƒç¯‡ä¸€å¾‹çš„â€œæ ‡å‡†æ˜Žä¿¡ç‰‡â€  è¥é€ è‡ªå·±çš„æ‹æ‘„é£Žæ ¼" onerror="this.src='http://skin.jxvdy.com/jxvdy/web/images/default/380_264.png'"></a></div>
+										<p class="color-gray js_summary">ä¸€äº›æ—…æ¸¸è¾¾äººç»å¸¸ä¼šå‡ºçŽ°åœ¨è¡—å¤´å··å°¾ï¼Œè¿™å°±æ˜¯æˆ‘ä»¬å¸¸è¯´çš„åŸŽå¸‚æ—…æ¸¸è€…äº†ï¼Œä»Šå¤©ï¼Œå°±å¸¦å¤§å®¶ä¸€èµ·å­¦ä¹ å’Œäº†è§£ä¸€ä¸‹æœ‰å…³åŸŽå¸‚æ—…æ¸¸ä¸­çš„æ‘„å½±æ‹æ‘„æŠ€å·§å’Œæ–¹æ³•ã€‚</p>
+					<p class="js_tag_jxvdy">
+						<i class="fa fa-tags color-gray"></i>
+																								<a class="brand-warning article-tag" href="javascript:if(confirm('http://www.jxvdy.com/tutorials/equipment/jyfx/search?kw=åŸŽå¸‚  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/tutorials/equipment/jyfx/search?kw=åŸŽå¸‚'" tppabs="http://www.jxvdy.com/tutorials/equipment/jyfx/search?kw=åŸŽå¸‚" target="_blank">åŸŽå¸‚</a>
+												<a class="brand-warning article-tag" href="javascript:if(confirm('http://www.jxvdy.com/tutorials/equipment/jyfx/search?kw=æ‘„å½±  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/tutorials/equipment/jyfx/search?kw=æ‘„å½±'" tppabs="http://www.jxvdy.com/tutorials/equipment/jyfx/search?kw=æ‘„å½±" target="_blank">æ‘„å½±</a>
+												<a class="brand-warning article-tag" href="javascript:if(confirm('http://www.jxvdy.com/tutorials/equipment/jyfx/search?kw=æž„å›¾  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/tutorials/equipment/jyfx/search?kw=æž„å›¾'" tppabs="http://www.jxvdy.com/tutorials/equipment/jyfx/search?kw=æž„å›¾" target="_blank">æž„å›¾</a>
+																							</p>
+					<div class="auth-span">
+						<span class="muted"><i class="fa fa-user"></i><a href="javascript:if(confirm('http://www.jxvdy.com/member/dynamic.html?id=310207  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/member/dynamic.html?id=310207'" tppabs="http://www.jxvdy.com/member/dynamic.html?id=310207" target="_blank">wuzhuang</a></span>						<span class="muted"><i class="fa fa-clock-o"></i>2015-06-30</span>
+						<span class="muted"><i class="fa fa-eye"></i><span>0</span>â„ƒ</span>
+						<span class="muted"><i class="fa fa-heart-o"></i><span>0</span>äººå–œæ¬¢</span>
+												<span class="muted"><a href="javascript:;" class="action" onclick="collect(this,'32029')"><i class="fa fa-star-o"></i><span>æ”¶è—</span></a></span>
+					</div>
+				</article>
+							<article class="excerpt clearfix content_32028 content-list-jxvdy js_search_jxvdy" js_data="32028" js_ch_id="31">
+					<div class="excert-header">
+						<span class="column-label"><a href="javascript:if(confirm('http://www.jxvdy.com/tutorials/equipment/qcpc/list.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/tutorials/equipment/qcpc/list.html'" tppabs="http://www.jxvdy.com/tutorials/equipment/qcpc/list.html">å™¨æè¯„æµ‹</a><i class="label-arrow"></i></span>
+						<h4><a class="js_title" target="_blank"  href="javascript:if(confirm('http://www.jxvdy.com/tutorials/equipment/qcpc/0033501628.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/tutorials/equipment/qcpc/0033501628.html'" tppabs="http://www.jxvdy.com/tutorials/equipment/qcpc/0033501628.html" >ä½³èƒ½EOS 750Dæµ‹è¯„ï¼šåœ¨åŒ—äº¬ç›¸çº¦ä¹…è¿çš„è“å¤©ç™½äº‘</a></h4>
+					</div>
+											<div class="focus"><a target="_blank"  href="javascript:if(confirm('http://www.jxvdy.com/tutorials/equipment/qcpc/0033501628.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/tutorials/equipment/qcpc/0033501628.html'" tppabs="http://www.jxvdy.com/tutorials/equipment/qcpc/0033501628.html" ><img class="lazy-article" _src="559226dfd3999f3ccdd27_0.jpg" tppabs="http://image.jxvdy.com/2015/0630/559226dfd3999f3ccdd27_0.jpg" alt="ä½³èƒ½EOS 750Dæµ‹è¯„ï¼šåœ¨åŒ—äº¬ç›¸çº¦ä¹…è¿çš„è“å¤©ç™½äº‘" onerror="this.src='http://skin.jxvdy.com/jxvdy/web/images/default/380_264.png'"></a></div>
+										<p class="color-gray js_summary">ä½³èƒ½ç›¸æœºä¸€ç›´æ˜¯æ‘„å½±çˆ±å¥½è€…çš„é¦–é€‰ï¼Œä»Šå¤©ï¼Œå†ç»™å¤§å®¶ä»‹ç»ä¸€æ¬¾ä½³èƒ½ç›¸æœºï¼Œå°±æ˜¯ä½³èƒ½EOS 750Dï¼Œè¿™éƒ¨ç›¸æœºæ‹æ‘„äº†è¿‘æœŸåŒ—äº¬çš„å¤©ç©ºï¼Œé€šè¿‡åŒ—äº¬çš„å¤©ç©ºè“çœ‹çœ‹è¿™éƒ¨ç›¸æœºçš„ä¼˜åŠ¿åœ¨å“ªå§ã€‚</p>
+					<p class="js_tag_jxvdy">
+						<i class="fa fa-tags color-gray"></i>
+																								<a class="brand-warning article-tag" href="javascript:if(confirm('http://www.jxvdy.com/tutorials/equipment/qcpc/search?kw=å…‰åœˆ  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/tutorials/equipment/qcpc/search?kw=å…‰åœˆ'" tppabs="http://www.jxvdy.com/tutorials/equipment/qcpc/search?kw=å…‰åœˆ" target="_blank">å…‰åœˆ</a>
+												<a class="brand-warning article-tag" href="javascript:if(confirm('http://www.jxvdy.com/tutorials/equipment/qcpc/search?kw=ç™½å¹³è¡¡  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/tutorials/equipment/qcpc/search?kw=ç™½å¹³è¡¡'" tppabs="http://www.jxvdy.com/tutorials/equipment/qcpc/search?kw=ç™½å¹³è¡¡" target="_blank">ç™½å¹³è¡¡</a>
+												<a class="brand-warning article-tag" href="javascript:if(confirm('http://www.jxvdy.com/tutorials/equipment/qcpc/search?kw=æ›å…‰è¡¥å¿  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/tutorials/equipment/qcpc/search?kw=æ›å…‰è¡¥å¿'" tppabs="http://www.jxvdy.com/tutorials/equipment/qcpc/search?kw=æ›å…‰è¡¥å¿" target="_blank">æ›å…‰è¡¥å¿</a>
+																							</p>
+					<div class="auth-span">
+						<span class="muted"><i class="fa fa-user"></i><a href="javascript:if(confirm('http://www.jxvdy.com/member/dynamic.html?id=309139  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/member/dynamic.html?id=309139'" tppabs="http://www.jxvdy.com/member/dynamic.html?id=309139" target="_blank">jiezhengxian0129</a></span>						<span class="muted"><i class="fa fa-clock-o"></i>2015-06-30</span>
+						<span class="muted"><i class="fa fa-eye"></i><span>0</span>â„ƒ</span>
+						<span class="muted"><i class="fa fa-heart-o"></i><span>0</span>äººå–œæ¬¢</span>
+												<span class="muted"><a href="javascript:;" class="action" onclick="collect(this,'32028')"><i class="fa fa-star-o"></i><span>æ”¶è—</span></a></span>
+					</div>
+				</article>
+							<article class="excerpt clearfix content_31995 content-list-jxvdy js_search_jxvdy" js_data="31995" js_ch_id="32">
+					<div class="excert-header">
+						<span class="column-label"><a href="javascript:if(confirm('http://www.jxvdy.com/tutorials/equipment/syjq/list.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/tutorials/equipment/syjq/list.html'" tppabs="http://www.jxvdy.com/tutorials/equipment/syjq/list.html">ä½¿ç”¨æŠ€å·§</a><i class="label-arrow"></i></span>
+						<h4><a class="js_title" target="_blank"  href="javascript:if(confirm('http://www.jxvdy.com/tutorials/equipment/syjq/0001184663.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/tutorials/equipment/syjq/0001184663.html'" tppabs="http://www.jxvdy.com/tutorials/equipment/syjq/0001184663.html" >é¿å…é•œåˆ°ç”¨æ—¶æ–¹æ¨å°‘çš„å›§æ€   å¸®ä½ é‡èº«åˆ¶å®šæœ€ç†æƒ³çš„æ—…è¡Œæ‘„å½±é•œå¤´</a></h4>
+					</div>
+											<div class="focus"><a target="_blank"  href="javascript:if(confirm('http://www.jxvdy.com/tutorials/equipment/syjq/0001184663.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/tutorials/equipment/syjq/0001184663.html'" tppabs="http://www.jxvdy.com/tutorials/equipment/syjq/0001184663.html" ><img class="lazy-article" _src="559104d7f0f06f3ccdd27_0.jpg" tppabs="http://image.jxvdy.com/2015/0629/559104d7f0f06f3ccdd27_0.jpg" alt="é¿å…é•œåˆ°ç”¨æ—¶æ–¹æ¨å°‘çš„å›§æ€   å¸®ä½ é‡èº«åˆ¶å®šæœ€ç†æƒ³çš„æ—…è¡Œæ‘„å½±é•œå¤´" onerror="this.src='http://skin.jxvdy.com/jxvdy/web/images/default/380_264.png'"></a></div>
+										<p class="color-gray js_summary">å¤å¤©æƒ³å¿…æ˜¯é©´å‹ä»¬æœ€çˆ±çš„å­£èŠ‚å§ï¼Œå› ä¸ºåˆåˆ°äº†å¯ä»¥å’Œå¤§å®¶ä¼™å‡ºé—¨æ—…æ¸¸çš„æ—¶åˆ»ï¼Œä»Šå¤©ï¼Œå°±å¸¦å¤§å®¶ä¸€èµ·å­¦ä¹ ä¸€ä¸‹æœ‰å…³æ—…è¡Œæ‘„å½±é•œå¤´é€‰æ‹©çš„é—®é¢˜ï¼Œå¸®åŠ©å¤§å®¶ç•™ä½æ²¿é€”çš„é£Žæ™¯å’Œå¿ƒæƒ…ï¼Œå¿«æ¥çœ‹çœ‹å§ã€‚</p>
+					<p class="js_tag_jxvdy">
+						<i class="fa fa-tags color-gray"></i>
+																								<a class="brand-warning article-tag" href="javascript:if(confirm('http://www.jxvdy.com/tutorials/equipment/syjq/search?kw=é•œå¤´  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/tutorials/equipment/syjq/search?kw=é•œå¤´'" tppabs="http://www.jxvdy.com/tutorials/equipment/syjq/search?kw=é•œå¤´" target="_blank">é•œå¤´</a>
+												<a class="brand-warning article-tag" href="javascript:if(confirm('http://www.jxvdy.com/tutorials/equipment/syjq/search?kw=æ—…ç¨‹  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/tutorials/equipment/syjq/search?kw=æ—…ç¨‹'" tppabs="http://www.jxvdy.com/tutorials/equipment/syjq/search?kw=æ—…ç¨‹" target="_blank">æ—…ç¨‹</a>
+												<a class="brand-warning article-tag" href="javascript:if(confirm('http://www.jxvdy.com/tutorials/equipment/syjq/search?kw=å™¨æ  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/tutorials/equipment/syjq/search?kw=å™¨æ'" tppabs="http://www.jxvdy.com/tutorials/equipment/syjq/search?kw=å™¨æ" target="_blank">å™¨æ</a>
+																							</p>
+					<div class="auth-span">
+						<span class="muted"><i class="fa fa-user"></i><a href="javascript:if(confirm('http://www.jxvdy.com/member/dynamic.html?id=309037  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/member/dynamic.html?id=309037'" tppabs="http://www.jxvdy.com/member/dynamic.html?id=309037" target="_blank">chidadao052782</a></span>						<span class="muted"><i class="fa fa-clock-o"></i>2015-06-29</span>
+						<span class="muted"><i class="fa fa-eye"></i><span>0</span>â„ƒ</span>
+						<span class="muted"><i class="fa fa-heart-o"></i><span>0</span>äººå–œæ¬¢</span>
+												<span class="muted"><a href="javascript:;" class="action" onclick="collect(this,'31995')"><i class="fa fa-star-o"></i><span>æ”¶è—</span></a></span>
+					</div>
+				</article>
+							<article class="excerpt clearfix content_31993 content-list-jxvdy js_search_jxvdy" js_data="31993" js_ch_id="33">
+					<div class="excert-header">
+						<span class="column-label"><a href="javascript:if(confirm('http://www.jxvdy.com/tutorials/equipment/jyfx/list.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/tutorials/equipment/jyfx/list.html'" tppabs="http://www.jxvdy.com/tutorials/equipment/jyfx/list.html">ç»éªŒåˆ†äº«</a><i class="label-arrow"></i></span>
+						<h4><a class="js_title" target="_blank"  href="javascript:if(confirm('http://www.jxvdy.com/tutorials/equipment/jyfx/0001181461.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/tutorials/equipment/jyfx/0001181461.html'" tppabs="http://www.jxvdy.com/tutorials/equipment/jyfx/0001181461.html" >è°è¯´å°åˆ¶ä½œæ²¡æœ‰æœªæ¥   å‘Šè¯‰ä½ å°æˆæœ¬ç”µå½±ä¹Ÿæœ‰â€œæ˜¥å¤©â€çš„åˆ¶ä½œç§˜å¯†</a></h4>
+					</div>
+											<div class="focus"><a target="_blank"  href="javascript:if(confirm('http://www.jxvdy.com/tutorials/equipment/jyfx/0001181461.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/tutorials/equipment/jyfx/0001181461.html'" tppabs="http://www.jxvdy.com/tutorials/equipment/jyfx/0001181461.html" ><img class="lazy-article" _src="559102baa5bb6f3ccdd27_0.jpg" tppabs="http://image.jxvdy.com/2015/0629/559102baa5bb6f3ccdd27_0.jpg" alt="è°è¯´å°åˆ¶ä½œæ²¡æœ‰æœªæ¥   å‘Šè¯‰ä½ å°æˆæœ¬ç”µå½±ä¹Ÿæœ‰â€œæ˜¥å¤©â€çš„åˆ¶ä½œç§˜å¯†" onerror="this.src='http://skin.jxvdy.com/jxvdy/web/images/default/380_264.png'"></a></div>
+										<p class="color-gray js_summary">å¤§å®¶æœ‰æ²¡æœ‰å¬è¯´è¿‡ç”µå½±æ¯’è¯ï¼ŒæŒ‡çš„å°±æ˜¯é‚£äº›èŠ±è´¹äº†é«˜æˆæœ¬çš„åˆ¶ä½œç»è´¹ä½†æ˜¯æœ€ç»ˆçš„æˆæžœæ”¶æ•ˆç”šå¾®ï¼Œä»Šå¤©ï¼Œå°±å¸¦å¤§å®¶ä¸€èµ·é€šè¿‡å¸ƒé²å§†ç”µå½±å…¬å¸çš„åˆ›å§‹äººå’ŒçŽ°ä»»CEOæ°æ£®Â·å¸ƒé²å§†æ¥å­¦ä¹ å’Œäº†è§£ä¸€ä¸‹å¦‚ä½•ç”¨å°æˆæœ¬æ‹å‡ºå¤§åˆ¶ä½œçš„ç»éªŒç§˜è¯€...</p>
+					<p class="js_tag_jxvdy">
+						<i class="fa fa-tags color-gray"></i>
+																								<a class="brand-warning article-tag" href="javascript:if(confirm('http://www.jxvdy.com/tutorials/equipment/jyfx/search?kw=ç”µå½±  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/tutorials/equipment/jyfx/search?kw=ç”µå½±'" tppabs="http://www.jxvdy.com/tutorials/equipment/jyfx/search?kw=ç”µå½±" target="_blank">ç”µå½±</a>
+												<a class="brand-warning article-tag" href="javascript:if(confirm('http://www.jxvdy.com/tutorials/equipment/jyfx/search?kw=æˆæœ¬  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/tutorials/equipment/jyfx/search?kw=æˆæœ¬'" tppabs="http://www.jxvdy.com/tutorials/equipment/jyfx/search?kw=æˆæœ¬" target="_blank">æˆæœ¬</a>
+												<a class="brand-warning article-tag" href="javascript:if(confirm('http://www.jxvdy.com/tutorials/equipment/jyfx/search?kw=å¸ƒé²å§†  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/tutorials/equipment/jyfx/search?kw=å¸ƒé²å§†'" tppabs="http://www.jxvdy.com/tutorials/equipment/jyfx/search?kw=å¸ƒé²å§†" target="_blank">å¸ƒé²å§†</a>
+																							</p>
+					<div class="auth-span">
+						<span class="muted"><i class="fa fa-user"></i><a href="javascript:if(confirm('http://www.jxvdy.com/member/dynamic.html?id=310269  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/member/dynamic.html?id=310269'" tppabs="http://www.jxvdy.com/member/dynamic.html?id=310269" target="_blank">yinying361</a></span>						<span class="muted"><i class="fa fa-clock-o"></i>2015-06-29</span>
+						<span class="muted"><i class="fa fa-eye"></i><span>0</span>â„ƒ</span>
+						<span class="muted"><i class="fa fa-heart-o"></i><span>0</span>äººå–œæ¬¢</span>
+												<span class="muted"><a href="javascript:;" class="action" onclick="collect(this,'31993')"><i class="fa fa-star-o"></i><span>æ”¶è—</span></a></span>
+					</div>
+				</article>
+						<div class="pagination-wrap clearfix">
+				<div id="light-pagination" class="light-theme simple-pagination pagination">
+<ul class="js_pagination_jxvdy">
+	
+							<li class="active"><span class="current">1</span></li>
+											<li><a href="javascript:if(confirm('http://www.jxvdy.com/tutorials/equipment/list-2.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/tutorials/equipment/list-2.html'" tppabs="http://www.jxvdy.com/tutorials/equipment/list-2.html">2</a></li>
+														<li><a href="javascript:if(confirm('http://www.jxvdy.com/tutorials/equipment/list-3.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/tutorials/equipment/list-3.html'" tppabs="http://www.jxvdy.com/tutorials/equipment/list-3.html">3</a></li>
+														<li><a href="javascript:if(confirm('http://www.jxvdy.com/tutorials/equipment/list-4.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/tutorials/equipment/list-4.html'" tppabs="http://www.jxvdy.com/tutorials/equipment/list-4.html">4</a></li>
+														<li><a href="javascript:if(confirm('http://www.jxvdy.com/tutorials/equipment/list-5.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/tutorials/equipment/list-5.html'" tppabs="http://www.jxvdy.com/tutorials/equipment/list-5.html">5</a></li>
+														<li><a href="javascript:if(confirm('http://www.jxvdy.com/tutorials/equipment/list-6.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/tutorials/equipment/list-6.html'" tppabs="http://www.jxvdy.com/tutorials/equipment/list-6.html">6</a></li>
+														<li><a href="javascript:if(confirm('http://www.jxvdy.com/tutorials/equipment/list-7.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/tutorials/equipment/list-7.html'" tppabs="http://www.jxvdy.com/tutorials/equipment/list-7.html">7</a></li>
+														<li><a href="javascript:if(confirm('http://www.jxvdy.com/tutorials/equipment/list-8.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/tutorials/equipment/list-8.html'" tppabs="http://www.jxvdy.com/tutorials/equipment/list-8.html">8</a></li>
+																																																																																																																																																																																																																																																																																																																																															
+			<li><a href="javascript:if(confirm('http://www.jxvdy.com/tutorials/equipment/list-2.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/tutorials/equipment/list-2.html'" tppabs="http://www.jxvdy.com/tutorials/equipment/list-2.html" rel="first">ä¸‹ä¸€é¡µ</a></li>
+	
+			<li><a href="javascript:if(confirm('http://www.jxvdy.com/tutorials/equipment/list-49.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/tutorials/equipment/list-49.html'" tppabs="http://www.jxvdy.com/tutorials/equipment/list-49.html" rel="first">æœ«é¡µ</a></li>
+	</ul>
+</div>
+
+
+<!--<li class="active"><span class="current prev">ä¸Šä¸€é¡µ</span></li><li class="active"><span class="current">1</span></li><li><a href="http://192.168.201.88:3000/list_video-2.html" class="page-link">2</a></li><li><a href="http://192.168.201.88:3000/list_video-3.html" class="page-link">3</a></li><li><a href="http://192.168.201.88:3000/list_video-4.html" class="page-link">4</a></li><li><a href="http://192.168.201.88:3000/list_video-5.html" class="page-link">5</a></li><li class="disabled"><span class="ellipse">â€¦</span></li><li><a href="http://192.168.201.88:3000/list_video-19.html" class="page-link">19</a></li><li><a href="http://192.168.201.88:3000/list_video-20.html" class="page-link">20</a></li><li><a href="http://192.168.201.88:3000/list_video-2.html" class="page-link next">ä¸‹ä¸€é¡µ</a></li></ul></div>-->
+<!--t1517408128-->
+			</div>
+		</div>
+	</div>
+	<aside class="sidebar">
+		<div class="js_reload js_pb_jxvdy widget widget-likes clearfix mt20" js_ch_id="17" js_action="guess" js_model="text_content" js_temp="1058">
+			<div class="modal-title clearfix">
+				<div class="modal-title-left">
+					<div class="modal-title-left-inner">çŒœä½ å–œæ¬¢</div>
+					<span class="tip-t"><i class="tip-outer"></i><i class="tip-inner"></i></span>
+				</div>
+				<div class="modal-title-right">
+					<a class="js_reload_h random" href="javascript:;" js_ch_id="17" js_action="guess" js_model="text_content" js_temp="1058"><i class="fa fa-repeat"></i>æ¢ä¸€æ¢</a>
+				</div>
+			</div>
+			<div class="js_reload_panel widget-likes-inner">
+				<ul class="js_reload_pagecount widget-likes-list" js_data="79">
+				<li><i class="dot"></i><a href="0001514426.html" tppabs="http://www.jxvdy.com/tutorials/equipment/qcpc/0001514426.html" title="æ‘„å½±å¸ˆä½ å¥½ï½œé™¤äº†Angelababyï¼Œä½ è¿˜éœ€è¦çŸ¥é“Lensbaby" target="_blank">æ‘„å½±å¸ˆä½ å¥½ï½œé™¤äº†Angelababyï¼Œ...</a></li>
+					<li><i class="dot"></i><a href="javascript:if(confirm('http://www.jxvdy.com/tutorials/equipment/jyfx/0001193830.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/tutorials/equipment/jyfx/0001193830.html'" tppabs="http://www.jxvdy.com/tutorials/equipment/jyfx/0001193830.html" title="èƒ½æ‰“ç¡¬ä»—â€”â€”ä½³èƒ½C300 Mark IIå®Œæˆæ–°åª’ä½“å½±è§†åˆ¶ä½œ" target="_blank">èƒ½æ‰“ç¡¬ä»—â€”â€”ä½³èƒ½C300 Mark I...</a></li>
+					<li><i class="dot"></i><a href="0001190612.html" tppabs="http://www.jxvdy.com/tutorials/equipment/syjq/0001190612.html" title="æ‘„å½±å¸ˆéƒ½æ˜¯è¿™æ ·æ“ä½œæ‘„å½±è½¦çš„ï¼" target="_blank">æ‘„å½±å¸ˆéƒ½æ˜¯è¿™æ ·æ“ä½œæ‘„å½±è½¦çš„ï¼</a></li>
+					<li><i class="dot"></i><a href="javascript:if(confirm('http://www.jxvdy.com/tutorials/equipment/syjq/0001190545.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/tutorials/equipment/syjq/0001190545.html'" tppabs="http://www.jxvdy.com/tutorials/equipment/syjq/0001190545.html" title="æ‹æ‘„é•œå­çš„ç”»é¢æ—¶ï¼Œæ‘„å½±æœºä¸ºä½•ä¸ä¼šç©¿å¸®" target="_blank">æ‹æ‘„é•œå­çš„ç”»é¢æ—¶ï¼Œæ‘„å½±æœºä¸ºä½•ä¸ä¼šç©¿å¸®</a></li>
+					<li><i class="dot"></i><a href="javascript:if(confirm('http://www.jxvdy.com/tutorials/equipment/syjq/0001193202.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/tutorials/equipment/syjq/0001193202.html'" tppabs="http://www.jxvdy.com/tutorials/equipment/syjq/0001193202.html" title="é€‚é©¬dpæ„å¤–ä¹‹å–œ æ•™ä½ çŽ©è½¬é«˜é€ŸåŒæ­¥é—ªå…‰" target="_blank">é€‚é©¬dpæ„å¤–ä¹‹å–œ æ•™ä½ çŽ©è½¬é«˜é€ŸåŒæ­¥é—ªå…‰</a></li>
+										</ul>
+<ul class="widget-likes-thumb">
+														<li><figure><a href="0033503100.html" tppabs="http://www.jxvdy.com/tutorials/equipment/qcpc/0033503100.html" title="é«˜ç”»è´¨ä½Žå™ªç‚¹ ä½³èƒ½å‘å¸ƒXA35/XA30æ‘„åƒæœº" target="_blank"><img class="lazy-article" _src="5644370f119e469fae496_0.jpg" tppabs="http://image.jxvdy.com/2015/1112/5644370f119e469fae496_0.jpg"  onerror="this.src='http://skin.jxvdy.com/jxvdy/web/images/default/380_264.png'" alt="é«˜ç”»è´¨ä½Žå™ªç‚¹ ä½³èƒ½å‘å¸ƒXA35/XA30æ‘„åƒæœº" width="140" height="98"></a></figure><a class="thumb-title" href="0033503100.html" tppabs="http://www.jxvdy.com/tutorials/equipment/qcpc/0033503100.html" title="é«˜ç”»è´¨ä½Žå™ªç‚¹ ä½³èƒ½å‘å¸ƒXA35/XA30æ‘„åƒæœº" target="_blank">é«˜ç”»è´¨ä½Žå™ªç‚¹ ä½³èƒ½å‘å¸ƒXA35/XA3...</a></li>
+					<li><figure><a href="0033186263.html" tppabs="http://www.jxvdy.com/tutorials/equipment/syjq/0033186263.html" title="ä¸åªæ˜¯ç³–æ°´ 85mmå®šç„¦é™¤äº†äººåƒè¿˜å¯ä»¥æ‹ä»€ä¹ˆ" target="_blank"><img class="lazy-article" _src="5644302883780fd3325f4_0.jpg" tppabs="http://image.jxvdy.com/2015/1112/5644302883780fd3325f4_0.jpg"  onerror="this.src='http://skin.jxvdy.com/jxvdy/web/images/default/380_264.png'" alt="ä¸åªæ˜¯ç³–æ°´ 85mmå®šç„¦é™¤äº†äººåƒè¿˜å¯ä»¥æ‹ä»€ä¹ˆ" width="140" height="98"></a></figure><a class="thumb-title" href="0033186263.html" tppabs="http://www.jxvdy.com/tutorials/equipment/syjq/0033186263.html" title="ä¸åªæ˜¯ç³–æ°´ 85mmå®šç„¦é™¤äº†äººåƒè¿˜å¯ä»¥æ‹ä»€ä¹ˆ" target="_blank">ä¸åªæ˜¯ç³–æ°´ 85mmå®šç„¦é™¤äº†äººåƒè¿˜å¯ä»¥...</a></li>
+					<li><figure><a href="javascript:if(confirm('http://www.jxvdy.com/tutorials/equipment/jyfx/0001506259.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/tutorials/equipment/jyfx/0001506259.html'" tppabs="http://www.jxvdy.com/tutorials/equipment/jyfx/0001506259.html" title="ä¸ä¸€æ ·çš„è§†è§’ å‘Šè¯‰ä½ ç©¶ç«Ÿä»€ä¹ˆé•œå¤´é€‚åˆæ‹ä»€ä¹ˆ" target="_blank"><img class="lazy-article" _src="564417e3ac8e49f51552b_0.jpg" tppabs="http://image.jxvdy.com/2015/1112/564417e3ac8e49f51552b_0.jpg"  onerror="this.src='http://skin.jxvdy.com/jxvdy/web/images/default/380_264.png'" alt="ä¸ä¸€æ ·çš„è§†è§’ å‘Šè¯‰ä½ ç©¶ç«Ÿä»€ä¹ˆé•œå¤´é€‚åˆæ‹ä»€ä¹ˆ" width="140" height="98"></a></figure><a class="thumb-title" href="javascript:if(confirm('http://www.jxvdy.com/tutorials/equipment/jyfx/0001506259.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/tutorials/equipment/jyfx/0001506259.html'" tppabs="http://www.jxvdy.com/tutorials/equipment/jyfx/0001506259.html" title="ä¸ä¸€æ ·çš„è§†è§’ å‘Šè¯‰ä½ ç©¶ç«Ÿä»€ä¹ˆé•œå¤´é€‚åˆæ‹ä»€ä¹ˆ" target="_blank">ä¸ä¸€æ ·çš„è§†è§’ å‘Šè¯‰ä½ ç©¶ç«Ÿä»€ä¹ˆé•œå¤´é€‚åˆæ‹...</a></li>
+					<li><figure><a href="0001182953.html" tppabs="http://www.jxvdy.com/tutorials/equipment/syjq/0001182953.html" title="å¦‚ä½•æ‰«è¡—ï¼Œè®ºè¡—å¤´æ‘„å½±ä¸­èƒ½å¦ä½¿ç”¨é•¿ç„¦é•œå¤´" target="_blank"><img class="lazy-article" _src="563c2a6e2a1e59f51552b_380_264.jpg" tppabs="http://image.jxvdy.com/2015/1106/563c2a6e2a1e59f51552b_380_264.jpg"  onerror="this.src='http://skin.jxvdy.com/jxvdy/web/images/default/380_264.png'" alt="å¦‚ä½•æ‰«è¡—ï¼Œè®ºè¡—å¤´æ‘„å½±ä¸­èƒ½å¦ä½¿ç”¨é•¿ç„¦é•œå¤´" width="140" height="98"></a></figure><a class="thumb-title" href="0001182953.html" tppabs="http://www.jxvdy.com/tutorials/equipment/syjq/0001182953.html" title="å¦‚ä½•æ‰«è¡—ï¼Œè®ºè¡—å¤´æ‘„å½±ä¸­èƒ½å¦ä½¿ç”¨é•¿ç„¦é•œå¤´" target="_blank">å¦‚ä½•æ‰«è¡—ï¼Œè®ºè¡—å¤´æ‘„å½±ä¸­èƒ½å¦ä½¿ç”¨é•¿ç„¦é•œå¤´</a></li>
+		</ul>
+<!--t1517408234-->
+
+			</div>
+		</div>
+		<div class="ads300-250 mt10 js_ad_record" style="height: 250px;">
+						<script type="text/javascript" src="0100.js" tppabs="http://ad.jxvdy.com/script/0100.js"></script>
+					</div>
+		<div class="js_reload widget widget-thumb-text clearfix mt20 js_pb_jxvdy" js_ch_id="17" js_action="getWatching" js_model="text_content" js_temp="1059">
+			<div class="modal-title clearfix">
+				<div class="modal-title-left">
+					<div class="modal-title-left-inner">å¤§å®¶éƒ½åœ¨çœ‹</div>
+					<span class="tip-t"><i class="tip-outer"></i><i class="tip-inner"></i></span>
+				</div>
+				<div class="modal-title-right">
+					<a class="js_reload_h random" href="javascript:;" js_ch_id="17" js_action="getWatching" js_model="text_content" js_temp="1059"><i class="fa fa-repeat"></i>æ¢ä¸€æ¢</a>
+				</div>
+			</div>
+			<div class="js_reload_panel widget-thumb-text-inner">
+					<article class="article-item js_reload_pagecount" js_data="178">
+		<figure><a href="javascript:if(confirm('http://www.jxvdy.com/tutorials/equipment/qcpc/0033491208.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/tutorials/equipment/qcpc/0033491208.html'" tppabs="http://www.jxvdy.com/tutorials/equipment/qcpc/0033491208.html" title="è…¾é¾™150-600mmé•œå¤´æµ‹è¯„   è½»æ¾æŠ“..." target="_blank"><img class="img-responsive lazy-article" _src="556e99e53a009f3ccdd27_0.jpg" tppabs="http://image.jxvdy.com/2015/0603/556e99e53a009f3ccdd27_0.jpg" onerror="this.src='http://skin.jxvdy.com/jxvdy/web/images/default/380_264.png'" alt="è…¾é¾™150-600mmé•œå¤´æµ‹è¯„   è½»æ¾æŠ“..."></a></figure>
+		<div class="widget-thumb-text-info">
+			<h5><a href="javascript:if(confirm('http://www.jxvdy.com/tutorials/equipment/qcpc/0033491208.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/tutorials/equipment/qcpc/0033491208.html'" tppabs="http://www.jxvdy.com/tutorials/equipment/qcpc/0033491208.html" target="_blank">è…¾é¾™150-600mmé•œå¤´æµ‹è¯„   è½»æ¾æŠ“...</a></h5>
+			<small>2449äººæ­£åœ¨æµè§ˆ<span class="text-center"><a href="javascript:if(confirm('http://www.jxvdy.com/tutorials/equipment/qcpc/0033491208.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/tutorials/equipment/qcpc/0033491208.html'" tppabs="http://www.jxvdy.com/tutorials/equipment/qcpc/0033491208.html" target="_blank"><i class="fa fa-eye"></i>å›´è§‚</a></span></small>
+		</div>
+	</article>
+	<article class="article-item js_reload_pagecount" js_data="178">
+		<figure><a href="javascript:if(confirm('http://www.jxvdy.com/tutorials/equipment/qcpc/0001043822.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/tutorials/equipment/qcpc/0001043822.html'" tppabs="http://www.jxvdy.com/tutorials/equipment/qcpc/0001043822.html" title="å…³äºŽæ˜Ÿäº‘6000" target="_blank"><img class="img-responsive lazy-article" _src="16-45-07-55-1531.jpg.png" tppabs="http://image.jxvdy.com/old/201406/17/16-45-07-55-1531.jpg" onerror="this.src='http://skin.jxvdy.com/jxvdy/web/images/default/380_264.png'" alt="å…³äºŽæ˜Ÿäº‘6000"></a></figure>
+		<div class="widget-thumb-text-info">
+			<h5><a href="javascript:if(confirm('http://www.jxvdy.com/tutorials/equipment/qcpc/0001043822.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/tutorials/equipment/qcpc/0001043822.html'" tppabs="http://www.jxvdy.com/tutorials/equipment/qcpc/0001043822.html" target="_blank">å…³äºŽæ˜Ÿäº‘6000</a></h5>
+			<small>181äººæ­£åœ¨æµè§ˆ<span class="text-center"><a href="javascript:if(confirm('http://www.jxvdy.com/tutorials/equipment/qcpc/0001043822.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/tutorials/equipment/qcpc/0001043822.html'" tppabs="http://www.jxvdy.com/tutorials/equipment/qcpc/0001043822.html" target="_blank"><i class="fa fa-eye"></i>å›´è§‚</a></span></small>
+		</div>
+	</article>
+	<article class="article-item js_reload_pagecount" js_data="178">
+		<figure><a href="javascript:if(confirm('http://www.jxvdy.com/tutorials/equipment/jyfx/0033002053.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/tutorials/equipment/jyfx/0033002053.html'" tppabs="http://www.jxvdy.com/tutorials/equipment/jyfx/0033002053.html" title="ç»™æ‘„å½±åˆå­¦è€…çš„å¿ å‘Šï¼šåˆ«å¤ªå½“å›žäº‹å„¿" target="_blank"><img class="img-responsive lazy-article" _src="14-53-12-44-51.jpg.png" tppabs="http://image.jxvdy.com/old/201310/18/14-53-12-44-51.jpg" onerror="this.src='http://skin.jxvdy.com/jxvdy/web/images/default/380_264.png'" alt="ç»™æ‘„å½±åˆå­¦è€…çš„å¿ å‘Šï¼šåˆ«å¤ªå½“å›žäº‹å„¿"></a></figure>
+		<div class="widget-thumb-text-info">
+			<h5><a href="javascript:if(confirm('http://www.jxvdy.com/tutorials/equipment/jyfx/0033002053.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/tutorials/equipment/jyfx/0033002053.html'" tppabs="http://www.jxvdy.com/tutorials/equipment/jyfx/0033002053.html" target="_blank">ç»™æ‘„å½±åˆå­¦è€…çš„å¿ å‘Šï¼šåˆ«å¤ªå½“å›žäº‹å„¿</a></h5>
+			<small>86äººæ­£åœ¨æµè§ˆ<span class="text-center"><a href="javascript:if(confirm('http://www.jxvdy.com/tutorials/equipment/jyfx/0033002053.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/tutorials/equipment/jyfx/0033002053.html'" tppabs="http://www.jxvdy.com/tutorials/equipment/jyfx/0033002053.html" target="_blank"><i class="fa fa-eye"></i>å›´è§‚</a></span></small>
+		</div>
+	</article>
+	<article class="article-item js_reload_pagecount" js_data="178">
+		<figure><a href="javascript:if(confirm('http://www.jxvdy.com/tutorials/equipment/syjq/0001081320.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/tutorials/equipment/syjq/0001081320.html'" tppabs="http://www.jxvdy.com/tutorials/equipment/syjq/0001081320.html" title="å¿«é€Ÿä¸Šæ‰‹å•åå¯¹ç„¦æ¨¡å¼å¤§é›†åˆ" target="_blank"><img class="img-responsive lazy-article" _src="549cce71c210200e1957d_380_264.jpg" tppabs="http://image.jxvdy.com/2014/1226/549cce71c210200e1957d_380_264.jpg" onerror="this.src='http://skin.jxvdy.com/jxvdy/web/images/default/380_264.png'" alt="å¿«é€Ÿä¸Šæ‰‹å•åå¯¹ç„¦æ¨¡å¼å¤§é›†åˆ"></a></figure>
+		<div class="widget-thumb-text-info">
+			<h5><a href="javascript:if(confirm('http://www.jxvdy.com/tutorials/equipment/syjq/0001081320.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/tutorials/equipment/syjq/0001081320.html'" tppabs="http://www.jxvdy.com/tutorials/equipment/syjq/0001081320.html" target="_blank">å¿«é€Ÿä¸Šæ‰‹å•åå¯¹ç„¦æ¨¡å¼å¤§é›†åˆ</a></h5>
+			<small>5130äººæ­£åœ¨æµè§ˆ<span class="text-center"><a href="javascript:if(confirm('http://www.jxvdy.com/tutorials/equipment/syjq/0001081320.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/tutorials/equipment/syjq/0001081320.html'" tppabs="http://www.jxvdy.com/tutorials/equipment/syjq/0001081320.html" target="_blank"><i class="fa fa-eye"></i>å›´è§‚</a></span></small>
+		</div>
+	</article>
+<!--t1517408234-->
+
+			</div>
+		</div>
+
+		<div class="widget widget-thumb-text clearfix js_pb_jxvdy" js_ch_id="4" js_action="getNew" js_temp="1062" js_model="screenplay">
+			<div class="modal-title clearfix">
+				<div class="modal-title-left">
+					<div class="modal-title-left-inner">æœ€æ–°å‰§æœ¬å±•ç¤º</div>
+					<span class="tip-t"><i class="tip-outer"></i><i class="tip-inner"></i></span>
+				</div>
+				<div class="modal-title-right">
+					<a class="more" href="javascript:if(confirm('http://www.jxvdy.com/screenplay/list.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/screenplay/list.html'" tppabs="http://www.jxvdy.com/screenplay/list.html" target="_blank">æ›´å¤š<i class="fa fa-caret-right"></i></a>
+				</div>
+			</div>
+			<div class="widget-thumb-text-inner js_reload_panel">
+					<article class="article-item">
+		<figure><a href="javascript:if(confirm('http://www.jxvdy.com/screenplay/056159.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/screenplay/056159.html'" tppabs="http://www.jxvdy.com/screenplay/056159.html" title="2016é‡‘ä¸¹è‹¥ç½‘ç»œå½±è§†åˆ›æ–°è®ºå›æš–å†¬å¼€å¹•" target="_blank"><img class="img-responsive" src="585ddc1a5afdd1abb2dc3_380_264.jpg" tppabs="http://image.jxvdy.com/2016/1224/585ddc1a5afdd1abb2dc3_380_264.jpg" alt="2016é‡‘ä¸¹è‹¥ç½‘ç»œå½±è§†åˆ›æ–°è®ºå›æš–å†¬å¼€å¹•"></a></figure>
+		<div class="widget-thumb-text-info">
+			<h5><a href="javascript:if(confirm('http://www.jxvdy.com/screenplay/056159.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/screenplay/056159.html'" tppabs="http://www.jxvdy.com/screenplay/056159.html" target="_blank" title="ã€2016é‡‘ä¸¹è‹¥ç½‘ç»œå½±è§†åˆ›æ–°è®ºå›æš–å†¬å¼€å¹•ã€‘2016é‡‘ä¸¹è‹¥ç½‘ç»œå½±è§†åˆ›æ–°è®ºå›æš–å†¬å¼€å¹•">ã€2016é‡‘ä¸¹è‹¥ç½‘ç»œå½±è§†åˆ›æ–°è®ºå›æš–å†¬å¼€å¹•ã€‘2016é‡‘ä¸¹è‹¥ç½‘ç»œå½±è§†åˆ›æ–°è®ºå›æš–å†¬å¼€å¹•</a></h5>
+			<small><i class="fa fa-clock-o"></i>2016-12-24</small>
+		</div>
+	</article>
+	<article class="article-item">
+		<figure><a href="javascript:if(confirm('http://www.jxvdy.com/screenplay/052924.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/screenplay/052924.html'" tppabs="http://www.jxvdy.com/screenplay/052924.html" title="æœé­”è®°" target="_blank"><img class="img-responsive" src="5838efae32d7e4e9d1a2d_380_264.jpg" tppabs="http://image.jxvdy.com/2016/1126/5838efae32d7e4e9d1a2d_380_264.jpg" alt="æœé­”è®°"></a></figure>
+		<div class="widget-thumb-text-info">
+			<h5><a href="javascript:if(confirm('http://www.jxvdy.com/screenplay/052924.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/screenplay/052924.html'" tppabs="http://www.jxvdy.com/screenplay/052924.html" target="_blank" title="ã€æœé­”è®°ã€‘å¤©ä¸‹è‹±é›„åœ¨ï¼Œæœé­”æ­£å½“æ—¶ï¼">ã€æœé­”è®°ã€‘å¤©ä¸‹è‹±é›„åœ¨ï¼Œæœé­”æ­£å½“æ—¶ï¼</a></h5>
+			<small><i class="fa fa-clock-o"></i>2016-11-26</small>
+		</div>
+	</article>
+	<article class="article-item">
+		<figure><a href="javascript:if(confirm('http://www.jxvdy.com/screenplay/056151.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/screenplay/056151.html'" tppabs="http://www.jxvdy.com/screenplay/056151.html" title="è¿™ä¸ªå¤å¤©é‡è§ä½ " target="_blank"><img class="img-responsive" src="57db8ed218d280562ab4e_380_264.jpg" tppabs="http://image.jxvdy.com/2016/0916/57db8ed218d280562ab4e_380_264.jpg" alt="è¿™ä¸ªå¤å¤©é‡è§ä½ "></a></figure>
+		<div class="widget-thumb-text-info">
+			<h5><a href="javascript:if(confirm('http://www.jxvdy.com/screenplay/056151.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/screenplay/056151.html'" tppabs="http://www.jxvdy.com/screenplay/056151.html" target="_blank" title="ã€è¿™ä¸ªå¤å¤©é‡è§ä½ ã€‘éƒ½å¸‚æƒ…æ„Ÿå‰§">ã€è¿™ä¸ªå¤å¤©é‡è§ä½ ã€‘éƒ½å¸‚æƒ…æ„Ÿå‰§</a></h5>
+			<small><i class="fa fa-clock-o"></i>2016-09-16</small>
+		</div>
+	</article>
+	<article class="article-item">
+		<figure><a href="javascript:if(confirm('http://www.jxvdy.com/screenplay/052916.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/screenplay/052916.html'" tppabs="http://www.jxvdy.com/screenplay/052916.html" title="å¤§å­¦ä¸éƒ½è¿™æ ·" target="_blank"><img class="img-responsive" src="57ce359155fa9ed89d82e_380_264.jpg" tppabs="http://image.jxvdy.com/2016/0906/57ce359155fa9ed89d82e_380_264.jpg" alt="å¤§å­¦ä¸éƒ½è¿™æ ·"></a></figure>
+		<div class="widget-thumb-text-info">
+			<h5><a href="javascript:if(confirm('http://www.jxvdy.com/screenplay/052916.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/screenplay/052916.html'" tppabs="http://www.jxvdy.com/screenplay/052916.html" target="_blank" title="ã€å¤§å­¦ä¸éƒ½è¿™æ ·ã€‘æˆ‘ä»¬éƒ½ä¸€æ ·ï¼Œæ‡µæ‡‚åœ°è¸å…¥å¤§å­¦ï¼Œä»Žæ†§æ†¬åˆ°è¿·æƒ˜ï¼Œä¸è¦æ‹…å¿ƒï¼Œä½ æ€»ä¼šæ‰¾åˆ°æ–¹å‘ã€‚">ã€å¤§å­¦ä¸éƒ½è¿™æ ·ã€‘æˆ‘ä»¬éƒ½ä¸€æ ·ï¼Œæ‡µæ‡‚åœ°è¸å…¥å¤§å­¦ï¼Œä»Žæ†§æ†¬åˆ°è¿·æƒ˜ï¼Œä¸è¦æ‹…å¿ƒï¼Œä½ æ€»ä¼šæ‰¾åˆ°æ–¹å‘ã€‚</a></h5>
+			<small><i class="fa fa-clock-o"></i>2016-09-06</small>
+		</div>
+	</article>
+<!--t1517407634-->
+
+			</div>
+		</div>
+		
+		<div class="widget widget-thumb-text clearfix js_pb_jxvdy" js_ch_id="5" js_action="getNew" js_temp="1062" js_model="text_content">
+			<div class="modal-title clearfix">
+				<div class="modal-title-left">
+					<div class="modal-title-left-inner">æœ€æ–°å­¦é™¢æ•™ç¨‹</div>
+					<span class="tip-t"><i class="tip-outer"></i><i class="tip-inner"></i></span>
+				</div>
+				<div class="modal-title-right">
+					<a class="more" href="list-18.html" tppabs="http://www.jxvdy.com/tutorials/list.html" target="_blank">æ›´å¤š<i class="fa fa-caret-right"></i></a>
+				</div>
+			</div>
+			<div class="widget-thumb-text-inner js_reload_panel">
+					<article class="article-item">
+		<figure><a href="0001514426.html" tppabs="http://www.jxvdy.com/tutorials/equipment/qcpc/0001514426.html" title="æ‘„å½±å¸ˆä½ å¥½ï½œé™¤äº†Angelababyï¼Œä½ è¿˜éœ€è¦çŸ¥é“Lensbaby" target="_blank"><img class="img-responsive" src="56a7465c2e4b4627b139a_0.jpg" tppabs="http://image.jxvdy.com/2016/0126/56a7465c2e4b4627b139a_0.jpg" alt="æ‘„å½±å¸ˆä½ å¥½ï½œé™¤äº†Angelababyï¼Œä½ è¿˜éœ€è¦çŸ¥é“Lensbaby"></a></figure>
+		<div class="widget-thumb-text-info">
+			<h5><a href="0001514426.html" tppabs="http://www.jxvdy.com/tutorials/equipment/qcpc/0001514426.html" target="_blank" title="æ‘„å½±å¸ˆä½ å¥½ï½œé™¤äº†Angelababyï¼Œä½ è¿˜éœ€è¦çŸ¥é“Lensbaby">æ‘„å½±å¸ˆä½ å¥½ï½œé™¤äº†Angelababyï¼Œä½ è¿˜éœ€è¦çŸ¥é“Lensbaby</a></h5>
+			<small><i class="fa fa-clock-o"></i>2016-01-26</small>
+		</div>
+	</article>
+	<article class="article-item">
+		<figure><a href="0001511257.html" tppabs="http://www.jxvdy.com/tutorials/shooting/sysx/0001511257.html" title="åœ¨é™åˆ¶é‡Œåšå‡ºæœ€åˆç†ï¼Œã€Šå”äººè¡—æŽ¢æ¡ˆã€‹æ‘„å½±æ‰‹è®°" target="_blank"><img class="img-responsive" src="56a73e20b6b35162ad1b8_0.jpg" tppabs="http://image.jxvdy.com/2016/0126/56a73e20b6b35162ad1b8_0.jpg" alt="åœ¨é™åˆ¶é‡Œåšå‡ºæœ€åˆç†ï¼Œã€Šå”äººè¡—æŽ¢æ¡ˆã€‹æ‘„å½±æ‰‹è®°"></a></figure>
+		<div class="widget-thumb-text-info">
+			<h5><a href="0001511257.html" tppabs="http://www.jxvdy.com/tutorials/shooting/sysx/0001511257.html" target="_blank" title="åœ¨é™åˆ¶é‡Œåšå‡ºæœ€åˆç†ï¼Œã€Šå”äººè¡—æŽ¢æ¡ˆã€‹æ‘„å½±æ‰‹è®°">åœ¨é™åˆ¶é‡Œåšå‡ºæœ€åˆç†ï¼Œã€Šå”äººè¡—æŽ¢æ¡ˆã€‹æ‘„å½±æ‰‹è®°</a></h5>
+			<small><i class="fa fa-clock-o"></i>2016-01-26</small>
+		</div>
+	</article>
+	<article class="article-item">
+		<figure><a href="0033514418.html" tppabs="http://www.jxvdy.com/tutorials/shooting/sysx/0033514418.html" title="é€šè¿‡æ‘„å½±æœºçš„è¿åŠ¨è¡¨çŽ°æ„ä¹‰ï¼šé»‘æ³½æ˜Žçš„ã€Šç½—ç”Ÿé—¨ã€‹" target="_blank"><img class="img-responsive" src="56a5a0224cc8f6a39463a_0.jpg" tppabs="http://image.jxvdy.com/2016/0125/56a5a0224cc8f6a39463a_0.jpg" alt="é€šè¿‡æ‘„å½±æœºçš„è¿åŠ¨è¡¨çŽ°æ„ä¹‰ï¼šé»‘æ³½æ˜Žçš„ã€Šç½—ç”Ÿé—¨ã€‹"></a></figure>
+		<div class="widget-thumb-text-info">
+			<h5><a href="0033514418.html" tppabs="http://www.jxvdy.com/tutorials/shooting/sysx/0033514418.html" target="_blank" title="é€šè¿‡æ‘„å½±æœºçš„è¿åŠ¨è¡¨çŽ°æ„ä¹‰ï¼šé»‘æ³½æ˜Žçš„ã€Šç½—ç”Ÿé—¨ã€‹">é€šè¿‡æ‘„å½±æœºçš„è¿åŠ¨è¡¨çŽ°æ„ä¹‰ï¼šé»‘æ³½æ˜Žçš„ã€Šç½—ç”Ÿé—¨ã€‹</a></h5>
+			<small><i class="fa fa-clock-o"></i>2016-01-25</small>
+		</div>
+	</article>
+	<article class="article-item">
+		<figure><a href="0001514410.html" tppabs="http://www.jxvdy.com/tutorials/shooting/dgbj/0001514410.html" title="æ‘„å½±å¸ˆæ‰“å…‰å¦‚ä½•å‚è€ƒå…‰æº" target="_blank"><img class="img-responsive" src="569c96710f46ff33e46f6_0.jpg" tppabs="http://image.jxvdy.com/2016/0118/569c96710f46ff33e46f6_0.jpg" alt="æ‘„å½±å¸ˆæ‰“å…‰å¦‚ä½•å‚è€ƒå…‰æº"></a></figure>
+		<div class="widget-thumb-text-info">
+			<h5><a href="0001514410.html" tppabs="http://www.jxvdy.com/tutorials/shooting/dgbj/0001514410.html" target="_blank" title="æ‘„å½±å¸ˆæ‰“å…‰å¦‚ä½•å‚è€ƒå…‰æº">æ‘„å½±å¸ˆæ‰“å…‰å¦‚ä½•å‚è€ƒå…‰æº</a></h5>
+			<small><i class="fa fa-clock-o"></i>2016-01-18</small>
+		</div>
+	</article>
+<!--t1517407634-->
+
+			</div>
+		</div>
+		
+		<!--çƒ­é—¨æŽ’è¡Œ -->
+		<div id="sidebar">
+			<div class="js_rank widget clearfix">
+				<div class="modal-title clearfix">
+					<div class="modal-title-left">
+						<div class="modal-title-left-inner">çƒ­é—¨æŽ’è¡Œ</div>
+						<span class="tip-t"><i class="tip-outer"></i><i class="tip-inner"></i></span>
+					</div>
+				</div>
+				<!-- /.modal-title  -->
+				<div class="modal-title-tab channel-tab-nav">
+					<ul class="rank-tab clearfix">
+						<li class="js_rank_handle " js_data_m="text_content" js_data_c="1" js_data="week"><a href="javascript:;">èµ„è®¯</a></li>
+						<li class="js_rank_handle" js_data_m="screenplay" js_data_c="4" js_data="week"><a href="javascript:;">å‰§æœ¬</a></li>
+						<li class="js_rank_handle on" js_data_m="text_content" js_data_c="5" js_data="week"><a href="javascript:;">æ•™ç¨‹</a></li>
+						<li class="js_rank_handle" js_data_m="video_info" js_data_c="2" js_data="week"><a href="javascript:;">å¾®ç”µå½±</a></li>
+						<li class="js_rank_handle last" js_data_m="video_info" js_data_c="3" js_data="week"><a href="javascript:;">ç½‘ç»œå‰§</a></li>
+					</ul>
+				</div>
+				<div class="channel-tab-inner clearfix">
+										<div class="hots-rank">
+	<ul class="js_col list-unstyled">
+					<li class="rank-title"><i class="rank-num num-1">1</i><a href="0001514426.html" tppabs="http://www.jxvdy.com/tutorials/equipment/qcpc/0001514426.html" target="_blank" title="æ‘„å½±å¸ˆä½ å¥½ï½œé™¤äº†Angelababyï¼Œä½ è¿˜éœ€è¦çŸ¥é“Lensbaby">æ‘„å½±å¸ˆä½ å¥½ï½œé™¤äº†Angelababyï¼Œä½ è¿˜éœ€è¦çŸ¥é“Lensbaby</a></li>
+					<li class="rank-title"><i class="rank-num num-2">2</i><a href="0001511257.html" tppabs="http://www.jxvdy.com/tutorials/shooting/sysx/0001511257.html" target="_blank" title="åœ¨é™åˆ¶é‡Œåšå‡ºæœ€åˆç†ï¼Œã€Šå”äººè¡—æŽ¢æ¡ˆã€‹æ‘„å½±æ‰‹è®°">åœ¨é™åˆ¶é‡Œåšå‡ºæœ€åˆç†ï¼Œã€Šå”äººè¡—æŽ¢æ¡ˆã€‹æ‘„å½±æ‰‹è®°</a></li>
+					<li class="rank-title"><i class="rank-num num-3">3</i><a href="0033514418.html" tppabs="http://www.jxvdy.com/tutorials/shooting/sysx/0033514418.html" target="_blank" title="é€šè¿‡æ‘„å½±æœºçš„è¿åŠ¨è¡¨çŽ°æ„ä¹‰ï¼šé»‘æ³½æ˜Žçš„ã€Šç½—ç”Ÿé—¨ã€‹">é€šè¿‡æ‘„å½±æœºçš„è¿åŠ¨è¡¨çŽ°æ„ä¹‰ï¼šé»‘æ³½æ˜Žçš„ã€Šç½—ç”Ÿé—¨ã€‹</a></li>
+					<li class="rank-title"><i class="rank-num num-4">4</i><a href="0001514410.html" tppabs="http://www.jxvdy.com/tutorials/shooting/dgbj/0001514410.html" target="_blank" title="æ‘„å½±å¸ˆæ‰“å…‰å¦‚ä½•å‚è€ƒå…‰æº">æ‘„å½±å¸ˆæ‰“å…‰å¦‚ä½•å‚è€ƒå…‰æº</a></li>
+					<li class="rank-title"><i class="rank-num num-5">5</i><a href="0001511241.html" tppabs="http://www.jxvdy.com/tutorials/shooting/psxd/0001511241.html" target="_blank" title="2015å¹´æœ€ç¾Žçš„çˆ±æƒ…ç”µå½±ã€Šå¡ç½—å°”ã€‹æ‹æ‘„æ‰‹è®°">2015å¹´æœ€ç¾Žçš„çˆ±æƒ…ç”µå½±ã€Šå¡ç½—å°”ã€‹æ‹æ‘„æ‰‹è®°</a></li>
+					<li class="rank-title"><i class="rank-num num-6">6</i><a href="0001511208.html" tppabs="http://www.jxvdy.com/tutorials/late/ystx/0001511208.html" target="_blank" title="å›¾æ–‡è§£æžï¼š[èšäºº]æœè£…è®¾è®¡å¸ˆè®²è§£æˆ˜æ–—å¥—è£…çŽ„æœº">å›¾æ–‡è§£æžï¼š[èšäºº]æœè£…è®¾è®¡å¸ˆè®²è§£æˆ˜æ–—å¥—è£…çŽ„æœº</a></li>
+					<li class="rank-title"><i class="rank-num num-7">7</i><a href="0001194439.html" tppabs="http://www.jxvdy.com/tutorials/plays/mjdj/0001194439.html" target="_blank" title="ã€Šè€ç‚®å„¿ã€‹:è‰¯çŸ¥çš„ç”Ÿå‘½æ—¶å…‰">ã€Šè€ç‚®å„¿ã€‹:è‰¯çŸ¥çš„ç”Ÿå‘½æ—¶å…‰</a></li>
+					<li class="rank-title"><i class="rank-num num-8">8</i><a href="0033511233.html" tppabs="http://www.jxvdy.com/tutorials/plays/jzfx/0033511233.html" target="_blank" title="ã€Šä¸‡ä¸‡æ²¡æƒ³åˆ°ã€‹ï¼šæ‹‰é•¿åˆ°95åˆ†é’Ÿä¹Ÿè¿˜æ˜¯ä¸€éƒ¨ç½‘å‰§">ã€Šä¸‡ä¸‡æ²¡æƒ³åˆ°ã€‹ï¼šæ‹‰é•¿åˆ°95åˆ†é’Ÿä¹Ÿè¿˜æ˜¯ä¸€éƒ¨ç½‘å‰§</a></li>
+					<li class="rank-title"><i class="rank-num num-9">9</i><a href="0033511200.html" tppabs="http://www.jxvdy.com/tutorials/plays/ysjp/0033511200.html" target="_blank" title="â€œè€ç‚®å„¿â€å…­çˆ·éª¤å€’å†°é¢ ç»“å±€èµ°å‘æ„ä¹‰ä½•åœ¨ï¼Ÿ">â€œè€ç‚®å„¿â€å…­çˆ·éª¤å€’å†°é¢ ç»“å±€èµ°å‘æ„ä¹‰ä½•åœ¨ï¼Ÿ</a></li>
+					<li class="rank-title"><i class="rank-num num-10">10</i><a href="0033511004.html" tppabs="http://www.jxvdy.com/tutorials/plays/ysjp/0033511004.html" target="_blank" title="ã€Šè€ç‚®å„¿ã€‹å…¨è§£è¯»ï¼Œå¯¼æ¼”è¿™ä¹ˆæ‹â€œå¹´åº¦æœ€ä½³â€">ã€Šè€ç‚®å„¿ã€‹å…¨è§£è¯»ï¼Œå¯¼æ¼”è¿™ä¹ˆæ‹â€œå¹´åº¦æœ€ä½³â€</a></li>
+			</ul>
+</div>
+<ul class="js_tpl hidden">
+	<li class="rank-title"><i class="rank-num"></i><a href="#" title="" target="_blank"></a></li>
+</ul>
+<!--t1517408533-->
+
+									</div>
+				<!-- /.tab-content -->
+			</div>
+			<!-- /.widget-thumb-text -->
+			<div class="mt10 ads300-250 mb20 js_ad_record" style="height: 250px;">
+						<script type="text/javascript" src="0133.js" tppabs="http://ad.jxvdy.com/script/0133.js"></script>
+						</div>
+		</div>
+		<!-- /.sidebar -->
+	</aside>
+	<a class="js_popup hidden" js_popup="js_popup_login"></a>
+	<script type="text/javascript" src="my_login.js" tppabs="http://skin.jxvdy.com/jxvdy2/public/javascripts/my_login.js"></script>
+<script language="JavaScript">
+<!--
+var CHECK_FIELD_URL = '/my/logincheck';
+//-->
+</script>
+<!-- ä¼šå‘˜ç™»å½•å¼¹å‡ºå±‚ -->
+<div id="js_popup_login" class="js_popup_content popup-wrap popup-login-wrap">
+	<div class="popup-title">
+		<a href="javascript:;" title="å…³é—­" class="js_popup_closed closed">Ã—</a>
+		<h4>ç™»å½•é‡‘è±¡å¾®ç”µå½±è´¦å·</h4>
+	</div>
+	<div class="popup-body clearfix">
+		<div class="setting-wrap setting-profile">
+			<form class="js_form form-usr" action="http://www.jxvdy.com/my/loginsubmit" method="post" js_validrules="validRules" onsubmit="return false;">
+				<input type="hidden" name="jumpto" value="" />
+				<div class="user-group-wrap">
+					<div class="user-group">
+						<input type="text" id="js_name" name="name" class="input-username form-control" autocomplete="off" maxlength="35" placeholder="ç”¨æˆ·å/é‚®ç®±">
+						<p class="user-tip-wrap" id="js_name_tip"></p>
+					</div>
+				</div>
+				<!-- /.user-group-wrap -->
+				<div class="user-group-wrap">
+					<div class="user-group">
+						<input type="password" id="js_pwd" name="pwd" class="input-password form-control" autocomplete="off" placeholder="è¯·è¾“å…¥å¯†ç " maxlength="35" />
+						<p class="user-tip-wrap" id="js_pwd_tip"></p>
+					</div>
+				</div>
+				<!-- /.user-group-wrap -->
+				<div class="user-group-wrap">
+					<div class="user-group aotu-login">
+						<span class="form-checkbox pull-left">
+							<input type="checkbox" id="js_autologin" name="autologin" style="-webkit-appearance:display" value="1" checked="checked">
+							<label for="js_autologin">ä¸‹æ¬¡è‡ªåŠ¨ç™»å½•</label>
+						</span>
+						<a href="javascript:if(confirm('http://www.jxvdy.com/my/forgetpwd  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼þ½«±»¼ÓÈëÏÂÔØ¶ÓÁÐ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jxvdy.com/my/forgetpwd'" tppabs="http://www.jxvdy.com/my/forgetpwd" class="color-gray pull-right">å¿˜è®°å¯†ç ï¼Ÿ</a>
+					</div>
+				</div>
+				<!-- /.user-group-wrap -->
+				<div class="user-group-wrap">
+					<div class="user-group">
+						<input type="submit" class="btn btn-warning btn-login-submit" value="ç™» å½•" />
+					</div>
+				</div>
+				<div id="js_ok_tip" style="display: none;"></div>
+				<!-- /.user-group-wrap -->
+				<div class="user-group-wrap">
+					<div class="user-group aotu-login">
+						<span class="pull-right">è¿˜æ²¡æœ‰é‡‘è±¡å¾®ç”µå½±è´¦å·ï¼Ÿ<a href="regist.htm" tppabs="http://www.jxvdy.com/my/regist" class="brand-warning">ç«‹å³æ³¨å†Œ</a></span>
+					</div>
+				</div>
+				<!-- /.user-group-wrap -->
+			</form>
+		</div>
+		<!-- /.lsetting-wrap -->
+		<dl class="login-other-wrap">
+			<dt class="login-other-title color-gray">ä¸€é”®æŽˆæƒï¼Œå¿«é€Ÿç™»å½• </dt>
+			<dd class="login-sina login-other-btn"><a href="javascript:void(0)" onclick="return window.open('http://www.jxvdy.com/oauth2/authorize?p=sinaweibo&login=1', 'oauth2Login_sinaweibo' ,'height=562,width=754, toolbar=no, menubar=no, scrollbars=no, status=no, location=yes, resizable=yes').noAim = true;"><i class="icon-login-sina"></i><span>æ–°æµªå¾®åšç™»å½•</span></a></dd>
+			<dd class="login-tqq login-other-btn"><a href="javascript:void(0)" onclick="return window.open('http://www.jxvdy.com/oauth2/authorize?p=txweibo&login=1', 'oauth2Login_txweibo' ,'height=420,width=610, toolbar=no, menubar=no, scrollbars=no, status=no, location=yes, resizable=yes').noAim = true;"><i class="icon-login-tqq"></i><span>è…¾è®¯å¾®åšç™»å½•</span></a></dd>
+			<dd class="login-qq login-other-btn tencent"><a href="javascript:void(0)" onclick="return window.open('http://www.jxvdy.com/oauth2/authorize?p=txqq&login=1', 'oauth2Login_txqq' ,'height=525,width=585, toolbar=no, menubar=no, scrollbars=no, status=no, location=yes, resizable=yes').noAim = true;"><i class="icon-login-qq"></i><span>è…¾è®¯QQç™»å½•</span></a></dd>
+		</dl>
+		<!-- /.login-other -->
+	</div>
+	<!-- /.popup-body -->
+</div>
+<!-- /.popup-wrap -->
+<!-- å¼¹å‡ºå±‚é®ç½© -->
+<div class="popup-wrap-mask"></div>
+<!--t1517408404-->
+</section>
+<!-- éšè—ä»£ç ç›’å­ S -->
+<div id="displayBox">
+	<div class="hd"><a></a></div>
+	<div class="bd" style="height: 0;">
+		<iframe scrolling="yse" src="" frameborder="0"></iframe>
+	</div>
+</div>
+<footer id="footer" class="footer-wrap clearfix">
+	<div class="container">
+		<div class="foot text-center">
+			<div class="clearfix foot-link">
+				<a href="about.html" tppabs="http://www.jxvdy.com/about.html" target="_blank">å…³äºŽæˆ‘ä»¬</a><span class="divide">|</span>
+				<a href="contact.html" tppabs="http://www.jxvdy.com/contact.html" target="_blank">è”ç³»æˆ‘ä»¬</a><span class="divide">|</span>
+				<a href="guestbook.html" tppabs="http://www.jxvdy.com/guestbook.html" target="_blank">ç½‘ç«™ç•™è¨€</a><span class="divide">|</span>
+				<a href="help.html" tppabs="http://www.jxvdy.com/help.html" target="_blank">å¸®åŠ©ä¸­å¿ƒ</a><span class="divide">|</span>
+				<a href="disclaimer.html" tppabs="http://www.jxvdy.com/disclaimer.html" target="_blank">å…è´£å£°æ˜Ž</a><span class="divide">|</span>
+				<a href="copyright.html" tppabs="http://www.jxvdy.com/copyright.html" target="_blank">ç‰ˆæƒå£°æ˜Ž</a><span class="divide">|</span>
+				<a href="agreement.html" tppabs="http://www.jxvdy.com/agreement.html" target="_blank">ä½¿ç”¨åè®®</a>
+			</div>
+			<p>Copyright &copy; 2013-2018 jxvdy.comï¼ŒAll Rights Reserved&nbsp;&nbsp;ä½¿ç”¨æœ¬ç½‘ç«™å³è¡¨ç¤ºæŽ¥å—é‡‘è±¡å¾®ç”µå½±ç½‘ç”¨æˆ·åè®®<br><a href="javascript:if(confirm('http://www.miitbeian.gov.cn/  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.miitbeian.gov.cn/'" tppabs="http://www.miitbeian.gov.cn/" target="_blank">ICPå¤‡æ¡ˆè¯ä¹¦å·ï¼šè±«ICPå¤‡12020961å·</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="licence.html" tppabs="http://www.jxvdy.com/licence.html" target="_blank">å¹¿æ’­ç”µè§†èŠ‚ç›®åˆ¶ä½œç»è¥è®¸å¯è¯ ï¼ˆè±«ï¼‰å­—ç¬¬00213å·</a><br>ç‰ˆæƒæ‰€æœ‰ é‡‘è±¡å¾®ç”µå½±ç½‘</p>
+		</div>
+	</div>
+</footer>
+
+<!-- é¡µé¢å³ä¾§æµ®åŠ¨æŽ§ä»¶ -->
+<div id="js_float_left" class="float-wx"><span class="jx-wx"></span></div>
+<div id="js_float_right" class="side-bar side-pannel" style="display: none;">
+    <div id="side-bar"><a class="gotop" href="javascript:;" style="display: none"></a></div>
+    <a class="block-text jx-app" href="javascript:;"><span class="jx-app-icon"></span></a>
+    <a class="block-text jx-kf" href="javascript:if(confirm('http://wpa.qq.com/msgrd?v=3&uin=1606173530&site=qq&menu=yes  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://wpa.qq.com/msgrd?v=3&uin=1606173530&site=qq&menu=yes'" tppabs="http://wpa.qq.com/msgrd?v=3&uin=1606173530&site=qq&menu=yes" target="_blank">
+        <span class="jx-kf-con">
+            å®˜æ–¹å®¢æœQQï¼š1605173530<br>å·¥ä½œæ—¥9:00-18:00åœ¨çº¿
+            <i></i>
+        </span>
+    </a>
+    <a class="block-text jx-wb" href="javascript:if(confirm('http://weibo.com/jinxiangv  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://weibo.com/jinxiangv'" tppabs="http://weibo.com/jinxiangv" target="_blank">
+        <span class="jx-wb-con">
+            <script src="wb.js" tppabs="http://tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8"></script>
+            <wb:follow-button uid="3568758305" type="red_2" width="136" height="24" ></wb:follow-button>
+            <i></i>
+        </span>
+    </a>
+    <a class="jx-ly" href="guestbook.html" tppabs="http://www.jxvdy.com/guestbook.html" target="_blank"></a>
+</div>
+<!--300_250_s-->
+<div class="js_ad_record" style="height: 250px;position:fixed; right:0; bottom:0;z-index:2147483648;"><script type="text/javascript" src="0112.js" tppabs="http://ad.jxvdy.com/script/0112.js"></script></div>
+<!--300_250_e-->
+<script type="text/javascript">
+//  è¿”å›žç½®é¡¶
+    $(function(){
+        $(window).scroll(function(){
+            if($(window).scrollTop()>100){
+                $("#side-bar .gotop").fadeIn();
+            }
+            else{
+                $("#side-bar .gotop").hide();
+            }
+        });
+        $("#side-bar .gotop").click(function(){
+            $('html,body').animate({'scrollTop':0},500);
+        });
+    });
+//    é¡µé¢ä¸¤ä¾§æµ®åŠ¨éšå±å¹•æ»šåŠ¨æ˜¾ç¤º
+    function float_nav(dom){
+        var right_nav=$(dom);
+        var nav_height=right_nav.height();
+        function right_nav_position(bool){
+            var window_height=$(window).height();
+            var nav_top=(window_height-nav_height)/2;
+            if(bool){
+                right_nav.stop(true,false).animate({top:nav_top+$(window).scrollTop()},500);
+            }else{
+                right_nav.stop(true,false).animate({top:nav_top},400);
+            }
+            right_nav.show();
+        }
+
+        if(!+'\v1' && !window.XMLHttpRequest ){
+            $(window).bind('scroll resize',function(){
+                if($(window).scrollTop()>400){
+                    right_nav_position(true);
+                }else{
+                    right_nav.hide();
+                }
+            })
+        }else{
+            $(window).bind('scroll resize',function(){
+                if($(window).scrollTop()>400){
+                    right_nav_position();
+                }else{
+                    right_nav.hide();
+                }
+            })
+        }
+    }
+    float_nav('#js_float_left');
+    float_nav('#js_float_right');
+    
+    $(function(){
+        recordShow();
+        $(window).scroll(recordShow);
+    })
+    
+    function recordShow()
+    {
+		var Hei = $(window).height();
+        var scrTop = $(document).scrollTop();
+        $('.js_ad_record').each(function(){
+        	var offHei = $(this).offset().top
+			var objHei = $(this).height();
+			if((offHei < scrTop + Hei && offHei > scrTop) || (offHei + objHei < scrTop + Hei && offHei + objHei > scrTop))
+			{
+				if(!$(this).hasClass('js_recorded'))
+				{
+					$(this).addClass('js_recorded');
+					var _u = $(this).children("div:last-child").attr('js_data');
+					$.ajax({cache:false,type:'GET',url: _u});
+				}
+			}
+        })
+    }
+</script>
+</body>
+</html>
+<!--t1517408166-->
+
+<!--t1517408188-->

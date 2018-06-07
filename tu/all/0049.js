@@ -1,0 +1,1 @@
+document.write('<a href="http://www.jxvdy.com/tutorials/plays/zpsx/0001491861.html" target="_blank"  onclick="js_click_record(\'http://ad.jxvdy.com/record?type=1&id=33&p=17\')"><img src="http://ad.jxvdy.com/media/2015/0610/5577d0541012cf3ccdd27.jpg" width="300" height="100"></a><div js_data="http://ad.jxvdy.com/record?id=33&p=17" style="display:none"/></div>');
